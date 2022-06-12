@@ -5,7 +5,7 @@
   
   outputs = { self, nixpkgs, sops-nix }: {
     # change `yourhostname` to your actual hostname
-    nixosConfigurations.yourhostname = nixpkgs.lib.nixosSystem {
+    nixosConfigurations.frankenixos = nixpkgs.lib.nixosSystem {
       # customize to your system
       system = "x86_64-linux";
       modules = [

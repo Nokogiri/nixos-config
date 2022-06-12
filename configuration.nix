@@ -77,7 +77,8 @@ in
     extraModprobeConfig = ''
       options hid_apple fnmode=2 swap_fn_leftctrl=1 iso_layout=0
     '';
-    initrd.kernelModules = [ "i915" "kvm-intel" "hid-apple" "wl" ];
+    initrd.kernelModules = [ "i915" "hid-apple"];
+    kernelModules = [ "wl" "kvm-intel" ];
     plymouth.enable = false;
   };
 

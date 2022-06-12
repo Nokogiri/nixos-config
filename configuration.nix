@@ -105,6 +105,7 @@ in
 
   systemd.network.enable = true;
   systemd.network.wait-online.anyInterface = true;
+  systemd.network.wait-online.ignoredInterfaces = [ "enp1s0f0" ];
   systemd.network.networks."20-wired" = {
     matchConfig.Name = [ "en*" ];
     linkConfig.RequiredForOnline = false;
@@ -114,15 +115,6 @@ in
     matchConfig.Name = [ "wlp2s0" ];
     DHCP = "yes";
   };
-  systemd.packages = [
-    (pkgs.runCommandNoCC "" {
-      preferLocalBuild = true;
-      allowSubstitutes = true;
-    } ''
-      mkdir -p $out/etc/systemd/system/systemd-networkd-wait-online.service.d
-      echo "[Service]\nExecStart=\nExecStart=/usr/lib/systemd/systemd-networkd-wait-online --any" > $out/etc/systemd/system/systemd-networkd-wait-online.service.d/wait-for-only-one-interface.conf
-      '')
-  ];
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/1f200403-52ed-4fe6-8e44-edfa6aed6cf9";
       fsType = "btrfs";

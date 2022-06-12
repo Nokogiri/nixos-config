@@ -69,6 +69,7 @@ in
       "intremap=off" 
       "rd.systemd.show_status=false"
       "rd.udev.log_priority=2"
+      "audit=0"
     ];
     consoleLogLevel = 3;
     kernelPackages = pkgs.linuxKernel.packages.linux_5_17;
@@ -90,7 +91,7 @@ in
   hardware.bluetooth.enable = true;
 
   networking = { 
-	hostName = "frankenixos"; # Define your hostname.
+	hostName = "frankenbook"; # Define your hostname.
 	wireless.iwd.enable = true;
 	wireless.iwd.settings = {
 	  General = {

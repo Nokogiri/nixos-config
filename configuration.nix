@@ -286,6 +286,7 @@ in
     (pkgs.writeShellScriptBin "nixFlakes" ''
       exec ${pkgs.nixFlakes}/bin/nix --experimental-features "nix-command flakes" "$@"
     '')
+    age
     bat
     cliphist
     configure-gtk
@@ -314,6 +315,7 @@ in
     ranger
     rofi-wayland
     slurp
+    ssh-to-age
     swayidle
     swaylock-effects
     swayr

@@ -114,6 +114,7 @@ in
   systemd.network.networks."25-wireless" = {
     matchConfig.Name = [ "wlp2s0" ];
     DHCP = "yes";
+    IgnoreCarrierLoss = "3s";
   };
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/1f200403-52ed-4fe6-8e44-edfa6aed6cf9";

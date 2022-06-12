@@ -53,9 +53,10 @@ in
       #<sops-nix/modules/sops>
     ];
 
-  sops.defaultSopsFile = ./secrets/frankenbook.yaml;
+    sops.defaultSopsFile = ./secrets/frankenbook.yaml;
+    sops.age.sshKeyPaths = [ "/home/nokogiri/.ssh/id_nokogiri.key" ];
   sops.age.keyFile = "/home/nokogiri/.config/sops/age/keys.txt";
-  sops.secrets."wireguard/psk" = {};
+  sops.secrets."wg_psk" = {};
   # Use the systemd-boot EFI boot loader.
   boot = {
     loader.systemd-boot.enable = true;

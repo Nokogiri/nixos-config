@@ -252,6 +252,7 @@ in
   programs.gnupg.agent.enable = true;
   programs.light.enable = true;
   programs.qt5ct.enable = true;
+  programs.ssh.startAgent = true;
   programs.tmux.enable = true;
   programs.waybar.enable = true;
   programs.xwayland.enable = true;

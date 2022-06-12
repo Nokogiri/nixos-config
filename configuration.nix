@@ -153,11 +153,12 @@ in
   security = {
     doas = { 
       enable = true;
-      wheelNeedsPassword = false;
+      wheelNeedsPassword = true;
       extraRules = [{
-	groups = [ "wheel" ];
-	keepEnv = true;
-	persist = true;
+        groups = [ "wheel" ];
+        noPass = false;
+        keepEnv = true;
+        persist = true;
       }];
     };
   };

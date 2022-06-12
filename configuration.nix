@@ -48,10 +48,14 @@ in
   };
 
   imports =
-    [ # Include the results of the hardware scan.
+    [
       ./hardware-configuration.nix
+      #<sops-nix/modules/sops>
     ];
 
+  sops.defaultSopsFile = ./secrets/frankenbook.yaml;
+  sops.age.keyFile = "/home/nokogiri/.config/sops/age/keys.txt";
+  sops.secrets."wireguard/psk" = {};
   # Use the systemd-boot EFI boot loader.
   boot = {
     loader.systemd-boot.enable = true;
@@ -234,10 +238,13 @@ in
   # ];
   users.users.nokogiri = {
     isNormalUser = true;
-    extraGroups = [ "wheel"
-                    "video"
-                    "audio"
-		    "input" ];
+    extraGroups = [ 
+      "wheel"
+      "video"
+      "audio"
+      "input"
+      "config.users.groups.keys.name"
+    ];
     shell = pkgs.zsh;
   };
   fonts.fonts = with pkgs; [

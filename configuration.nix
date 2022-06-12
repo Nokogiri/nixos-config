@@ -154,6 +154,11 @@ in
     doas = { 
       enable = true;
       wheelNeedsPassword = false;
+      extraRules = [{
+	groups = [ "wheel" ];
+	keepEnv = true;
+	persist = true;
+      }];
     };
   };
   

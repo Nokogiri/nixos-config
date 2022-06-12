@@ -109,12 +109,23 @@ in
   systemd.network.networks."20-wired" = {
     matchConfig.Name = [ "en*" ];
     linkConfig.RequiredForOnline = false;
+    networkConfig.MulticastDNS = true;
     DHCP = "yes";
+    dhcpV4Config = {
+      UseDNS = true;
+      UseRoutes = true;
+      RouteMetric = 10;
+    };
   };
   systemd.network.networks."25-wireless" = {
     matchConfig.Name = [ "wlp2s0" ];
     DHCP = "yes";
-    networkConfig.IgnoreCarrierLoss = "3s";
+    networkConfig.MulticastDNS = true;
+    dhcpV4Config = {
+      UseDNS = true;
+      UseRoutes = true;
+      RouteMetric = 20;
+    };
   };
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/1f200403-52ed-4fe6-8e44-edfa6aed6cf9";
@@ -300,8 +311,9 @@ in
     bat
     cliphist
     configure-gtk
-    dfc
     dbus-sway-environment
+    dfc
+    diff-so-fancy
     firefox-esr-wayland
     fusuma
     glib

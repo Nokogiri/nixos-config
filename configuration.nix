@@ -70,7 +70,7 @@ in
     extraModulePackages = [ config.boot.kernelPackages.broadcom_sta ];
     blacklistedKernelModules = [ "b43" ];
     extraModprobeConfig = ''
-      options hid_apple fnmode=2 swap_fn_leftctrl=1 iso_layout=1
+      options hid_apple fnmode=2 swap_fn_leftctrl=1 iso_layout=0
     '';
     initrd.kernelModules = [ "i915" "kvm-intel" "hid-apple" "wl" ];
     plymouth.enable = false;

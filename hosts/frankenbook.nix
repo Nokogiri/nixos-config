@@ -25,7 +25,10 @@
     initrd.availableKernelModules = [ "xhci_pci" "ehci_pci" "ahci" "firewire_ohci" "usb_storage" "usbhid" "sd_mod" "sdhci_pci" ];
     initrd.kernelModules = [ "i915" "hid-apple"];
     kernelModules = [ "wl" "kvm-intel" ];
-    kernelPackages = pkgs.linuxKernel.packages.linux_5_17;
+    kernelPackages = [
+      pkgs.linuxKernel.packages.linux_5_17
+      pkgs.linuxKernel.packages.linux_xanmod
+      ;
     kernelParams = [
       "acpi_backlight=vendor"
       "i915.fastboot=1"

@@ -53,11 +53,6 @@ in
       ./modules/sops.nix
     ];
 
-#    sops.defaultSopsFile = ./secrets/frankenbook.yaml;
- #   sops.age.sshKeyPaths = [ "/home/nokogiri/.ssh/id_nokogiri.key" ];
-#  sops.age.keyFile = "/home/nokogiri/.config/sops/age/keys.txt";
-#  sops.secrets."wg_psk" = {};
-
   networking = { 
 	hostName = "frankenbook"; # Define your hostname.
 	wireless.iwd.enable = true;
@@ -147,7 +142,6 @@ in
 
   services.clight.enable = true;
   services.tlp.enable = true;
-  services.flatpak.enable = true;
   services.resolved.enable = true;
   # Enable CUPS to print documents.
   # services.printing.enable = true;

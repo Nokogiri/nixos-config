@@ -49,7 +49,8 @@ in
 
   imports =
     [
-      ./hardware-configuration.nix
+      ./hosts/frankenbook.nix
+      #./hardware-configuration.nix
       #<sops-nix/modules/sops>
     ];
 

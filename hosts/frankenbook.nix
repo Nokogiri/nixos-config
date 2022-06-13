@@ -88,4 +88,10 @@
 
 
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+
+  hardware.bluetooth.enable = true;
+  hardware.opengl.extraPackages = with pkgs; [
+    vaapiIntel
+  ];
+  hardware.xpadneo.enable = true;
 }

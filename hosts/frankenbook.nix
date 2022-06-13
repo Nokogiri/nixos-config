@@ -20,7 +20,7 @@
     consoleLogLevel = 3;
     extraModulePackages = [
       config.boot.kernelPackages.broadcom_sta
-      config.boot.kernelPackages.nintendo-hid
+      config.boot.kernelPackages.hid-nintendo
     ];
     extraModprobeConfig = ''
       options hid_apple fnmode=2 swap_fn_leftctrl=1 iso_layout=0

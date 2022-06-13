@@ -57,43 +57,6 @@ in
     sops.age.sshKeyPaths = [ "/home/nokogiri/.ssh/id_nokogiri.key" ];
   sops.age.keyFile = "/home/nokogiri/.config/sops/age/keys.txt";
   sops.secrets."wg_psk" = {};
-  # Use the systemd-boot EFI boot loader.
-  boot = {
-    loader.systemd-boot.enable = true;
-    loader.efi.canTouchEfiVariables = true;
-    loader.efi.efiSysMountPoint = "/efi";
-  };
-
-  boot = {
-    kernelParams = [
-      "acpi_backlight=vendor"
-      "i915.fastboot=1" 
-      "i915.enable_guc=2"
-      "i915.enable_fbc=1" 
-      "sdhci.debug_quirks2=4"
-      "intremap=off" 
-      "rd.systemd.show_status=false"
-      "rd.udev.log_priority=2"
-      "audit=0"
-    ];
-    consoleLogLevel = 3;
-    kernelPackages = pkgs.linuxKernel.packages.linux_5_17;
-    extraModulePackages = [ config.boot.kernelPackages.broadcom_sta ];
-    blacklistedKernelModules = [ "b43" ];
-    extraModprobeConfig = ''
-      options hid_apple fnmode=2 swap_fn_leftctrl=1 iso_layout=0
-    '';
-    initrd.kernelModules = [ "i915" "hid-apple"];
-    kernelModules = [ "wl" "kvm-intel" ];
-    plymouth.enable = false;
-  };
-
-  hardware.xpadneo.enable = true;
-  hardware.opengl.extraPackages = with pkgs; [
-    vaapiIntel
-    libvdpau-va-gl
-  ];
-  hardware.bluetooth.enable = true;
 
   networking = { 
 	hostName = "frankenbook"; # Define your hostname.
@@ -133,42 +96,6 @@ in
       RouteMetric = 20;
     };
   };
-  fileSystems."/" =
-    { device = "/dev/disk/by-uuid/1f200403-52ed-4fe6-8e44-edfa6aed6cf9";
-      fsType = "btrfs";
-      options = [ "subvol=nixos"
-      		  "compress=zstd:9" ];
-    };
-
-  fileSystems."/home" =
-    { device = "/dev/disk/by-uuid/1f200403-52ed-4fe6-8e44-edfa6aed6cf9";
-      fsType = "btrfs";
-      options = [ "subvol=@home"
-      		  "compress=zstd:9" ];
-    };
-
-  fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/2052-3A83";
-      fsType = "vfat";
-      options = [ "fmask=0022"
-      		  "dmask=0022"
-		  "codepage=437"
-		  "iocharset=ascii"
-		  "shortname=mixed"
-		  "utf8" ];
-    };
-
-  fileSystems."/efi" =
-    { device = "/dev/disk/by-uuid/67E3-17ED";
-      fsType = "vfat";
-      options = [ "fmask=0022"
-          	  "dmask=0022"
-		  "codepage=437"
-		  "iocharset=ascii"
-		  "shortname=mixed"
-		  "utf8"
-      		];
-    };
 
   security = {
     doas = { 

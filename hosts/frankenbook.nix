@@ -28,7 +28,7 @@
     kernelPackages = [
       pkgs.linuxKernel.packages.linux_5_17
       pkgs.linuxKernel.packages.linux_xanmod
-      ;
+    ];
     kernelParams = [
       "acpi_backlight=vendor"
       "i915.fastboot=1"

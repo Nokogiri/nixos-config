@@ -50,14 +50,13 @@ in
   imports =
     [
       ./hosts/frankenbook.nix
-      #./hardware-configuration.nix
-      #<sops-nix/modules/sops>
+      ./modules/sops.nix
     ];
 
-    sops.defaultSopsFile = ./secrets/frankenbook.yaml;
-    sops.age.sshKeyPaths = [ "/home/nokogiri/.ssh/id_nokogiri.key" ];
-  sops.age.keyFile = "/home/nokogiri/.config/sops/age/keys.txt";
-  sops.secrets."wg_psk" = {};
+#    sops.defaultSopsFile = ./secrets/frankenbook.yaml;
+ #   sops.age.sshKeyPaths = [ "/home/nokogiri/.ssh/id_nokogiri.key" ];
+#  sops.age.keyFile = "/home/nokogiri/.config/sops/age/keys.txt";
+#  sops.secrets."wg_psk" = {};
 
   networking = { 
 	hostName = "frankenbook"; # Define your hostname.

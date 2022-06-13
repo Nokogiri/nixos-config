@@ -88,7 +88,7 @@
 
 
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
-
+  hardware.enableRedistributableFirmware = true;
   hardware.bluetooth.enable = true;
   hardware.opengl.extraPackages = with pkgs; [
     vaapiIntel

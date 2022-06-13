@@ -23,7 +23,7 @@
       options hid_apple fnmode=2 swap_fn_leftctrl=1 iso_layout=0
     '';
     initrd.availableKernelModules = [ "xhci_pci" "ehci_pci" "ahci" "firewire_ohci" "usb_storage" "usbhid" "sd_mod" "sdhci_pci" ];
-    initrd.kernelModules = [ "i915" "hid=apple"];
+    initrd.kernelModules = [ "i915" "hid-apple"];
     kernelModules = [ "wl" "kvm-intel" ];
     kernelPackages = pkgs.linuxKernel.packages.linux_5_17;
     kernelParams = [

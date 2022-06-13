@@ -81,6 +81,19 @@ in
       RouteMetric = 10;
     };
   };
+  systemd.network.networks."24-home-wifi" = {
+    matchConfig.Name = [ "wlp2s0" ];
+    matchConfig.SSID = [ "(=^--^=)" ];
+    DHCP = "no";
+    address = [ "192.168.178.21" ];
+    dns = [ "192.168.178.254" ];
+    gateway = [ "192.168.178.1" ];
+    dhcpV4Config = {
+      UseDNS = true;
+      UseRoute = true;
+      RouteMetric = 20;
+    };
+  };
   systemd.network.networks."25-wireless" = {
     matchConfig.Name = [ "wlp2s0" ];
     DHCP = "yes";

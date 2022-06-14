@@ -19,6 +19,7 @@
         ./default-modules.nix
         ./frankenbook/system.nix
         ./frankenbook/network.nix
+        ./frankenbook/security.nix
         ./frankenbook/sops.nix
         sops-nix.nixosModules.sops
       ];

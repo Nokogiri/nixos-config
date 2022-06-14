@@ -4,7 +4,7 @@
   nix = {
     package =  pkgs.nixFlakes;
     extraOptions = ''
-      experimentl-features = nix-command flakes
+      experimental-features = nix-command flakes
     '';
     gc = {
       automatic = true;

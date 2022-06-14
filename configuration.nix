@@ -84,7 +84,7 @@ in
   systemd.network.networks."24-home-wifi" = {
     matchConfig.Name = [ "wlp2s0" ];
     #matchConfig.SSID = [ "(=^--^=)" ];
-    matchConfig.BSSID = [ "08:96:D7:51:41:1B" "08:96:D7:51:41:1B"];
+    matchConfig.BSSID = [ "08:96:D7:51:41:1B EC:08:6B:27:16:E3" ];
     DHCP = "no";
     address = [ "192.168.178.21/24" ];
     dns = [ "192.168.178.254" ];

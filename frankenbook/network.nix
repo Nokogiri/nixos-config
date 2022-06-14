@@ -36,7 +36,7 @@
       DHCP = "ipv4";
       networkConfig = {
         MulticastDNS = true;
-        IPv6AccetRA = "no";
+        IPv6AcceptRA = "no";
       };
       dhcpV4Config = {
         RouteMetric = 20;

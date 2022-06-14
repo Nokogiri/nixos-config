@@ -60,7 +60,9 @@ in
 	  General = {
 	    UseDefaultInterface = true;
 	  };
-	};
+    };
+    dhcpcd.extraConfig = "noipv6rs\nnoipv6";
+    enableIPv6 = false;
   };
     systemd.network.links."79-iwd" = {
       matchConfig.Type = "wlan";
@@ -81,9 +83,9 @@ in
       RouteMetric = 10;
     };
   };
-  systemd.network.networks."24-home-wifi" = {
+  systemd.network.networks."20-wireless" = {
     matchConfig.Name = [ "wlp2s0" ];
-    #matchConfig.SSID = [ "(=^--^=)" ];
+    matchConfig.SSID = [ "(=^--^=)" ];
     matchConfig.BSSID = [ "08:96:D7:51:41:1B EC:08:6B:27:16:E3" ];
     DHCP = "no";
     address = [ "192.168.178.21/24" ];

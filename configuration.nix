@@ -50,7 +50,7 @@ in
   imports =
     [
       #./hosts/frankenbook.nix
-      ./modules/sops.nix
+      #./modules/sops.nix
     ];
 
   networking = { 

@@ -53,18 +53,18 @@ in
       #./modules/sops.nix
     ];
 
-  security = {
-    doas = { 
-      enable = true;
-      wheelNeedsPassword = true;
-      extraRules = [{
-        groups = [ "wheel" ];
-        noPass = false;
-        keepEnv = true;
-        persist = true;
-      }];
-    };
-  };
+#  security = {
+#    doas = { 
+#      enable = true;
+#      wheelNeedsPassword = true;
+#      extraRules = [{
+#        groups = [ "wheel" ];
+#        noPass = false;
+#        keepEnv = true;
+#        persist = true;
+#      }];
+#    };
+#  };
   
   # Set your time zone.
   time.timeZone = "Europe/Berlin";

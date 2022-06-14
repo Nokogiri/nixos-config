@@ -16,7 +16,8 @@
       system = "x86_64-linux";
       modules = [
         ./configuration.nix
-        ./frankenbook/hardware.nix
+        ./default-modules.nix
+        ./frankenbook/system.nix
         ./frankenbook/network.nix
         ./frankenbook/sops.nix
         sops-nix.nixosModules.sops

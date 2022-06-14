@@ -49,7 +49,7 @@ in
 
   imports =
     [
-      ./hosts/frankenbook.nix
+      #./hosts/frankenbook.nix
       ./modules/sops.nix
     ];
 

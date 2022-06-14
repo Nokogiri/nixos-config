@@ -1,7 +1,7 @@
 {
   ...
 }: {
-  sops.defaultSopsFile = ../secrets/frankenbook.yaml;
+  sops.defaultSopsFile = ../secrets/secrets.yaml;
   sops.age.keyFile = "/etc/nixos/keys/keys.txt";
-  sops.secrets."wg_psk" = {};
+  sops.secrets."frankenbook/wg/private" = {};
 }

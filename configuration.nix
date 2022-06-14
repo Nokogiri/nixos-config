@@ -53,62 +53,62 @@ in
       #./modules/sops.nix
     ];
 
-  networking = { 
-    hostName = "frankenbook"; # Define your hostname.
-    useDHCP = false;
-    resolvconf.enable = true;
-	wireless.iwd.enable = true;
-    wireless.iwd.settings = {
-      General = {
-        UseDefaultInterface = true;
-      };
-    };
-    dhcpcd.extraConfig = "noipv6rs\nnoipv6";
-  };
-  systemd.network.links."79-iwd" = {
-    matchConfig.Type = "wlan";
-    linkConfig.NamePolicy = "path";
-  };
+#  networking = { 
+#    hostName = "frankenbook"; # Define your hostname.
+#    useDHCP = false;
+#    resolvconf.enable = true;
+#	wireless.iwd.enable = true;
+#    wireless.iwd.settings = {
+#      General = {
+#        UseDefaultInterface = true;
+#      };
+#    };
+#    dhcpcd.extraConfig = "noipv6rs\nnoipv6";
+#  };
+#  systemd.network.links."79-iwd" = {
+#    matchConfig.Type = "wlan";
+#    linkConfig.NamePolicy = "path";
+#  };
 
-  systemd.network.enable = true;
-  systemd.network.wait-online.timeout = 20;
-  systemd.network.wait-online.anyInterface = true;
-  systemd.network.wait-online.ignoredInterfaces = [ "enp1s0f0" ];
-  systemd.network.networks."20-wired" = {
-    matchConfig.Name = [ "en*" ];
-    linkConfig.RequiredForOnline = false;
-    networkConfig.MulticastDNS = true;
-    DHCP = "yes";
-    dhcpV4Config = {
-      UseDNS = true;
-      UseRoutes = true;
-      RouteMetric = 10;
-    };
-  };
-  systemd.network.networks."26-wireless" = {
-    matchConfig.Name = [ "wlp2s0" ];
-    networkConfig = {
-      IPv6AcceptRA = "no";
-    };
-    DHCP = "no";
-    address = [ "192.168.178.21/24" ];
-    dns = [ "192.168.178.254" ];
-    gateway = [ "192.168.178.1" ];
-  };
-  systemd.network.networks."25-wireless" = {
-    matchConfig.Name = [ "wlp2s0" ];
-    matchConfig.SSID = [ "!\\(\\=\\^\\-\\-\\^\\=\\)" ];
-    DHCP = "ipv4";
-    networkConfig = {
-      MulticastDNS = true;
-      IPv6AcceptRA = "no";
-    };
-    dhcpV4Config = {
-      UseDNS = true;
-      UseRoutes = true;
-      RouteMetric = 20;
-    };
-  };
+#  systemd.network.enable = true;
+#  systemd.network.wait-online.timeout = 20;
+#  systemd.network.wait-online.anyInterface = true;
+#  systemd.network.wait-online.ignoredInterfaces = [ "enp1s0f0" ];
+#  systemd.network.networks."20-wired" = {
+#    matchConfig.Name = [ "en*" ];
+#    linkConfig.RequiredForOnline = false;
+#    networkConfig.MulticastDNS = true;
+#    DHCP = "yes";
+#    dhcpV4Config = {
+#      UseDNS = true;
+#      UseRoutes = true;
+#      RouteMetric = 10;
+#    };
+#  };
+#  systemd.network.networks."26-wireless" = {
+#    matchConfig.Name = [ "wlp2s0" ];
+#    networkConfig = {
+#      IPv6AcceptRA = "no";
+#    };
+#    DHCP = "no";
+#    address = [ "192.168.178.21/24" ];
+#    dns = [ "192.168.178.254" ];
+#    gateway = [ "192.168.178.1" ];
+#  };
+#  systemd.network.networks."25-wireless" = {
+#    matchConfig.Name = [ "wlp2s0" ];
+#    matchConfig.SSID = [ "!\\(\\=\\^\\-\\-\\^\\=\\)" ];
+#    DHCP = "ipv4";
+#    networkConfig = {
+#      MulticastDNS = true;
+#      IPv6AcceptRA = "no";
+#    };
+#    dhcpV4Config = {
+#      UseDNS = true;
+#      UseRoutes = true;
+#      RouteMetric = 20;
+#    };
+#  };
 
   security = {
     doas = { 

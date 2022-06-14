@@ -17,6 +17,7 @@
       modules = [
         ./configuration.nix
         ./frankenbook/hardware.nix
+        ./frankenbook/network.nix
         ./frankenbook/sops.nix
         sops-nix.nixosModules.sops
       ];

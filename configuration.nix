@@ -83,15 +83,16 @@ in
   };
   systemd.network.networks."24-home-wifi" = {
     matchConfig.Name = [ "wlp2s0" ];
-    matchConfig.SSID = [ "(=^--^=)" ];
+    #matchConfig.SSID = [ "(=^--^=)" ];
+    matchConfig.BSSID = [ "08:96:D7:51:41:1B" "08:96:D7:51:41:1B"];
     DHCP = "no";
-    address = [ "192.168.178.21" ];
+    address = [ "192.168.178.21/24" ];
     dns = [ "192.168.178.254" ];
     gateway = [ "192.168.178.1" ];
   };
   systemd.network.networks."25-wireless" = {
     matchConfig.Name = [ "wlp2s0" ];
-    DHCP = "yes";
+    DHCP = "ipv4";
     networkConfig.MulticastDNS = true;
     dhcpV4Config = {
       UseDNS = true;

@@ -2,6 +2,6 @@
   ...
 }: {
   sops.defaultSopsFile = ../secrets/frankenbook.yaml;
-  sops.age.keyFile = "/home/nokogiri/.config/sops/age/keys.txt";
+  sops.age.keyFile = "/etc/nixos/keys/keys.txt";
   sops.secrets."wg_psk" = {};
 }

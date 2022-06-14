@@ -54,22 +54,24 @@ in
     ];
 
   networking = { 
-	hostName = "frankenbook"; # Define your hostname.
+    hostName = "frankenbook"; # Define your hostname.
+    useDHCP = false;
+    resolvconf.enable = true;
 	wireless.iwd.enable = true;
-	wireless.iwd.settings = {
-	  General = {
-	    UseDefaultInterface = true;
-	  };
+    wireless.iwd.settings = {
+      General = {
+        UseDefaultInterface = true;
+      };
     };
     dhcpcd.extraConfig = "noipv6rs\nnoipv6";
-    enableIPv6 = false;
   };
-    systemd.network.links."79-iwd" = {
-      matchConfig.Type = "wlan";
-      linkConfig.NamePolicy = "path";
-    };
+  systemd.network.links."79-iwd" = {
+    matchConfig.Type = "wlan";
+    linkConfig.NamePolicy = "path";
+  };
 
   systemd.network.enable = true;
+  systemd.network.wait-online.timeout = 20;
   systemd.network.wait-online.anyInterface = true;
   systemd.network.wait-online.ignoredInterfaces = [ "enp1s0f0" ];
   systemd.network.networks."20-wired" = {
@@ -83,10 +85,11 @@ in
       RouteMetric = 10;
     };
   };
-  systemd.network.networks."20-wireless" = {
+  systemd.network.networks."26-wireless" = {
     matchConfig.Name = [ "wlp2s0" ];
-    matchConfig.SSID = [ "(=^--^=)" ];
-    matchConfig.BSSID = [ "08:96:D7:51:41:1B EC:08:6B:27:16:E3" ];
+    networkConfig = {
+      IPv6AcceptRA = "no";
+    };
     DHCP = "no";
     address = [ "192.168.178.21/24" ];
     dns = [ "192.168.178.254" ];
@@ -94,8 +97,12 @@ in
   };
   systemd.network.networks."25-wireless" = {
     matchConfig.Name = [ "wlp2s0" ];
+    matchConfig.SSID = [ "!\\(\\=\\^\\-\\-\\^\\=\\)" ];
     DHCP = "ipv4";
-    networkConfig.MulticastDNS = true;
+    networkConfig = {
+      MulticastDNS = true;
+      IPv6AcceptRA = "no";
+    };
     dhcpV4Config = {
       UseDNS = true;
       UseRoutes = true;

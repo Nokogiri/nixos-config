@@ -46,7 +46,7 @@
     };
     networks."26-wireless" = {
       matchConfig.Name = [ "wlp2s0" ];
-      networkingConfig.IPv6AcceptRA = "no";
+      networkConfig.IPv6AcceptRA = "no";
       DHCP = "no";
       address = [ "192.168.178.21/24" ];
       dns = [ "192.168.178.254" ];

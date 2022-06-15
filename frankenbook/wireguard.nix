@@ -8,9 +8,13 @@
   };
 
   systemd.network.netdevs."90-wireguard" = {
+    netdevConfig = {
+      Kind = "wireguard";
+      Name = "wg0";
+    };
     wireguardConfig = {
       PrivateKeyFile = config.sops.secrets."wg/private".path;
-      ListenPort51872;
+      ListenPort = 51872;
     };
     wireguardPeers = {
       AllowedIPs = [

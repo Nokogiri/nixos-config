@@ -57,27 +57,17 @@ in
   #   vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
   #   wget
   # ];
-  users.users.nokogiri = {
-    isNormalUser = true;
-    extraGroups = [ 
-      "wheel"
-      "video"
-      "audio"
-      "input"
-      "config.users.groups.keys.name"
-    ];
-    shell = pkgs.zsh;
-  };
-#  fonts.fonts = with pkgs; [
-#    (nerdfonts.override { fonts = [ "FiraCode" "FiraMono" "Meslo" "Mononoki" ]; })
-#    corefonts
-#    dejavu_fonts
-#    unifont
-#    noto-fonts
-#    noto-fonts-emoji
-#    noto-fonts-cjk-sans
+#  users.users.nokogiri = {
+#    isNormalUser = true;
+#    extraGroups = [ 
+#      "wheel"
+#      "video"
+#      "audio"
+#      "input"
+#      "config.users.groups.keys.name"
 #    ];
-
+#    shell = pkgs.zsh;
+#  };
   programs.sway = {
     enable = true;
     wrapperFeatures.gtk = true;

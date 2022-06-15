@@ -21,6 +21,7 @@
         ./frankenbook/network.nix
         ./frankenbook/security.nix
         ./frankenbook/sops.nix
+        ./frankenbook/users.nix
         sops-nix.nixosModules.sops
       ];
     };

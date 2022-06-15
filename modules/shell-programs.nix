@@ -17,7 +17,6 @@
     ncdu
     nix-diff
     nix-index
-    nix-ld
     nix-tree
     nix-top
     nix-pin
@@ -30,4 +29,6 @@
     wireguard-tools
     yadm
   ];
+
+   programs.nix-ld.enable = true;
 }

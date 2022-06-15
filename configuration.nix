@@ -34,72 +34,10 @@ let
   };
 in
 {
-#  nix = {
-#    #package = pkgs.nixUnstable;
-#    package = pkgs.nixFlakes;
-#    extraOptions = ''
-#      experimental-features = nix-command flakes
-#    '';
-#    gc = {
-#      automatic = true;
-#      dates = "weekly";
-#      options = "--delete-older-than 20d";
-#    };
-#  };
-
-#  imports =
-#    [
-      #./hosts/frankenbook.nix
-      #./modules/sops.nix
-#    ];
-
-#  security = {
-#    doas = { 
-#      enable = true;
-#      wheelNeedsPassword = true;
-#      extraRules = [{
-#        groups = [ "wheel" ];
-#        noPass = false;
-#        keepEnv = true;
-#        persist = true;
-#      }];
-#    };
-#  };
-  
-  # Set your time zone.
-#  time.timeZone = "Europe/Berlin";
   location = {
     latitude = 50.9787;
     longitude = 11.03283;
   };
-
-#  nixpkgs.config.allowUnfree = true;
-
-  # Select internationalisation properties.
-#  i18n = {
-#    supportedLocales = [
-#      "en_US.UTF-8/UTF-8" 
-#      "de_DE.UTF-8/UTF-8"
-#    ];
-#    defaultLocale = "en_US.UTF-8";
-#    extraLocaleSettings = { LC_CTYPE = "en_US.UTF-8";
-#    			    LC_NUMERIC = "de_DE.UTF-8";
-#			    LC_TIME = "de_DE.UTF-8";
-#			    LC_COLLATE = "en_US.UTF-8";
-#			    LC_MONETARY = "de_DE.UTF-8";
-#			    LC_MESSAGES = "en_US.UTF-8";
-#			    LC_PAPER = "de_DE.UTF-8";
-#			    LC_NAME = "en_US.UTF-8";
-#			    LC_ADDRESS = "en_US.UTF-8";
-#			    LC_TELEPHONE = "en_US.UTF-8";
-#			    LC_MEASUREMENT = "de_DE.UTF-8";
-#			    LC_IDENTIFICATION= "en_US.UTF-8";
-#			    };
-#  };
-
-#  console = {
-#    font = "Lat2-14";
-#  };
 
   services.clight.enable = true;
   services.tlp.enable = true;

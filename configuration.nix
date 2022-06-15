@@ -68,15 +68,15 @@ in
     ];
     shell = pkgs.zsh;
   };
-  fonts.fonts = with pkgs; [
-    (nerdfonts.override { fonts = [ "FiraCode" "FiraMono" "Meslo" "Mononoki" ]; })
-    corefonts
-    dejavu_fonts
-    unifont
-    noto-fonts
-    noto-fonts-emoji
-    noto-fonts-cjk-sans
-    ];
+#  fonts.fonts = with pkgs; [
+#    (nerdfonts.override { fonts = [ "FiraCode" "FiraMono" "Meslo" "Mononoki" ]; })
+#    corefonts
+#    dejavu_fonts
+#    unifont
+#    noto-fonts
+#    noto-fonts-emoji
+#    noto-fonts-cjk-sans
+#    ];
 
   programs.sway = {
     enable = true;
@@ -162,7 +162,8 @@ in
     neovim
     nix-index
     nwg-launchers
-    python311
+    python39
+    python39Packages.requests
     ranger
     rofi-wayland
     slurp

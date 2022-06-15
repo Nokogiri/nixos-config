@@ -14,7 +14,7 @@
 
   fonts = {
     enableDefaultFonts = true;
-    enableFontDir = true;
+    fontDir.enable = true;
     enableGhostscriptFonts = true;
     fontconfig = {
       enable = true;

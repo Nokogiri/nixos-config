@@ -30,7 +30,7 @@
     }];
   };
   systemd.network.networks."90-wireguard.network" = {
-    matchConfigName = "wg0";
+    matchConfig.Name = "wg0";
     address = [ "10.200.200.2/24" ];
     dns = [ "10.200.200.1" ];
     routes = {

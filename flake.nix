@@ -22,6 +22,7 @@
         ./frankenbook/security.nix
         ./frankenbook/sops.nix
         ./frankenbook/users.nix
+        ./frankenbook/wireguard.nix
         sops-nix.nixosModules.sops
       ];
     };

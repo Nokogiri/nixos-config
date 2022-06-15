@@ -111,48 +111,48 @@ in
     '')
     age
     bat
-    cliphist
+    #cliphist
     configure-gtk
     dbus-sway-environment
     dfc
     diff-so-fancy
     firefox-esr-wayland
-    fusuma
-    glib
+    #fusuma
+    #glib
     gnome3.adwaita-icon-theme
     gnome.gnome-settings-daemon
-    gnome.gnome-themes-extra
-    grim
+    #gnome.gnome-themes-extra
+    #grim
     gsettings-desktop-schemas
-    gtk-engine-murrine
-    hicolor-icon-theme
+    #gtk-engine-murrine
+    #hicolor-icon-theme
     iwd
-    kitty
-    libsForQt5.qtstyleplugin-kvantum
+    #kitty
+    #libsForQt5.qtstyleplugin-kvantum
     linuxKernel.packages.linux_5_17.cpupower
-    mako
-    neovide
+    #mako
+    #neovide
     neovim
     nix-index
-    nwg-launchers
+    #nwg-launchers
     python39
     python39Packages.requests
     ranger
-    rofi-wayland
-    slurp
+    #rofi-wayland
+    #slurp
     ssh-to-age
-    swayidle
-    swaylock-effects
-    swayr
-    tridactyl-native
+    #swayidle
+    #swaylock-effects
+    #swayr
+    #tridactyl-native
     udiskie
     unrar
     unzip
-    vimix-icon-theme
+    #vimix-icon-theme
     wireguard-tools
-    wl-clipboard
-    wlr-randr
-    wofi
+    #wl-clipboard
+    #wlr-randr
+    #wofi
     yadm
     yt-dlp
   ];

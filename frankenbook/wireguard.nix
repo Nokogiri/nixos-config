@@ -2,9 +2,24 @@
 
 {
   sops.secrets = {
-    "wg/private" = {};
+    #"wg/private" = {};
     "wg/public" = {};
-    "wg/psk" = {};
+    #"wg/psk" = {};
+  };
+  
+  sops.secrets = {
+    "wg/private" = { 
+      mode = "0666";
+      owner = config.users.users.systemd-network.name;
+    };
+    "wg/psk" = {
+      mode = "0666";
+      owner = config.users.users.systemd-network.name;
+    };
+  };
+  
+  systemd.services.systemd-networkd = {
+    serviceConfig.SupplementaryGroups = [ config.users.groups.keys.name ];
   };
 
   systemd.network.netdevs."90-wireguard" = {

@@ -17,7 +17,10 @@
     ncdu
     nix-diff
     nix-index
+    nix-ld
     nix-tree
+    nix-top
+    nix-pin
     ranger
     rsync
     ssh-to-age

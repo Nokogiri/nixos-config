@@ -27,9 +27,12 @@
       grim
       gtk-engine-murrine
       hicolor-icon-theme
+      imv
       kitty
       libsForQt5.qtstyleplugin-kvantum
       mako
+      mpv
+      mpvScripts.mpris
       neovide
       nwg-launchers
       rofi-wayland
@@ -37,8 +40,8 @@
       swayidle
       swaylock-effects
       swayr
-      trydactyl-native
-      wl-cipboard
+      tridactyl-native
+      wl-clipboard
       wlr-randr
       wofi
     ];

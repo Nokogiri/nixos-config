@@ -115,7 +115,7 @@ in
     configure-gtk
     dbus-sway-environment
     #dfc
-    d#iff-so-fancy
+    #d#iff-so-fancy
     #firefox-esr-wayland
     #fusuma
     #glib

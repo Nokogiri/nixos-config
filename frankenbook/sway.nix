@@ -20,6 +20,7 @@
       '';
     extraPackages = with pkgs; [
       cliphist
+      emacs28NativeComp
       firefox-esr-wayland
       fusuma
       glib.bin
@@ -35,6 +36,7 @@
       mpvScripts.mpris
       neovide
       nwg-launchers
+      ponymix
       rofi-wayland
       slurp
       swayidle

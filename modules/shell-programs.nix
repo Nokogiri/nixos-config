@@ -23,6 +23,7 @@
     nix-top
     nix-pin
     ranger
+    ripgrep
     rsync
     ssh-to-age
     tmux

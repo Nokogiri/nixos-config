@@ -21,10 +21,11 @@
         ./frankenbook/network.nix
         ./frankenbook/security.nix
         ./frankenbook/sops.nix
+        ./frankenbook/sway.nix
         ./frankenbook/users.nix
         ./frankenbook/wireguard.nix
+        ./modules/emacs.nix
         ./modules/shell-programs.nix
-        ./modules/sway.nix
         sops-nix.nixosModules.sops
       ];
     };

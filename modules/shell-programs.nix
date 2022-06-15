@@ -12,6 +12,7 @@
     file
     fzf
     gitAndTools.diff-so-fancy
+    lesspipe
     neovim
     neovim-remote
     ncdu
@@ -29,5 +30,12 @@
     wireguard-tools
     yadm
   ];
+
+  programs.zsh.enable = true;
+  
+  programs.command-not-found.enable = false;
+  programs.zsh.interactiveShellInit = ''
+    source ${pkgs.nix-index}/etc/profile.d/command-not-found.sh
+  '';
 
 }

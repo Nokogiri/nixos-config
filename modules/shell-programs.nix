@@ -7,14 +7,22 @@
     '')
     age
     bat
+    btop
     dfc
-    diff-so-fancy
+    file
+    fzf
+    gitAndTools.diff-so-fancy
     neovim
+    neovim-remote
+    nix-diff
     nix-index
+    nix-tree
     ranger
+    rsync
     ssh-to-age
     unrar
     unzip
+    zip
     wireguard-tools
     yadm
   ];

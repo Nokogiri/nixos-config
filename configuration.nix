@@ -106,54 +106,13 @@ in
   };
   services.avahi.enable = true;
   environment.systemPackages = with pkgs; [
-    #(pkgs.writeShellScriptBin "nixFlakes" ''
-    #  exec ${pkgs.nixFlakes}/bin/nix --experimental-features "nix-command flakes" "$@"
-    #'')
-    #age
-    #bat
-    #cliphist
     configure-gtk
     dbus-sway-environment
-    #dfc
-    #d#iff-so-fancy
-    #firefox-esr-wayland
-    #fusuma
-    #glib
-    #gnome3.adwaita-icon-theme
-    #gnome.gnome-settings-daemon
-    #gnome.gnome-themes-extra
-    #grim
-    #gsettings-desktop-schemas
-    #gtk-engine-murrine
-    #hicolor-icon-theme
     iwd
-    #kitty
-    #libsForQt5.qtstyleplugin-kvantum
-    linuxKernel.packages.linux_5_17.cpupower
-    #mako
-    #neovide
-    #neovim
-    #nix-index
-    #nwg-launchers
     python39
     python39Packages.requests
-    #ranger
-    #rofi-wayland
-    #slurp
     ssh-to-age
-    #swayidle
-    #swaylock-effects
-    #swayr
-    #tridactyl-native
     udiskie
-    #unrar
-    #unzip
-    #vimix-icon-theme
-    #wireguard-tools
-    #wl-clipboard
-    #wlr-randr
-    #wofi
-    #yadm
     yt-dlp
   ];
   # Some programs need SUID wrappers, can be configured further or are

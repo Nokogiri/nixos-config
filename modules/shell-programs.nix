@@ -8,6 +8,7 @@
     age
     bat
     btop
+    cpupower
     dfc
     file
     fzf
@@ -24,6 +25,7 @@
     ranger
     rsync
     ssh-to-age
+    tmux
     unrar
     unzip
     zip

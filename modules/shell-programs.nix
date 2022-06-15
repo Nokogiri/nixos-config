@@ -30,5 +30,4 @@
     yadm
   ];
 
-   programs.nix-ld.enable = true;
 }

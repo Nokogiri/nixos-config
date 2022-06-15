@@ -106,24 +106,24 @@ in
   };
   services.avahi.enable = true;
   environment.systemPackages = with pkgs; [
-    (pkgs.writeShellScriptBin "nixFlakes" ''
-      exec ${pkgs.nixFlakes}/bin/nix --experimental-features "nix-command flakes" "$@"
-    '')
-    age
-    bat
+    #(pkgs.writeShellScriptBin "nixFlakes" ''
+    #  exec ${pkgs.nixFlakes}/bin/nix --experimental-features "nix-command flakes" "$@"
+    #'')
+    #age
+    #bat
     #cliphist
     configure-gtk
     dbus-sway-environment
-    dfc
-    diff-so-fancy
-    firefox-esr-wayland
+    #dfc
+    d#iff-so-fancy
+    #firefox-esr-wayland
     #fusuma
     #glib
-    gnome3.adwaita-icon-theme
-    gnome.gnome-settings-daemon
+    #gnome3.adwaita-icon-theme
+    #gnome.gnome-settings-daemon
     #gnome.gnome-themes-extra
     #grim
-    gsettings-desktop-schemas
+    #gsettings-desktop-schemas
     #gtk-engine-murrine
     #hicolor-icon-theme
     iwd
@@ -132,12 +132,12 @@ in
     linuxKernel.packages.linux_5_17.cpupower
     #mako
     #neovide
-    neovim
-    nix-index
+    #neovim
+    #nix-index
     #nwg-launchers
     python39
     python39Packages.requests
-    ranger
+    #ranger
     #rofi-wayland
     #slurp
     ssh-to-age
@@ -146,14 +146,14 @@ in
     #swayr
     #tridactyl-native
     udiskie
-    unrar
-    unzip
+    #unrar
+    #unzip
     #vimix-icon-theme
-    wireguard-tools
+    #wireguard-tools
     #wl-clipboard
     #wlr-randr
     #wofi
-    yadm
+    #yadm
     yt-dlp
   ];
   # Some programs need SUID wrappers, can be configured further or are

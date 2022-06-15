@@ -23,6 +23,7 @@
         ./frankenbook/sops.nix
         ./frankenbook/users.nix
         ./frankenbook/wireguard.nix
+        ./modules/shell-programs.nix
         ./modules/sway.nix
         sops-nix.nixosModules.sops
       ];

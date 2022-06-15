@@ -8,7 +8,7 @@
     age
     bat
     btop
-    cpupower
+    linuxKernel.packages.linux_xanmod.cpupower
     dfc
     file
     fzf

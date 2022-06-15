@@ -8,7 +8,7 @@
       "video"
       "audio"
       "input"
-      "config.users.groups.keys.name"
+      config.users.groups.keys.name
     ];
     shell = pkgs.zsh;
   };

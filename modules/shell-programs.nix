@@ -14,6 +14,7 @@
     gitAndTools.diff-so-fancy
     neovim
     neovim-remote
+    ncdu
     nix-diff
     nix-index
     nix-tree

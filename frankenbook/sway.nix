@@ -20,7 +20,6 @@
       '';
     extraPackages = with pkgs; [
       cliphist
-      emacs28NativeComp
       firefox-esr-wayland
       fusuma
       glib.bin

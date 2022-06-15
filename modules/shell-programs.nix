@@ -8,6 +8,7 @@
     age
     bat
     btop
+    cachix
     linuxKernel.packages.linux_xanmod.cpupower
     dfc
     file

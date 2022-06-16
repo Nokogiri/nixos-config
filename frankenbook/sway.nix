@@ -23,8 +23,10 @@
       firefox-esr-wayland
       fusuma
       glib.bin
+      gnome.adwaita-icon-theme
       gnome.gnome-themes-extra
       grim
+      gsettings-desktop-schemas
       gtk-engine-murrine
       hicolor-icon-theme
       imv
@@ -42,6 +44,7 @@
       swaylock-effects
       swayr
       tridactyl-native
+      vimix-icon-theme
       wl-clipboard
       wlr-randr
       wofi

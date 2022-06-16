@@ -23,13 +23,13 @@
       modules = [
         ./configuration.nix
         ./default-modules.nix
-        ./frankenbook/system.nix
+        ./frankenbook/emacs.nix
         ./frankenbook/network.nix
-        ./frankenbook/programs.nix
         ./frankenbook/python.nix
         ./frankenbook/security.nix
         ./frankenbook/sops.nix
         ./frankenbook/sway.nix
+        ./frankenbook/system.nix
         ./frankenbook/users.nix
         ./frankenbook/wireguard.nix
         sops-nix.nixosModules.sops

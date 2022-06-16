@@ -22,13 +22,7 @@
       cliphist
       firefox-esr-wayland
       fusuma
-      glib.bin
-      gnome.adwaita-icon-theme
-      gnome.gnome-themes-extra
       grim
-      gsettings-desktop-schemas
-      gtk-engine-murrine
-      hicolor-icon-theme
       imv
       kitty
       libsForQt5.qtstyleplugin-kvantum
@@ -50,4 +44,18 @@
       wofi
     ];
   };
+
+  environment.systemPackages = with pkgs; [
+    xdg_utils
+    polkit_gnome
+    glib.bin
+    hicolor-icon-theme
+    gnome.adwaita-icon-theme
+    gnome.gnome-themes-extra
+    gtk-engine-murrine
+    gtk_engines
+    gsettings-desktop-schemas
+    libsForQt5.qtstyleplugin-kvantum
+  ];
+
 }

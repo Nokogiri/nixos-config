@@ -8,6 +8,7 @@
     hunspell
     hunspellDicts.en_US
     hunspellDicts.de_DE
+    jdk
     nixfmt
     pandoc
     shellcheck

@@ -1,13 +1,13 @@
 {
   inputs = { 
-    sops-nix.url = github:Mic92/sops-nix;
-    # optional, not necessary for the module
-    sops-nix.inputs.nixpkgs.follows = "nixpkgs";
+    sops-nix = {
+      url = github:Mic92/sops-nix;
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     home-manager = {
       url = github:nix-community/home-manager/master;
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    #emacs.url = "github:nix-community/emacs-overlay";
     emacs-overlay = {
       type = "github";
       owner = "nix-community";
@@ -21,7 +21,6 @@
       # customize to your system
       system = "x86_64-linux";
       modules = [
-        ./cachix.nix
         ./configuration.nix
         ./default-modules.nix
         ./frankenbook/system.nix
@@ -32,7 +31,6 @@
         ./frankenbook/sway.nix
         ./frankenbook/users.nix
         ./frankenbook/wireguard.nix
-        ./modules/shell-programs.nix
         sops-nix.nixosModules.sops
         {
           nixpkgs.overlays = [

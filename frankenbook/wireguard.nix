@@ -9,11 +9,11 @@
   
   sops.secrets = {
     "wg/private" = { 
-      mode = "0666";
+      mode = "0640";
       owner = config.users.users.systemd-network.name;
     };
     "wg/psk" = {
-      mode = "0666";
+      mode = "0640";
       owner = config.users.users.systemd-network.name;
     };
   };

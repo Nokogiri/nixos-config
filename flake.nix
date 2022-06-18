@@ -27,12 +27,11 @@
         ./frankenbook/fusuma.nix
         ./frankenbook/network.nix
         ./frankenbook/python.nix
-        ./frankenbook/security.nix
         ./frankenbook/services.nix
         ./frankenbook/sway.nix
         ./frankenbook/sops.nix
         ./frankenbook/system.nix
-        #./frankenbook/users.nix
+        ./frankenbook/users.nix
         sops-nix.nixosModules.sops
         {
           nixpkgs.overlays = [

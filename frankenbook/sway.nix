@@ -49,6 +49,13 @@
     ];
   };
 
+  xdg.portal = {
+    enable =true;
+    wlr.enable = true;
+    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+    gtkUsePortal = true;
+  };
+
   environment.systemPackages = with pkgs; [
     xdg_utils
     polkit_gnome
@@ -62,8 +69,6 @@
     libsForQt5.qtstyleplugin-kvantum
   ];
   systemd.user.targets.sway-session = {
-    #description = "Sway compositor session";
-    #documentation = ["man:systemd.special(7)"];
     bindsTo = ["graphical-session.target"];
     wants = ["graphical-session-pre.target"];
     after = ["graphical-session-pre.target"];    description = "Sway compositor session";

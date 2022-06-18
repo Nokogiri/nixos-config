@@ -112,6 +112,4 @@
     cpuFreqGovernor = "schedutil";
     powertop.enable = true;
   };
-  services.geoclue2.enable = true;
-  services.localtimed.enable = true;
 }

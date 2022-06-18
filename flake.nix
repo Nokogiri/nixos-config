@@ -29,6 +29,7 @@
         ./frankenbook/python.nix
         ./frankenbook/ruby.nix
         ./frankenbook/security.nix
+        ./frankenbook/services.nix
         ./frankenbook/sops.nix
         ./frankenbook/sway.nix
         ./frankenbook/system.nix

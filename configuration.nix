@@ -39,8 +39,6 @@ in
     longitude = 11.03283;
   };
 
-  services.clight.enable = true;
-  services.tlp.enable = true;
   services.resolved.enable = true;
   # Enable CUPS to print documents.
   # services.printing.enable = true;
@@ -82,29 +80,7 @@ in
   
   xdg.icons.enable = true;
   gtk.iconCache.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    pulse.enable = true;
-    wireplumber.enable = true;
-  };
-
-  services.dbus.enable = true;
-  xdg.portal = {
-    enable = true;
-    wlr.enable = true;
-    # gtk portal needed to make gtk apps happy
-    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
-    gtkUsePortal = true;
-  };
   
-  services.mbpfan = {
-    enable = true;
-    settings.general.max_temp = 80;
-    settings.general.polling_interval = 2;
-    settings.general.min_fan1_speed = 2600;    
-  };
-  services.avahi.enable = true;
   environment.systemPackages = with pkgs; [
     configure-gtk
     dbus-sway-environment
@@ -155,7 +131,7 @@ in
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "22.05"; # Did you read the comment?
+  #system.stateVersion = "22.05"; # Did you read the comment?
 
 }
 

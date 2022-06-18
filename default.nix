@@ -41,5 +41,5 @@
 
   time.timeZone = "Europe/Berlin";
 
-  
+  system.stateVersion = "22.05";
 }

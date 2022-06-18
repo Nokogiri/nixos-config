@@ -1,0 +1,21 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    fusuma (2.4.1)
+    fusuma-plugin-sendkey (0.6.4)
+      fusuma (~> 2.0)
+      revdev
+    fusuma-plugin-tap (0.4.2)
+      fusuma (~> 2.0)
+    revdev (0.2.1)
+
+PLATFORMS
+  x86_64-linux
+
+DEPENDENCIES
+  fusuma
+  fusuma-plugin-sendkey
+  fusuma-plugin-tap
+
+BUNDLED WITH
+   2.3.9

@@ -21,10 +21,12 @@
     extraPackages = with pkgs; [
       cliphist
       firefox-esr-wayland
-      fusuma
+      #fusuma
       grim
       imv
       kitty
+      libinput-gestures
+      libinput
       libsForQt5.qtstyleplugin-kvantum
       mako
       mpv
@@ -32,6 +34,7 @@
       neovide
       nwg-launchers
       ponymix
+      pulseaudio
       rofi-wayland
       slurp
       swayidle
@@ -42,6 +45,7 @@
       wl-clipboard
       wlr-randr
       wofi
+      ydotool
     ];
   };
 
@@ -57,5 +61,12 @@
     gsettings-desktop-schemas
     libsForQt5.qtstyleplugin-kvantum
   ];
+  systemd.user.targets.sway-session = {
+    #description = "Sway compositor session";
+    #documentation = ["man:systemd.special(7)"];
+    bindsTo = ["graphical-session.target"];
+    wants = ["graphical-session-pre.target"];
+    after = ["graphical-session-pre.target"];    description = "Sway compositor session";
+  };
 
 }

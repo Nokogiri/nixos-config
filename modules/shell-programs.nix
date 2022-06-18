@@ -9,13 +9,14 @@
     bat
     btop
     cachix
-    linuxKernel.packages.linux_xanmod.cpupower
+    exa
     dfc
     fd
     file
     fzf
     gitAndTools.diff-so-fancy
     lesspipe
+    linuxKernel.packages.linux_xanmod.cpupower
     neovim
     neovim-remote
     ncdu

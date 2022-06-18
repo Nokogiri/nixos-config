@@ -27,7 +27,7 @@
     '';
     initrd.availableKernelModules = [ "xhci_pci" "ehci_pci" "ahci" "firewire_ohci" "usb_storage" "usbhid" "sd_mod" "sdhci_pci" ];
     initrd.kernelModules = [ "i915" "hid-apple"];
-    kernelModules = [ "wl" "kvm-intel" ];
+    kernelModules = [ "hid-nintendo" "kvm-intel" "wl" ];
     kernelPackages =
     #  pkgs.linuxKernel.packages.linux_5_17
       pkgs.linuxKernel.packages.linux_xanmod
@@ -100,10 +100,18 @@
     opengl.extraPackages = with pkgs; [
       vaapiIntel
     ];
+    uinput.enable = true;
     xpadneo.enable = true;
   };
 
   environment.systemPackages = with pkgs; [
     lm_sensors
   ];
+
+  powerManagement = {
+    cpuFreqGovernor = "schedutil";
+    powertop.enable = true;
+  };
+  services.geoclue2.enable = true;
+  services.localtimed.enable = true;
 }

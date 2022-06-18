@@ -23,7 +23,7 @@
       modules = [
         ./configuration.nix
         ./default-modules.nix
-        ./frankenbook/emacs.nix
+        #./frankenbook/emacs.nix
         ./frankenbook/fusuma.nix
         ./frankenbook/network.nix
         ./frankenbook/python.nix

@@ -24,14 +24,10 @@
       #fusuma
       grim
       imv
-      kitty
       libinput-gestures
       libinput
       libsForQt5.qtstyleplugin-kvantum
       mako
-      mpv
-      mpvScripts.mpris
-      neovide
       nwg-launchers
       ponymix
       pulseaudio
@@ -40,12 +36,10 @@
       swayidle
       swaylock-effects
       swayr
-      tridactyl-native
       vimix-icon-theme
       wl-clipboard
       wlr-randr
       wofi
-      ydotool
     ];
   };
 
@@ -56,16 +50,6 @@
     gtkUsePortal = true;
   };
 
-  environment.systemPackages = with pkgs; [
-    xdg_utils
-    polkit_gnome
-    glib.bin
-    gnome.adwaita-icon-theme
-    gtk-engine-murrine
-    gtk_engines
-    gsettings-desktop-schemas
-    libsForQt5.qtstyleplugin-kvantum
-  ];
   systemd.user.targets.sway-session = {
     description = "Sway compositor session";
     bindsTo = ["graphical-session.target"];

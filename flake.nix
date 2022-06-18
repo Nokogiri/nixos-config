@@ -24,17 +24,15 @@
         ./configuration.nix
         ./default-modules.nix
         ./frankenbook/emacs.nix
+        ./frankenbook/fusuma.nix
         ./frankenbook/network.nix
-        ./frankenbook/programs.nix
         ./frankenbook/python.nix
-        ./frankenbook/ruby.nix
         ./frankenbook/security.nix
         ./frankenbook/services.nix
-        ./frankenbook/sops.nix
         ./frankenbook/sway.nix
+        ./frankenbook/sops.nix
         ./frankenbook/system.nix
-        ./frankenbook/users.nix
-        ./frankenbook/wireguard.nix
+        #./frankenbook/users.nix
         sops-nix.nixosModules.sops
         {
           nixpkgs.overlays = [

@@ -60,18 +60,17 @@
     xdg_utils
     polkit_gnome
     glib.bin
-    hicolor-icon-theme
     gnome.adwaita-icon-theme
-    gnome.gnome-themes-extra
     gtk-engine-murrine
     gtk_engines
     gsettings-desktop-schemas
     libsForQt5.qtstyleplugin-kvantum
   ];
   systemd.user.targets.sway-session = {
+    description = "Sway compositor session";
     bindsTo = ["graphical-session.target"];
     wants = ["graphical-session-pre.target"];
-    after = ["graphical-session-pre.target"];    description = "Sway compositor session";
+    after = ["graphical-session-pre.target"];
   };
 
 }

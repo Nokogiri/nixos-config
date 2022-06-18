@@ -1,9 +1,19 @@
 { config, pkgs, lib, ... }:
 
 {
-  environment.systPackages = with pkgs; [
+  nixpkgs.overlays = [
+    (self: super:
+    {
+      fusuma = super.callPackage ../pkgs/fusuma { };
+    })
+  ];
+
+  #services.emacs.package = pkgs.emacsPgtkNativeComp;
+
+  environment.systemPackages = with pkgs; [
     cmake
     emacsPgtkNativeComp
+    fusuma
     glib.bin
     gnome.adwaita-icon-theme
     gnumake
@@ -21,10 +31,36 @@
     neovide
     nixfmt
     pandoc
+    pipenv
     polkit_gnome
+    (let
+      python-packages-plus = python-packages: with python-packages; [
+        isort
+        nose
+        pytest
+        requests
+        setuptools
+      ];
+      python-with-packages-plus = python3.withPackages python-packages-plus;
+    in
+    python-with-packages-plus)
     shellcheck
     texlive.combined.scheme-small
     tridactyl-native
     xdg_utils
   ];
+
+  systemd.user.services.fusuma = {
+    partOf = ["graphical-session.target"];
+    after = ["graphicial-session.target"];
+    path = [ pkgs.libinput ];
+    wantedBy = [ "graphical-session.target" ];
+    serviceConfig = {
+      Type = "simple";
+      ExecStart = ":${pkgs.fusuma}/bin/fusuma";
+      TimeoutSec = 5;
+      Restart = "on-failure";
+      Slice = "app.slice";
+    };
+  };
 }

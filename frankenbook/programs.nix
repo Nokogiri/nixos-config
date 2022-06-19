@@ -32,6 +32,7 @@
     neovide
     nixfmt
     pandoc
+    pavucontrol
     pipenv
     polkit_gnome
     (let
@@ -53,23 +54,17 @@
     yt-dlp
   ];
 
-  programs.git.enable = true;
-
-  programs.gnupg.agent.enable = true;
-
-  programs.mtr.enable = true;
-
-  programs.light.enable = true;
-
-  programs.qt5ct.enable = true;
-  
-  programs.ssh.startAgent = true;
-  
-  programs.tmux.enable = true;
-  
-  programs.waybar.enable = true;
-  
-  programs.xwayland.enable = true;
+  programs = {
+    git.enable = true;
+    gnupg.agent.enable = true;
+    mtr.enable = true;
+    light.enable = true;
+    qt5ct.enable = true;
+    ssh.startAgent = true;
+    tmux.enable = true;
+    waybar.enable = true;
+    xwayland.enable = true;
+  };
   
   systemd.user.services.fusuma = {
     partOf = ["graphical-session.target"];

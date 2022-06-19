@@ -19,7 +19,7 @@
     nixosConfigurations.frankenbook = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
-        ./configuration.nix
+        #./configuration.nix
         ./default-modules.nix
         ./frankenbook/network.nix
         ./frankenbook/programs.nix

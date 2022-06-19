@@ -23,6 +23,7 @@
     hunspell
     hunspellDicts.en_US
     hunspellDicts.de_DE
+    iwd
     #jdk
     kitty
     libsForQt5.qtstyleplugin-kvantum
@@ -47,19 +48,29 @@
     shellcheck
     texlive.combined.scheme-small
     tridactyl-native
+    udiskie
     xdg_utils
+    yt-dlp
   ];
 
   programs.git.enable = true;
-  programs.gnupg.agent.enable = true;
-  programs.light.enable = true;
-  programs.qt5ct.enable = true;
-  programs.ssh.startAgent = true;
-  programs.tmux.enable = true;
-  programs.waybar.enable = true;
-  programs.xwayland.enable = true;
-  programs.zsh.enable = true;
 
+  programs.gnupg.agent.enable = true;
+
+  programs.mtr.enable = true;
+
+  programs.light.enable = true;
+
+  programs.qt5ct.enable = true;
+  
+  programs.ssh.startAgent = true;
+  
+  programs.tmux.enable = true;
+  
+  programs.waybar.enable = true;
+  
+  programs.xwayland.enable = true;
+  
   systemd.user.services.fusuma = {
     partOf = ["graphical-session.target"];
     after = ["graphicial-session.target"];

@@ -16,9 +16,7 @@
   };
   
   outputs = inputs@{ self, nixpkgs, sops-nix, home-manager, emacs-overlay, ...}: {
-    # change `yourhostname` to your actual hostname
     nixosConfigurations.frankenbook = nixpkgs.lib.nixosSystem {
-      # customize to your system
       system = "x86_64-linux";
       modules = [
         ./configuration.nix

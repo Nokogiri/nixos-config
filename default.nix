@@ -41,5 +41,18 @@
 
   time.timeZone = "Europe/Berlin";
 
+  security = {
+    doas = {
+      enable = true;
+      wheelNeedsPassword = true;
+      extraRules = [{
+        groups = [ "wheel" ];
+        noPass = false;
+        keepEnv = true;
+        persist = true;
+      }];
+    };
+  };
+
   system.stateVersion = "22.05";
 }

@@ -34,12 +34,6 @@ let
   };
 in
 {
-  location = {
-    latitude = 50.9787;
-    longitude = 11.03283;
-  };
-
-  services.resolved.enable = true;
   # Enable CUPS to print documents.
   # services.printing.enable = true;
 
@@ -51,28 +45,13 @@ in
   environment.systemPackages = with pkgs; [
     configure-gtk
     dbus-sway-environment
-    iwd
-    udiskie
-    yt-dlp
   ];
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
-  programs.mtr.enable = true;
   # programs.gnupg.agent = {
   #   enable = true;
   #   enableSSHSupport = true;
   # };
-  virtualisation = {
-    docker = {
-      enable = false;
-      storageDriver = "btrfs";
-    };
-    libvirtd = {
-      enable = false;
-      onBoot = "ignore";
-      onShutdown = "shutdown";
-    };
-  };
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.

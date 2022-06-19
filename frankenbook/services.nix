@@ -23,7 +23,22 @@
       wireplumber.enable = true;
     };
 
+    resolved.enable = true;
+
     tlp.enable = true;
 
+  };
+
+  virtualisation = {
+    docker = {
+      enable = false;
+      storageDriver = "btrfs";
+    };
+
+    libvirtd = {
+      enable = false;
+      onBoot = "ignore";
+      onShutdown = "shutdown";
+    };
   };
 }

@@ -23,7 +23,7 @@
     hunspell
     hunspellDicts.en_US
     hunspellDicts.de_DE
-    jdk
+    #jdk
     kitty
     libsForQt5.qtstyleplugin-kvantum
     mpv
@@ -49,6 +49,16 @@
     tridactyl-native
     xdg_utils
   ];
+
+  programs.git.enable = true;
+  programs.gnupg.agent.enable = true;
+  programs.light.enable = true;
+  programs.qt5ct.enable = true;
+  programs.ssh.startAgent = true;
+  programs.tmux.enable = true;
+  programs.waybar.enable = true;
+  programs.xwayland.enable = true;
+  programs.zsh.enable = true;
 
   systemd.user.services.fusuma = {
     partOf = ["graphical-session.target"];

@@ -14,6 +14,7 @@
     fd
     file
     fzf
+    git
     gitAndTools.diff-so-fancy
     lesspipe
     linuxKernel.packages.linux_xanmod.cpupower

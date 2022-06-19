@@ -34,11 +34,23 @@
     ;
     kernelParams = [
       "acpi_backlight=vendor"
+      "intremap=off"
       "i915.fastboot=1"
       "i915.enable_guc=2"
       "i915.enable_fbc=1"
+      "noibrs"
+      "noibpb"
+      "nopti"
+      "nospectre_v2"
+      "nospectre_v1"
+      "l1tf=off"
+      "nospec_store_bypass_disable"
+      "no_stf_barrier"
+      "mds=off"
+      "tsx=on"
+      "tsx_async_abort=off"
+      "mitigations=off"
       "sdhci.debug_quirks2=4"
-      "intremap=off"
     ];
   };
 
@@ -112,5 +124,5 @@
     cpuFreqGovernor = "schedutil";
     powertop.enable = true;
   };
-  
+  sound.enable = true;
 }

@@ -24,7 +24,6 @@
       #fusuma
       grim
       imv
-      libinput-gestures
       libinput
       libsForQt5.qtstyleplugin-kvantum
       mako
@@ -49,6 +48,9 @@
     extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
     gtkUsePortal = true;
   };
+  
+  xdg.icons.enable = true;
+  gtk.iconCache.enable = true;
 
   systemd.user.targets.sway-session = {
     description = "Sway compositor session";

@@ -11,6 +11,7 @@
   #services.emacs.package = pkgs.emacsPgtkNativeComp;
 
   environment.systemPackages = with pkgs; [
+    appimage-run
     cmake
     emacsPgtkNativeComp
     fusuma
@@ -26,6 +27,7 @@
     iwd
     #jdk
     kitty
+    ldns
     libsForQt5.qtstyleplugin-kvantum
     mpv
     mpvScripts.mpris
@@ -48,6 +50,7 @@
     in
     python-with-packages-plus)
     shellcheck
+    sshfs-fuse
     texlive.combined.scheme-small
     tridactyl-native
     udiskie

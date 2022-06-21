@@ -23,6 +23,7 @@
         ./default-modules.nix
         ./frankenbook/network.nix
         ./frankenbook/programs.nix
+        ./frankenbook/retroarch.nix
         ./frankenbook/services.nix
         ./frankenbook/sway.nix
         ./frankenbook/sops.nix

@@ -27,6 +27,7 @@
     nix-top
     nix-pin
     ranger
+    rbw
     ripgrep
     rsync
     ssh-to-age

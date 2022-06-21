@@ -33,6 +33,7 @@
     nixfmt
     pandoc
     pavucontrol
+    pinentry-gnome
     pipenv
     polkit_gnome
     (let
@@ -52,6 +53,7 @@
     udiskie
     xdg_utils
     yt-dlp
+    zathura
   ];
 
   programs = {

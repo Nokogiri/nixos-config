@@ -26,11 +26,12 @@
       options hid_apple fnmode=2 swap_fn_leftctrl=1 iso_layout=0
     '';
     initrd.availableKernelModules = [ "xhci_pci" "ehci_pci" "ahci" "firewire_ohci" "usb_storage" "usbhid" "sd_mod" "sdhci_pci" ];
-    initrd.kernelModules = [ "i915" "hid-apple"];
-    kernelModules = [ "hid-nintendo" "kvm-intel" "wl" ];
+    initrd.kernelModules = [ "i915" "hid-apple" "wl" ];
+    kernelModules = [ "hid-nintendo" "kvm-intel" ];
     kernelPackages =
     #  pkgs.linuxKernel.packages.linux_5_17
-      pkgs.linuxKernel.packages.linux_xanmod
+      pkgs.linuxKernel.packages.linux_zen
+      #pkgs.linuxKernel.packages.linux_xanmod
     ;
     kernelParams = [
       "acpi_backlight=vendor"
@@ -122,7 +123,7 @@
 
   powerManagement = {
     cpuFreqGovernor = "schedutil";
-    powertop.enable = true;
+    powertop.enable = false;
   };
 
   sound.enable = true;

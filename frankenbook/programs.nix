@@ -29,7 +29,6 @@
     hunspellDicts.en_US
     hunspellDicts.de_DE
     iwd
-    #jdk
     kitty
     ldns
     libsForQt5.qtstyleplugin-kvantum
@@ -37,7 +36,6 @@
     mpvScripts.mpris
     ncdu_fix
     ncspot
-    neovide
     nixfmt
     pandoc
     pavucontrol
@@ -60,9 +58,6 @@
     texlive.combined.scheme-small
     tridactyl-native
     udiskie
-    vivaldi
-    vivaldi-widevine
-    vivaldi-ffmpeg-codecs
     xdg_utils
     yt-dlp
     zathura

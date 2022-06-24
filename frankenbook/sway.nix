@@ -21,7 +21,6 @@
     extraPackages = with pkgs; [
       cliphist
       firefox-esr-wayland
-      #fusuma
       grim
       imv
       libinput

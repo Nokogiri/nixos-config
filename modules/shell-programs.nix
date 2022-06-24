@@ -20,7 +20,6 @@
     linuxKernel.packages.linux_xanmod.cpupower
     neovim
     neovim-remote
-    ncdu
     nix-diff
     nix-index
     nix-tree

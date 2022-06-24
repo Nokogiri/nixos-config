@@ -5,3 +5,8 @@ creation_rules:
     key_groups:
       - age:
         - *admin_nokogiri
+
+  - path_regex: /tmp/[^/]+\.*$
+    key_groups:
+      - age:
+         - *admin_nokogiri    

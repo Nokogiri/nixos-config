@@ -13,13 +13,19 @@
       owner = "nix-community";
       repo = "emacs-overlay";
     };
+    hyprland = {
+      url = "github:vaxerski/Hyprland";
+      # build with your own instance of nixpkgs
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
   
-  outputs = inputs@{ self, nixpkgs, sops-nix, home-manager, emacs-overlay, ...}: {
+  outputs = inputs@{ self, nixpkgs, sops-nix, home-manager, emacs-overlay, hyprland, ...}: {
     nixosConfigurations.frankenbook = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
-        #./configuration.nix
+        hyprland.nixosModules.default
+        { programs.hyprland.enable =true; }
         ./default-modules.nix
         ./frankenbook/network.nix
         ./frankenbook/programs.nix

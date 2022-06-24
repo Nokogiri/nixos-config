@@ -21,6 +21,7 @@
     extraPackages = with pkgs; [
       cliphist
       firefox-esr-wayland
+      fluent-gtk-theme
       grim
       imv
       libinput

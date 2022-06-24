@@ -2,10 +2,10 @@
 
 {
   nixpkgs.overlays = [
-    (self: super:
-    {
-      fusuma = super.callPackage ../pkgs/fusuma { };
-    })
+    #(self: super:
+    #{
+    #  fusuma = super.callPackage ../pkgs/fusuma { };
+    #})
     (self: super:
     {
       ncdu_fix = super.callPackage ../pkgs/ncdu_2 { };
@@ -34,7 +34,7 @@
     libsForQt5.qtstyleplugin-kvantum
     mpv
     mpvScripts.mpris
-    ncdu_fix
+    ncdu
     ncspot
     nixfmt
     pandoc

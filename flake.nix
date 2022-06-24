@@ -19,13 +19,13 @@
       # build with your own instance of nixpkgs
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    #packages = {
-     # url = "git+https://git.fishoeder.net/nokogiri/pkgs";
+    addins-overlay = {
+      url = "git+https://git.fishoeder.net/nokogiri/pkgs";
       #inputs.nixpkgs.follows = "nixpkgs";
-    #};
+    };
   };
   
-  outputs = inputs@{ self, nixpkgs, sops-nix, home-manager, emacs-overlay, hyprland, ...}: {
+  outputs = inputs@{ self, nixpkgs, sops-nix, home-manager, emacs-overlay, hyprland, addins-overlay, ...}: {
     nixosConfigurations.frankenbook = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
@@ -44,6 +44,7 @@
         {
           nixpkgs.overlays = [
             emacs-overlay.overlay
+            addins-overlay.overlay
           ];
         }
       ];

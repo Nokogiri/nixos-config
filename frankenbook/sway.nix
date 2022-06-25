@@ -53,9 +53,9 @@
       in ''
         export XDG_DATA_DIRS=${datadir}:$XDG_DATA_DIRS
         gnome_schema=org.gnome.desktop.interface
-        gsettings set $gnome_schema gtk-theme 'Fluent-grey-dark-compact'
+        gsettings set $gnome_schema gtk-theme 'Fluent-grey-Dark-compact'
         gsettings set $gnome_schema icon-theme 'Fluent-grey-dark'
-        gsettings set $gnome_schema cursor-theme 'Vimix-white-dark'
+        gsettings set $gnome_schema cursor-theme 'Vimix-White-dark'
         '';
   })
   ];

@@ -49,5 +49,15 @@
         }
       ];
     };
+    nixosConfigurations.calvin = nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux";
+      modules = [
+        ./default-modules.nix
+        ./calvin/network.nix
+        ./calvin/users.nix
+        ./calvin/wiregurad.nix
+        sops-nix.nixosModules.sops
+      ];
+    };
   };
 }

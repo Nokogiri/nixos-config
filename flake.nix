@@ -55,7 +55,7 @@
         ./default-modules.nix
         ./calvin/network.nix
         ./calvin/users.nix
-        ./calvin/wiregurad.nix
+        ./calvin/wireguard.nix
         sops-nix.nixosModules.sops
       ];
     };

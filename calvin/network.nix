@@ -5,6 +5,7 @@
     hostName = "calvin";
     useDHCP = false;
     resolvconf.enable = true;
+  };
 
   systemd.network = {
     enable = true;

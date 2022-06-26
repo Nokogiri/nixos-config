@@ -20,6 +20,7 @@
     emacsPgtkNativeComp
     fusuma
     glib.bin
+    gnome-icon-theme
     gnome.adwaita-icon-theme
     gnumake
     gtk-engine-murrine

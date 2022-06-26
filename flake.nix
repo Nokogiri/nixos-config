@@ -65,10 +65,12 @@
       system = "x86_64-linux";
       modules = [
         #./configuration.nix
+        ./calvin/acme.nix
         ./calvin/system.nix
         ./default-modules.nix
         ./calvin/environment.nix
         ./calvin/network.nix
+        ./calvin/nginx.nix
         ./calvin/programs.nix
         ./calvin/services.nix
         ./calvin/sops.nix

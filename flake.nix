@@ -26,6 +26,14 @@
     nix-minecraft = {
       url = "github:Infinidoge/nix-minecraft";
     };
+    newmpkg = {
+      url = "github:jbuchermn/newm";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    pywm-fullscreenpkg = {
+      url = "github:jbuchermn/pywm-fullscreen";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
   
   outputs = inputs@{ 

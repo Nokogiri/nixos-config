@@ -28,7 +28,16 @@
     };
   };
   
-  outputs = inputs@{ self, nixpkgs, sops-nix, home-manager, emacs-overlay, hyprland, addins-overlay, nix-minecraft, ...}: {
+  outputs = inputs@{ 
+    self, 
+    nixpkgs, 
+    sops-nix, 
+    home-manager, 
+    emacs-overlay, 
+    hyprland, 
+    addins-overlay, 
+    nix-minecraft, 
+    ... }: {
     nixosConfigurations.frankenbook = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [

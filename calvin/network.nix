@@ -11,7 +11,7 @@
     enable = true;
 
     networks."40-static" = {
-      matchConfig.Name = [ "eth0" ];
+      matchConfig.Name = [ "ens*" ];
       address = [ 
         "46.38.240.252/22"
         "2a03:4000:7:3f4::1/64"

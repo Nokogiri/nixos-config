@@ -52,8 +52,13 @@
     nixosConfigurations.calvin = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
+        #./configuration.nix
+        ./calvin/system.nix
         ./default-modules.nix
         ./calvin/network.nix
+        ./calvin/programs.nix
+        ./calvin/services.nix
+        ./calvin/sops.nix
         ./calvin/users.nix
         ./calvin/wireguard.nix
         sops-nix.nixosModules.sops

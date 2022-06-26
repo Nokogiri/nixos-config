@@ -7,5 +7,11 @@
   #   wget
   git
   ];
-
+  
+  programs = {
+    git.enable = true;
+    gnupg.agent.enable = true;
+    tmux.enable = true;
+    ssh.startAgent = true;
+  };
 }

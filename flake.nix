@@ -20,7 +20,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     addins-overlay = {
-      url = "git+https://git.fishoeder.net/nokogiri/pkgs";
+      url = "git+https://codeberg.org/Nokogiri/pkgs.git";
       #inputs.nixpkgs.follows = "nixpkgs";
     };
   };

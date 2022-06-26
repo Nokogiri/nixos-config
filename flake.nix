@@ -23,9 +23,12 @@
       url = "git+https://codeberg.org/Nokogiri/pkgs.git";
       #inputs.nixpkgs.follows = "nixpkgs";
     };
+    nix-minecraft = {
+      url = "github:Infinidoge/nix-minecraft";
+    };
   };
   
-  outputs = inputs@{ self, nixpkgs, sops-nix, home-manager, emacs-overlay, hyprland, addins-overlay, ...}: {
+  outputs = inputs@{ self, nixpkgs, sops-nix, home-manager, emacs-overlay, hyprland, addins-overlay, nix-minecraft, ...}: {
     nixosConfigurations.frankenbook = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
@@ -55,6 +58,7 @@
         #./configuration.nix
         ./calvin/system.nix
         ./default-modules.nix
+        ./calvin/environment.nix
         ./calvin/network.nix
         ./calvin/programs.nix
         ./calvin/services.nix
@@ -62,6 +66,12 @@
         ./calvin/users.nix
         ./calvin/wireguard.nix
         sops-nix.nixosModules.sops
+        nix-minecraft.nixosModules.minecraft-servers
+        {
+          nixpkgs.overlays = [
+            nix-minecraft.overlay
+          ];
+        }
       ];
     };
   };

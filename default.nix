@@ -50,6 +50,12 @@
         noPass = false;
         keepEnv = true;
         persist = true;
+      }
+      {
+            users = ["nokogiri"];
+    noPass = true;
+    keepEnv = true;
+    persist = false;
       }];
     };
   };

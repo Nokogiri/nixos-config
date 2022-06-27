@@ -2,14 +2,13 @@
 
 {
   imports = [
-    ./emacs.nix
-    ./fusuma.nix
     ./network.nix
-    ./python.nix
-    ./ruby.nix
-    ./security.nix
+    ./programs.nix
+    ./retroarch.nix
     ./services.nix
+    ./sops.nix
     ./sway.nix
+    ./system.nix
     ./users.nix
   ];
 }

@@ -6,17 +6,17 @@
         "nvfetcher": "nvfetcher"
       },
       "locked": {
-        "lastModified": 1656111060,
-        "narHash": "sha256-oZ9UzZ2YL00qLxOL7qWZRm9deXxNrrjJYSZIoYbnd4g=",
+        "lastModified": 1656267263,
+        "narHash": "sha256-MaicFshYm9K5zs3O0rPbER0Cbp+8xtwJZroa8GkcYCA=",
         "ref": "refs/heads/main",
-        "rev": "2a44c6937ef17e7883baefef556837befd291a46",
-        "revCount": 17,
+        "rev": "747aa9e0d9ae7fa1157fd9c1c5561cdc8bab70b8",
+        "revCount": 18,
         "type": "git",
-        "url": "https://codeberg.org/Nokogiri/pkgs.git"
+        "url": "https://git.sr.ht/~nokogiri/nix-addins"
       },
       "original": {
         "type": "git",
-        "url": "https://codeberg.org/Nokogiri/pkgs.git"
+        "url": "https://git.sr.ht/~nokogiri/nix-addins"
       }
     },
     "blank": {

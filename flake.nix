@@ -20,7 +20,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     addins-overlay = {
-      url = "git+https://codeberg.org/Nokogiri/pkgs.git";
+      url = "git+https://git.sr.ht/~nokogiri/nix-addins";
       #inputs.nixpkgs.follows = "nixpkgs";
     };
     nix-minecraft = {
@@ -52,6 +52,7 @@
         #hyprland.nixosModules.default
         #{ programs.hyprland.enable =true; }
         ./default-modules.nix
+        #./frankenbook/default.nix
         ./frankenbook/network.nix
         ./frankenbook/programs.nix
         ./frankenbook/retroarch.nix

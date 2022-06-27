@@ -66,19 +66,6 @@
     ];
   };
 
-  #fileSystems."/boot" = {
-  #  device = "/dev/disk/by-uuid/2052-3A83";
-  #  fsType = "vfat";
-  #  options = [
-  #    "fmask=0022"
-  #    "dmask=0022"
-  #    "codepage=437"
-  #    "iocharset=ascii"
-  #    "shortname=mixed"
-  #    "utf8"
-  #  ];
-  #};
-
   fileSystems."/home" = {
     device = "/dev/disk/by-uuid/1f200403-52ed-4fe6-8e44-edfa6aed6cf9";
     fsType = "btrfs";

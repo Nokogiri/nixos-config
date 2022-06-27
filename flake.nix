@@ -73,7 +73,7 @@
       system = "x86_64-linux";
       modules = [
         #./configuration.nix
-        ./calvin/acme.nix
+        #./calvin/acme.nix
         ./calvin/system.nix
         ./default-modules.nix
         ./calvin/environment.nix

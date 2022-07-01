@@ -17,7 +17,6 @@
   environment.systemPackages = with pkgs; [
     appimage-run
     cmake
-    emacsPgtkNativeComp
     fusuma
     glib.bin
     gnome-icon-theme
@@ -27,8 +26,6 @@
     gtk_engines
     gsettings-desktop-schemas
     hunspell
-    hunspellDicts.en_US
-    hunspellDicts.de_DE
     iwd
     kitty
     ldns
@@ -37,11 +34,9 @@
     mpvScripts.mpris
     ncdu
     ncspot
-    nixfmt
     pandoc
     pavucontrol
     pinentry-gnome
-    pipenv
     polkit_gnome
     (let
       python-packages-plus = python-packages: with python-packages; [
@@ -54,7 +49,6 @@
       python-with-packages-plus = python3.withPackages python-packages-plus;
     in
     python-with-packages-plus)
-    shellcheck
     sshfs-fuse
     texlive.combined.scheme-small
     tridactyl-native

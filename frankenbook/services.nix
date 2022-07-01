@@ -11,9 +11,13 @@
 
     mbpfan = {
       enable = true;
-      settings.general.max_temp = 84;
-      settings.general.polling_interval = 2;
-      settings.general.min_fan1_speed = 2000;    
+      settings.general = { 
+        low_temp = 50;
+        hihg_temp = 55;
+        max_temp = 84;
+        polling_interval = 1;
+        min_fan1_speed = 2500;
+      };
     };
 
     pipewire = {

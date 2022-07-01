@@ -24,7 +24,6 @@
   environment.systemPackages = with pkgs; [
     appimage-run
     cmake
-    emacsPgtkNativeComp
     fusuma
     glib.bin
     gnome-icon-theme

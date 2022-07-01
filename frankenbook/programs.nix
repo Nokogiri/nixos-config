@@ -10,7 +10,14 @@
     {
       ncdu_fix = super.callPackage ../pkgs/ncdu_2 { };
     })
-  ];
+    (self: super: {
+    mpv = super.mpv-with-scripts.override {
+      scripts = [ 
+        self.mpvScripts.mpris 
+      ];
+    };
+  })
+];
 
   #services.emacs.package = pkgs.emacsPgtkNativeComp;
 
@@ -22,7 +29,6 @@
     glib.bin
     gnome-icon-theme
     gnome.adwaita-icon-theme
-    gnumake
     gtk-engine-murrine
     gtk_engines
     gsettings-desktop-schemas
@@ -32,7 +38,6 @@
     ldns
     libsForQt5.qtstyleplugin-kvantum
     mpv
-    mpvScripts.mpris
     ncdu
     ncspot
     pandoc

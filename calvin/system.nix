@@ -16,6 +16,8 @@
   boot.kernelModules = [ "fuse" ];
   boot.extraModulePackages = [ ];
 
+  boot.kernelPackages = pkgs.linuxPackages_latest;
+
 
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/75953a7e-d508-4fa7-ae83-1a6fd77ea05d";

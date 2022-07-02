@@ -7,7 +7,6 @@
   #   wget
   git
   rclone
-  jellyfin
   jellyfin-ffmpeg
   ];
   

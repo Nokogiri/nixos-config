@@ -24,6 +24,7 @@
   environment.systemPackages = with pkgs; [
     appimage-run
     cmake
+    EmulationStation-DE
     fusuma
     glib.bin
     gnome-icon-theme

@@ -22,6 +22,7 @@
       cliphist
       firefox-esr-wayland
       fluent-gtk-theme
+      fluent-icon-theme
       grim
       imv
       libinput

@@ -36,7 +36,7 @@
       swayidle
       swaylock-effects
       swayr
-      vimix-icon-theme
+      vimix-cursors
       wl-clipboard
       wlr-randr
       wofi

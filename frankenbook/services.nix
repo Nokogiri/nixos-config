@@ -9,6 +9,8 @@
 
     dbus.enable = true;
 
+    flatpak.enable = true;
+
     mbpfan = {
       enable = true;
       settings.general = { 

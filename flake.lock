@@ -6,11 +6,11 @@
         "nvfetcher": "nvfetcher"
       },
       "locked": {
-        "lastModified": 1657046769,
-        "narHash": "sha256-6IPwAGeTZ7X7un//xmwC3TTmXX5ulRbdcmgja+ODzGw=",
+        "lastModified": 1657052473,
+        "narHash": "sha256-UrlE8Z3KFV9Scw3XgjBO9AYpZdPtmBTfnrxXLF9XvQs=",
         "ref": "refs/heads/main",
-        "rev": "da0042fd2c73c668b784272d8501b96c70c13e8d",
-        "revCount": 46,
+        "rev": "e820819787e8d72be96f02da354d36999a36a580",
+        "revCount": 48,
         "type": "git",
         "url": "https://git.sr.ht/~nokogiri/nix-addins"
       },
@@ -348,11 +348,11 @@
         "wlroots": "wlroots"
       },
       "locked": {
-        "lastModified": 1657043165,
-        "narHash": "sha256-fZBn5/2Sg5PfCNHjdLaWuZQEabO69xerkcip6u98CVk=",
+        "lastModified": 1657050332,
+        "narHash": "sha256-qk9uEw3DQnTbbgvQvm/ZAD9uyZYYL8z2/3bghpnZe90=",
         "owner": "vaxerski",
         "repo": "Hyprland",
-        "rev": "7ff427c229b22243d3a6507cca3a7df64d31c241",
+        "rev": "ae096219e83b1a90990f2277b5a9302a3e943d84",
         "type": "github"
       },
       "original": {

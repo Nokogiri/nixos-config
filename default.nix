@@ -11,14 +11,14 @@
       dates = "weekly";
       options = "--delete-older-than 20d";
     };
-    settings = {
-      substituters = [
-        "https://cache.fishoeder.net"
-      ];
-      trusted-public-keys = [
-        "cache.fishoeder.net:0wqH5JXoJJVWitNUfD9PCCVO+A8DOEOyXZSrkCi5lb8="
-      ];
-    };
+#    settings = {
+#      substituters = [
+#        "https://cache.fishoeder.net"
+#      ];
+#      trusted-public-keys = [
+#        "cache.fishoeder.net:0wqH5JXoJJVWitNUfD9PCCVO+A8DOEOyXZSrkCi5lb8="
+#      ];
+#    };
   };
   
   nixpkgs.config.allowUnfree = true;

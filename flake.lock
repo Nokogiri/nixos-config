@@ -6,11 +6,11 @@
         "nvfetcher": "nvfetcher"
       },
       "locked": {
-        "lastModified": 1657052473,
-        "narHash": "sha256-UrlE8Z3KFV9Scw3XgjBO9AYpZdPtmBTfnrxXLF9XvQs=",
+        "lastModified": 1657053602,
+        "narHash": "sha256-DwkR80EYiC9YaWf5c+/UyurSB9xUUGyZ51tU1Mk+NTY=",
         "ref": "refs/heads/main",
-        "rev": "e820819787e8d72be96f02da354d36999a36a580",
-        "revCount": 48,
+        "rev": "f3e791bef2c6aa2f27709cee87951717b9ebe333",
+        "revCount": 50,
         "type": "git",
         "url": "https://git.sr.ht/~nokogiri/nix-addins"
       },

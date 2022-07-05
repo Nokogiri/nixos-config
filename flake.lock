@@ -6,11 +6,11 @@
         "nvfetcher": "nvfetcher"
       },
       "locked": {
-        "lastModified": 1657044350,
-        "narHash": "sha256-Mn9wnhtstmngpDKtHwXWHBPmGiB2mrx3HSKcLtc/gaA=",
+        "lastModified": 1657045921,
+        "narHash": "sha256-6scrfHrWNcg2nL5NcuHBkAsLWi2IaoP1dzEOg16nphE=",
         "ref": "refs/heads/main",
-        "rev": "9a705852e4fa8eeb59970ed48bc4370041978ea8",
-        "revCount": 42,
+        "rev": "160f5acdb75e24c22f300d8827e2150995bf869d",
+        "revCount": 44,
         "type": "git",
         "url": "https://git.sr.ht/~nokogiri/nix-addins"
       },
@@ -111,11 +111,11 @@
         "nixpkgs": "nixpkgs_2"
       },
       "locked": {
-        "lastModified": 1657016837,
-        "narHash": "sha256-knx83nZ0xax6U1zR3rEOwIz2matk85kntbVEJRQYNuw=",
+        "lastModified": 1657045122,
+        "narHash": "sha256-YMZE+NsnhC36YqtMnsDYV2WsHUHLMffM56lNXyHxOSA=",
         "owner": "nix-community",
         "repo": "emacs-overlay",
-        "rev": "beec877720e2b09b0b1a96450286459bcd7e6435",
+        "rev": "6ad17c8e39b64221557d1753252850f8f0b8a275",
         "type": "github"
       },
       "original": {

@@ -96,6 +96,7 @@
         {
           nixpkgs.overlays = [
             nix-minecraft.overlay
+            addins-overlay.overlay
           ];
         }
       ];

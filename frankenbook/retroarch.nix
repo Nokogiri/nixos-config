@@ -3,6 +3,7 @@
 {
   environment.systemPackages = with pkgs; [
     gamemode
+    ppsspp-sdl
     retroarch
     libretro.mgba
     libretro.bsnes

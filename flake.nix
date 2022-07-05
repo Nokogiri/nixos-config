@@ -44,7 +44,9 @@
     emacs-overlay, 
     hyprland, 
     addins-overlay, 
-    nix-minecraft, 
+    nix-minecraft,
+    newmpkg,
+    pywm-fullscreenpkg,
     ... }: {
     nixosConfigurations.frankenbook = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
@@ -66,6 +68,10 @@
           nixpkgs.overlays = [
             emacs-overlay.overlay
             addins-overlay.overlay
+            (self: super: {
+              newm = newmpkg.packages.x86_64-linux.newm;
+              pywm-fullscreen = pywm-fullscreenpkg.packages.x86_64-linux.pywm-fullscreen; 
+            })
           ];
         }
       ];

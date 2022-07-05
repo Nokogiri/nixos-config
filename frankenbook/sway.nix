@@ -56,7 +56,7 @@
         gnome_schema=org.gnome.desktop.interface
         gsettings set $gnome_schema gtk-theme 'Fluent-grey-Dark-compact'
         gsettings set $gnome_schema icon-theme 'Fluent-grey-dark'
-        gsettings set $gnome_schema cursor-theme 'Vimix-White-dark'
+        gsettings set $gnome_schema cursor-theme 'Vimix White dark'
         '';
   })
   ];

@@ -15,7 +15,7 @@
       url = "github:nix-community/emacs-overlay";
     };
     addins-overlay = {
-      url = "git+https://git.sr.ht/~nokogiri/nix-addins";
+      url = "git+https://codeberg.org/Nokogiri/nix-pkgs.git";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nix-minecraft = {

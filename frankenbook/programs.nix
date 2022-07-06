@@ -22,6 +22,7 @@
   #services.emacs.package = pkgs.emacsPgtkNativeComp;
 
   environment.systemPackages = with pkgs; [
+    hyprland
     newm
     appimage-run
     cmake

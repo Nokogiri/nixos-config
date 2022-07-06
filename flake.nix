@@ -14,14 +14,9 @@
     emacs-overlay = {
       url = "github:nix-community/emacs-overlay";
     };
-    hyprland = {
-      url = "github:vaxerski/Hyprland";
-      # build with your own instance of nixpkgs
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     addins-overlay = {
       url = "git+https://git.sr.ht/~nokogiri/nix-addins";
-      #inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
     nix-minecraft = {
       url = "github:Infinidoge/nix-minecraft";
@@ -42,7 +37,6 @@
     sops-nix, 
     home-manager, 
     emacs-overlay, 
-    hyprland, 
     addins-overlay, 
     nix-minecraft,
     newmpkg,
@@ -51,10 +45,7 @@
     nixosConfigurations.frankenbook = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
-        #hyprland.nixosModules.default
-        #{ programs.hyprland.enable =true; }
         ./default-modules.nix
-        #./frankenbook/default.nix
         ./frankenbook/network.nix
         ./frankenbook/programs.nix
         ./frankenbook/retroarch.nix
@@ -79,8 +70,6 @@
     nixosConfigurations.calvin = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
-        #./configuration.nix
-        #./calvin/acme.nix
         ./calvin/system.nix
         ./default-modules.nix
         ./calvin/environment.nix

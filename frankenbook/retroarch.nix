@@ -9,7 +9,7 @@
     libretro.bsnes
     libretro.bsnes-hd
     libretro.snes9x
-    libretro.ppsspp
+    #libretro.ppsspp
     libretro.flycast
     libretro.melonds
     libretro.gambatte

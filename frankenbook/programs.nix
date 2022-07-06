@@ -22,11 +22,10 @@
   #services.emacs.package = pkgs.emacsPgtkNativeComp;
 
   environment.systemPackages = with pkgs; [
-    hyprland
-    newm
     appimage-run
     cmake
     EmulationStation-DE
+    emacsPgtkNativeComp
     fusuma
     glib.bin
     gnome-icon-theme

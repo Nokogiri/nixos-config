@@ -21,14 +21,14 @@
     nix-minecraft = {
       url = "github:Infinidoge/nix-minecraft";
     };
-    newmpkg = {
-      url = "github:jbuchermn/newm";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    pywm-fullscreenpkg = {
-      url = "github:jbuchermn/pywm-fullscreen";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    #newmpkg = {
+    #  url = "github:jbuchermn/newm";
+    #  inputs.nixpkgs.follows = "nixpkgs";
+    #};
+    #pywm-fullscreenpkg = {
+    #  url = "github:jbuchermn/pywm-fullscreen";
+    #  inputs.nixpkgs.follows = "nixpkgs";
+    #};
   };
   
   outputs = inputs@{ 
@@ -39,8 +39,8 @@
     emacs-overlay, 
     addins-overlay, 
     nix-minecraft,
-    newmpkg,
-    pywm-fullscreenpkg,
+    #newmpkg,
+    #pywm-fullscreenpkg,
     ... }: {
     nixosConfigurations.frankenbook = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
@@ -59,10 +59,10 @@
           nixpkgs.overlays = [
             emacs-overlay.overlay
             addins-overlay.overlay
-            (self: super: {
-              newm = newmpkg.packages.x86_64-linux.newm;
-              pywm-fullscreen = pywm-fullscreenpkg.packages.x86_64-linux.pywm-fullscreen; 
-            })
+            #(self: super: {
+            #  newm = newmpkg.packages.x86_64-linux.newm;
+            #  pywm-fullscreen = pywm-fullscreenpkg.packages.x86_64-linux.pywm-fullscreen; 
+            #})
           ];
         }
       ];

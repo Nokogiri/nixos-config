@@ -49,6 +49,7 @@
           nixpkgs.overlays = [
             emacs-overlay.overlay
             addins-overlay.overlay
+            (self: super: { nix-direnv = super.nix-direnv.override { enableFlakes = true; }; } )
           ];
         }
       ];

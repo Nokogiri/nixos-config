@@ -9,6 +9,7 @@
     bat
     btop
     cachix
+    direnv
     exa
     dfc
     fd
@@ -23,6 +24,7 @@
     neovim
     neovim-remote
     nix-diff
+    nix-direnv
     nix-index
     nix-tree
     nix-top

@@ -16,8 +16,10 @@
     fzf
     git
     gitAndTools.diff-so-fancy
+    jq
     lesspipe
-    linuxKernel.packages.linux_xanmod.cpupower
+    linuxKernel.packages.linux_xanmod_latest.cpupower
+    lsd
     neovim
     neovim-remote
     nix-diff

@@ -64,13 +64,12 @@
     yt-dlp
     zathura
   ];
-
+  qt5.platformTheme = "qt5ct";
   programs = {
     git.enable = true;
     gnupg.agent.enable = true;
     mtr.enable = true;
     light.enable = true;
-    qt5ct.enable = true;
     ssh.startAgent = true;
     tmux.enable = true;
     waybar.enable = true;

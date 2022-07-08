@@ -9,6 +9,7 @@
     bat
     btop
     cachix
+    compsize
     direnv
     exa
     dfc
@@ -38,6 +39,7 @@
     unrar
     unzip
     zip
+    vivid
     wireguard-tools
     yadm
   ];

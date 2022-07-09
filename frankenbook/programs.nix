@@ -22,10 +22,11 @@
   #services.emacs.package = pkgs.emacsPgtkNativeComp;
 
   environment.systemPackages = with pkgs; [
+    alacritty
     appimage-run
     cmake
     EmulationStation-DE
-    emacsPgtkNativeComp
+    #emacsPgtkNativeComp
     fusuma
     glib.bin
     gnome-icon-theme
@@ -41,6 +42,7 @@
     mpv
     ncdu
     ncspot
+    newm
     pandoc
     pavucontrol
     pinentry-gnome
@@ -64,10 +66,13 @@
     yt-dlp
     zathura
   ];
+  
   qt5.platformTheme = "qt5ct";
+  
   programs = {
     git.enable = true;
     gnupg.agent.enable = true;
+    hyprland.enable = true;
     mtr.enable = true;
     light.enable = true;
     ssh.startAgent = true;

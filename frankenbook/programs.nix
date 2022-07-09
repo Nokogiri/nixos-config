@@ -65,6 +65,7 @@
     xdg_utils
     yt-dlp
     zathura
+    wob
   ];
   
   qt5.platformTheme = "qt5ct";

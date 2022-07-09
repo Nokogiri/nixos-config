@@ -33,6 +33,7 @@
       url = "github:jbuchermn/pywm-fullscreen";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
   };
   
   outputs = inputs@{ 

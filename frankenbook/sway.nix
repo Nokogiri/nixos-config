@@ -33,6 +33,7 @@
       pulseaudio
       rofi-wayland
       slurp
+      swayfader
       swayidle
       swaylock-effects
       swayr

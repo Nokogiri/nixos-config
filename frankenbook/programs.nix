@@ -39,6 +39,7 @@
     kitty
     ldns
     libsForQt5.qtstyleplugin-kvantum
+    libsForQt5.qt5ct
     mpv
     ncdu
     ncspot
@@ -47,6 +48,7 @@
     pavucontrol
     pinentry-gnome
     polkit_gnome
+    (polymc.override { msaClientID = "0b5d07b7-fcd2-4f81-901a-7596869a0cee"; })
     (let
       python-packages-plus = python-packages: with python-packages; [
         isort

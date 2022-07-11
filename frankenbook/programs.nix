@@ -62,6 +62,8 @@
     in
     python-with-packages-plus)
     sshfs-fuse
+    swaync
+    waybar-hyprland
     texlive.combined.scheme-small
     tridactyl-native
     udiskie

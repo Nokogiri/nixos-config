@@ -31,6 +31,7 @@
     gnome.adwaita-icon-theme
     gtk-engine-murrine
     gtk_engines
+    glfw-wayland
     gsettings-desktop-schemas
     hunspell
     hyprpaper
@@ -62,8 +63,8 @@
     python-with-packages-plus)
     sshfs-fuse
     swaynotificationcenter
-    #waybar-hyprland
-    waybar
+    waybar-hyprland
+    #waybar
     texlive.combined.scheme-small
     tridactyl-native
     udiskie
@@ -83,7 +84,7 @@
     light.enable = true;
     ssh.startAgent = true;
     tmux.enable = true;
-    waybar.enable = true;
+    #waybar.enable = true;
     xwayland.enable = true;
   };
   

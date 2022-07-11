@@ -43,6 +43,7 @@
     ncdu
     ncspot
     neovide
+    newm
     pandoc
     pavucontrol
     pinentry-gnome
@@ -61,7 +62,8 @@
     python-with-packages-plus)
     sshfs-fuse
     swaynotificationcenter
-    waybar-hyprland
+    #waybar-hyprland
+    waybar
     texlive.combined.scheme-small
     tridactyl-native
     udiskie

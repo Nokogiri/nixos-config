@@ -35,6 +35,7 @@
     gtk_engines
     gsettings-desktop-schemas
     hunspell
+    hyprpaper
     iwd
     kitty
     ldns

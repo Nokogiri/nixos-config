@@ -62,7 +62,7 @@
     in
     python-with-packages-plus)
     sshfs-fuse
-    swaync
+    swaynotificationcenter
     waybar-hyprland
     texlive.combined.scheme-small
     tridactyl-native

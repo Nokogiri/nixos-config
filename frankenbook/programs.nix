@@ -53,6 +53,7 @@
     (let
       python-packages-plus = python-packages: with python-packages; [
         isort
+        evdev
         nose
         pytest
         requests

@@ -22,8 +22,6 @@
   #services.emacs.package = pkgs.emacsPgtkNativeComp;
 
   environment.systemPackages = with pkgs; [
-    alacritty
-    appimage-run
     cmake
     EmulationStation-DE
     #emacsPgtkNativeComp
@@ -44,7 +42,7 @@
     mpv
     ncdu
     ncspot
-    newm
+    neovide
     pandoc
     pavucontrol
     pinentry-gnome

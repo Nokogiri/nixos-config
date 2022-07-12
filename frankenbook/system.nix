@@ -97,6 +97,7 @@
     bluetooth.enable = true;
     opengl.extraPackages = with pkgs; [
       vaapiIntel
+      intel-media-driver
     ];
     uinput.enable = true;
     xpadneo.enable = true;

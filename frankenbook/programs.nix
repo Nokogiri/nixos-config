@@ -64,8 +64,7 @@
     python-with-packages-plus)
     sshfs-fuse
     swaynotificationcenter
-    waybar-hyprland
-    #waybar
+    waybar
     texlive.combined.scheme-small
     tridactyl-native
     udiskie
@@ -80,12 +79,11 @@
   programs = {
     git.enable = true;
     gnupg.agent.enable = true;
-    hyprland.enable = true;
     mtr.enable = true;
     light.enable = true;
     ssh.startAgent = true;
     tmux.enable = true;
-    #waybar.enable = true;
+    waybar.enable = true;
     xwayland.enable = true;
   };
   

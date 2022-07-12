@@ -24,7 +24,7 @@
   environment.systemPackages = with pkgs; [
     cmake
     chromium
-    chromium-dev
+    chromiumDev
     EmulationStation-DE
     #emacsPgtkNativeComp
     fusuma
@@ -36,7 +36,6 @@
     glfw-wayland
     gsettings-desktop-schemas
     hunspell
-    hyprpaper
     iwd
     kitty
     ldns
@@ -46,7 +45,6 @@
     ncdu
     ncspot
     neovide
-    newm
     pandoc
     pavucontrol
     pinentry-gnome

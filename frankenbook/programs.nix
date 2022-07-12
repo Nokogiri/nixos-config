@@ -47,6 +47,8 @@
     pandoc
     pavucontrol
     pinentry-gnome
+    pipe-viewer
+    gtk-pipe-viewer
     polkit_gnome
     (polymc.override { msaClientID = "0b5d07b7-fcd2-4f81-901a-7596869a0cee"; })
     (let

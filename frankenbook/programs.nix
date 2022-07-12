@@ -26,6 +26,7 @@
     chromium
     EmulationStation-DE
     #emacsPgtkNativeComp
+    ffmpeg
     fusuma
     glib.bin
     gnome-icon-theme

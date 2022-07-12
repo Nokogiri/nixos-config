@@ -23,6 +23,8 @@
 
   environment.systemPackages = with pkgs; [
     cmake
+    chromium
+    chromium-dev
     EmulationStation-DE
     #emacsPgtkNativeComp
     fusuma

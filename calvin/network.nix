@@ -4,7 +4,7 @@
   networking = {
     hostName = "calvin";
     useDHCP = false;
-    resolvconf.enable = true;
+    #resolvconf.enable = true;
   };
 
   systemd.network = {

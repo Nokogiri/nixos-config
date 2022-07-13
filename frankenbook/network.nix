@@ -15,7 +15,7 @@
   networking = {
     hostName = "frankenbook";
     useDHCP = false;
-    resolvconf.enable = true;
+    #resolvconf.enable = true;
     wireless.iwd.enable = true;
     dhcpcd.extraConfig = "noipv6rs\nnoipv6";
   };

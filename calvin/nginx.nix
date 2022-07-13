@@ -63,7 +63,7 @@
       useACMEHost = "fishoeder.net";
       forceSSL = true;
       locations."/" = {
-        proxyPass = "http://10.200.200.1:8284";
+        proxyPass = "http://127.0.0.1:8284";
         extraConfig = 
           "proxy_redirect off;" +
           "proxy_set_header Range $http_range;" +
@@ -88,6 +88,19 @@
         proxy_set_header X-Real-IP $remote_addr;
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
       '';
+    };
+    virtualHost."invid.fishoeder.net" = {
+      useACMEHost = "fishoeder.net";
+      forceSSL = true;
+      locations."/" = {
+        proxyPass = "http://127.0.0.1:3000/";
+        extraConfig = 
+        "proxy_set_header X-Forwarded-For $remote_addr;" +
+        "proxy_set_header Host $host;" +
+        "proxy_http_version 1.1;" +
+        "proxy_set_header Connection "";"
+        ;
+      };
     };
   };
 }

@@ -27,6 +27,7 @@
     EmulationStation-DE
     #emacsPgtkNativeComp
     ffmpeg
+    freetube
     fusuma
     glib.bin
     gnome-icon-theme

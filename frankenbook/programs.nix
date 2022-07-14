@@ -23,11 +23,8 @@
 
   environment.systemPackages = with pkgs; [
     cmake
-    chromium
     EmulationStation-DE
-    emacsPgtkNativeComp
     ffmpeg
-    freetube
     fusuma
     glib.bin
     gnome-icon-theme

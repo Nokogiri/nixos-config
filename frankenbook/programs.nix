@@ -25,7 +25,7 @@
     cmake
     chromium
     EmulationStation-DE
-    #emacsPgtkNativeComp
+    emacsPgtkNativeComp
     ffmpeg
     freetube
     fusuma

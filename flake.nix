@@ -20,6 +20,11 @@
     nix-minecraft = {
       url = "github:Infinidoge/nix-minecraft";
     };
+    hyprland = {
+      url = "github:hyprwm/Hyprland";
+      # build with your own instance of nixpkgs
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
   
   outputs = inputs@{ 
@@ -30,6 +35,7 @@
     emacs-overlay, 
     addins-overlay, 
     nix-minecraft,
+    hyprland,
     ... }: {
     nixosConfigurations.frankenbook = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
@@ -43,6 +49,7 @@
         ./frankenbook/sops.nix
         ./frankenbook/system.nix
         ./frankenbook/users.nix
+        hyprland.nixosModules.default
         sops-nix.nixosModules.sops
         {
           nixpkgs.overlays = [

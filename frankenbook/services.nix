@@ -4,13 +4,8 @@
   services = {
 
     avahi.enable = true;
-
     clight.enable = true;
-
     dbus.enable = true;
-
-    flatpak.enable = true;
-
     mbpfan = {
       enable = true;
       settings.general = { 
@@ -30,7 +25,6 @@
     };
 
     resolved.enable = true;
-
     tlp.enable = true;
 
   };

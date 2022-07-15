@@ -11,7 +11,6 @@
     cachix
     compsize
     direnv
-    exa
     dfc
     fd
     file

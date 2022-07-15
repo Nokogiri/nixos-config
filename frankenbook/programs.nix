@@ -64,11 +64,12 @@
     python-with-packages-plus)
     sshfs-fuse
     swaynotificationcenter
-    waybar
+    waybar-hyprland
     texlive.combined.scheme-small
     tridactyl-native
     udiskie
     xdg_utils
+    yambar
     yt-dlp
     zathura
     wob

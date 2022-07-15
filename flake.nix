@@ -53,6 +53,7 @@
         sops-nix.nixosModules.sops
         {
           nixpkgs.overlays = [
+            hyprland.overlays.default
             emacs-overlay.overlay
             addins-overlay.overlay
             (self: super: { nix-direnv = super.nix-direnv.override { enableFlakes = true; }; } )

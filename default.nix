@@ -71,10 +71,10 @@
         persist = true;
       }
       {
-            users = ["nokogiri"];
-    noPass = true;
-    keepEnv = true;
-    persist = false;
+        users = ["nokogiri"];
+        noPass = true;
+        keepEnv = true;
+        persist = false;
       }];
     };
   };

@@ -12,6 +12,7 @@
     };
     emacs-overlay = {
       url = "github:nix-community/emacs-overlay";
+      inputs.nixpgs.follows = "nixpkgs";
     };
     addins-overlay = {
       url = "git+https://codeberg.org/Nokogiri/nix-pkgs.git";

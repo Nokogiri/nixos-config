@@ -30,7 +30,7 @@
     kernelModules = [ "hid-nintendo" "kvm-intel" ];
     kernelPackages =
       #pkgs.linuxKernel.packages.linux_xanmod_latest
-      pkgs.linuxPackages_xanmod_latest
+      pkgs.linuxPackages_zen
     ;
     kernelParams = [
       "acpi_backlight=vendor"
@@ -102,6 +102,10 @@
     uinput.enable = true;
     xpadneo.enable = true;
   };
+
+  systemd.sleep.extraConfig = ''
+    HibernateMode=shutdown
+    '';
 
   environment.systemPackages = with pkgs; [
     lm_sensors

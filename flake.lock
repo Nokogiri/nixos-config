@@ -290,11 +290,11 @@
         "wlroots": "wlroots"
       },
       "locked": {
-        "lastModified": 1657920106,
-        "narHash": "sha256-lRkzBdLxDzoYZtrLUGt9SStPoo73WOeFHKP0kdTmquo=",
+        "lastModified": 1657923081,
+        "narHash": "sha256-hnMt/Gp/sjloymbgvp9G8CnHziMi4A1x7g3EroKmPKo=",
         "owner": "hyprwm",
         "repo": "Hyprland",
-        "rev": "069e3b211492f8f7d788154058d84ffbe3324055",
+        "rev": "b2650928eac06e3181ad07efe6ec55b2550f89b8",
         "type": "github"
       },
       "original": {

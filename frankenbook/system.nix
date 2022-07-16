@@ -29,7 +29,8 @@
     initrd.kernelModules = [ "i915" "hid-apple" "wl" ];
     kernelModules = [ "hid-nintendo" "kvm-intel" ];
     kernelPackages =
-      pkgs.linuxKernel.packages.linux_xanmod_latest
+      #pkgs.linuxKernel.packages.linux_xanmod_latest
+      pkgs.linuxKernel.packages.linux_latest
     ;
     kernelParams = [
       "acpi_backlight=vendor"

@@ -2,7 +2,7 @@
 
 {
   nix = {
-    package =  pkgs.nixFlakes;
+    package = pkgs.nixFlakes;
     extraOptions = ''
       experimental-features = nix-command flakes
       keep-outputs = true
@@ -27,7 +27,7 @@
       ];
     };
   };
-  
+
   environment.pathsToLink = [
     "/share/nix-direnv"
   ];
@@ -52,7 +52,7 @@
       LC_ADDRESS = "en_US.UTF-8";
       LC_TELEPHONE = "en_US.UTF-8";
       LC_MEASUREMENT = "de_DE.UTF-8";
-      LC_IDENTIFICATION= "en_US.UTF-8";
+      LC_IDENTIFICATION = "en_US.UTF-8";
     };
   };
 
@@ -70,12 +70,12 @@
         keepEnv = true;
         persist = true;
       }
-      {
-        users = ["nokogiri"];
-        noPass = true;
-        keepEnv = true;
-        persist = false;
-      }];
+        {
+          users = [ "nokogiri" ];
+          noPass = true;
+          keepEnv = true;
+          persist = false;
+        }];
     };
   };
 

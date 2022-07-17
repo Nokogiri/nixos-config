@@ -5,8 +5,9 @@
 
 {
   imports =
-    [ (modulesPath + "/installer/scan/not-detected.nix")
-  ];
+    [
+      (modulesPath + "/installer/scan/not-detected.nix")
+    ];
 
 
   boot.loader = {
@@ -30,7 +31,8 @@
     kernelModules = [ "hid-nintendo" "kvm-intel" ];
     kernelPackages =
       #pkgs.linuxKernel.packages.linux_xanmod_latest
-      pkgs.linuxPackages_zen
+      pkgs.linuxPackages_xanmod
+      #pkgs.linuxPackages_zen
     ;
     kernelParams = [
       "acpi_backlight=vendor"
@@ -59,7 +61,7 @@
   fileSystems."/" = {
     device = "/dev/disk/by-uuid/1f200403-52ed-4fe6-8e44-edfa6aed6cf9";
     fsType = "btrfs";
-    options = [ 
+    options = [
       "subvol=@nixos"
       "compress=zstd:9"
     ];
@@ -68,7 +70,7 @@
   fileSystems."/home" = {
     device = "/dev/disk/by-uuid/1f200403-52ed-4fe6-8e44-edfa6aed6cf9";
     fsType = "btrfs";
-    options = [ 
+    options = [
       "subvol=@home"
       "compress=zstd:9"
     ];
@@ -105,7 +107,7 @@
 
   systemd.sleep.extraConfig = ''
     HibernateMode=shutdown
-    '';
+  '';
 
   environment.systemPackages = with pkgs; [
     lm_sensors
@@ -122,5 +124,5 @@
     latitude = 50.9787;
     longitude = 11.03283;
   };
-
+  sops.defaultSopsFile = ./../../secrets/frankenbook.yaml;
 }

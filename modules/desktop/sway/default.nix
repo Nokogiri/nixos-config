@@ -17,7 +17,7 @@
       export _JAVA_AWT_WM_NONREPARENTING=1
       export NO_AT_BRIDGE=1
       export WINIT_UNIX_BACKEND=wayland
-      '';
+    '';
     extraPackages = with pkgs; [
       cliphist
       firefox-esr-wayland
@@ -43,40 +43,43 @@
       wofi
     ];
   };
-  
+
   environment.systemPackages = with pkgs; [
     (pkgs.writeTextFile {
       name = "configure-gtk";
       destination = "/bin/configure-gtk";
       executable = true;
-      text = let
-        schema = pkgs.gsettings-desktop-schemas;
-        datadir = "${schema}/share/gsettings-schemas/${schema.name}";
-      in ''
-        export XDG_DATA_DIRS=${datadir}:$XDG_DATA_DIRS
-        gnome_schema=org.gnome.desktop.interface
-        gsettings set $gnome_schema gtk-theme 'Fluent-grey-Dark-compact'
-        gsettings set $gnome_schema icon-theme 'Fluent-grey-dark'
-        gsettings set $gnome_schema cursor-theme 'Vimix White dark'
+      text =
+        let
+          schema = pkgs.gsettings-desktop-schemas;
+          datadir = "${schema}/share/gsettings-schemas/${schema.name}";
+        in
+        ''
+          export XDG_DATA_DIRS=${datadir}:$XDG_DATA_DIRS
+          gnome_schema=org.gnome.desktop.interface
+          gsettings set $gnome_schema gtk-theme 'Fluent-grey-Dark-compact'
+          gsettings set $gnome_schema icon-theme 'Fluent-grey-dark'
+          gsettings set $gnome_schema cursor-theme 'Vimix White dark'
         '';
-  })
+    })
   ];
 
   xdg.portal = {
-    enable =true;
+    enable = true;
     wlr.enable = true;
     extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
     #gtkUsePortal = true;
   };
-  
+
   xdg.icons.enable = true;
   gtk.iconCache.enable = true;
 
   systemd.user.targets.sway-session = {
     description = "Sway compositor session";
-    bindsTo = ["graphical-session.target"];
-    wants = ["graphical-session-pre.target"];
-    after = ["graphical-session-pre.target"];
+    bindsTo = [ "graphical-session.target" ];
+    wants = [ "graphical-session-pre.target" ];
+    after = [ "graphical-session-pre.target" ];
   };
 
 }
+

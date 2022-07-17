@@ -1,7 +1,7 @@
 { config, pkgs, lib, ... }:
 
 {
-  imports = [ 
+  imports = [
     #./cachix.nix
     ./default.nix
     ./modules/fonts.nix

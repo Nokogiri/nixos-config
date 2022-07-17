@@ -8,7 +8,7 @@
     dbus.enable = true;
     mbpfan = {
       enable = true;
-      settings.general = { 
+      settings.general = {
         low_temp = 50;
         high_temp = 65;
         max_temp = 84;

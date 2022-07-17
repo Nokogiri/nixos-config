@@ -45,7 +45,7 @@
       forceSSL = true;
       locations."/" = {
         proxyPass = "http://10.200.200.1:8096";
-        extraConfig = 
+        extraConfig =
           "proxy_redirect off;" +
           "proxy_set_header Range $http_range;" +
           "proxy_set_header If-Range $http_if_range;" +
@@ -56,7 +56,7 @@
           "proxy_http_version 1.1;" +
           "proxy_set_header Upgrade $http_upgrade;" +
           "proxy_set_header Connection \"upgrade\";"
-          ;
+        ;
       };
     };
     virtualHosts."vault.fishoeder.net" = {
@@ -64,7 +64,7 @@
       forceSSL = true;
       locations."/" = {
         proxyPass = "http://127.0.0.1:8284";
-        extraConfig = 
+        extraConfig =
           "proxy_redirect off;" +
           "proxy_set_header Range $http_range;" +
           "proxy_set_header If-Range $http_if_range;" +
@@ -75,7 +75,7 @@
           "proxy_http_version 1.1;" +
           "proxy_set_header Upgrade $http_upgrade;" +
           "proxy_set_header Connection \"upgrade\";"
-          ;
+        ;
       };
     };
     virtualHosts."cache.fishoeder.net" = {

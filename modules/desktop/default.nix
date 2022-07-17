@@ -1,0 +1,6 @@
+[
+  ./hyprland
+  ./fonts
+  ./apps
+  ./services
+]

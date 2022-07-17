@@ -1,8 +1,8 @@
-{config, pkgs, libs, ...}:
+{ config, pkgs, libs, ... }:
 
 {
   sops.secrets = {
-    "wg/private" = { 
+    "wg/private" = {
       mode = "0640";
       owner = config.users.users.systemd-network.name;
     };
@@ -50,7 +50,7 @@
       timeout = 20;
       anyInterface = true;
     };
-    
+
     links."79-iwd" = {
       matchConfig.Type = [ "wlan" ];
       linkConfig.NamePolicy = "path";
@@ -87,7 +87,7 @@
       dns = [ "192.168.178.254" ];
       gateway = [ "192.168.178.1" ];
     };
-    
+
     networks."90-wireguard" = {
       matchConfig.Name = "wg0";
       address = [ "10.200.200.2/24" ];

@@ -1,13 +1,24 @@
 { config, pkgs, lib, ... }:
 
 {
-
-  security.doas.extraRules = [{
-    users = [ "nokogiri" ];
-    noPass = true;
-    keepEnv = true;
-    persist = false;
-  }];
+  security = {
+    doas = {
+      enable = true;
+      wheelNeedsPassword = true;
+      extraRules = [{
+        groups = [ "wheel" ];
+        noPass = false;
+        keepEnv = true;
+        persist = true;
+      }
+        {
+          users = [ "nokogiri" ];
+          noPass = true;
+          keepEnv = true;
+          persist = false;
+        }];
+    };
+  };
 
   users.groups = {
     nokogiri = {

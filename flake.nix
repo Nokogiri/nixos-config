@@ -1,4 +1,5 @@
 {
+  description = "My Personal NixOS and Darwin System Flake Configuration";
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
@@ -14,13 +15,17 @@
       url = "github:nix-community/emacs-overlay";
       inputs.nixpgs.follows = "nixpkgs";
     };
-    addins-overlay = {
+    addins = {
       url = "git+https://codeberg.org/Nokogiri/nix-pkgs.git";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nix-minecraft = {
       url = "github:Infinidoge/nix-minecraft";
     };
+    nur = {
+      url = "github:nix-community/NUR"; # NUR packages
+    };
+
     hyprland = {
       url = "github:hyprwm/Hyprland";
       # build with your own instance of nixpkgs
@@ -34,57 +39,22 @@
     , sops-nix
     , home-manager
     , emacs-overlay
-    , addins-overlay
+    , addins
     , nix-minecraft
     , hyprland
+    , nur
     , ...
-    }: {
-      nixosConfigurations.frankenbook = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        modules = [
-          ./default-modules.nix
-          ./frankenbook/network.nix
-          ./frankenbook/programs.nix
-          ./frankenbook/retroarch.nix
-          ./frankenbook/services.nix
-          ./frankenbook/sway.nix
-          ./frankenbook/sops.nix
-          ./frankenbook/system.nix
-          ./frankenbook/users.nix
-          hyprland.nixosModules.default
-          sops-nix.nixosModules.sops
-          {
-            nixpkgs.overlays = [
-              hyprland.overlays.default
-              emacs-overlay.overlay
-              addins-overlay.overlay
-              (self: super: { nix-direnv = super.nix-direnv.override { enableFlakes = true; }; })
-            ];
-          }
-        ];
-      };
-      nixosConfigurations.calvin = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        modules = [
-          ./calvin/system.nix
-          ./default-modules.nix
-          ./calvin/environment.nix
-          ./calvin/network.nix
-          ./calvin/nginx.nix
-          ./calvin/programs.nix
-          ./calvin/services.nix
-          ./calvin/sops.nix
-          ./calvin/users.nix
-          ./calvin/wireguard.nix
-          sops-nix.nixosModules.sops
-          nix-minecraft.nixosModules.minecraft-servers
-          {
-            nixpkgs.overlays = [
-              nix-minecraft.overlay
-              addins-overlay.overlay
-            ];
-          }
-        ];
-      };
+    }:
+    let
+      user = "nokogiri";
+    in
+    {
+      nixosConfigurations = (
+        import ./hosts {
+          inherit (nixpkgs) lib;
+          inherit inputs nixpkgs home-manager nur user hyprland addins emacs-overlay nix-minecraft sops-nix;
+        }
+      );
     };
 }
+

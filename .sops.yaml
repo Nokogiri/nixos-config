@@ -1,12 +1,16 @@
 keys:
-  - &admin_nokogiri age1p23sw99dhmtlyku9vpc77s452tkhpvagmjwetk5m8cmx3u5ldfjq6qmja5
+  #- &admin_nokogiri age1p23sw99dhmtlyku9vpc77s452tkhpvagmjwetk5m8cmx3u5ldfjq6qmja5
+  - &host_calvin age1cf896thek5up8ghqqgxw9twz4ssrf8z200a350uhjafmp7s4kdjsrncxk6
+  - &host_frankenbook age1xp5hezyj8l8heum9gzmdve9hnuv2l7vxy3xa6gnze28zqk2pwpkswn5l9u
 creation_rules:
   - path_regex: secrets/[^/]+\.yaml$
     key_groups:
       - age:
-        - *admin_nokogiri
+        #- *admin_nokogiri
+        - *host_calvin
+        - *host_frankenbook
 
-  - path_regex: /tmp/[^/]+\.*$
-    key_groups:
-      - age:
-         - *admin_nokogiri    
+          #- path_regex: /tmp/[^/]+\.*$
+          #    key_groups:
+          #      - age:
+          #         - *admin_nokogiri    

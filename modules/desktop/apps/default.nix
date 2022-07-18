@@ -21,7 +21,7 @@
     brightnessctl
     cmake
     EmulationStation-DE
-    emacsPgtkNativeComp
+    #emacsPgtkNativeComp
     ffmpeg
     fusuma
     glib.bin
@@ -79,6 +79,7 @@
 
   programs = {
     git.enable = true;
+    ccache.enable = true;
     gnupg.agent.enable = true;
     hyprland.enable = true;
     mtr.enable = true;

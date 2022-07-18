@@ -1,5 +1,8 @@
 { config, pkgs, lib, ... }:
 
 {
-  environment.enableAllTerminfo = true;
+  environment = {
+    enableAllTerminfo = true;
+    noXlibs = true;
+  };
 }

@@ -36,6 +36,7 @@ in
     inherit system;
     specialArgs = { inherit inputs user; };
     modules = [
+      sops-nix.nixosModules.sops
       ./calvin
       ./configuration.nix
     ];

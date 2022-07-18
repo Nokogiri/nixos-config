@@ -124,5 +124,4 @@
     latitude = 50.9787;
     longitude = 11.03283;
   };
-  sops.defaultSopsFile = ./../../secrets/frankenbook.yaml;
 }

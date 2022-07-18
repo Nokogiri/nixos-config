@@ -18,6 +18,7 @@
   #services.emacs.package = pkgs.emacsPgtkNativeComp;
 
   environment.systemPackages = with pkgs; [
+    brightnessctl
     cmake
     EmulationStation-DE
     emacsPgtkNativeComp

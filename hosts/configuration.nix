@@ -16,6 +16,8 @@
       options = "--delete-older-than 20d";
     };
     settings = {
+      auto-optimise-store = true;
+      extra-sandbox-paths = [ (toString config.programs.ccache.cacheDir) ];
       substituters = [
         "https://cache.fishoeder.net"
         "https://nix-community.cachix.org"

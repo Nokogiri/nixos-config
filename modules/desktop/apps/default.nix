@@ -78,8 +78,8 @@
   qt5.platformTheme = "qt5ct";
 
   programs = {
-    git.enable = true;
     ccache.enable = true;
+    git.enable = true;
     gnupg.agent.enable = true;
     hyprland.enable = true;
     mtr.enable = true;
@@ -90,10 +90,13 @@
     xwayland.enable = true;
   };
 
-  programs.ccache.packageNames = [
-    "hyprland"
-    "polymc"
-  ];
+  programs.ccache = {
+    packageNames = [
+      "hyprland"
+    ];
+    cacheDir = "/nix/var/cache/ccache";
+  };
+
   systemd.user.services.fusuma = {
     partOf = [ "graphical-session.target" ];
     after = [ "graphicial-session.target" ];

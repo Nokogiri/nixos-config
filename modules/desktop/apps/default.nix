@@ -64,7 +64,6 @@
     )
     sshfs-fuse
     swaynotificationcenter
-    waybar-hyprland
     texlive.combined.scheme-small
     tridactyl-native
     udiskie

@@ -90,6 +90,10 @@
     xwayland.enable = true;
   };
 
+  programs.ccache.packageNames = [
+    "hyprland"
+    "polymc"
+  ];
   systemd.user.services.fusuma = {
     partOf = [ "graphical-session.target" ];
     after = [ "graphicial-session.target" ];

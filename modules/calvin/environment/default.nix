@@ -3,6 +3,5 @@
 {
   environment = {
     enableAllTerminfo = true;
-    noXlibs = true;
   };
 }

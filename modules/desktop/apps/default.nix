@@ -21,7 +21,7 @@
     brightnessctl
     cmake
     EmulationStation-DE
-    #emacsPgtkNativeComp
+    emacsPgtkNativeComp
     ffmpeg
     fusuma
     glib.bin

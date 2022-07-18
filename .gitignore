@@ -2,3 +2,4 @@ result
 modules/wireguard.nix
 keys/*
 !keys/.keep
+old/*

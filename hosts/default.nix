@@ -42,7 +42,7 @@ in
       {
         nixpkgs.overlays = [
           emacs-overlay.overlay
-          hyperland.overlays.overlay
+          hyprland.overlays.overlay
           addins.overlay
           (self: super: { nix-direnv = super.nix-direnv.override { enableFlakes = true; }; })
         ];

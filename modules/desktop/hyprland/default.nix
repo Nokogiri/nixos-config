@@ -5,13 +5,9 @@
   environment = {
     loginShellInit = ''
       if [ -z $DISPLAY ] && [ "$(tty)" = "/dev/tty1" ]; then
-        exec Hyprland
+        exec hyprland-run
       fi
     ''; # Will automatically open sway when logged into tty1
-
-    sessionVariables = {
-      XDG_DATA_DIRS = "${pkgs.gsettings-desktop-schemas}/share/gsettings/${pkgs.gsettings-desktop-schemas.name}:$XDG_DATA_DIRS";
-    };
   };
 
   programs.hyprland = {
@@ -71,7 +67,22 @@
             export DBUS_SESSION_BUS_PID
             export XDG_DATA_DIRS=${datadir}:$XDG_DATA_DIRS
           '';
-      })
+        })
+        (pkgs.writeTextFile = {
+          name = "hyprland-run";
+          destination = "/bin/hyprland-run";
+          executable = true;
+          text =
+            ''
+              # Session
+              export XDG_SESSION_TYPE=wayland
+              export XDG_SESSION_DESKTOP=wlroots
+              export XDG_CURRENT_DESKTOP=wlroots
+              export XDG_CURRENT_SESSION=wlroots
+
+              systemd-cat --identifyer=hyprland Hyprland $@
+            '';
+        })
       cliphist
       firefox-esr-wayland
       fluent-gtk-theme

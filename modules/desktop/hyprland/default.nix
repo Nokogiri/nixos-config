@@ -1,13 +1,6 @@
 { config, lib, pkgs, ... }:
-let
-  (self: super: { waybar-hyprland = super.waybar.override {
-    runTests = false;
-    traySupport = true;
-    withMediaPlayer = true;
-  };
-  })
-  in
-  {
+
+{
 
   environment = {
     loginShellInit = ''
@@ -83,10 +76,10 @@ let
   xdg.portal = {
     enable = true;
     wlr.enable = true;
-    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+    #extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
     #gtkUsePortal = true;
   };
 
   xdg.icons.enable = true;
   gtk.iconCache.enable = true;
-  }
+}

@@ -1,4 +1,4 @@
-{ lib, inputs, nixpkgs, home-manager, nur, user, hyprland, sops-nix, emacs-overlay, addins, ... }:
+{ lib, inputs, nixpkgs, home-manager, nur, user, hyprland, sops-nix, emacs-overlay, addins, newmpkg, pywm-fullscreenpkg, ... }:
 
 let
   system = "x86_64-linux"; # System architecture
@@ -28,6 +28,10 @@ in
           emacs-overlay.overlay
           addins.overlay
           (self: super: { nix-direnv = super.nix-direnv.override { enableFlakes = true; }; })
+          (self: super: {
+            newm = newmpkg.packages.${system}.newm;
+            pywm-fullscreen = pywm-fullscreenpkg.packages.${system}.pywm-fullscreen;
+          })
         ];
       }
     ];

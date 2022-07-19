@@ -2,10 +2,6 @@
 
 {
   nixpkgs.overlays = [
-    (self: super:
-      {
-        ncdu_fix = super.callPackage ../pkgs/ncdu_2 { };
-      })
     (self: super: {
       mpv = super.mpv-with-scripts.override {
         scripts = [
@@ -15,10 +11,9 @@
     })
   ];
 
-  #services.emacs.package = pkgs.emacsPgtkNativeComp;
-
   environment.systemPackages = with pkgs; [
     brightnessctl
+    ccache
     cmake
     EmulationStation-DE
     emacsPgtkNativeComp

@@ -1,6 +1,13 @@
 { config, lib, pkgs, ... }:
-
-{
+let
+  (self: super: { waybar-hyprland = super.waybar.override {
+    runTests = false;
+    traySupport = true;
+    withMediaPlayer = true;
+  };
+  })
+  in
+  {
 
   environment = {
     loginShellInit = ''
@@ -36,12 +43,7 @@
       vimix-cursors
       wl-clipboard
       wlr-randr
-      #waybar-hyprland
-      (self: super: { waybar-hyprland = super.waybar.override {
-        runTests = false;
-        traySupport = true;
-        withMediaPlayer = true;
-      }; })
+      waybar-hyprland
       wofi
     ];
   };
@@ -87,4 +89,4 @@
 
   xdg.icons.enable = true;
   gtk.iconCache.enable = true;
-}
+  }

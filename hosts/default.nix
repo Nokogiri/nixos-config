@@ -1,4 +1,4 @@
-{ lib, inputs, nixpkgs, home-manager, nur, user, hyprland, sops-nix, emacs-overlay, addins, newmpkg, pywm-fullscreenpkg, ... }:
+{ lib, inputs, nixpkgs, home-manager, nur, user, hyprland, sops-nix, emacs-overlay, addins, newmpkg, pywm-fullscreenpkg, nix-minecraft, ... }:
 
 let
   system = "x86_64-linux"; # System architecture
@@ -41,7 +41,7 @@ in
     specialArgs = { inherit inputs user; };
     modules = [
       sops-nix.nixosModules.sops
-      inputs.minecraft.nixosModules.minecraft-servers
+      nix-minecraft.nixosModules.minecraft-servers
       ./calvin
       ./configuration.nix
       {
@@ -49,7 +49,7 @@ in
           emacs-overlay.overlay
           hyprland.overlays.default
           addins.overlay
-          inputs.nix-minecraft.overlay
+          nix-minecraft.overlay
           (self: super: { nix-direnv = super.nix-direnv.override { enableFlakes = true; }; })
         ];
       }

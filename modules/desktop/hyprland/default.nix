@@ -83,7 +83,7 @@
             source /run/current-system/sw/bin/wayland_env
 
             sleep 1;
-            systemd-cat --identifyer=hyprland Hyprland $@
+            systemd-cat --identifier=hyprland Hyprland $@
           '';
       })
       cliphist

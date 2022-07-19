@@ -8,6 +8,10 @@
         exec Hyprland
       fi
     ''; # Will automatically open sway when logged into tty1
+
+    sessionVariables = {
+      "XDG_DATA_DIRS=${pkgs.gnome-desktop-schemas}/share/gsettings/${pkgs.gnome-desktop-schemas.name}:$XDG_DATA_DIRS"
+    };
   };
 
   programs.hyprland = {

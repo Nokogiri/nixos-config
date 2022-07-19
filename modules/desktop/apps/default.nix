@@ -36,6 +36,7 @@
     ncdu
     ncspot
     neovide
+    newm
     pandoc
     pavucontrol
     pinentry-gnome

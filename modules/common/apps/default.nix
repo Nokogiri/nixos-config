@@ -18,6 +18,7 @@
     git
     gitAndTools.diff-so-fancy
     jq
+    killall
     lesspipe
     linuxKernel.packages.linux_xanmod_latest.cpupower
     lsd

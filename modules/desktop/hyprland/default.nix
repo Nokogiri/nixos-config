@@ -29,10 +29,8 @@
       pulseaudio
       rofi-wayland
       slurp
-      swayfader
       swayidle
       swaylock-effects
-      swayr
       vimix-cursors
       wl-clipboard
       wlr-randr

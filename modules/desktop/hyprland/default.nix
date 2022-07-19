@@ -79,7 +79,10 @@
             export XDG_SESSION_DESKTOP=wlroots
             export XDG_CURRENT_DESKTOP=wlroots
             export XDG_CURRENT_SESSION=wlroots
+            
+            source /run/current-system/sw/bin/wayland_env
 
+            sleep 1;
             systemd-cat --identifyer=hyprland Hyprland $@
           '';
       })

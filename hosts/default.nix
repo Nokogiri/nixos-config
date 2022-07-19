@@ -39,6 +39,14 @@ in
       sops-nix.nixosModules.sops
       ./calvin
       ./configuration.nix
+      {
+        nixpkgs.overlays = [
+          emacs-overlay.overlay
+          hyperland.overlays.overlay
+          addins.overlay
+          (self: super: { nix-direnv = super.nix-direnv.override {enableFlakes = true;};})
+        ];
+      };
     ];
   };
 }

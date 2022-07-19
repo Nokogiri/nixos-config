@@ -36,7 +36,12 @@
       vimix-cursors
       wl-clipboard
       wlr-randr
-      waybar-hyprland
+      #waybar-hyprland
+      (self: super: { waybar-hyprland = super.waybar.override {
+        runTests = false;
+        traySupport = true;
+        withMediaPlayer = true;
+      }; })
       wofi
     ];
   };

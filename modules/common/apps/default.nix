@@ -45,8 +45,11 @@
     yadm
   ];
 
-  programs.git.enable = true;
-  programs.zsh.enable = true;
+  programs = {
+    git.enable = true;
+    tmux.enable = true;
+    zsh.enable = true;
+  };
 
   programs.command-not-found.enable = false;
   programs.zsh.interactiveShellInit = ''

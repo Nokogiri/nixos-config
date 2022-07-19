@@ -73,23 +73,13 @@
   qt5.platformTheme = "qt5ct";
 
   programs = {
-    ccache.enable = true;
-    git.enable = true;
     gnupg.agent.enable = true;
     hyprland.enable = true;
     mtr.enable = true;
     light.enable = true;
     ssh.startAgent = true;
-    tmux.enable = true;
     waybar.enable = true;
     xwayland.enable = true;
-  };
-
-  programs.ccache = {
-    packageNames = [
-      "hyprland"
-    ];
-    cacheDir = "/nix/var/cache/ccache";
   };
 
   systemd.user.services.fusuma = {

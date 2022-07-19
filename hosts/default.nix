@@ -41,6 +41,7 @@ in
     specialArgs = { inherit inputs user; };
     modules = [
       sops-nix.nixosModules.sops
+      inputs.minecraft.nixosModules.minecraft-servers
       ./calvin
       ./configuration.nix
       {
@@ -48,6 +49,7 @@ in
           emacs-overlay.overlay
           hyprland.overlays.default
           addins.overlay
+          inputs.nix-minecraft.overlay
           (self: super: { nix-direnv = super.nix-direnv.override { enableFlakes = true; }; })
         ];
       }

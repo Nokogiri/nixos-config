@@ -192,7 +192,7 @@
   },
   "flake-utils-plus": {
   "inputs": {
-  "flake-utils": "flake-utils_3"
+  "flake-utils": "flake-utils_5"
   },
   "locked": {
   "lastModified": 1639385028,
@@ -225,11 +225,71 @@
   },
   "flake-utils_3": {
   "locked": {
+  "lastModified": 1644229661,
+  "narHash": "sha256-1YdnJAsNy69bpcjuoKdOYQX0YxZBiCYZo4Twxerqv7k=",
+  "owner": "numtide",
+  "repo": "flake-utils",
+  "rev": "3cecb5b042f7f209c56ffd8371b2711a290ec797",
+  "type": "github"
+  },
+  "original": {
+  "owner": "numtide",
+  "repo": "flake-utils",
+  "type": "github"
+  }
+  },
+  "flake-utils_4": {
+  "locked": {
+  "lastModified": 1644229661,
+  "narHash": "sha256-1YdnJAsNy69bpcjuoKdOYQX0YxZBiCYZo4Twxerqv7k=",
+  "owner": "numtide",
+  "repo": "flake-utils",
+  "rev": "3cecb5b042f7f209c56ffd8371b2711a290ec797",
+  "type": "github"
+  },
+  "original": {
+  "owner": "numtide",
+  "repo": "flake-utils",
+  "type": "github"
+  }
+  },
+  "flake-utils_5": {
+  "locked": {
   "lastModified": 1638122382,
   "narHash": "sha256-sQzZzAbvKEqN9s0bzWuYmRaA03v40gaJ4+iL1LXjaeI=",
   "owner": "numtide",
   "repo": "flake-utils",
   "rev": "74f7e4319258e287b0f9cb95426c9853b282730b",
+  "type": "github"
+  },
+  "original": {
+  "owner": "numtide",
+  "repo": "flake-utils",
+  "type": "github"
+  }
+  },
+  "flake-utils_6": {
+  "locked": {
+  "lastModified": 1649676176,
+  "narHash": "sha256-OWKJratjt2RW151VUlJPRALb7OU2S5s+f0vLj4o1bHM=",
+  "owner": "numtide",
+  "repo": "flake-utils",
+  "rev": "a4b154ebbdc88c8498a5c7b01589addc9e9cb678",
+  "type": "github"
+  },
+  "original": {
+  "owner": "numtide",
+  "repo": "flake-utils",
+  "type": "github"
+  }
+  },
+  "flake-utils_7": {
+  "locked": {
+  "lastModified": 1644229661,
+  "narHash": "sha256-1YdnJAsNy69bpcjuoKdOYQX0YxZBiCYZo4Twxerqv7k=",
+  "owner": "numtide",
+  "repo": "flake-utils",
+  "rev": "3cecb5b042f7f209c56ffd8371b2711a290ec797",
   "type": "github"
   },
   "original": {
@@ -320,6 +380,28 @@
   "type": "github"
   }
   },
+  "newmpkg": {
+  "inputs": {
+  "flake-utils": "flake-utils_3",
+  "nixpkgs": [
+  "nixpkgs"
+  ],
+  "pywmpkg": "pywmpkg"
+  },
+  "locked": {
+  "lastModified": 1657789754,
+  "narHash": "sha256-7xLmgXVnpAEueUf3xGbnm+YozAyf838Pgn46W7bjays=",
+  "owner": "jbuchermn",
+  "repo": "newm",
+  "rev": "bcea8953d722adec35cb1bcf611c985897ab08db",
+  "type": "github"
+  },
+  "original": {
+  "owner": "jbuchermn",
+  "repo": "newm",
+  "type": "github"
+  }
+  },
   "nix-minecraft": {
   "inputs": {
   "digga": "digga",
@@ -404,11 +486,11 @@
   },
   "nur": {
   "locked": {
-  "lastModified": 1658220086,
-  "narHash": "sha256-BCX+FJF9U9JqgZGKJq73UeZW/bJIVOtiEtyb4gYOwks=",
+  "lastModified": 1658239684,
+  "narHash": "sha256-TsRcvmm/4yl1WHdf7xJiP2ftJDCfpjR9bXZD9Xp6w8c=",
   "owner": "nix-community",
   "repo": "NUR",
-  "rev": "2a079d1611cd3c038e7c9e7a661dfef360eae571",
+  "rev": "d555cf3bf91bb13bca12d011d6e180dec50066c2",
   "type": "github"
   },
   "original": {
@@ -456,15 +538,83 @@
   "type": "github"
   }
   },
+  "pywm": {
+  "inputs": {
+  "flake-utils": "flake-utils_7",
+  "nixpkgs": [
+  "pywm-fullscreenpkg",
+  "nixpkgs"
+  ]
+  },
+  "locked": {
+  "lastModified": 1653162654,
+  "narHash": "sha256-NV4/9eLQgVeT4r3PskD2G2CdqqMsivSjLVQnrdtfu6g=",
+  "owner": "jbuchermn",
+  "repo": "pywm",
+  "rev": "6cd58ed216fe5b7448e1dd9321dfc05f591b0fe5",
+  "type": "github"
+  },
+  "original": {
+  "owner": "jbuchermn",
+  "repo": "pywm",
+  "type": "github"
+  }
+  },
+  "pywm-fullscreenpkg": {
+  "inputs": {
+  "flake-utils": "flake-utils_6",
+  "nixpkgs": [
+  "nixpkgs"
+  ],
+  "pywm": "pywm"
+  },
+  "locked": {
+  "lastModified": 1656945490,
+  "narHash": "sha256-NKMD17CjjUy5yIu+bwGWhamRytTeo+uQMljoXdijZRE=",
+  "owner": "jbuchermn",
+  "repo": "pywm-fullscreen",
+  "rev": "d8802143e4d2a3036265f335f6eeb6480b3c4771",
+  "type": "github"
+  },
+  "original": {
+  "owner": "jbuchermn",
+  "repo": "pywm-fullscreen",
+  "type": "github"
+  }
+  },
+  "pywmpkg": {
+  "inputs": {
+  "flake-utils": "flake-utils_4",
+  "nixpkgs": [
+  "newmpkg",
+  "nixpkgs"
+  ]
+  },
+  "locked": {
+  "lastModified": 1652256791,
+  "narHash": "sha256-CX6vLdMK8y+2AyE+Cp/NReZVX5IhZVf8ELuTGNqZ47E=",
+  "owner": "jbuchermn",
+  "repo": "pywm",
+  "rev": "0262c0b5e0c6c1fdd914e32bcd1df815f258d74a",
+  "type": "github"
+  },
+  "original": {
+  "owner": "jbuchermn",
+  "repo": "pywm",
+  "type": "github"
+  }
+  },
   "root": {
   "inputs": {
   "addins": "addins",
   "emacs-overlay": "emacs-overlay",
   "home-manager": "home-manager",
   "hyprland": "hyprland",
+  "newmpkg": "newmpkg",
   "nix-minecraft": "nix-minecraft",
   "nixpkgs": "nixpkgs_3",
   "nur": "nur",
+  "pywm-fullscreenpkg": "pywm-fullscreenpkg",
   "sops-nix": "sops-nix"
   }
   },

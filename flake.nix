@@ -31,6 +31,15 @@
       # build with your own instance of nixpkgs
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    newmpkg = {
+      url = "github:jbuchermn/newm";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    pywm-fullscreenpkg = {
+      url = "github:jbuchermn/pywm-fullscreen";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -43,6 +52,8 @@
     , nix-minecraft
     , hyprland
     , nur
+    , newmpkg
+    , pywm-fullscreenpkg
     , ...
     }:
     let
@@ -52,7 +63,7 @@
       nixosConfigurations = (
         import ./hosts {
           inherit (nixpkgs) lib;
-          inherit inputs nixpkgs home-manager nur user hyprland addins emacs-overlay nix-minecraft sops-nix;
+          inherit inputs nixpkgs home-manager nur user hyprland addins emacs-overlay nix-minecraft sops-nix newmpkg pywm-fullscreenpkg;
         }
       );
     };

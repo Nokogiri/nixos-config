@@ -28,10 +28,6 @@ in
           emacs-overlay.overlay
           addins.overlay
           (self: super: { nix-direnv = super.nix-direnv.override { enableFlakes = true; }; })
-          (self: super: {
-            newm = newmpkg.packages.${system}.newm;
-            pywm-fullscreen = pywm-fullscreenpkg.packages.${system}.pywm-fullscreen;
-          })
         ];
       }
     ];

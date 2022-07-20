@@ -4,6 +4,5 @@
   imports =
     [ (import ./configuration.nix) ] ++
     [ (import ./network.nix) ] ++
-    (import ../../modules/desktop) ++
-    (import ../../modules/editors);
+    (import ../../modules/desktop);
 }

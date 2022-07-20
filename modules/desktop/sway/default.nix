@@ -21,7 +21,6 @@
     '';
     extraPackages = with pkgs; [
       cliphist
-      firefox-esr-wayland
       firefox-wayland
       fluent-gtk-theme
       fluent-icon-theme

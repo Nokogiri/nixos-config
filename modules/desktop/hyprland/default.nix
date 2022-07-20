@@ -87,7 +87,7 @@
           '';
       })
       cliphist
-      firefox-esr-wayland
+      firefox-wayland
       fluent-gtk-theme
       fluent-icon-theme
       gsettings-desktop-schemas

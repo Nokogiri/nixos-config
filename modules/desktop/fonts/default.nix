@@ -3,7 +3,7 @@
 {
   fonts.fonts = with pkgs; [
     (nerdfonts.override {
-      fonts = [ "CascadiaCode" "FiraCode" "FiraMono" "Iosevka" "Meslo" "Mononoki" "SourceCodePro" ];
+      fonts = [ "CascadiaCode" "FiraCode" "FiraMono" "Iosevka" "iA-Writer" "Meslo" "Mononoki" "SourceCodePro" ];
     })
     corefonts
     dejavu_fonts

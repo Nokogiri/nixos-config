@@ -29,7 +29,6 @@
       libinput
       libsForQt5.qtstyleplugin-kvantum
       mako
-      nwg-launchers
       ponymix
       pulseaudio
       rofi-wayland

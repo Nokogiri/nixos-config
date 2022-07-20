@@ -87,6 +87,7 @@
           '';
       })
       cliphist
+      eww-wayland
       firefox-wayland
       fluent-gtk-theme
       fluent-icon-theme

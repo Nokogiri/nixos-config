@@ -1,4 +1,4 @@
-{ lib, inputs, nixpkgs, home-manager, nur, user, hyprland, sops-nix, emacs-overlay, addins, newmpkg, pywm-fullscreenpkg, nix-minecraft, ... }:
+{ lib, inputs, nixpkgs, home-manager, nur, user, hyprland, sops-nix, emacs-overlay, addins, nix-minecraft, ... }:
 
 let
   system = "x86_64-linux"; # System architecture

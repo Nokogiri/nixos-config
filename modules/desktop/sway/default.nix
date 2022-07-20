@@ -3,6 +3,7 @@
 {
   programs.sway = {
     enable = true;
+    wrapperFeatures.base = true;
     wrapperFeatures.gtk = true;
     extraSessionCommands = ''
       export TDESKTOP_DISABLE_GTK_INTEGRATION=1

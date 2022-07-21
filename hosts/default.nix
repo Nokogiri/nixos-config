@@ -24,7 +24,7 @@ in
       ./configuration.nix
       {
         nixpkgs.overlays = [
-          hyprland.overlays.default
+          #hyprland.overlays.default
           emacs-overlay.overlay
           addins.overlay
           (self: super: { nix-direnv = super.nix-direnv.override { enableFlakes = true; }; })

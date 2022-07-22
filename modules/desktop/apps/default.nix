@@ -13,7 +13,6 @@
 
   environment.systemPackages = with pkgs; [
     brightnessctl
-    ccache
     cmake
     EmulationStation-DE
     emacsPgtkNativeComp
@@ -63,7 +62,6 @@
     tridactyl-native
     udiskie
     xdg_utils
-    yambar
     yt-dlp
     zathura
     wob

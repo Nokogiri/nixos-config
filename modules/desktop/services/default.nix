@@ -9,7 +9,7 @@
     mbpfan = {
       enable = true;
       settings.general = {
-        low_temp = 50;
+        low_temp = 55;
         high_temp = 65;
         max_temp = 84;
         polling_interval = 1;

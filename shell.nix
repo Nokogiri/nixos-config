@@ -5,9 +5,6 @@ pkgs.mkShell {
     home-manager
     git
 
-    # Para deploy
-    ssh-to-pgp
-    gnupg
     age
     sops
   ];

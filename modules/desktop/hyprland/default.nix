@@ -108,7 +108,7 @@
       vimix-cursors
       wl-clipboard
       wlr-randr
-      waybar-hyprland
+      waybar
       wofi
     ];
   };

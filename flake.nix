@@ -31,11 +31,6 @@
       url = "github:nix-community/NUR"; # NUR packages
     };
 
-    hyprland = {
-      url = "github:hyprwm/Hyprland";
-      # build with your own instance of nixpkgs
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   outputs =
@@ -46,7 +41,6 @@
     , emacs-overlay
     , addins
     , nix-minecraft
-    , hyprland
     , nur
     , ...
     }:
@@ -57,7 +51,7 @@
       nixosConfigurations = (
         import ./hosts {
           inherit (nixpkgs) lib;
-          inherit inputs nixpkgs home-manager nur user hyprland addins emacs-overlay nix-minecraft sops-nix;
+          inherit inputs nixpkgs home-manager nur user addins emacs-overlay nix-minecraft sops-nix;
         }
       );
     };

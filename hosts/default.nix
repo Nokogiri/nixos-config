@@ -1,4 +1,4 @@
-{ lib, inputs, nixpkgs, home-manager, nur, user, hyprland, sops-nix, emacs-overlay, addins, nix-minecraft, ... }:
+{ lib, inputs, nixpkgs, home-manager, nur, user, sops-nix, emacs-overlay, addins, nix-minecraft, ... }:
 
 let
   system = "x86_64-linux"; # System architecture
@@ -18,7 +18,6 @@ in
     modules = [
       # Modules that are used.
       sops-nix.nixosModules.sops
-      hyprland.nixosModules.default
       nur.nixosModules.nur
       ./frankenbook
       ./configuration.nix
@@ -43,7 +42,6 @@ in
       {
         nixpkgs.overlays = [
           emacs-overlay.overlay
-          hyprland.overlays.default
           addins.overlay
           nix-minecraft.overlay
           (self: super: { nix-direnv = super.nix-direnv.override { enableFlakes = true; }; })

@@ -73,7 +73,6 @@
 
   programs = {
     gnupg.agent.enable = true;
-    hyprland.enable = true;
     mtr.enable = true;
     light.enable = true;
     ssh.startAgent = true;

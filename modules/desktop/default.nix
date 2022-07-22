@@ -1,5 +1,4 @@
 [
-  ./hyprland
   ./sway
   ./fonts
   ./apps

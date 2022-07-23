@@ -1,6 +1,14 @@
 { config, pkgs, lib, ... }:
 
 {
+  environment = {
+    loginShellInit = ''
+      if [ -z $DISPLAY ] && [ "$(tty)" = "/dev/tty1" ]; then
+        exec sway
+      fi
+    ''; # Will automatically open sway when logged into tty1
+  };
+
   programs.sway = {
     enable = true;
     wrapperFeatures.base = true;

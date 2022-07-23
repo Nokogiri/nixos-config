@@ -13,6 +13,7 @@
 
   environment.systemPackages = with pkgs; [
     brightnessctl
+    chromium
     cmake
     EmulationStation-DE
     emacsPgtkNativeComp

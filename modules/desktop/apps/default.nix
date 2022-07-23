@@ -13,7 +13,6 @@
 
   environment.systemPackages = with pkgs; [
     brightnessctl
-    chromium
     cmake
     EmulationStation-DE
     emacsPgtkNativeComp
@@ -25,7 +24,6 @@
     gtk-engine-murrine
     gtk_engines
     glfw-wayland
-    gsettings-desktop-schemas
     hunspell
     iwd
     kitty
@@ -35,7 +33,6 @@
     mpv
     ncdu
     ncspot
-    neovide
     pandoc
     pavucontrol
     pinentry-gnome

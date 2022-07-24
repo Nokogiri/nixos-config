@@ -42,6 +42,7 @@
       pulseaudio
       rofi-wayland
       slurp
+      sov
       swayfader
       swayidle
       swaylock-effects

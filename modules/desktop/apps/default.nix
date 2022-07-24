@@ -13,6 +13,7 @@
 
   environment.systemPackages = with pkgs; [
     brightnessctl
+    blueman
     cmake
     EmulationStation-DE
     emacsPgtkNativeComp

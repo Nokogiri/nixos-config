@@ -30,14 +30,12 @@
     extraPackages = with pkgs; [
       cliphist
       firefox-wayland
-      foot
       fluent-gtk-theme
       fluent-icon-theme
       grim
       imv
       libinput
       libsixel
-      wezterm
       libsForQt5.qtstyleplugin-kvantum
       mako
       ponymix

@@ -26,6 +26,7 @@
     glfw-wayland
     hunspell
     iwd
+    iwgtk
     kitty
     ldns
     libsForQt5.qtstyleplugin-kvantum

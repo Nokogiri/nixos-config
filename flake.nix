@@ -27,10 +27,6 @@
       url = "github:Infinidoge/nix-minecraft";
     };
 
-    nur = {
-      url = "github:nix-community/NUR"; # NUR packages
-    };
-
   };
 
   outputs =
@@ -41,7 +37,6 @@
     , emacs-overlay
     , addins
     , nix-minecraft
-    , nur
     , ...
     }:
     let
@@ -51,7 +46,7 @@
       nixosConfigurations = (
         import ./hosts {
           inherit (nixpkgs) lib;
-          inherit inputs nixpkgs home-manager nur user addins emacs-overlay nix-minecraft sops-nix;
+          inherit inputs nixpkgs home-manager user addins emacs-overlay nix-minecraft sops-nix;
         }
       );
     };

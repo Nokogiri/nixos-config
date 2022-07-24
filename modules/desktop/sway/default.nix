@@ -30,6 +30,7 @@
     extraPackages = with pkgs; [
       cliphist
       firefox-wayland
+      foot
       fluent-gtk-theme
       fluent-icon-theme
       grim

@@ -36,6 +36,8 @@
       grim
       imv
       libinput
+      libsixel
+      wezterm
       libsForQt5.qtstyleplugin-kvantum
       mako
       ponymix

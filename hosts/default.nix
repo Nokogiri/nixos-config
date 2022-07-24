@@ -1,4 +1,4 @@
-{ lib, inputs, nixpkgs, home-manager, nur, user, sops-nix, emacs-overlay, addins, nix-minecraft, ... }:
+{ lib, inputs, nixpkgs, home-manager, user, sops-nix, emacs-overlay, addins, nix-minecraft, ... }:
 
 let
   system = "x86_64-linux"; # System architecture
@@ -18,7 +18,6 @@ in
     modules = [
       # Modules that are used.
       sops-nix.nixosModules.sops
-      nur.nixosModules.nur
       ./frankenbook
       ./configuration.nix
       {

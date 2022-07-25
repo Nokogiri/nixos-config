@@ -20,26 +20,28 @@
   #];
 
   home = {
-    packages = woth pkgs;
-    [
-    #Apps
-    gimp
-      inkscape
-      gtk-pipe-viewer
-      pipe-viewer
-      zathura
-      imv
-      mpv
-      ncspot
+    packages = with pkgs;
+      [
+        #Apps
+        gimp
+        inkscape
+        gtk-pipe-viewer
+        #pipe-viewer
+        zathura
+        imv
+        mpv
+        ncspot
 
-      #Games
+        #Games
 
-      (polymc.override { msaClientID = "0b5d07b7-fcd2-4f81-901a-7596869a0cee";
-  })
-  ];
-};
+        (polymc.override {
+          msaClientID = "0b5d07b7-fcd2-4f81-901a-7596869a0cee";
+        })
+      ];
+  };
 
-services = {                            # Applets
-blueman-applet.enable = true;         # Bluetooth
-};
+  services = {
+    # Applets
+    blueman-applet.enable = true; # Bluetooth
+  };
 }

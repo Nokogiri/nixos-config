@@ -23,6 +23,7 @@
     packages = with pkgs;
       [
         #Apps
+        firefox-wayland
         gimp
         inkscape
         gtk-pipe-viewer

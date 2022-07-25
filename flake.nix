@@ -41,6 +41,7 @@
     }:
     let
       user = "nokogiri";
+      pkgs = nixpkgs.legacyPackages.x86_64-linux;
     in
     {
       nixosConfigurations = (
@@ -49,9 +50,6 @@
           inherit inputs nixpkgs home-manager user addins emacs-overlay nix-minecraft sops-nix;
         }
       );
-      homeConfigurations.jdoe = home-manager.lib.homeManagerConfiguration {
-        inherit (nixpkgs) lib;
-      };
     };
 }
 

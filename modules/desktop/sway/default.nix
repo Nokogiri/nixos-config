@@ -28,6 +28,7 @@
       export WINIT_UNIX_BACKEND=wayland
     '';
     extraPackages = with pkgs; [
+      brave
       cliphist
       firefox-wayland
       fluent-gtk-theme

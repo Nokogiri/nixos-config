@@ -29,13 +29,9 @@
     '';
     extraPackages = with pkgs; [
       cliphist
-      firefox-wayland
       fluent-gtk-theme
       fluent-icon-theme
       grim
-      imv
-      libinput
-      libsixel
       libsForQt5.qtstyleplugin-kvantum
       mako
       ponymix

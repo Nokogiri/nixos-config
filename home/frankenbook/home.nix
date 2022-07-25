@@ -2,8 +2,8 @@
 
 {
   home = {
-    username = "${user}";
-    homeDirectory = "/home/${user}";
+    #username = "${user}";
+    #homeDirectory = "/home/${user}";
 
     packages = with pkgs; [
       home-manager

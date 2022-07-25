@@ -49,6 +49,9 @@
           inherit inputs nixpkgs home-manager user addins emacs-overlay nix-minecraft sops-nix;
         }
       );
+      homeConfigurations.jdoe = home-manager.lib.homeManagerConfiguration {
+        inherit (nixpkgs) lib;
+      };
     };
 }
 

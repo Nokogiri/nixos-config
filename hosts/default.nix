@@ -28,6 +28,16 @@ in
           (self: super: { nix-direnv = super.nix-direnv.override { enableFlakes = true; }; })
         ];
       }
+      home-manager.nixosModules.home-manager
+      {
+        # Home-Manager module that is used.
+        home-manager.useGlobalPkgs = true;
+        home-manager.useUserPackages = true;
+        home-manager.extraSpecialArgs = { inherit user; }; # Pass flake variable
+        home-manager.users.${user} = {
+          imports = [ (import ./home.nix) ]; # ++ [ (import ./desktop/home.nix) ];
+        };
+      }
     ];
   };
   calvin = lib.nixosSystem {

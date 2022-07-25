@@ -33,16 +33,11 @@
     ldns
     libsForQt5.qtstyleplugin-kvantum
     libsForQt5.qt5ct
-    mpv
     ncdu
-    ncspot
     pandoc
     pavucontrol
     pinentry-gnome
-    pipe-viewer
-    gtk-pipe-viewer
     polkit_gnome
-    (polymc.override { msaClientID = "0b5d07b7-fcd2-4f81-901a-7596869a0cee"; })
     (
       let
         python-packages-plus = python-packages: with python-packages; [
@@ -64,7 +59,6 @@
     udiskie
     xdg_utils
     yt-dlp
-    zathura
     wob
   ];
 

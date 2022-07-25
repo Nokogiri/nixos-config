@@ -17,7 +17,8 @@
     cmake
     EmulationStation-DE
     emacsPgtkNativeComp
-    ffmpeg
+    #ffmpeg
+    ffmpeg_5
     fusuma
     glib.bin
     gnome-icon-theme

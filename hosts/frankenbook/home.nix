@@ -14,8 +14,8 @@
 { pkgs, ... }:
 
 {
-  imports = 
-  (import ../../modules/home);
+  imports =
+    (import ../../modules/home);
   #  ../../modules/desktop/sway/home.nix
 
   home = {

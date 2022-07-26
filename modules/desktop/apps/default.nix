@@ -31,6 +31,7 @@
     iwgtk
     kitty
     ldns
+    libinput
     libsForQt5.qtstyleplugin-kvantum
     libsForQt5.qt5ct
     ncdu

@@ -8,11 +8,11 @@
         "nvfetcher": "nvfetcher"
       },
       "locked": {
-        "lastModified": 1658777372,
-        "narHash": "sha256-C/ZcM3qvtwD31t4WinO0tR5NR4OR+RvyBYPNbKnYcok=",
+        "lastModified": 1658837832,
+        "narHash": "sha256-lBn1gVOspqpdhsQscYZU2AlEddDMXH3xeIKLon7BXw4=",
         "ref": "refs/heads/main",
-        "rev": "0d6e24f32d1d58bf93a7fad7a68965df78f223ff",
-        "revCount": 77,
+        "rev": "13ba878b1fa522d70852e2878001c5ebff7e9171",
+        "revCount": 78,
         "type": "git",
         "url": "https://codeberg.org/Nokogiri/nix-pkgs.git"
       },

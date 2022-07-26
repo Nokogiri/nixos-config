@@ -14,10 +14,11 @@
 { pkgs, ... }:
 
 {
-  #imports = 
-  #[
+  imports = 
+  [
+    ../../modules/home
   #  ../../modules/desktop/sway/home.nix
-  #];
+  ];
 
   home = {
     packages = with pkgs;

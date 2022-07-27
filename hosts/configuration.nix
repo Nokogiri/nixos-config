@@ -34,6 +34,7 @@
 
   environment.pathsToLink = [
     "/share/nix-direnv"
+    "/share/zsh"
   ];
 
   nixpkgs.config.allowUnfree = true;

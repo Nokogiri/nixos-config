@@ -40,6 +40,7 @@
     unrar
     unzip
     zip
+    zsh-powerlevel10k
     vivid
     wireguard-tools
     yadm

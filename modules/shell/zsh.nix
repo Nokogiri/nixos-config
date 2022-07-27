@@ -24,8 +24,8 @@
           src = pkgs.fetchFromGitHub {
             owner = "zsh-users";
             repo = "zsh-autosuggestions";
-            rev = "v0.4.0";
-            sha256 = "0z6i9wjjklb4lvr7zjhbphibsyx51psv50gm07mbb0kj9058j6kc";
+            rev = "v0.7.0";
+            sha256 = "022gf4mkaakad7l93d6i2ylkwlg35y5fylf6hd3662r5szlpznfc";
           };
         }
         {
@@ -34,7 +34,7 @@
             owner = "Aloxaf";
             repo = "fzf-tab";
             rev = "master";
-            sha256 = "";
+            sha256 = "ixUnuNtxxmiigeVjzuV5uG6rIBPY/1vdBZF2/Qv0Trs=";
           };
         }
       ];

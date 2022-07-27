@@ -2,6 +2,7 @@
 {
   programs = {
     zsh = {
+      dotDir = ".config/zsh";
       enable = true;
       enableCompletion = true;
       enableSyntaxHighlighting = true;

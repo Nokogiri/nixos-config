@@ -4,7 +4,7 @@ pkgs.mkShell {
     nix
     home-manager
     git
-
+    nix-universal-prefetch
     age
     sops
   ];

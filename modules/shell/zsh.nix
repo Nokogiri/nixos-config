@@ -4,6 +4,7 @@
     zsh = {
       enable = true;
       enableCompletion = true;
+      enableSyntaxHighlighting = true;
       initExtra = ''
         source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme
         POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true
@@ -25,7 +26,7 @@
             owner = "zsh-users";
             repo = "zsh-autosuggestions";
             rev = "v0.7.0";
-            sha256 = "022gf4mkaakad7l93d6i2ylkwlg35y5fylf6hd3662r5szlpznfc";
+            sha256 = "KLUYpUu4DHRumQZ3w59m9aTW6TBKMCXl2UcKi4uMd7w=";
           };
         }
         {

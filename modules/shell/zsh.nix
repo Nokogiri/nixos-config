@@ -4,6 +4,10 @@
     zsh = {
       enable = true;
       enableCompletion = true;
+      initExtra = ''
+        ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme
+        POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true
+        '';
       oh-my-zsh = {
         enable = true;
         plugins = [

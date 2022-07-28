@@ -11,6 +11,9 @@
         if [[ -r "/home/${user}/.cache/p10k-instant-prompt-nokogiri.zsh" ]]; then
           source "/home/${user}/.cache/p10k-instant-prompt-nokogiri.zsh"
         fi
+
+        #WORDCHARS='*?_-.[]~&;!#$%^(){}<>'
+        WORDCHARS=""
       '';
       initExtra = ''
         # Set keystrokes for substring searching
@@ -39,6 +42,9 @@
         autoload -U zmv
 
         ZSH_AUTOSUGGEST_CLEAR_WIDGETS+=(bracketed-paste)
+
+        setopt AUTO_CD
+
         # Add some completions settings
         setopt ALWAYS_TO_END     # Move cursor to the end of a completed word.
         setopt AUTO_LIST         # Automatically list choices on ambiguous completion.
@@ -46,6 +52,7 @@
         setopt AUTO_PARAM_SLASH  # If completed parameter is a directory, add a trailing slash.
         setopt COMPLETE_IN_WORD  # Complete from both ends of a word.
         unsetopt MENU_COMPLETE   # Do not autoselect the first completion entry.
+
 
         if test -n "$KITTY_INSTALLATION_DIR"; then
           export KITTY_SHELL_INTEGRATION="enabled"
@@ -65,6 +72,7 @@
         size = 100000;
       };
       oh-my-zsh = {
+        enable = false;
         plugins = [
           "git"
         ];

@@ -33,6 +33,11 @@
         share = true;
         size = 100000;
       };
+      oh-my-zsh = {
+        plugins = [
+          "git"
+        ];
+      };
       plugins = [
         {
           name = "fzf-tab";

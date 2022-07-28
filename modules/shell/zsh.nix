@@ -16,6 +16,28 @@
         source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme
         POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true
         source ~/.p10k.zsh
+
+        # Miscellaneous settings
+        setopt INTERACTIVE_COMMENTS  # Enable comments in interactive shell.
+        
+        setopt extended_glob # Enable more powerful glob features
+        
+        # Long running processes should return time after they complete. Specified
+        # in seconds.
+        REPORTTIME=2
+        TIMEFMT="%U user %S system %P cpu %*Es total"
+
+        autoload -U zmv
+
+        ZSH_AUTOSUGGEST_CLEAR_WIDGETS+=(bracketed-paste)
+        # Add some completions settings
+        setopt ALWAYS_TO_END     # Move cursor to the end of a completed word.
+        setopt AUTO_LIST         # Automatically list choices on ambiguous completion.
+        setopt AUTO_MENU         # Show completion menu on a successive tab press.
+        setopt AUTO_PARAM_SLASH  # If completed parameter is a directory, add a trailing slash.
+        setopt COMPLETE_IN_WORD  # Complete from both ends of a word.
+        unsetopt MENU_COMPLETE   # Do not autoselect the first completion entry.
+
         if test -n "$KITTY_INSTALLATION_DIR"; then
           export KITTY_SHELL_INTEGRATION="enabled"
           autoload -Uz -- "$KITTY_INSTALLATION_DIR"/shell-integration/zsh/kitty-integration

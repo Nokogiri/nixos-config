@@ -8,7 +8,6 @@
     age
     bat
     btop
-    cachix
     compsize
     direnv
     dfc
@@ -29,13 +28,11 @@
     nix-index
     nix-tree
     nix-top
-    nix-pin
     nixpkgs-fmt
     ranger
     rbw
     ripgrep
     rsync
-    ssh-to-age
     tmux
     unrar
     unzip

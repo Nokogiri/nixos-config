@@ -8,18 +8,13 @@
       enableCompletion = true;
       enableSyntaxHighlighting = true;
       initExtraFirst = ''
-        if [[ -r "/home/${user}/.cache/p10k-instant-prompt-nokogiri.zsh" ]]; then
-          source "/home/${user}/.cache/p10k-instant-prompt-nokogiri.zsh"
+        if [[ -r "/home/${user}/.cache/p10k-instant-prompt-${user}.zsh" ]]; then
+          source "/home/${user}/.cache/p10k-instant-prompt-${user}.zsh"
         fi
 
-        #WORDCHARS='*?_-.[]~&;!#$%^(){}<>'
         WORDCHARS=""
       '';
       initExtra = ''
-        # Set keystrokes for substring searching
-        zmodload zsh/terminfo
-        bindkey "$terminfo[kcuu1]" history-substring-search-up
-        bindkey "$terminfo[kcud1]" history-substring-search-down
         export COMPLETION_WAITING_DOTS="true"
         
         setopt correct
@@ -30,7 +25,7 @@
         source ~/.p10k.zsh
 
         # Miscellaneous settings
-        setopt INTERACTIVE_COMMENTS  # Enable comments in interactive shell.
+        #setopt INTERACTIVE_COMMENTS  # Enable comments in interactive shell.
         
         setopt extended_glob # Enable more powerful glob features
         

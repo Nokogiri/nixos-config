@@ -45,7 +45,7 @@
         
         setopt hist_verify
         setopt INC_APPEND_HISTORY
-        unsetopt HIST_BEEP
+        unsetopt BEEP
         setopt hist_expire_dups_first
         setopt hist_ignore_all_dups
 

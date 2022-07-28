@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, user, ... }:
 {
   programs = {
     zsh = {
@@ -8,15 +8,20 @@
       enableCompletion = true;
       enableSyntaxHighlighting = true;
       initExtraFirst = ''
-        if [[ -r "$\{XDG_CACHE_HOME\}/p10k-instant-prompt-$\{(%):-%n\}.zsh" ]]; then
-          source "$\{XDG_CACHE_HOME/p10k-instant-prompt-$\{(%):-%n\}.zsh"
+        if [[ -r "/home/${user}/.cache/p10k-instant-prompt-nokogiri.zsh" ]]; then
+          source "/home/${user}/.cache/p10k-instant-prompt-nokogiri.zsh"
         fi
-        export FZF_PREVIEW_ADVANCED=true
       '';
       initExtra = ''
         source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme
         POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true
         source ~/.p10k.zsh
+        if test -n "$KITTY_INSTALLATION_DIR"; then
+          export KITTY_SHELL_INTEGRATION="enabled"
+          autoload -Uz -- "$KITTY_INSTALLATION_DIR"/shell-integration/zsh/kitty-integration
+          kitty-integration
+          unfunction kitty-integration
+        fi
       '';
       history = {
         expireDuplicatesFirst = true;
@@ -28,29 +33,33 @@
         share = true;
         size = 100000;
       };
-      oh-my-zsh = {
-        enable = true;
-        plugins = [
-          "fzf"
-        ];
-      };
       plugins = [
-        #{
-        #  name = "zsh-autosuggestions";
-        #  src = pkgs.fetchFromGitHub {
-        #    owner = "zsh-users";
-        #    repo = "zsh-autosuggestions";
-        #    rev = "v0.7.0";
-        #    sha256 = "KLUYpUu4DHRumQZ3w59m9aTW6TBKMCXl2UcKi4uMd7w=";
-        #  };
-        #}
         {
           name = "fzf-tab";
           src = pkgs.fetchFromGitHub {
             owner = "Aloxaf";
             repo = "fzf-tab";
-            rev = "master";
+            rev = "7e0eee64df6c7c81a57792674646b5feaf89f263";
             sha256 = "ixUnuNtxxmiigeVjzuV5uG6rIBPY/1vdBZF2/Qv0Trs=";
+          };
+        }
+        {
+          name = "fzf-zsh";
+          file = "plugins/fzf/fzf.plugin.zsh";
+          src = pkgs.fetchFromGitHub {
+            owner = "ohmyzsh";
+            repo = "ohmyzsh";
+            rev = "8362ae285a5c227cb20387543483a3597fa31931";
+            sha256 = "4jQEGC3EXLC5dnDa+717/sf29vyS4zdDY/mrQ5gfepY=";
+          };
+        }
+        {
+          name = "zsh-history-substring-search";
+          src = pkgs.fetchFromGitHub {
+            owner = "zsh-users";
+            repo = "zsh-history-substring-search";
+            rev = "4abed97b6e67eb5590b39bcd59080aa23192f25d";
+            sha256 = "8kiPBtgsjRDqLWt0xGJ6vBBLqCWEIyFpYfd+s1prHWk=";
           };
         }
       ];

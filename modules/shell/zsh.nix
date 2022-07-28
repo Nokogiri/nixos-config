@@ -13,6 +13,15 @@
         fi
       '';
       initExtra = ''
+        # Set keystrokes for substring searching
+        zmodload zsh/terminfo
+        bindkey "$terminfo[kcuu1]" history-substring-search-up
+        bindkey "$terminfo[kcud1]" history-substring-search-down
+        export COMPLETION_WAITING_DOTS="true"
+        
+        setopt correct
+        unsetopt correctall
+
         source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme
         POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true
         source ~/.p10k.zsh

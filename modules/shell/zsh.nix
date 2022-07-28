@@ -42,6 +42,12 @@
         autoload -U zmv
 
         ZSH_AUTOSUGGEST_CLEAR_WIDGETS+=(bracketed-paste)
+        
+        setopt hist_verify
+        setopt INC_APPEND_HISTORY
+        unsetopt HIST_BEEP
+        setopt hist_expire_dups_first
+        setopt hist_ignore_all_dups
 
         setopt AUTO_CD
 

@@ -26,8 +26,8 @@
     nix-minecraft = {
       url = "github:Infinidoge/nix-minecraft";
     };
-    nixpkgs-wayland  = {
-      url = "github:nix-community/nixpkgs-wayland"; 
+    nixpkgs-wayland = {
+      url = "github:nix-community/nixpkgs-wayland";
     };
   };
 

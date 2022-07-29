@@ -19,7 +19,7 @@
       auto-optimise-store = true;
       extra-sandbox-paths = [ (toString config.programs.ccache.cacheDir) ];
       substituters = [
-        #"https://cache.fishoeder.net"
+        "https://cache.fishoeder.net"
         "https://nix-community.cachix.org"
         "https://nookogiri.cachix.org"
         "https://cache.nixos.org"
@@ -27,7 +27,7 @@
       trusted-public-keys = [
         "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
         "nookogiri.cachix.org-1:tKY3HBn6Xhuqys5EcQRl1u+sKualOXFzCs9Q6qEXR+o="
-        #"cache.fishoeder.net:0wqH5JXoJJVWitNUfD9PCCVO+A8DOEOyXZSrkCi5lb8="
+        "cache.fishoeder.net:0wqH5JXoJJVWitNUfD9PCCVO+A8DOEOyXZSrkCi5lb8="
       ];
     };
   };

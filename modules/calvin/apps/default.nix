@@ -7,6 +7,7 @@
     #   wget
     git
     jellyfin-ffmpeg
+    emacsPgtkNativeComp
   ];
 
   programs = {

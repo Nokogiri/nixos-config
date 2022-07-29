@@ -1,4 +1,4 @@
-{ lib, inputs, nixpkgs, home-manager, user, sops-nix, emacs-overlay, addins, nix-minecraft, ... }:
+{ lib, inputs, nixpkgs, home-manager, user, sops-nix, emacs-overlay, addins, nix-minecraft, nixpkgs-wayland, ... }:
 
 let
   system = "x86_64-linux"; # System architecture
@@ -24,6 +24,7 @@ in
         nixpkgs.overlays = [
           emacs-overlay.overlay
           addins.overlay
+          nixpkgs-wayland.overlay
           (self: super: { nix-direnv = super.nix-direnv.override { enableFlakes = true; }; })
         ];
       }

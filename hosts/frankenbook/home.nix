@@ -15,7 +15,7 @@
 
 {
   imports =
-    (import ../../modules/home);
+    (import ../../home/frankenbook);
   #  ../../modules/desktop/sway/home.nix
 
   home = {

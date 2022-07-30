@@ -1,5 +1,6 @@
 { config, pkgs, user, ... }:
 {
+  xdg.configFile."zsh/p10k.zsh".source = ./config/zsh/p10k.zsh;
   programs = {
     zsh = {
       dotDir = ".config/zsh";
@@ -114,7 +115,7 @@
         }
         {
           name = "powerlevel10k";
-          file = "powerlevel10.zsh-theme";
+          file = "powerlevel10k.zsh-theme";
           src = pkgs.fetchFromGitHub {
             owner = "romkatv";
             repo = "powerlevel10k";

@@ -15,13 +15,11 @@
     file
     fzf
     git
-    gitAndTools.diff-so-fancy
     jq
     killall
     lesspipe
     linuxKernel.packages.linux_xanmod_latest.cpupower
     lsd
-    neofetch
     neovim
     neovim-remote
     nix-diff
@@ -39,7 +37,6 @@
     unrar
     unzip
     zip
-    zsh-powerlevel10k
     vivid
     wireguard-tools
     yadm

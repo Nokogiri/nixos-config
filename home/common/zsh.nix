@@ -1,6 +1,7 @@
 { config, pkgs, user, ... }:
 {
   xdg.configFile."zsh/p10k.zsh".source = ./config/zsh/p10k.zsh;
+  xdg.configFile."zsh/p10k-linux.zsh".source = ./config/zsh/p10k-linux.zsh;
   programs = {
     zsh = {
       dotDir = ".config/zsh";
@@ -29,7 +30,7 @@
 
         POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true
 
-        if [[ ! $TERM =~ "linux"]]; then
+        if [[ ! $TERM =~ "linux" ]]; then
           source ~/.config/zsh/p10k.zsh
         else
           source ~/.config/zsh/p10k-linux.zsh

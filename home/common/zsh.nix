@@ -26,7 +26,7 @@
         setopt correct
         unsetopt correctall
 
-        source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme
+        #source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme
         POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true
         source ~/.p10k.zsh
 
@@ -77,12 +77,12 @@
         share = true;
         size = 100000;
       };
-      oh-my-zsh = {
-        enable = false;
-        plugins = [
-          "git"
-        ];
-      };
+      #oh-my-zsh = {
+      #  enable = false;
+      #  plugins = [
+      #    "git"
+      #  ];
+      #};
       plugins = [
         {
           name = "fzf-tab";
@@ -110,6 +110,16 @@
             repo = "zsh-history-substring-search";
             rev = "4abed97b6e67eb5590b39bcd59080aa23192f25d";
             sha256 = "8kiPBtgsjRDqLWt0xGJ6vBBLqCWEIyFpYfd+s1prHWk=";
+          };
+        }
+        {
+          name = "powerlevel10k";
+          file = "powerlevel10.zsh-theme";
+          src = pkgs.fetchFromGitHub {
+            owner = "romkatv";
+            repo = "powerlevel10k";
+            rev = "e72264e01cb24431455ed6e398a769bca0da7ffe";
+            sha-256 = "";
           };
         }
       ];

@@ -16,7 +16,7 @@
     blueman
     cmake
     EmulationStation-DE
-    emacsPgtkNativeComp
+    #emacsPgtkNativeComp
     ffmpeg
     fusuma
     glib.bin
@@ -56,6 +56,7 @@
     texlive.combined.scheme-small
     tridactyl-native
     udiskie
+    vscode
     xdg_utils
     yt-dlp
     wob

@@ -6,6 +6,7 @@
     avahi.enable = true;
     clight.enable = true;
     dbus.enable = true;
+    gnome.gnome-keyring.enable = true;
     mbpfan = {
       enable = true;
       settings.general = {

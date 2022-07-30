@@ -16,7 +16,6 @@
     blueman
     cmake
     EmulationStation-DE
-    #emacsPgtkNativeComp
     ffmpeg
     fusuma
     glib.bin
@@ -50,7 +49,6 @@
       in
       python-with-packages-plus
     )
-    qgnomeplatform
     sshfs-fuse
     swaynotificationcenter
     texlive.combined.scheme-small
@@ -62,7 +60,6 @@
     wob
   ];
 
-  # qt5.platformTheme = "qt5ct";
 
   programs = {
     gnupg.agent.enable = true;

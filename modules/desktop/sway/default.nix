@@ -32,7 +32,6 @@
       fluent-gtk-theme
       fluent-icon-theme
       grim
-      #libsForQt5.qtstyleplugin-kvantum
       mako
       ponymix
       pulseaudio

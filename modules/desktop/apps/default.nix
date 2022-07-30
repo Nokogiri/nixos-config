@@ -17,8 +17,7 @@
     cmake
     EmulationStation-DE
     emacsPgtkNativeComp
-    #ffmpeg
-    ffmpeg_5
+    ffmpeg
     fusuma
     glib.bin
     gnome-icon-theme
@@ -32,8 +31,6 @@
     kitty
     ldns
     libinput
-    libsForQt5.qtstyleplugin-kvantum
-    libsForQt5.qt5ct
     ncdu
     pandoc
     pavucontrol
@@ -53,6 +50,7 @@
       in
       python-with-packages-plus
     )
+    qgnomeplatform
     sshfs-fuse
     swaynotificationcenter
     texlive.combined.scheme-small
@@ -63,7 +61,7 @@
     wob
   ];
 
-  qt5.platformTheme = "qt5ct";
+  # qt5.platformTheme = "qt5ct";
 
   programs = {
     gnupg.agent.enable = true;

@@ -21,6 +21,7 @@
     lesspipe
     linuxKernel.packages.linux_xanmod_latest.cpupower
     lsd
+    neofetch
     neovim
     neovim-remote
     nix-diff
@@ -29,6 +30,7 @@
     nix-tree
     nix-top
     nixpkgs-fmt
+    pfetch
     ranger
     rbw
     ripgrep

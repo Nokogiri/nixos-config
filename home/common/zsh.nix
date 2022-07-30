@@ -7,12 +7,14 @@
       enableAutosuggestions = true;
       enableCompletion = true;
       enableSyntaxHighlighting = true;
+      autocd = true;
       initExtraFirst = ''
         if [[ -r "/home/${user}/.cache/p10k-instant-prompt-${user}.zsh" ]]; then
           source "/home/${user}/.cache/p10k-instant-prompt-${user}.zsh"
         fi
 
         WORDCHARS=""
+        
       '';
       initExtra = ''
         zmodload zsh/terminfo
@@ -48,7 +50,6 @@
         setopt hist_expire_dups_first
         setopt hist_ignore_all_dups
 
-        setopt AUTO_CD
 
         # Add some completions settings
         setopt ALWAYS_TO_END     # Move cursor to the end of a completed word.

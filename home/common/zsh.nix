@@ -119,7 +119,7 @@
             owner = "romkatv";
             repo = "powerlevel10k";
             rev = "e72264e01cb24431455ed6e398a769bca0da7ffe";
-            sha-256 = "";
+            sha256 = "FbjjOLod4l+FGvOhSAmTuAdsoBrxdfEY/MYP163N1xY=";
           };
         }
       ];

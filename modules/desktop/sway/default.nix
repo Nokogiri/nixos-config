@@ -32,6 +32,7 @@
       fluent-gtk-theme
       fluent-icon-theme
       grim
+      kitty
       mako
       ponymix
       pulseaudio
@@ -41,6 +42,7 @@
       swayfader
       swayidle
       swaylock-effects
+      swaynotificationcenter
       swayr
       vimix-cursors
       wl-clipboard

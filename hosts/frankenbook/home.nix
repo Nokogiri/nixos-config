@@ -29,6 +29,7 @@
         inkscape
         mpv
         ncspot
+        vscode
         zathura
 
         #Emulation

@@ -27,7 +27,6 @@
     hunspell
     iwd
     iwgtk
-    kitty
     ldns
     libinput
     ncdu
@@ -50,11 +49,9 @@
       python-with-packages-plus
     )
     sshfs-fuse
-    swaynotificationcenter
     texlive.combined.scheme-small
     tridactyl-native
     udiskie
-    vscode
     xdg_utils
     yt-dlp
     wob

@@ -31,8 +31,6 @@
     kernelModules = [ "hid-nintendo" "kvm-intel" ];
     kernelPackages =
       pkgs.linuxPackages_xanmod_latest
-      #pkgs.linuxPackages_zen
-      #pkgs.linuxPackage_linux_latest
     ;
     kernelParams = [
       "acpi_backlight=vendor"

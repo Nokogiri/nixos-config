@@ -2,7 +2,7 @@
 
 {
   #xdg.configFile."wofi/config".source = ./config;
-  xdg.configFile."wofi/style.css".source = ./style.css;
+  xdg.configFile."wofi/style.css".source = ./config/wofi/style.css;
 
   xdg.configFile."wofi/config".text = ''
     width=965

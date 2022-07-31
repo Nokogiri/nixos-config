@@ -1,3 +1,4 @@
 [
-  ./config/wofi
+  ./wofi.nix
+  ./styles.nix
 ]

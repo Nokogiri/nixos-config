@@ -15,8 +15,8 @@
 
 {
   imports =
-    (import ../../home/frankenbook) ++
-    [ (import ../../home/frankenbook/home.nix) ];
+    (import ../../modules/frankenbook/home) ++
+    [ (import ../../modules/frankenbook/home/home.nix) ];
   #  ../../modules/desktop/sway/home.nix
 
   home = {

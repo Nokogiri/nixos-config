@@ -49,7 +49,7 @@
         libretro.beetle-supergrafx
         libretro.mupen64plus
         libretro.parallel-n64
-        
+
         #Games
         eduke32
         gzdoom
@@ -58,7 +58,7 @@
         yquake2-all-games
       ];
   };
-  
+
   programs.vscode = {
     enable = true;
     extensions = with pkgs.vscode-extensions; [

@@ -29,7 +29,6 @@
         inkscape
         mpv
         ncspot
-        vscode
         zathura
 
         #Emulation
@@ -52,11 +51,23 @@
         libretro.parallel-n64
         
         #Games
+        eduke32
         gzdoom
         polymc
         vkquake
         yquake2-all-games
       ];
+  };
+  
+  programs.vscode = {
+    enable = true;
+    extensions = with pkgs.vscode-extensions; [
+      bbenoist.nix
+      eamodio.gitlens
+      jnoortheen.nix-ide
+      yzhang.markdown-all-in-one
+      vscodevim.vim
+    ];
   };
 
   services = {

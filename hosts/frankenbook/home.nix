@@ -31,7 +31,7 @@
         ncspot
         zathura
 
-        #Games
+        #Emulation
         gamemode
         ppsspp-sdl
         retroarch
@@ -39,7 +39,6 @@
         libretro.bsnes
         libretro.bsnes-hd
         libretro.snes9x
-        #libretro.ppsspp
         libretro.flycast
         libretro.melonds
         libretro.gambatte
@@ -50,10 +49,12 @@
         libretro.beetle-supergrafx
         libretro.mupen64plus
         libretro.parallel-n64
-        #(polymc.override {
-        #  msaClientID = "0b5d07b7-fcd2-4f81-901a-7596869a0cee";
-        #})
+        
+        #Games
+        gzdoom
         polymc
+        vkquake
+        yquake2-all-games
       ];
   };
 

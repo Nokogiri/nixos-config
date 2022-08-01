@@ -12,6 +12,20 @@
       settings = {
         kitty_mod = "ctrl+shift";
 
+        tab_bar_edge = "bottom";
+        tab_bar_margin_height = "0.0 0.0";
+        tab_bar_margin_width = "0.0";
+        tab_bar_style = "powerline";
+        tab_bar_min_tabs = 1;
+        tab_switch_strategy = "previous";
+        tab_fade = "0 0 0 0";
+        tab_separator = "";
+        tab_title_template = "{fmt.fg._c5c6c8}{fmt.bg._1d1f21} {index}:{f'{title[:10]}…{title[-10:]}' if title.rindex(title[-1]) + 1 > 21 else title}{' []' if layout_name == 'stack' else ''} ";
+        active_tab_title_template = "{fmt.fg._1d1f21}{fmt.bg._c5c6c8} {index}:{f'{title[:10]}…{title[-10:]}' if title.rindex(title[-1]) + 1 > 21 else title}{' []' if layout_name == 'stack' else ''} ";
+        tab_activity_symbol = "none";
+        tab_powerline_style = "angled";
+        active_tab_font_style = "bold";
+        inactive_tab_font_style = "normal";
       };
       keybindings = {
         "kitty_mod+c" = "copy_to_clipboard";

@@ -52,6 +52,7 @@
         #Games
         eduke32
         gzdoom
+        opentyrian
         polymc
         vkquake
         yquake2-all-games

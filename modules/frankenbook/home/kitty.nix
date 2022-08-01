@@ -10,8 +10,37 @@
         include ./base16-tomorrow-night-256.conf
       '';
       settings = {
+        # General settings
         kitty_mod = "ctrl+shift";
+        linux_display_server = "wayland";
+        touch_scroll_multiplier = "6.0";
+        wayland_titlebar_color = "system";
+        hide_window_decorations = true;
+        scrollback_lines = 9000;
+        scrollback_pager = "less --chop-long-lines --RAW-CONTROL-CHARS +INPUT_LINE_NUMBER";
+        scrollback_pager_history_size = 0;
+        wheel_scroll_multiplier = 5;
+        mouse_hide_wait = 3;
 
+        # Cursor settings
+        cursor = "#00bcd4";
+        cursor_text_color = "#00bcd4";
+        cursor_shape = "block";
+        cursor_blink_interval = "-1";
+        cursor_stop_blinking_after = 15;
+
+        # URL settings
+        url_color = "#0087bd";
+        url_style = "double";
+        open_url_with = "default";
+        copy_on_select = true;
+        strip_trailing_spaces = "never";
+        select_by_word_characters = ":@-./_~?&=%+#";
+        click_interval = "-1.0";
+        focus_follows_mouse = false;
+        pointer_shape_when_grabbed = "arrow";
+
+        # Tab settings
         tab_bar_edge = "bottom";
         tab_bar_margin_height = "0.0 0.0";
         tab_bar_margin_width = "0.0";
@@ -26,6 +55,11 @@
         tab_powerline_style = "angled";
         active_tab_font_style = "bold";
         inactive_tab_font_style = "normal";
+
+        # Misc settings
+        disable_ligatures = "cursor";
+        adjust_line_height = 0;
+        adjust_column_width = 0;
       };
       keybindings = {
         "kitty_mod+c" = "copy_to_clipboard";

@@ -52,6 +52,7 @@
         #Games
         eduke32
         gzdoom
+        minetest
         opentyrian
         polymc
         vkquake

@@ -40,6 +40,13 @@
         focus_follows_mouse = false;
         pointer_shape_when_grabbed = "arrow";
 
+        # Bell settings
+        enable_audio_bell = false;
+        visual_bell_duration = 0;
+        window_alert_on_bell = true;
+        bell_on_tab = true;
+        command_on_bell = "none";
+
         # Tab settings
         tab_bar_edge = "bottom";
         tab_bar_margin_height = "0.0 0.0";
@@ -60,6 +67,42 @@
         disable_ligatures = "cursor";
         adjust_line_height = 0;
         adjust_column_width = 0;
+        repaint_delay = 8;
+        input_delay = 3;
+        sync_to_monitor = true;
+        shell = ".";
+        editor = ".";
+        close_on_child_death = false;
+        allow_remote_control = true;
+        listen_on = "unix:/tmp/kitty";
+        update_check_interval = 0;
+        startup_session = true;
+        clipboard_control = "write-clipboard write-primary read-clipboard read-primary";
+        term = "xterm-kitty";
+
+
+        # Window settings
+        remember_window_size = true;
+        initial_window_width = 800;
+        initial_window_height = 900;
+        enabled_layouts = "tall:bias=50;full_size=1;mirrored=false";
+        window_resize_step_cells = 2;
+        window_resize_step_lines = 2;
+        window_border_width = 1;
+        draw_minimal_borders = true;
+        window_margin_width = 1;
+        single_window_margin_width = -1000;
+        window_padding_width = 0;
+        placement_strategy = "center";
+        bell_border_color = "#ff5a00";
+        inactive_text_alpha = 1;
+        resize_debounce_time = "0.1";
+        resize_draw_strategy = "static";
+
+        # Opacity settings
+        background_opacity = "0.9";
+        dim_opacity = "0.4";
+
       };
       keybindings = {
         "kitty_mod+c" = "copy_to_clipboard";

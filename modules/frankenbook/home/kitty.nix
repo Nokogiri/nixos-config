@@ -1,5 +1,5 @@
 {
-  xdg.configFile."kitty/theme.conf".source = ./config/kitty/OneDark.conf;
+  xdg.configFile."kitty/theme.conf".source = ./config/kitty/TomorrowNight.conf;
   programs = {
     kitty = {
       enable = true;
@@ -58,8 +58,8 @@
         tab_switch_strategy = "previous";
         tab_fade = "0 0 0 0";
         tab_separator = "";
-        tab_title_template = "{fmt.fg._abb2bf}{fmt.bg._282c34} {index}:{f'{title[:10]}…{title[-10:]}' if title.rindex(title[-1]) + 1 > 21 else title}{' []' if layout_name == 'stack' else ''} ";
-        active_tab_title_template = "{fmt.fg._282c34}{fmt.bg._abb2bf} {index}:{f'{title[:10]}…{title[-10:]}' if title.rindex(title[-1]) + 1 > 21 else title}{' []' if layout_name == 'stack' else ''} ";
+        tab_title_template = "{fmt.fg._c5c8c6}{fmt.bg._1d1f21} {index}:{f'{title[:10]}…{title[-10:]}' if title.rindex(title[-1]) + 1 > 21 else title}{' []' if layout_name == 'stack' else ''} ";
+        active_tab_title_template = "{fmt.fg._1d1f21}{fmt.bg._c5c8c8} {index}:{f'{title[:10]}…{title[-10:]}' if title.rindex(title[-1]) + 1 > 21 else title}{' []' if layout_name == 'stack' else ''} ";
         tab_activity_symbol = "none";
         tab_powerline_style = "angled";
         active_tab_font_style = "bold";

@@ -6,6 +6,7 @@
       exec ${pkgs.nixFlakes}/bin/nix --experimental-features "nix-command flakes" "$@"
     '')
     age
+    atool
     bat
     btop
     compsize

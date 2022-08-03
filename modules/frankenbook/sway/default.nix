@@ -28,7 +28,9 @@
       export WINIT_UNIX_BACKEND=wayland
     '';
     extraPackages = with pkgs; [
+      avizo
       cliphist
+      eww-wayland
       fluent-gtk-theme
       fluent-icon-theme
       grim

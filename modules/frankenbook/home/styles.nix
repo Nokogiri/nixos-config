@@ -1,5 +1,9 @@
 { pkgs, ... }:
 {
+  gtk = {
+    enable = true;
+    cursorTheme = "Vimix White Dark";
+  };
   qt = {
     enable = true;
     platformTheme = "gnome";

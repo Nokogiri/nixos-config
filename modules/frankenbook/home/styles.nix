@@ -3,7 +3,7 @@
   gtk = {
     enable = true;
     cursorTheme = {
-      name = "Vimix White Dark";
+      name = "Vimix White dark";
     };
     font = {
       name = "MesloLGSDZ Nerd Font";
@@ -13,7 +13,7 @@
       name = "Fluent-grey-dark";
     };
     theme = {
-      nam = "Fluent-grey-Dark-compact";
+      name = "Fluent-grey-Dark-compact";
     };
     gtk3 = {
       extraConfig = {
@@ -23,7 +23,7 @@
         gtk-enable-animations = true;
         gtk-application-prefer-dark-theme = true;
       };
-    }
+    };
   };
   qt = {
     enable = true;

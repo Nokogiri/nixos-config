@@ -2,7 +2,28 @@
 {
   gtk = {
     enable = true;
-    cursorTheme = "Vimix White Dark";
+    cursorTheme = {
+      name = "Vimix White Dark";
+    };
+    font = {
+      name = "MesloLGSDZ Nerd Font";
+      size = 10;
+    };
+    iconTheme = {
+      name = "Fluent-grey-dark";
+    };
+    theme = {
+      nam = "Fluent-grey-Dark-compact";
+    };
+    gtk3 = {
+      extraConfig = {
+        gtk-button-images = false;
+        gtk-menu-images = false;
+        gtk-enable-event-sounds = false;
+        gtk-enable-animations = true;
+        gtk-application-prefer-dark-theme = true;
+      };
+    }
   };
   qt = {
     enable = true;

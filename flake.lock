@@ -263,11 +263,11 @@
         "nixpkgs": "nixpkgs_4"
       },
       "locked": {
-        "lastModified": 1659616239,
-        "narHash": "sha256-m3Nvd6xiXGAi6cCklezFvPbVUZmMIQW2lJpt94N9s4I=",
+        "lastModified": 1659622547,
+        "narHash": "sha256-MZUQ/YLaMcWj0xLtRZfe4Hrn95dwowW8fb+yOWLRo6Q=",
         "owner": "nix-community",
         "repo": "nixpkgs-wayland",
-        "rev": "619660bfc61a3132720d4018a90e79849a7d1538",
+        "rev": "4573171eeb7b6d1f615fbf765a68065ae74aaf69",
         "type": "github"
       },
       "original": {

@@ -83,12 +83,12 @@
         share = true;
         size = 100000;
       };
-      #oh-my-zsh = {
-      #  enable = false;
+      oh-my-zsh = {
+        enable = true;
       #  plugins = [
       #    "git"
       #  ];
-      #};
+      };
       plugins = [
         {
           name = "fzf-tab";

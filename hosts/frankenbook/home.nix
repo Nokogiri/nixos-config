@@ -31,6 +31,7 @@
         zathura
 
         #Emulation
+        EmulationStation-DE
         gamemode
         ppsspp-sdl
         retroarch

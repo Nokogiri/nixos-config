@@ -15,7 +15,6 @@
     brightnessctl
     blueman
     cmake
-    EmulationStation-DE
     ffmpeg
     fusuma
     glib.bin
@@ -23,7 +22,7 @@
     gnome.adwaita-icon-theme
     gtk-engine-murrine
     gtk_engines
-    glfw-wayland-mc
+    glfw-wayland
     hunspell
     iwd
     iwgtk

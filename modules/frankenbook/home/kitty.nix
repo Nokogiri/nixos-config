@@ -1,5 +1,5 @@
 {
-  xdg.configFile."kitty/theme.conf".source = ./config/kitty/TomorrowNight.conf;
+  xdg.configFile."kitty/theme.conf".source = ./config/kitty/TomorrowNightEighties.conf;
   programs = {
     kitty = {
       enable = true;

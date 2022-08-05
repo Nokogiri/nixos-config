@@ -22,7 +22,7 @@
       }
       {
         name = "base16-terminal";
-        publicher = "piyush-bhatt";
+        publisher = "piyush-bhatt";
         version = "1.1.1";
         sha256 = "";
       }

@@ -23,7 +23,7 @@
     gnome.adwaita-icon-theme
     gtk-engine-murrine
     gtk_engines
-    glfw-wayland
+    glfw-wayland-mc
     hunspell
     iwd
     iwgtk

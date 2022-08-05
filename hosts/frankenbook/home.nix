@@ -54,6 +54,7 @@
         gzdoom
         minetest
         opentyrian
+        #(polymc.override { msaClientID = "0b5d07b7-fcd2-4f81-901a-7596869a0cee"; })
         polymc
         vkquake
         yquake2-all-games

@@ -4,7 +4,13 @@
   services = {
 
     avahi.enable = true;
-    clight.enable = true;
+    clight = {
+      enable = true;
+      temperature = {
+        day = 6500;
+        night = 5000;
+      };
+    };
     dbus.enable = true;
     gnome.gnome-keyring.enable = true;
     mbpfan = {

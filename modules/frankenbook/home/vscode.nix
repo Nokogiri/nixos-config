@@ -14,6 +14,12 @@
         version = "0.1.4";
         sha256 = "qakwJWak+IrIeeVcMDWV/fLPx5M8LQGCyhVt4TS/Lmc=";
       }
+      {
+        name = "base16-generator";
+        publisher = "golf1052";
+        version = "1.17.0";
+        sha256 = "";
+      }
     ];
   };
 }

@@ -24,7 +24,7 @@
         name = "base16-terminal";
         publisher = "piyush-bhatt";
         version = "1.1.1";
-        sha256 = "";
+        sha256 = "Uzg6VjgwOmpvlt6/+7c8bE0aFz9h2BJLMNtBA1C84jQ=";
       }
     ];
   };

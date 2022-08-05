@@ -20,6 +20,12 @@
         version = "1.17.0";
         sha256 = "IpCjeIfRLKJYoVA0S3oUtG5UxqjPBJ2Z3DFpXBCNWeA=";
       }
+      {
+        name = "base16-terminal";
+        publicher = "piyush-bhatt";
+        version = "1.1.1";
+        sha256 = "";
+      }
     ];
   };
 }

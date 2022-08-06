@@ -5,22 +5,19 @@
 
     sops-nix = {
       url = "github:Mic92/sops-nix";
-      #inputs.nixpkgs.follows = "nixpkgs";
     };
 
     home-manager = {
       url = "github:nix-community/home-manager/master";
-      #inputs.nixpkgs.follows = "nixpkgs";
     };
 
     emacs-overlay = {
-      url = "github:nix-community/emacs-overlay/49173ef266e5968f16b7007481f05b2e5ccbfa56";
-      #inputs.nixpgs.follows = "nixpkgs";
+      url = "github:nix-community/emacs-overlay";
     };
 
     addins = {
       url = "git+https://codeberg.org/Nokogiri/nix-pkgs.git";
-      inputs.nixpkgs.follows = "nixpkgs";
+      #inputs.nixpkgs.follows = "nixpkgs";
     };
 
     nix-minecraft = {

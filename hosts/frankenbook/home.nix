@@ -11,7 +11,9 @@
 #               └─ home.nix
 #
 
-{ pkgs, ... }:
+{ config, lib, pkgs, ... }:
+
+with lib;
 
 {
   imports =
@@ -21,7 +23,12 @@
   home = {
     packages = with pkgs;
       [
-        emacsPgtkNativeComp
+        #emacsPgtkNativeComp
+        ((emacsPackagesFor emacsPgtkNativeComp).emacsWithPackages
+          (epkgs: [ epkgs.vterm ]))
+        (aspellWithDicts (ds: with ds; [ en en-computers en-science ]))
+        #(mkIf (config.programs.gnupg.agent.enable)
+          pinentry_emacs#)
         firefox-wayland
         gimp
         gtk-pipe-viewer

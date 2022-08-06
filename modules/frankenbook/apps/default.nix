@@ -29,6 +29,7 @@
     ldns
     libinput
     ncdu
+    nixfmt
     pandoc
     pavucontrol
     pinentry-gnome

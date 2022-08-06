@@ -20,7 +20,8 @@
 
   home = {
     packages = with pkgs;
-      [
+    [
+        emacsPgtkNativeComp
         firefox-wayland
         gimp
         gtk-pipe-viewer

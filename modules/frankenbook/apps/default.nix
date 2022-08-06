@@ -53,7 +53,6 @@
     udiskie
     xdg_utils
     yt-dlp
-    wob
   ];
 
 

@@ -20,8 +20,7 @@
 
   home = {
     packages = with pkgs;
-    [
-        emacsPgtkNativeComp
+      [
         firefox-wayland
         gimp
         gtk-pipe-viewer
@@ -29,6 +28,7 @@
         inkscape
         mpv
         ncspot
+        neovide
         zathura
 
         #Emulation
@@ -55,7 +55,6 @@
         eduke32
         gzdoom
         minetest
-        opentyrian
         #(polymc.override { msaClientID = "0b5d07b7-fcd2-4f81-901a-7596869a0cee"; })
         polymc
         vkquake

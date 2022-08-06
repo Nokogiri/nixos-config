@@ -6,6 +6,7 @@
     docker-compose
     git
     jellyfin-ffmpeg
+    ncdu_2
   ];
 
   programs = {

@@ -31,9 +31,6 @@
       avizo
       cliphist
       eww-wayland
-      fluent-gtk-theme
-      fluent-icon-theme
-      graphite-gtk-theme
       grim
       kitty
       mako
@@ -47,9 +44,6 @@
       swaylock-effects
       swaynotificationcenter
       swayr
-      vimix-gtk-themes
-      vimix-icon-theme
-      vimix-cursors
       wl-clipboard
       wlr-randr
       wofi

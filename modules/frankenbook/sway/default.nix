@@ -33,6 +33,7 @@
       eww-wayland
       fluent-gtk-theme
       fluent-icon-theme
+      graphite-gtk-theme
       grim
       kitty
       mako
@@ -46,6 +47,8 @@
       swaylock-effects
       swaynotificationcenter
       swayr
+      vimix-gtk-themes
+      vimix-icon-theme
       vimix-cursors
       wl-clipboard
       wlr-randr
@@ -66,9 +69,9 @@
         ''
           export XDG_DATA_DIRS=${datadir}:$XDG_DATA_DIRS
           gnome_schema=org.gnome.desktop.interface
-          gsettings set $gnome_schema gtk-theme 'Fluent-grey-Dark-compact'
-          gsettings set $gnome_schema icon-theme 'Fluent-grey-dark'
-          gsettings set $gnome_schema cursor-theme 'Vimix White dark'
+          gsettings set $gnome_schema gtk-theme 'vimix-dark'
+          gsettings set $gnome_schema icon-theme 'Vimix-Black-dark'
+          gsettings set $gnome_schema cursor-theme 'Vimix-White-dark'
         '';
     })
   ];

@@ -28,7 +28,7 @@ with lib;
           (epkgs: [ epkgs.vterm ]))
         (aspellWithDicts (ds: with ds; [ en en-computers en-science ]))
         #(mkIf (config.programs.gnupg.agent.enable)
-          pinentry_emacs#)
+        pinentry_emacs #)
         firefox-wayland
         gimp
         gtk-pipe-viewer

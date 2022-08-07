@@ -6,11 +6,11 @@
         "nvfetcher": "nvfetcher"
       },
       "locked": {
-        "lastModified": 1659725875,
-        "narHash": "sha256-oX7t9aw48PLTzJ6+k+2iB7lAqZRNrgPAAhEAUPXZl1c=",
+        "lastModified": 1659822811,
+        "narHash": "sha256-r5DLMtzqJhm8IzgsLmF43N6qNzYUnEjkqgEk26iDIq0=",
         "ref": "refs/heads/main",
-        "rev": "669502667e9f5a1658fd459dbdd2b5d151be71e3",
-        "revCount": 96,
+        "rev": "1a3bb08a99e49af12aa4a2391c4fff87a2361f27",
+        "revCount": 97,
         "type": "git",
         "url": "https://codeberg.org/Nokogiri/nix-pkgs.git"
       },
@@ -208,11 +208,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1659522808,
-        "narHash": "sha256-HBcM19nGhI3IWwPNVlYb0MZ8VW6iKp4JbAVkeIHVykc=",
+        "lastModified": 1659713809,
+        "narHash": "sha256-M4aHuXXVnfprM8xPH2lLkYkkR0fmaG5QmvIc0DT/d4E=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "168d1c578909dc143ba52dbed661c36e76b12b36",
+        "rev": "93c57a988470c1948976b1bb70abbd5855c5b810",
         "type": "github"
       },
       "original": {

@@ -3,17 +3,20 @@
   gtk = {
     enable = true;
     cursorTheme = {
-      name = "Vimix White dark";
+      package = "vimix-icon-theme";
+      name = "Vimix-White-dark";
     };
     font = {
       name = "MesloLGSDZ Nerd Font";
       size = 10;
     };
     iconTheme = {
-      name = "Fluent-grey-dark";
+      package = "vimix-icon-theme";
+      name = "Vimix-Black-dark";
     };
     theme = {
-      name = "Fluent-grey-Dark-compact";
+      package = "pkgs.vimix-gtk-themes";
+      name = "vimix-dark";
     };
     gtk3 = {
       extraConfig = {
@@ -28,9 +31,9 @@
   qt = {
     enable = true;
     platformTheme = "gnome";
-    style = {
-      package = pkgs.libsForQt5.qtstyleplugin-kvantum;
-      name = "kvantum";
-    };
+    #style = {
+    #  package = pkgs.libsForQt5.qtstyleplugin-kvantum;
+    #  name = "kvantum";
+    #};
   };
 }

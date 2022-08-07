@@ -26,7 +26,7 @@ with lib;
         #emacsPgtkNativeComp
         ((emacsPackagesFor emacsPgtkNativeComp).emacsWithPackages
           (epkgs: [ epkgs.vterm ]))
-        (aspellWithDicts (ds: with ds; [ en en-computers en-science ]))
+        (aspellWithDicts (ds: with ds; [ de en en-computers en-science ]))
         #(mkIf (config.programs.gnupg.agent.enable)
         pinentry_emacs #)
         firefox-wayland

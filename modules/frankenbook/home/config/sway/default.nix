@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, home-manager, ... }:
 
 let
   cfg = config.wayland.windowManager.sway.config;
@@ -41,6 +41,7 @@ in
           { class = "Com.github.johnfactotum.Foliate"; }
         ];
       };
+      bars = [ ];
       colors = {
         background = "#ffffff";
         focused = {
@@ -117,7 +118,7 @@ in
       keybindings = {
         # Basics apps
         "${cfg.modifier}+Return" = "exec ${cfg.terminal}";
-        "${cfg.modifier}+Space" = "exec wofi --show drun";
+        "${cfg.modifier}+space" = "exec wofi --show drun";
 
         # basic internals
         "${cfg.modifier}+Shift+q" = "kill";
@@ -135,11 +136,107 @@ in
         "${cfg.modifier}+Shift+Right" = "move right";
         "${cfg.modifier}+Shift+Up" = "move up";
 
+        # splitting
+        "${cfg.modifier}+h" = "split h";
+        "${cfg.modifier}+v" = "split v";
 
+        # fullscreen
+        "${cfg.modifier}+f" = "fullscreen toggle";
 
+        # container layouts
+        "${cfg.modifier}+s" = "layout stacking";
+        "${cfg.modifier}+w" = "layout tabbed";
+        "${cfg.modifier}+e" = "layout toggle split";
+
+        # floating
+        "${cfg.modifier}+Shift+f" = "floating toggle";
+        "${cfg.modifier}+Shift+space" = "fcous mode-toggle";
+
+        # focus parent
+        "${cfg.modifier}+a" = "focus parent";
+
+        # focus child
+        "${cfg.modifier}+d" = "focus child";
+
+        # switch to ws
+        "${cfg.modifier}+Tab" = "workspace back_and_forth";
+        "--no-repeat ${cfg.modifier}+1" = "workspace number 1; exec 'echo 1 > /tmp/sovpipe'";
+        "--no-repeat ${cfg.modifier}+2" = "workspace number 2; exec 'echo 1 > /tmp/sovpipe'";
+        "--no-repeat ${cfg.modifier}+3" = "workspace number 3; exec 'echo 1 > /tmp/sovpipe'";
+        "--no-repeat ${cfg.modifier}+4" = "workspace number 4; exec 'echo 1 > /tmp/sovpipe'";
+        "--no-repeat ${cfg.modifier}+5" = "workspace number 5; exec 'echo 1 > /tmp/sovpipe'";
+        "--no-repeat ${cfg.modifier}+6" = "workspace number 6; exec 'echo 1 > /tmp/sovpipe'";
+        "--no-repeat ${cfg.modifier}+7" = "workspace number 7; exec 'echo 1 > /tmp/sovpipe'";
+        "--no-repeat ${cfg.modifier}+8" = "workspace number 8; exec 'echo 1 > /tmp/sovpipe'";
+        "--no-repeat ${cfg.modifier}+9" = "workspace number 9; exec 'echo 1 > /tmp/sovpipe'";
+
+        "--release ${cfg.modifier}+1" = "exec 'echo 0 > /tmp/sovpipe'";
+        "--release ${cfg.modifier}+2" = "exec 'echo 0 > /tmp/sovpipe'";
+        "--release ${cfg.modifier}+3" = "exec 'echo 0 > /tmp/sovpipe'";
+        "--release ${cfg.modifier}+4" = "exec 'echo 0 > /tmp/sovpipe'";
+        "--release ${cfg.modifier}+5" = "exec 'echo 0 > /tmp/sovpipe'";
+        "--release ${cfg.modifier}+6" = "exec 'echo 0 > /tmp/sovpipe'";
+        "--release ${cfg.modifier}+7" = "exec 'echo 0 > /tmp/sovpipe'";
+        "--release ${cfg.modifier}+8" = "exec 'echo 0 > /tmp/sovpipe'";
+        "--release ${cfg.modifier}+9" = "exec 'echo 0 > /tmp/sovpipe'";
+
+        # scratchpad
+        "${cfg.modifier}+Shift+minus" = "move scratchpad";
+        "${cfg.modifier}+minus" = "scratchpad show";
+
+        # Apps
+        ###
+        # brightness
+        "XF86MonBrightnessDown" = "exec lightctl -";
+        "XF86MonBrightnessUp" = "exec lightctl +";
+        "XF86KbdBrightnessDOwn" = "exec lightctl -D smc::kbd_backlight -";
+        "XF86KbdBrightnessUp" = "exec lightctl -D smc::kbd_backlight +";
+
+        "XF86AudioRaiseVolume" = "exec volumectl +";
+        "XF86AudioLowerVolume" = "exec volumectl -";
+        "XF86AudioMute" = "exec volumectl %";
+
+        # grimshot
+        "${cfg.modifier}+m" = "exec grimshot save output";
+        "${cfg.modifier}+Shift+m" = "exec grimshot save active";
+        "${cfg.modifier}+Mod1+m" = "exec grimshot save area";
+        "${cfg.modifier}+Ctrl+m" = "exec grimshot save window";
+
+        # mylock
+        "${cfg.modifier}+l" = "exec ${config.home.homeDirectory}/.local/bin/mylock";
+        "${cfg.modifier}+Shift+l" = "exec ${config.home.homeDirectory}/.local/bin/mylock at-home-mode";
+        "${cfg.modifier}+Ctrl+l" = "exec ${config.home.homeDirectory}/.local/bin/mylock safe-mode";
+        "${cfg.modifier}+Shift+Ctrl+l" = "exec ${config.home.homeDirectory}/.local/bin/mylock lock-now";
       };
+      menu = "\${pkgs.wofi}/bin/wofi --show drun";
       modifier = "Mod4";
+      output = {
+        "*" = {
+          bg = "${config.home.homeDirectory}/.config/wallpaper/current.png fill";
+        };
+      };
+      seat = {
+        "*" = {
+          xcursor_theme = "Vimix-White-dark";
+          hide_cursor = "when-typing 10";
+        };
+      };
+      startup = [
+        { command = "configure-gtk"; always = true; }
+        { command = "wl-paste --watch cliphist store"; }
+        { command = "avizo-service"; }
+        { command = "rm -f /tmp/sovpipe && mkfifo /tmp/sovpipe && tail -f /tmp/sovpipe | sov"; }
+      ];
       terminal = "kitty";
+      window = {
+        border = 1;
+      };
+      #workspaceAutoBackAndForth = true;
+
     };
+    extraConfig = ''
+      for_window [app_id="org.qutebrowser.qutebrowser"] inhibit_idle fullscreen
+      for_window [app_id="firefox"] inhibit_idle fullscreen
+    '';
   };
 }

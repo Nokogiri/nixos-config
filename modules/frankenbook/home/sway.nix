@@ -1,8 +1,46 @@
+{ config, lib, pkgs, ... }:
+
+let
+  cfg = config.wayland.windowManager.sway.config;
+in
 {
   wayland.windowManager.sway = {
     enable = true;
     config = {
-      assigns = { };
+      assigns = {
+        "1" = [
+          { app_id = "kitty"; }
+        ];
+        "2" = [
+          { app_id = "firefox"; }
+          { app_id = "chromium-browser"; }
+        ];
+        "3" = [
+          { app_id = "mpv"; }
+        ];
+        "4" = [
+          { class = "Emacs"; }
+          { app_id = "emacs"; }
+        ];
+        "5" = [
+          { app_id = "org.pwmt.zathura"; }
+          { app_id = "com.github.maoschanz.drawing"; }
+        ];
+        "6" = [
+          { class = "Steam"; }
+        ];
+        "7" = [
+          { class = "Spotify"; }
+          { app_id = "spotify-qt"; }
+          { app_id = "dev.alextren.Spot"; }
+        ];
+        "8" = [
+
+        ];
+        "9" = [
+          { class = "Com.github.johnfactotum.Foliate"; }
+        ];
+      };
       colors = {
         background = "#ffffff";
         focused = {
@@ -53,7 +91,55 @@
       focus = {
         followMouse = true;
       };
-      fonts = { };
+      fonts = {
+        names = [ "mononoki Nerd Font" ];
+        style = "Regular";
+        size = 8.0;
+      };
+      gaps = {
+        inner = 3;
+        outer = 6;
+        smartBorders = "on";
+        smartGaps = false;
+      };
+      input = {
+        "1452:594:Apple_Inc._Apple_Internal_Keyboard_/_Trackpad" = {
+          xkb_layout = "us,de";
+          xkb_model = "apple_laptop";
+          xkb_options = "grp:alt_space_toggle";
+          xkb_variant = "altgr-intl,";
+        };
+        "type:touchpad" = {
+          events = "enabled";
+          tap = "enabled";
+        };
+      };
+      keybindings = {
+        # Basics apps
+        "${cfg.modifier}+Return" = "exec ${cfg.terminal}";
+        "${cfg.modifier}+Space" = "exec wofi --show drun";
+
+        # basic internals
+        "${cfg.modifier}+Shift+q" = "kill";
+        "${cfg.modifier}+Shift+c" = "reload";
+
+        # navigate windows
+        "${cfg.modifier}+Left" = "focus left";
+        "${cfg.modifier}+Down" = "focus down";
+        "${cfg.modifier}+Right" = "focus right";
+        "${cfg.modifier}+Up" = "focus up";
+
+        # move windows
+        "${cfg.modifier}+Shift+Left" = "move left";
+        "${cfg.modifier}+Shift+Down" = "move down";
+        "${cfg.modifier}+Shift+Right" = "move right";
+        "${cfg.modifier}+Shift+Up" = "move up";
+
+
+
+      };
+      modifier = "Mod4";
+      terminal = "kitty";
     };
   };
 }

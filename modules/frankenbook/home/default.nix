@@ -1,6 +1,7 @@
 [
-  ./kitty.nix
+  ./config/kitty
   ./vscode.nix
-  ./wofi.nix
+  ./config/wofi
   ./styles.nix
+  #./sway.nix
 ]

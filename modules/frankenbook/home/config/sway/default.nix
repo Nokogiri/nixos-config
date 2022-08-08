@@ -160,25 +160,15 @@ in
 
         # switch to ws
         "${cfg.modifier}+Tab" = "workspace back_and_forth";
-        "--no-repeat ${cfg.modifier}+1" = "workspace number 1; exec 'echo 1 > /tmp/sovpipe'";
-        "--no-repeat ${cfg.modifier}+2" = "workspace number 2; exec 'echo 1 > /tmp/sovpipe'";
-        "--no-repeat ${cfg.modifier}+3" = "workspace number 3; exec 'echo 1 > /tmp/sovpipe'";
-        "--no-repeat ${cfg.modifier}+4" = "workspace number 4; exec 'echo 1 > /tmp/sovpipe'";
-        "--no-repeat ${cfg.modifier}+5" = "workspace number 5; exec 'echo 1 > /tmp/sovpipe'";
-        "--no-repeat ${cfg.modifier}+6" = "workspace number 6; exec 'echo 1 > /tmp/sovpipe'";
-        "--no-repeat ${cfg.modifier}+7" = "workspace number 7; exec 'echo 1 > /tmp/sovpipe'";
-        "--no-repeat ${cfg.modifier}+8" = "workspace number 8; exec 'echo 1 > /tmp/sovpipe'";
-        "--no-repeat ${cfg.modifier}+9" = "workspace number 9; exec 'echo 1 > /tmp/sovpipe'";
-
-        "--release ${cfg.modifier}+1" = "exec 'echo 0 > /tmp/sovpipe'";
-        "--release ${cfg.modifier}+2" = "exec 'echo 0 > /tmp/sovpipe'";
-        "--release ${cfg.modifier}+3" = "exec 'echo 0 > /tmp/sovpipe'";
-        "--release ${cfg.modifier}+4" = "exec 'echo 0 > /tmp/sovpipe'";
-        "--release ${cfg.modifier}+5" = "exec 'echo 0 > /tmp/sovpipe'";
-        "--release ${cfg.modifier}+6" = "exec 'echo 0 > /tmp/sovpipe'";
-        "--release ${cfg.modifier}+7" = "exec 'echo 0 > /tmp/sovpipe'";
-        "--release ${cfg.modifier}+8" = "exec 'echo 0 > /tmp/sovpipe'";
-        "--release ${cfg.modifier}+9" = "exec 'echo 0 > /tmp/sovpipe'";
+        "${cfg.modifier}+1" = "workspace number 1";
+        "${cfg.modifier}+2" = "workspace number 2";
+        "${cfg.modifier}+3" = "workspace number 3";
+        "${cfg.modifier}+4" = "workspace number 4";
+        "${cfg.modifier}+5" = "workspace number 5";
+        "${cfg.modifier}+6" = "workspace number 6";
+        "${cfg.modifier}+7" = "workspace number 7";
+        "${cfg.modifier}+8" = "workspace number 8";
+        "${cfg.modifier}+9" = "workspace number 9";
 
         # scratchpad
         "${cfg.modifier}+Shift+minus" = "move scratchpad";
@@ -225,7 +215,6 @@ in
         { command = "configure-gtk"; always = true; }
         { command = "wl-paste --watch cliphist store"; }
         { command = "avizo-service"; }
-        { command = "rm -f /tmp/sovpipe && mkfifo /tmp/sovpipe && tail -f /tmp/sovpipe | sov"; }
       ];
       terminal = "kitty";
       window = {
@@ -238,5 +227,6 @@ in
       for_window [app_id="org.qutebrowser.qutebrowser"] inhibit_idle fullscreen
       for_window [app_id="firefox"] inhibit_idle fullscreen
     '';
+    systemdIntegration = true;
   };
 }

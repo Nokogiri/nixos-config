@@ -3,7 +3,7 @@
 {
   fonts.fonts = with pkgs; [
     (nerdfonts.override {
-      fonts = [ "CascadiaCode" "FiraCode" "FiraMono" "iA-Writer" "Meslo" "Mononoki" "SourceCodePro" ];
+      fonts = [ "CascadiaCode" "FiraMono" "Meslo" "Mononoki" "SourceCodePro" ];
     })
     corefonts
     dejavu_fonts
@@ -21,8 +21,8 @@
       enable = true;
       antialias = true;
       defaultFonts = {
-        serif = [ "MesloLGSDZ Nerd Font" ];
-        sansSerif = [ "MesloLGSDZ Nerd Font" ];
+        serif = [ "SauceCodePro Nerd Font" ];
+        sansSerif = [ "SauceCodePro Nerd Font" ];
         monospace = [ "mononoki Nerd Font Mono" ];
       };
     };

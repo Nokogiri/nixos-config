@@ -17,7 +17,6 @@
 
     addins = {
       url = "git+https://codeberg.org/Nokogiri/nix-pkgs.git";
-      #inputs.nixpkgs.follows = "nixpkgs";
     };
 
     nix-minecraft = {

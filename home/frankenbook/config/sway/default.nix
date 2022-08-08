@@ -118,7 +118,7 @@ in
       keybindings = {
         # Basics apps
         "${cfg.modifier}+Return" = "exec ${cfg.terminal}";
-        "${cfg.modifier}+space" = "exec wofi --show drun";
+        "${cfg.modifier}+p" = "exec wofi --show drun";
 
         # basic internals
         "${cfg.modifier}+Shift+q" = "kill";

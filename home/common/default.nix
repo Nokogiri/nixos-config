@@ -1,7 +1,7 @@
 [
   ./home.nix
-  ./git.nix
-  ./lsd.nix
   ./ssh.nix
-  ./zsh.nix
+  ./config/git
+  ./config/lsd
+  ./config/zsh
 ]

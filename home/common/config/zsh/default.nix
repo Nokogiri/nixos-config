@@ -1,7 +1,7 @@
 { config, pkgs, user, ... }:
 {
-  xdg.configFile."zsh/p10k.zsh".source = ./config/zsh/p10k.zsh;
-  xdg.configFile."zsh/p10k-linux.zsh".source = ./config/zsh/p10k-linux.zsh;
+  xdg.configFile."zsh/p10k.zsh".source = ./p10k.zsh;
+  xdg.configFile."zsh/p10k-linux.zsh".source = ./p10k-linux.zsh;
   programs = {
     zsh = {
       dotDir = ".config/zsh";

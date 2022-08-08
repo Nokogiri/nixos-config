@@ -220,7 +220,7 @@ in
       window = {
         border = 1;
       };
-      #workspaceAutoBackAndForth = true;
+      workspaceAutoBackAndForth = true;
 
     };
     extraConfig = ''

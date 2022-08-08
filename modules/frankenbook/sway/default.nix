@@ -80,12 +80,12 @@
   xdg.icons.enable = true;
   gtk.iconCache.enable = true;
 
-  systemd.user.targets.sway-session = {
-    description = "Sway compositor session";
-    bindsTo = [ "graphical-session.target" ];
-    wants = [ "graphical-session-pre.target" ];
-    after = [ "graphical-session-pre.target" ];
-  };
+  #systemd.user.targets.sway-session = {
+  #  description = "Sway compositor session";
+  #  bindsTo = [ "graphical-session.target" ];
+  #  wants = [ "graphical-session-pre.target" ];
+  #  after = [ "graphical-session-pre.target" ];
+  #};
 
 }
 

@@ -3,5 +3,7 @@
   ./vscode.nix
   ./config/wofi
   ./styles.nix
-  #./sway.nix
+  ./config/sway
+  ./config/wallpaper
+  ./config/waybar
 ]

@@ -4,7 +4,7 @@
   home = {
     sessionVariables = {
       PAGER = "less";
-      MANPAGER = "less";
+      MANPAGER="sh -c 'col -bx | bat -l man -p'";
       TERMINAL = "kitty";
       EDITOR = "nvim";
       VISUAL = "${config.home.sessionVariables.EDITOR}";

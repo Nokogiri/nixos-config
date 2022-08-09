@@ -85,9 +85,6 @@
       };
       oh-my-zsh = {
         enable = true;
-        #  plugins = [
-        #    "git"
-        #  ];
       };
       plugins = [
         {
@@ -129,6 +126,10 @@
           };
         }
       ];
+      shellAliases = {
+        sys = "doas systemctl";
+        sysu = "systemctl --user";
+      };
     };
   };
 }

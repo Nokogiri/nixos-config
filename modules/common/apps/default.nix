@@ -21,6 +21,7 @@
     lesspipe
     linuxKernel.packages.linux_xanmod_latest.cpupower
     lsd
+    ncdu
     neovim
     neovim-remote
     nix-diff

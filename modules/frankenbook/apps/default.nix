@@ -24,7 +24,6 @@
     iwgtk
     ldns
     libinput
-    ncdu
     nixfmt
     pandoc
     pavucontrol

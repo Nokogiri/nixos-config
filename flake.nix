@@ -13,6 +13,7 @@
 
     emacs-overlay = {
       url = "github:nix-community/emacs-overlay/962851d3e66ce26c65693ab9e2eadd87c24b5c7c";
+      #url = "github:nix-community/emacs-overlay";
     };
 
     addins = {

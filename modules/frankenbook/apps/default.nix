@@ -17,6 +17,7 @@
     cmake
     ffmpeg
     fusuma
+    gebaar-libinput
     glib.bin
     glfw-wayland
     hunspell

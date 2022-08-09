@@ -41,7 +41,7 @@
     }:
     let
       user = "nokogiri";
-      pkgs = nixpkgs.legacyPackages.x86_64-linux;
+      #pkgs = nixpkgs.legacyPackages.x86_64-linux;
     in
     {
       nixosConfigurations = (

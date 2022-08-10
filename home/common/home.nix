@@ -1,21 +1,24 @@
-{ config, ... }:
+{ config, libs, ... }:
 
 {
   home = {
     sessionVariables = {
       PAGER = "less";
-      MANPAGER="sh -c 'col -bx | bat -l man -p'";
+      MANPAGER = "sh -c 'col -bx | bat -l man -p'";
       TERMINAL = "kitty";
       EDITOR = "nvim";
       VISUAL = "${config.home.sessionVariables.EDITOR}";
       BROWSER = "firefox";
 
       NIXOS_OZONE_WL = 1;
-
+      
+      XDG_CONFIG_HOME = "$HOME/.config";
+      XDG_DATA_HOME = "$HOME/local/share";
+      XDG_CACHE_HOME = "$HOME/.cache/";
     };
     sessionPath = [
       "$HOME/.local/bin"
-      "\${xdg.configHome}/emacs/bin"
+      "${config.xdg.configHome}/emacs/bin"
     ];
   };
 }

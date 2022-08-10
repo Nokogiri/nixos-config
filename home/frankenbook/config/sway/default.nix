@@ -85,6 +85,7 @@ in
         criteria = [
           { app_id = "pavucontrol"; }
           { app_id = "retroarch"; }
+          { app_id = ".blueman-manager-wrapped"; }
           { title = "File Operation Progress"; }
         ];
         modifier = "Mod4";
@@ -202,7 +203,7 @@ in
       modifier = "Mod4";
       output = {
         "*" = {
-          bg = "${config.home.homeDirectory}/.config/wallpaper/current.png fill";
+          bg = "${config.xdg.configHome}/wallpaper/current.png fill";
         };
       };
       seat = {

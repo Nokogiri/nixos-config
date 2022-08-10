@@ -1,4 +1,5 @@
 [
+  ./home.nix
   ./config/kitty
   ./vscode.nix
   ./config/wofi

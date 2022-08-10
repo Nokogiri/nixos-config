@@ -50,6 +50,11 @@
           inherit inputs nixpkgs home-manager user addins emacs-overlay nix-minecraft nixpkgs-wayland sops-nix;
         }
       );
+      nixosConfiguration = (
+        import ./arm {
+          inherit (nixpkgs) lib;
+        }
+      );
     };
 }
 

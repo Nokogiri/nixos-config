@@ -14,8 +14,6 @@
   environment.systemPackages = with pkgs; [
     brightnessctl
     blueman
-    cmake
-    ffmpeg
     fusuma
     glib.bin
     glfw-wayland

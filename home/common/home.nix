@@ -13,5 +13,9 @@
       NIXOS_OZONE_WL = 1;
 
     };
+    sessionPath = [
+      "$HOME/.local/bin"
+      "\${xdg.configHome}/emacs/bin"
+    ];
   };
 }

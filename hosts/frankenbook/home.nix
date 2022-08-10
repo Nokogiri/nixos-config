@@ -18,18 +18,15 @@ with lib;
 {
   imports =
     (import ../../home/frankenbook);
-  #  ../../modules/desktop/sway/home.nix
 
   home = {
     packages = with pkgs;
       [
-        #emacsPgtkNativeComp
         ((emacsPackagesFor emacsPgtkNativeComp).emacsWithPackages
           (epkgs: [ epkgs.vterm ]))
         (aspellWithDicts (ds: with ds; [ de en en-computers en-science ]))
-        #(mkIf (config.programs.gnupg.agent.enable)
-        #pinentry_emacs #)
         firefox-wayland
+        tridactyl-native
         gimp
         gtk-pipe-viewer
         imv
@@ -38,6 +35,9 @@ with lib;
         ncspot
         neovide
         zathura
+
+        # media
+        yt-dlp
 
         #Emulation
         EmulationStation-DE
@@ -63,10 +63,16 @@ with lib;
         eduke32
         gzdoom
         minetest
-        #(polymc.override { msaClientID = "0b5d07b7-fcd2-4f81-901a-7596869a0cee"; })
         polymc
         vkquake
         yquake2-all-games
+
+        # misc
+        nixfmt
+        pavucontrol
+        xfce.thunar
+        xfce.tumbler
+        ffmpegthumbnailer
       ];
   };
 

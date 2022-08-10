@@ -24,9 +24,7 @@
     iwgtk
     ldns
     libinput
-    nixfmt
     pandoc
-    pavucontrol
     pinentry-gnome
     polkit_gnome
     (
@@ -45,10 +43,8 @@
     )
     sshfs-fuse
     texlive.combined.scheme-small
-    tridactyl-native
     udiskie
     xdg_utils
-    yt-dlp
   ];
 
 

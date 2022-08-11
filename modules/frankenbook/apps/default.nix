@@ -14,6 +14,8 @@
   environment.systemPackages = with pkgs; [
     brightnessctl
     blueman
+    ffmpeg_5
+    mpv
     fusuma
     glib.bin
     glfw-wayland
@@ -42,6 +44,7 @@
     sshfs-fuse
     texlive.combined.scheme-small
     udiskie
+    yt-dlp
     xdg_utils
   ];
 

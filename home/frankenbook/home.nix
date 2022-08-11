@@ -18,15 +18,6 @@ with lib;
 {
   #  imports =
   #    (import ../../home/frankenbook);
-  nixpkgs.overlays = [
-    (self: super: {
-      mpv = super.mpv-with-scripts.override {
-        scripts = [
-          self.mpvScripts.mpris
-        ];
-      };
-    })
-  ];
   home = {
     sessionVariables = {
       BROWSER = "friefox";
@@ -47,9 +38,7 @@ with lib;
         zathura
 
         # media
-        mpv
         playerctl
-        yt-dlp
 
         #Emulation
         EmulationStation-DE
@@ -80,6 +69,7 @@ with lib;
         yquake2-all-games
 
         # misc
+        cmake
         nixfmt
         pavucontrol
         xfce.thunar

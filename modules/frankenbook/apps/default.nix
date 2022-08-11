@@ -16,7 +16,6 @@
     blueman
     cmake
     ffmpeg
-    mpv
     fusuma
     glib.bin
     glfw-wayland

@@ -38,6 +38,7 @@ with lib;
         zathura
 
         # media
+        mpv
         playerctl
 
         #Emulation

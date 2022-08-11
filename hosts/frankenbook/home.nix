@@ -16,8 +16,8 @@
 with lib;
 
 {
-    imports =
-      (import ../../home/frankenbook);
+  imports =
+    (import ../../home/frankenbook);
   home = {
     sessionVariables = {
       BROWSER = "friefox";

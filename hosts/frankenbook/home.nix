@@ -71,6 +71,7 @@ with lib;
 
         # misc
         cmake
+        gsettings-desktop-schemas
         nixfmt
         pavucontrol
         xfce.thunar

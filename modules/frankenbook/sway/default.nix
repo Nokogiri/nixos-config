@@ -31,6 +31,7 @@
       avizo
       cliphist
       eww-wayland
+      gsettings-desktop-schemas
       grim
       kitty
       mako

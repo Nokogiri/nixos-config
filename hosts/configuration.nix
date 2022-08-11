@@ -23,13 +23,11 @@
         "https://nix-community.cachix.org"
         "https://nookogiri.cachix.org"
         "https://cache.nixos.org"
-        "https://nixpkgs-wayland.cachix.org"
       ];
       trusted-public-keys = [
         "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
         "nookogiri.cachix.org-1:tKY3HBn6Xhuqys5EcQRl1u+sKualOXFzCs9Q6qEXR+o="
         #"cache.fishoeder.net:0wqH5JXoJJVWitNUfD9PCCVO+A8DOEOyXZSrkCi5lb8="
-        "nixpkgs-wayland.cachix.org-1:3lwxaILxMRkVhehr5StQprHdEo4IrE8sRho9R9HOLYA="
       ];
     };
   };

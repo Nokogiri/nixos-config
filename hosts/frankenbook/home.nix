@@ -35,6 +35,7 @@ with lib;
         inkscape
         ncspot
         neovide
+        #wofi
         zathura
 
         # media
@@ -72,6 +73,7 @@ with lib;
         # misc
         cmake
         gsettings-desktop-schemas
+        gtk_engines
         nixfmt
         pavucontrol
         xfce.thunar

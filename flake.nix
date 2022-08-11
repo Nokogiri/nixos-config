@@ -23,9 +23,6 @@
     nix-minecraft = {
       url = "github:Infinidoge/nix-minecraft";
     };
-    nixpkgs-wayland = {
-      url = "github:nix-community/nixpkgs-wayland";
-    };
   };
 
   outputs =
@@ -36,18 +33,16 @@
     , emacs-overlay
     , addins
     , nix-minecraft
-    , nixpkgs-wayland
     , ...
     }:
     let
       user = "nokogiri";
-      #pkgs = nixpkgs.legacyPackages.x86_64-linux;
     in
     {
       nixosConfigurations = (
         import ./hosts {
           inherit (nixpkgs) lib;
-          inherit inputs nixpkgs home-manager user addins emacs-overlay nix-minecraft nixpkgs-wayland sops-nix;
+          inherit inputs nixpkgs home-manager user addins emacs-overlay nix-minecraft sops-nix;
         }
       );
       nixosConfiguration = (

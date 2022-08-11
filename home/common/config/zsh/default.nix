@@ -18,7 +18,14 @@
         WORDCHARS=""
         
       '';
-      initExtra = ''
+      initExtra = 
+      let
+        schema = pkgs.gsettings-desktop-schemas;
+        datadir = "${schema}/share/gsettings-schemas/${schema.name}";
+      in
+      #initExtra = ''
+      ''
+        #export XDG_DATA_DIRS=${datadir}:$XDG_DATA_DIRS
         zmodload zsh/terminfo
         bindkey "$terminfo[kcuu1]" history-substring-search-up
         bindkey "$terminfo[kcud1]" history-substring-search-down

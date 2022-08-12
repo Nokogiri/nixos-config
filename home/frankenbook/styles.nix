@@ -7,7 +7,7 @@
       name = "Vimix-White-dark";
     };
     font = {
-      name = "SauceCodePro Nerd Font";
+      name = "mononoki Nerd Font";
       size = 10;
     };
     iconTheme = {

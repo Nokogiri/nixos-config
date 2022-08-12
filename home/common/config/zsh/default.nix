@@ -11,12 +11,7 @@
       enableSyntaxHighlighting = true;
       autocd = true;
       initExtraFirst = ''
-        if [[ -r "/home/${user}/.cache/p10k-instant-prompt-${user}.zsh" ]]; then
-          source "/home/${user}/.cache/p10k-instant-prompt-${user}.zsh"
-        fi
-
         WORDCHARS=""
-        
       '';
       initExtra = 
       let
@@ -25,7 +20,6 @@
       in
       #initExtra = ''
       ''
-        #export XDG_DATA_DIRS=${datadir}:$XDG_DATA_DIRS
         zmodload zsh/terminfo
         bindkey "$terminfo[kcuu1]" history-substring-search-up
         bindkey "$terminfo[kcud1]" history-substring-search-down
@@ -34,14 +28,6 @@
         
         setopt correct
         unsetopt correctall
-
-        POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true
-
-        if [[ ! $TERM =~ "linux" ]]; then
-          source ~/.config/zsh/p10k.zsh
-        else
-          source ~/.config/zsh/p10k-linux.zsh
-        fi
 
         # Miscellaneous settings
         #setopt INTERACTIVE_COMMENTS  # Enable comments in interactive shell.
@@ -123,13 +109,13 @@
           };
         }
         {
-          name = "powerlevel10k";
-          file = "powerlevel10k.zsh-theme";
+          name = "zsh-nix-shell";
+          file = "nix-shell.plugin.zsh";
           src = pkgs.fetchFromGitHub {
-            owner = "romkatv";
-            repo = "powerlevel10k";
-            rev = "e72264e01cb24431455ed6e398a769bca0da7ffe";
-            sha256 = "FbjjOLod4l+FGvOhSAmTuAdsoBrxdfEY/MYP163N1xY=";
+            owner = "chisui";
+            repo = "zsh-nix-shell";
+            rev = "v0.5.0";
+            sha256 = "0za4aiwwrlawnia4f29msk822rj9bgcygw6a8a6iikiwzjjz0g91";
           };
         }
       ];

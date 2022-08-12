@@ -35,11 +35,11 @@ with lib;
         inkscape
         ncspot
         neovide
-        #wofi
         zathura
 
         # media
         mpv
+        pamixer
         playerctl
 
         #Emulation
@@ -72,7 +72,6 @@ with lib;
 
         # misc
         cmake
-        gsettings-desktop-schemas
         gtk_engines
         nixfmt
         pavucontrol

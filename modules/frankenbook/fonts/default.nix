@@ -21,8 +21,8 @@
       enable = true;
       antialias = true;
       defaultFonts = {
-        serif = [ "SauceCodePro Nerd Font" ];
-        sansSerif = [ "SauceCodePro Nerd Font" ];
+        serif = [ "mononoki Nerd Font" ];
+        sansSerif = [ "mononoki Nerd Font" ];
         monospace = [ "mononoki Nerd Font Mono" ];
       };
     };

@@ -208,7 +208,8 @@ in
       };
       seat = {
         "*" = {
-          xcursor_theme = "Vimix-White-dark";
+          xcursor_theme = "${config.gtk.cursorTheme.name}";
+          #xcursor_theme = "Vimix-White-dark";
           hide_cursor = "when-typing 10";
         };
       };

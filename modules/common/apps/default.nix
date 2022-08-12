@@ -29,6 +29,7 @@
     nix-index
     nix-tree
     nix-top
+    nix-zsh-completions
     nixpkgs-fmt
     pfetch
     ranger
@@ -39,7 +40,6 @@
     unrar
     unzip
     zip
-    vivid
     wireguard-tools
     yadm
   ];

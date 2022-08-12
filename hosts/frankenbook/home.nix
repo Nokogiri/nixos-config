@@ -34,7 +34,6 @@ with lib;
         imv
         inkscape
         ncspot
-        neovide
         zathura
 
         # media

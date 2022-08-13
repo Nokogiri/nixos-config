@@ -11,15 +11,13 @@
       enableSyntaxHighlighting = true;
       autocd = true;
       initExtraFirst = ''
+        if [[ -r "/home/${user}/.cache/p10k-instant-prompt-${user}.zsh" ]]; then
+          source "/home/${user}/.cache/p10k-instant-prompt-${user}.zsh"
+        fi
+
         WORDCHARS=""
       '';
-      initExtra = 
-      let
-        schema = pkgs.gsettings-desktop-schemas;
-        datadir = "${schema}/share/gsettings-schemas/${schema.name}";
-      in
-      #initExtra = ''
-      ''
+      initExtra = ''
         zmodload zsh/terminfo
         bindkey "$terminfo[kcuu1]" history-substring-search-up
         bindkey "$terminfo[kcud1]" history-substring-search-down
@@ -28,7 +26,11 @@
         
         setopt correct
         unsetopt correctall
-
+        if [[ ! $TERM =~ "linux" ]]; then
+          source ~/.config/zsh/p10k.zsh
+        else
+          source ~/.config/zsh/p10k-linux.zsh
+        fi
         # Miscellaneous settings
         #setopt INTERACTIVE_COMMENTS  # Enable comments in interactive shell.
         
@@ -99,6 +101,17 @@
             sha256 = "4jQEGC3EXLC5dnDa+717/sf29vyS4zdDY/mrQ5gfepY=";
           };
         }
+        {
+          name = "powerlevel10k";
+          file = "powerlevel10k.zsh-theme";
+          src = pkgs.fetchFromGitHub {
+            owner = "romkatv";
+            repo = "powerlevel10k";
+            rev = "e72264e01cb24431455ed6e398a769bca0da7ffe";
+            sha256 = "FbjjOLod4l+FGvOhSAmTuAdsoBrxdfEY/MYP163N1xY=";
+          };
+        }
+
         {
           name = "zsh-history-substring-search";
           src = pkgs.fetchFromGitHub {

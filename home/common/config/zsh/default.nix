@@ -78,6 +78,9 @@
         share = true;
         size = 100000;
       };
+      localVariables = {
+        POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD = true;
+      };
       oh-my-zsh = {
         enable = true;
       };

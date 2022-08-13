@@ -1,5 +1,5 @@
 {
-  xdg.configFile."kitty/theme.conf".source = ./TomorrowNight.conf;
+  xdg.configFile."kitty/theme.conf".source = ./OneDark.conf;
   programs = {
     kitty = {
       enable = true;
@@ -100,7 +100,7 @@
         resize_draw_strategy = "static";
 
         # Opacity settings
-        background_opacity = "0.9";
+        background_opacity = "0.94";
         dim_opacity = "0.4";
 
       };

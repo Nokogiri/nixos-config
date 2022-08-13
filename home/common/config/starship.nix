@@ -3,8 +3,8 @@
 {
   programs = {
     starship = {
-      enable = true;
-      enableZshIntegration = true;
+      enable = false;
+      enableZshIntegration = false;
       settings = {
         battery = {
           disabled = true;

@@ -15,6 +15,9 @@
     brightnessctl
     blueman
     cmake
+    clang
+    gcc
+    gnumake
     ffmpeg
     fusuma
     glib.bin
@@ -26,6 +29,7 @@
     libinput
     pandoc
     pinentry-gnome
+    pkg-config
     polkit_gnome
     (
       let

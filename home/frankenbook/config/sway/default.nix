@@ -171,6 +171,16 @@ in
         "${cfg.modifier}+8" = "workspace number 8";
         "${cfg.modifier}+9" = "workspace number 9";
 
+        # move containers 
+        "${cfg.modifier}+Shift+1" = "move container to workspace number 1";
+        "${cfg.modifier}+Shift+2" = "move container to workspace number 2";
+        "${cfg.modifier}+Shift+3" = "move container to workspace number 3";
+        "${cfg.modifier}+Shift+4" = "move container to workspace number 4";
+        "${cfg.modifier}+Shift+5" = "move container to workspace number 5";
+        "${cfg.modifier}+Shift+6" = "move container to workspace number 6";
+        "${cfg.modifier}+Shift+7" = "move container to workspace number 7";
+        "${cfg.modifier}+Shift+8" = "move container to workspace number 8";
+        "${cfg.modifier}+Shift+9" = "move container to workspace number 9";
         # scratchpad
         "${cfg.modifier}+Shift+minus" = "move scratchpad";
         "${cfg.modifier}+minus" = "scratchpad show";

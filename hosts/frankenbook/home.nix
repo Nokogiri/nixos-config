@@ -43,6 +43,7 @@ with lib;
 
         #Emulation
         EmulationStation-DE
+        fsuae-launcher
         gamemode
         ppsspp-sdl
         retroarch

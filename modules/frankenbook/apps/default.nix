@@ -47,6 +47,7 @@
     )
     sshfs-fuse
     texlive.combined.scheme-small
+    udisks
     udiskie
     yt-dlp
     xdg_utils

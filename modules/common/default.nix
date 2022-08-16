@@ -1,5 +1,5 @@
 [
   ./apps
-  ./sops
+  #./sops
   ./users
 ]

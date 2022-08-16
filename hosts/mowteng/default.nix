@@ -4,5 +4,5 @@
   imports =
     [ (import ./configuration.nix) ] ++
     [ (import ./network.nix) ] ++
-    (import ../../modules/frankenbook);
+    (import ../../modules/mowteng);
 }

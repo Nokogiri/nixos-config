@@ -12,10 +12,12 @@
   ];
 
   environment.systemPackages = with pkgs; [
+    amdvlk
     brightnessctl
     blueman
     cmake
     clang
+    fwupd
     gcc
     gnumake
     ffmpeg

@@ -96,7 +96,7 @@ in
       fonts = {
         names = [ "mononoki Nerd Font" ];
         style = "Regular";
-        size = 8.0;
+        size = 10.0;
       };
       gaps = {
         inner = 3;

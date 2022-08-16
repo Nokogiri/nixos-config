@@ -5,7 +5,7 @@
       enable = true;
       font = {
         name = "mononoki Nerd Font Mono";
-        size = 12;
+        size = 13;
       };
       extraConfig = ''
         include ./theme.conf

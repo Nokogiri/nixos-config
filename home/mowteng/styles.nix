@@ -8,7 +8,7 @@
     };
     font = {
       name = "mononoki Nerd Font";
-      size = 10;
+      size = 13;
     };
     iconTheme = {
       package = pkgs.vimix-icon-theme;

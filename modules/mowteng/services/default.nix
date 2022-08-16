@@ -12,9 +12,10 @@
       };
     };
     dbus.enable = true;
+    fwupd.enable = true;
     gnome.gnome-keyring.enable = true;
     mbpfan = {
-      enable = true;
+      enable = false;
       settings.general = {
         low_temp = 55;
         high_temp = 65;

@@ -18,11 +18,15 @@
 
   boot = {
     initrd.availableKernelModules = [ "nvme" "xhci_pci" "ahci" "uas" "usb_storage" "sd_mod" ];
-    initrd.kernelModules = [ ];
+    initrd.kernelModules = [ "amd_pstate" "amdgpu" ];
     kernelModules = [ "hid-nintendo" "kvm-amd" ];
     kernelPackages =
-      pkgs.linuxPackages_xanmod_latest
+      #pkgs.linuxPackages_xanmod_latest
+      pkgs.linuxPackages_zen
     ;
+    kernelParams = [
+      "amd_pstate.shared_mem=1"
+    ];
   };
 
 
@@ -67,23 +71,24 @@
     cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
     enableRedistributableFirmware = true;
     bluetooth.enable = true;
-    opengl.extraPackages = with pkgs; [
-      vaapiIntel
-    ];
+    #opengl.extraPackages = with pkgs; [
+    #  vaapiIntel
+    #];
     uinput.enable = true;
     xpadneo.enable = true;
   };
 
-  systemd.sleep.extraConfig = ''
-    HibernateMode=shutdown
-  '';
+  services.logind.lidSwitch = "hibernate";
+  #systemd.sleep.extraConfig = ''
+  #  HibernateMode=shutdown
+  #'';
 
   environment.systemPackages = with pkgs; [
     lm_sensors
   ];
 
   powerManagement = {
-    #cpuFreqGovernor = "schedutil";
+    cpuFreqGovernor = "schedutil";
     powertop.enable = false;
   };
 

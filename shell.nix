@@ -7,6 +7,7 @@ pkgs.mkShell {
     nix-universal-prefetch
     age
     sops
+    ssh-to-age
   ];
 }
 

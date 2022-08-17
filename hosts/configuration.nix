@@ -86,7 +86,7 @@
 
   system.stateVersion = "22.05";
 
-  #sops.age.sshKeyPaths = [ "/etc/ssh/ssh_host_ed25519_key" ];
+  sops.age.sshKeyPaths = [ "/etc/ssh/ssh_host_ed25519_key" ];
 
   environment.systemPackages = with pkgs; [
     (pkgs.writeShellScriptBin "nixFlakes" ''

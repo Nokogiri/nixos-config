@@ -7,6 +7,7 @@
     "wg_psk/frankenbook" = { };
     "wg_psk/hassio" = { };
     "wg_psk/kathi" = { };
+    "wg_psk/mowteng" = { };
     "wg_psk/mrpig" = { };
     "wg_psk/sm-af530" = { };
   };
@@ -36,6 +37,12 @@
           allowedIPs = [ "10.200.200.2/32" ];
           publicKey = "40RkpFdcTlk+AWc9XC/yhWsnwDJKIhEY7t5z3meFJkQ=";
           presharedKeyFile = config.sops.secrets."wg_psk/frankenbook".path;
+        }
+        {
+          # mowteng
+          allowedIPs = [ "10.200.200.3/32" ];
+          publicKey = "lSe62fvsrQc3FRI/jVTWL99V1PQzMwte9CjxNs3nLH4=";
+          presharedKeyFile = config.sops.secrets."wg_psk/mowteng".path;
         }
         {
           # hassio

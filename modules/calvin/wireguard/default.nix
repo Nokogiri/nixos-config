@@ -41,7 +41,7 @@
         {
           # mowteng
           allowedIPs = [ "10.200.200.3/32" ];
-          publicKey = "lSe62fvsrQc3FRI/jVTWL99V1PQzMwte9CjxNs3nLH4=";
+          publicKey = "PIofiSw2cfcn23NlGC6uJocthPIJqwXB6dUnh4fWwhY=";
           presharedKeyFile = config.sops.secrets."wg_psk/mowteng".path;
         }
         {

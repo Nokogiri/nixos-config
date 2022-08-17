@@ -71,17 +71,33 @@
     cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
     enableRedistributableFirmware = true;
     bluetooth.enable = true;
-    #opengl.extraPackages = with pkgs; [
-    #  vaapiIntel
-    #];
+
+    opengl.extraPackages = with pkgs; [
+      rocm-opencl-icd
+      rocm-opencl-runtime
+      amdvlk
+    ];
+    opengl.extraPackages32 = with pkgs; [
+      driversi686Linux.amdvlk
+    ];
+
+    opengl = {
+      driSupport = lib.mkDefault true;
+      driSupport32Bit = lib.mkDefault true;
+    };
+
+    sensor.iio.enable = true;
     uinput.enable = true;
     xpadneo.enable = true;
+
   };
 
   services.logind.lidSwitch = "hibernate";
   #systemd.sleep.extraConfig = ''
   #  HibernateMode=shutdown
   #'';
+
+  environment.variables.AMD_VULKAN_ICD = lib.mkDefault "RADV";
 
   environment.systemPackages = with pkgs; [
     lm_sensors

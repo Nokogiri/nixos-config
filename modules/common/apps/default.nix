@@ -19,7 +19,7 @@
     jq
     killall
     lesspipe
-    linuxKernel.packages.linux_xanmod_latest.cpupower
+    linuxKernel.packages.linux_zen.cpupower
     lsd
     ncdu
     neovim

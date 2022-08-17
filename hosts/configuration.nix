@@ -106,7 +106,7 @@
     gitAndTools.diff-so-fancy
     jq
     lesspipe
-    linuxKernel.packages.linux_xanmod_latest.cpupower
+    linuxKernel.packages.linux_zen.cpupower
     lsd
     neovim
     neovim-remote

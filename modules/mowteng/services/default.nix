@@ -12,7 +12,10 @@
       };
     };
     dbus.enable = true;
-    fwupd.enable = true;
+    fwupd = {
+      enable = true;
+      enableTestRemote = true;
+    };
     fprintd.enable = true;
     gnome.gnome-keyring.enable = true;
     mbpfan = {

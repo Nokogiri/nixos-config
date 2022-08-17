@@ -18,8 +18,8 @@
 
   boot = {
     initrd.availableKernelModules = [ "nvme" "xhci_pci" "ahci" "uas" "usb_storage" "sd_mod" ];
-    initrd.kernelModules = [ "amd_pstate" "amdgpu" ];
-    kernelModules = [ "hid-nintendo" "kvm-amd" ];
+    initrd.kernelModules = [ "amd_pstate" "amdgpu" "governor_powersave" "governor_simpleondemand" ];
+    kernelModules = [ "hid-nintendo" "kvm-amd" "governor_powersave" "governor_simpleondemand" ];
     kernelPackages =
       #pkgs.linuxPackages_xanmod_latest
       pkgs.linuxPackages_zen

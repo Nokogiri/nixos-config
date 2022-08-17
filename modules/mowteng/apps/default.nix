@@ -17,6 +17,7 @@
     blueman
     cmake
     clang
+    fprintd
     fwupd
     gcc
     gnumake
@@ -25,10 +26,12 @@
     glib.bin
     glfw-wayland
     hunspell
+    iio-sensor-proxy
     iwd
     iwgtk
     ldns
     libinput
+    libva-utils
     pandoc
     pinentry-gnome
     pkg-config

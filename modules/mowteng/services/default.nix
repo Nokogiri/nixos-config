@@ -13,6 +13,7 @@
     };
     dbus.enable = true;
     fwupd.enable = true;
+    fprintd.enable = true;
     gnome.gnome-keyring.enable = true;
     mbpfan = {
       enable = false;

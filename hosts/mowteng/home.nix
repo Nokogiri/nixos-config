@@ -29,6 +29,7 @@ with lib;
         (aspellWithDicts (ds: with ds; [ de en en-computers en-science ]))
         firefox-wayland
         tridactyl-native
+        chromium
         gimp
         gtk-pipe-viewer
         imv
@@ -49,6 +50,7 @@ with lib;
         libretro.mgba
         libretro.bsnes
         libretro.bsnes-hd
+        libretro.dolphin
         libretro.snes9x
         libretro.flycast
         libretro.melonds

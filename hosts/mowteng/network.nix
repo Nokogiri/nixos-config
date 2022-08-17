@@ -1,16 +1,16 @@
 { config, pkgs, libs, ... }:
 
 {
-    sops.secrets = {
-      "wg/private" = {
-        mode = "0640";
-        owner = config.users.users.systemd-network.name;
-      };
-      "wg/psk" = {
-        mode = "0640";
-        owner = config.users.users.systemd-network.name;
-      };
+  sops.secrets = {
+    "wg/private" = {
+      mode = "0640";
+      owner = config.users.users.systemd-network.name;
     };
+    "wg/psk" = {
+      mode = "0640";
+      owner = config.users.users.systemd-network.name;
+    };
+  };
 
   networking = {
     hostName = "mowteng";

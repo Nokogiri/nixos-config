@@ -42,6 +42,10 @@
 
   };
 
+  security = {
+    polkit.enable = true;
+  };
+
   virtualisation = {
     docker = {
       enable = false;
@@ -49,7 +53,7 @@
     };
 
     libvirtd = {
-      enable = false;
+      enable = true;
       onBoot = "ignore";
       onShutdown = "shutdown";
     };

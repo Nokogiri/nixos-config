@@ -18,8 +18,8 @@
 
   boot = {
     initrd.availableKernelModules = [ "nvme" "xhci_pci" "ahci" "uas" "usb_storage" "sd_mod" ];
-    initrd.kernelModules = [ "amd_pstate" "amdgpu" "governor_powersave" "governor_simpleondemand" ];
-    kernelModules = [ "hid-nintendo" "kvm-amd" "governor_powersave" "governor_simpleondemand" ];
+    initrd.kernelModules = [ "amd_pstate" "amdgpu" ];
+    kernelModules = [ "hid-nintendo" "kvm-amd" ];
     kernelPackages =
       #pkgs.linuxPackages_xanmod_latest
       pkgs.linuxPackages_zen
@@ -32,10 +32,20 @@
 
 
   fileSystems."/" = {
-    device = "/dev/disk/by-uuid/cd229a4c-f1ba-435e-99a4-208504e3fe63";
+    #device = "/dev/disk/by-uuid/cd229a4c-f1ba-435e-99a4-208504e3fe63";
+    device = "/dev/disk/by-uuid/00af92b2-0a8a-47b0-8e61-aac1789b25e5";
     fsType = "btrfs";
     options = [
-      "subvol=@nixos"
+      "subvol=@root"
+      "compress=zstd:9"
+    ];
+  };
+
+  fileSystems."/nix" = {
+    device = "/dev/disk/by-uuid/00af92b2-0a8a-47b0-8e61-aac1789b25e5";
+    fsType = "btrfs";
+    options = [
+      "subvol=@nix"
       "compress=zstd:9"
     ];
   };

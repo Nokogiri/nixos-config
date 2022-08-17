@@ -37,6 +37,7 @@ with lib;
         ncspot
         zathura
 
+        gparted
         # media
         mpv
         pamixer

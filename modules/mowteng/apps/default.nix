@@ -64,6 +64,11 @@
     mtr.enable = true;
     light.enable = true;
     ssh.startAgent = true;
+    steam = {
+      enable = true;
+      remotePlay.openFirewall = true;
+      dedicatedServer.openFirewall = true;
+    };
     waybar.enable = true;
     xwayland.enable = true;
   };

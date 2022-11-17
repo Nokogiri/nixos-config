@@ -1,6 +1,5 @@
 [
-  #./sway
-  #./fonts
+  ../agnostic/docker
   ./apps
   ./services
 ]

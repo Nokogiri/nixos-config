@@ -8,7 +8,7 @@
   # Use the GRUB 2 boot loader.
   boot.loader.grub.enable = true;
   boot.loader.grub.version = 2;
-  boot.loader.grub.useOSProber = true;
+  boot.loader.grub.useOSProber = false;
   boot.loader.grub.device = "/dev/sda";
 
   boot.initrd.availableKernelModules = [ "ata_piix" "uhci_hcd" "virtio_pci" "virtio_scsi" "sd_mod" "sr_mod" ];
@@ -23,14 +23,20 @@
     {
       device = "/dev/disk/by-uuid/75953a7e-d508-4fa7-ae83-1a6fd77ea05d";
       fsType = "btrfs";
-      options = [ "subvol=@NixOS" ];
+      options = [ 
+        "subvol=@NixOS"
+        "compress=zstd:9"
+      ];
     };
 
   fileSystems."/home" =
     {
       device = "/dev/disk/by-uuid/75953a7e-d508-4fa7-ae83-1a6fd77ea05d";
       fsType = "btrfs";
-      options = [ "subvol=@home" ];
+      options = [ 
+        "subvol=@home"
+        "compress=zstd:9"
+      ];
     };
 
   fileSystems."/boot" =

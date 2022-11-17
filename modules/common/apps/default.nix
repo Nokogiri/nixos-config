@@ -5,7 +5,6 @@
     (pkgs.writeShellScriptBin "nixVersions.stable" ''
       exec ${pkgs.nixVersions.stable}/bin/nix --experimental-features "nix-command flakes" "$@"
     '')
-    docker-compose
     pfetch
     starship
   ];

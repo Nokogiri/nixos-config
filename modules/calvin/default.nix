@@ -1,8 +1,9 @@
 [
   ./apps
-  ./docker
+  #./docker
   ./environment
   ./nginx
   ./services
   ./wireguard
+  ../agnostic/docker
 ]

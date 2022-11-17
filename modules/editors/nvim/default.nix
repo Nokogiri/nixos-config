@@ -21,12 +21,7 @@
         # File Tree
         nerdtree # File Manager - set in extraConfig to F6
 
-        # Customization 
-        wombat256-vim # Color scheme for lightline
-        srcery-vim # Color scheme for text
-
-        lightline-vim # Info bar at bottom
-        indent-blankline-nvim # Indentation lines
+        # Customization
       ];
     };
   };

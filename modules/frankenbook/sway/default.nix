@@ -31,6 +31,7 @@
       avizo
       cliphist
       eww-wayland
+      fuzzel
       gsettings-desktop-schemas
       grim
       kitty

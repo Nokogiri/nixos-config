@@ -3,7 +3,7 @@
 {
   nixpkgs.overlays = [
     (self: super: {
-      mpv = super.mpv-with-scripts.override {
+      mpv = super.mpv.override {
         scripts = [
           self.mpvScripts.mpris
         ];

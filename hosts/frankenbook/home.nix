@@ -29,12 +29,7 @@ with lib;
         (aspellWithDicts (ds: with ds; [ de en en-computers en-science ]))
         firefox-wayland
         tridactyl-native
-        gimp
-        gtk-pipe-viewer
         imv
-        inkscape
-        ncspot
-        zathura
 
         # media
         mpv
@@ -42,32 +37,6 @@ with lib;
         playerctl
 
         #Emulation
-        EmulationStation-DE
-        gamemode
-        ppsspp-sdl
-        retroarch
-        libretro.mgba
-        libretro.bsnes
-        libretro.bsnes-hd
-        libretro.snes9x
-        libretro.flycast
-        libretro.melonds
-        libretro.gambatte
-        libretro.genesis-plus-gx
-        libretro.beetle-psx
-        libretro.beetle-psx-hw
-        libretro.beetle-pce-fast
-        libretro.beetle-supergrafx
-        libretro.mupen64plus
-        libretro.parallel-n64
-
-        #Games
-        eduke32
-        gzdoom
-        minetest
-        polymc
-        vkquake
-        yquake2-all-games
 
         # misc
         cmake

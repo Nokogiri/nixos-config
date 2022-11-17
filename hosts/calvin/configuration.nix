@@ -39,6 +39,13 @@
       fsType = "ext4";
     };
 
+  fileSystems."/nextData" = 
+    {
+      device = "/dev/disk/by-uuid/ec8f2811-bb28-404a-a5f0-7ca3544cf437";
+      fsType = "btrfs";
+      options = [ "compress=zstd:9" ];
+    };
+
   swapDevices = [ ];
 
   system.stateVersion = "22.05"; # Did you read the comment?

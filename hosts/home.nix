@@ -3,8 +3,8 @@
 {
   imports =
     (import ../home/common);
-
-  home = {
+#manual.manpages.enable = false;
+    home = {
     username = "${user}";
     homeDirectory = "/home/${user}";
 

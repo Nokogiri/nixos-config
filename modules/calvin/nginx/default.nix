@@ -1,6 +1,8 @@
 { pkgs, config, lib, ... }:
 
 {
+  imports =
+    [(./foodwiki.nix)];
   sops.secrets.ovh_dns = {
     owner = "acme";
   };
@@ -12,6 +14,7 @@
       dnsProvider = "ovh";
       email = "nokogiri@gefjon.org";
       group = "nginx";
+      renewInterval = "daily";
     };
 
     certs = {
@@ -32,14 +35,28 @@
 
   networking.firewall.allowedTCPPorts = [ 80 443 ];
 
+  services.phpfpm.pools.general = {
+    user = "nokogiri";
+    settings = {
+      pm = "dynamic";
+      "listen.owner" = config.services.nginx.user;
+      "pm.max_children" = 32;
+      "pm.start_servers" = 2;
+      "pm.min_spare_servers" = 2;
+      "pm.max_spare_servers" = 4;
+      "pm.max_requests" = 500;
+    };
+  };
+
   services.nginx = {
     enable = true;
+    user = "nokogiri";
     virtualHosts."git.fishoeder.net" = {
       useACMEHost = "fishoeder.net";
       forceSSL = true;
       root = "/srv/www/git";
     };
-
+    
     virtualHosts."media.fishoeder.net" = {
       useACMEHost = "fishoeder.net";
       forceSSL = true;
@@ -59,11 +76,12 @@
         ;
       };
     };
-    virtualHosts."vault.fishoeder.net" = {
+
+    virtualHosts."next.fishoeder.net" = {
       useACMEHost = "fishoeder.net";
       forceSSL = true;
       locations."/" = {
-        proxyPass = "http://127.0.0.1:8284";
+        proxyPass = "https://127.0.0.1:4443";
         extraConfig =
           "proxy_redirect off;" +
           "proxy_set_header Range $http_range;" +
@@ -78,30 +96,7 @@
         ;
       };
     };
-    virtualHosts."cache.fishoeder.net" = {
-      useACMEHost = "fishoeder.net";
-      forceSSL = true;
-      serverAliases = [ "binarycache" ];
-      locations."/".extraConfig = ''
-        proxy_pass http://localhost:${toString config.services.nix-serve.port};
-        proxy_set_header Host $host;
-        proxy_set_header X-Real-IP $remote_addr;
-        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-      '';
-    };
-    virtualHosts."invid.fishoeder.net" = {
-      useACMEHost = "fishoeder.net";
-      forceSSL = true;
-      locations."/" = {
-        proxyPass = "http://127.0.0.1:3000/";
-        extraConfig = '' 
-        proxy_set_header X-Forwarded-For $remote_addr;
-        proxy_set_header Host $host;
-        proxy_http_version 1.1;
-        proxy_set_header Connection "";
-        '';
-      };
-    };
+
   };
 }
 

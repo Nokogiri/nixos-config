@@ -4,7 +4,7 @@
   imports =
     (import ../modules/common);
   nix = {
-    package = pkgs.nixFlakes;
+    package = pkgs.nixVersions.stable;
     extraOptions = ''
       experimental-features = nix-command flakes
       keep-outputs = true
@@ -89,8 +89,8 @@
   sops.age.sshKeyPaths = [ "/etc/ssh/ssh_host_ed25519_key" ];
 
   environment.systemPackages = with pkgs; [
-    (pkgs.writeShellScriptBin "nixFlakes" ''
-      exec ${pkgs.nixFlakes}/bin/nix --experimental-features "nix-command flakes" "$@"
+    (pkgs.writeShellScriptBin "nixVersions.stable" ''
+      exec ${pkgs.nixVersions.stable}/bin/nix --experimental-features "nix-command flakes" "$@"
     '')
     age
     bat
@@ -109,7 +109,6 @@
     linuxKernel.packages.linux_zen.cpupower
     lsd
     neovim
-    neovim-remote
     nix-diff
     nix-direnv
     nix-index

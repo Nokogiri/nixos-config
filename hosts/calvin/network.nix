@@ -5,6 +5,11 @@
     hostName = "calvin";
     useDHCP = false;
     #resolvconf.enable = true;
+    firewall = {
+      trustedInterfaces = [
+        "wg0"
+      ];
+    };
   };
 
   systemd.network = {

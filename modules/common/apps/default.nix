@@ -2,13 +2,14 @@
 
 {
   environment.systemPackages = with pkgs; [
-    (pkgs.writeShellScriptBin "nixFlakes" ''
-      exec ${pkgs.nixFlakes}/bin/nix --experimental-features "nix-command flakes" "$@"
+    (pkgs.writeShellScriptBin "nixVersions.stable" ''
+      exec ${pkgs.nixVersions.stable}/bin/nix --experimental-features "nix-command flakes" "$@"
     '')
     age
     atool
     bat
     btop
+    chezmoi
     compsize
     direnv
     dfc
@@ -23,7 +24,6 @@
     lsd
     ncdu
     neovim
-    neovim-remote
     nix-diff
     nix-direnv
     nix-index
@@ -32,10 +32,12 @@
     nix-zsh-completions
     nixpkgs-fmt
     pfetch
+    python
     ranger
     rbw
     ripgrep
     rsync
+    starship
     tmux
     unrar
     unzip

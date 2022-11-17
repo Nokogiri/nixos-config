@@ -91,9 +91,11 @@
       exec ${pkgs.nixVersions.stable}/bin/nix --experimental-features "nix-command flakes" "$@"
     '')
     age
+    atool
     bat
     btop
     cachix
+    chezmoi
     compsize
     direnv
     dfc
@@ -103,9 +105,11 @@
     git
     gitAndTools.diff-so-fancy
     jq
+    killall
     lesspipe
     linuxKernel.packages.linux_zen.cpupower
     lsd
+    ncdu
     neovim
     nix-diff
     nix-direnv
@@ -113,8 +117,8 @@
     nix-tree
     nix-top
     nix-pin
+    nix-zsh-completions
     ranger
-    rbw
     ripgrep
     rsync
     ssh-to-age
@@ -124,7 +128,6 @@
     zip
     vivid
     wireguard-tools
-    yadm
   ];
 
   programs.zsh.enable = true;

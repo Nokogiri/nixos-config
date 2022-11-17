@@ -98,8 +98,6 @@
     opengl.extraPackages = with pkgs; [
       vaapiIntel
     ];
-    uinput.enable = true;
-    xpadneo.enable = true;
   };
 
   systemd.sleep.extraConfig = ''
@@ -111,7 +109,7 @@
   ];
 
   powerManagement = {
-    cpuFreqGovernor = "schedutil";
+    cpuFreqGovernor = "ondemand";
     powertop.enable = false;
   };
 

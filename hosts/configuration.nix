@@ -118,6 +118,7 @@
     nix-top
     nix-pin
     nix-zsh-completions
+    python
     ranger
     ripgrep
     rsync

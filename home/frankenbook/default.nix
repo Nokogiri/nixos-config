@@ -1,9 +1,6 @@
 [
-  ./config/kitty
   ./vscode.nix
-  ./config/wofi
   ./styles.nix
-  ./config/sway
   ./config/wallpaper
   ./config/waybar
 ]

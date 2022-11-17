@@ -12,18 +12,19 @@
       };
     };
     dbus.enable = true;
-    gnome.gnome-keyring.enable = true;
+    gnome.gnome-keyring.enable = false;
+    logind.lidSwitch = "ignore";
     mbpfan = {
       enable = true;
       settings.general = {
         low_temp = 55;
-        high_temp = 65;
+        high_temp = 70;
         max_temp = 84;
-        polling_interval = 1;
-        min_fan1_speed = 2500;
+        polling_interval = 2;
+        min_fan1_speed = 2000;
       };
     };
-
+    openssh.enable = true;
     pipewire = {
       enable = true;
       alsa.enable = true;

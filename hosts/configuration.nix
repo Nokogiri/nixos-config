@@ -118,11 +118,13 @@
     nix-top
     nix-pin
     nix-zsh-completions
+    pfetch
     python
     ranger
     ripgrep
     rsync
     ssh-to-age
+    starship
     tmux
     unrar
     unzip
@@ -131,7 +133,11 @@
     wireguard-tools
   ];
 
-  programs.zsh.enable = true;
+  programs = {
+    git.enable = true;
+    tmux.enable = true;
+    zsh.enable = true;
+  };
 
   programs.command-not-found.enable = false;
   programs.zsh.interactiveShellInit = ''

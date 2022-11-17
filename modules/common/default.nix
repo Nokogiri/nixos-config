@@ -1,5 +1,4 @@
 [
-  ./apps
   ./sops
   ./users
 ]

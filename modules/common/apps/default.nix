@@ -13,6 +13,7 @@
     compsize
     direnv
     dfc
+    docker-compose
     fd
     file
     fzf

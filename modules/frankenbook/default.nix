@@ -1,5 +1,5 @@
 [
-  ./sway
+  #./sway
   ./fonts
   ./apps
   ./services

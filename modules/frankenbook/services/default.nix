@@ -5,7 +5,7 @@
 
     avahi.enable = true;
     clight = {
-      enable = true;
+      enable = false;
       temperature = {
         day = 6500;
         night = 4200;
@@ -33,14 +33,14 @@
     };
 
     resolved.enable = true;
-    tlp.enable = true;
+    tlp.enable = false;
     udisks2.enable = true;
 
   };
 
   virtualisation = {
     docker = {
-      enable = false;
+      enable = true;
       storageDriver = "btrfs";
     };
 

@@ -1,4 +1,4 @@
-{ lib, inputs, nixpkgs, home-manager, user, sops-nix, emacs-overlay, addins, nix-minecraft, ... }:
+{ lib, inputs, nixpkgs, user, sops-nix, nix-minecraft, ... }:
 
 let
   system = "x86_64-linux"; # System architecture
@@ -22,21 +22,9 @@ in
       ./configuration.nix
       {
         nixpkgs.overlays = [
-          emacs-overlay.overlay
-          addins.overlay
           (self: super: { nix-direnv = super.nix-direnv.override { enableFlakes = true; }; })
         ];
       }
-#      home-manager.nixosModules.home-manager
-#      {
-#        # Home-Manager module that is used.
-#        home-manager.useGlobalPkgs = true;
-#        home-manager.useUserPackages = true;
-#        home-manager.extraSpecialArgs = { inherit user; }; # Pass flake variable
-#        home-manager.users.${user} = {
-#          imports = [ (import ./home.nix) ] ++ [ (import ./frankenbook/home.nix) ];
-#        };
-#      }
     ];
   };
   calvin = lib.nixosSystem {
@@ -49,22 +37,10 @@ in
       ./configuration.nix
       {
         nixpkgs.overlays = [
-          emacs-overlay.overlay
-          addins.overlay
           nix-minecraft.overlay
           (self: super: { nix-direnv = super.nix-direnv.override { enableFlakes = true; }; })
         ];
       }
-#      home-manager.nixosModules.home-manager
-#      {
-#        home-manager.useGlobalPkgs = true;
-#        home-manager.useUserPackages = true;
-#        home-manager.extraSpecialArgs = { inherit user; };
-#        home-manager.users.${user} = {
-#          imports = [ (import ./home.nix) ];
-#        };
-#
-#      }
     ];
   };
 }

@@ -14,39 +14,12 @@
   environment.systemPackages = with pkgs; [
     brightnessctl
     blueman
-    cmake
-    clang
-    gcc
-    gnumake
-    ffmpeg
-    fusuma
     glib.bin
-    glfw-wayland
     hunspell
     iwd
-    iwgtk
     ldns
-    libinput
-    pandoc
-    pinentry-gnome
     pkg-config
-    polkit_gnome
-    (
-      let
-        python-packages-plus = python-packages: with python-packages; [
-          isort
-          evdev
-          nose
-          pytest
-          requests
-          setuptools
-        ];
-        python-with-packages-plus = python3.withPackages python-packages-plus;
-      in
-      python-with-packages-plus
-    )
     sshfs-fuse
-    texlive.combined.scheme-small
     udisks
     udiskie
     yt-dlp
@@ -59,22 +32,7 @@
     mtr.enable = true;
     light.enable = true;
     ssh.startAgent = true;
-    waybar.enable = true;
-    xwayland.enable = true;
   };
 
-  systemd.user.services.fusuma = {
-    partOf = [ "graphical-session.target" ];
-    after = [ "graphicial-session.target" ];
-    path = [ pkgs.libinput ];
-    wantedBy = [ "graphical-session.target" ];
-    serviceConfig = {
-      Type = "simple";
-      ExecStart = ":${pkgs.fusuma}/bin/fusuma";
-      TimeoutSec = 5;
-      Restart = "on-failure";
-      Slice = "app.slice";
-    };
-  };
 }
 

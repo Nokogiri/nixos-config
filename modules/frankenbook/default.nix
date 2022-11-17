@@ -1,6 +1,6 @@
 [
   #./sway
-  ./fonts
+  #./fonts
   ./apps
   ./services
 ]

@@ -16,7 +16,6 @@
         min_fan1_speed = 2000;
       };
     };
-    openssh.enable = true;
     pipewire = {
       enable = true;
       alsa.enable = true;

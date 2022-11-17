@@ -2,7 +2,6 @@
 
 {
   services = {
-    openssh.enable = true;
     qemuGuest.enable = true;
     jellyfin.enable = true;
     transmission = {

@@ -113,6 +113,8 @@
     powertop.enable = false;
   };
 
+  programs.fuse.userAllowOther = true;
+
   sound.enable = true;
 
   location = {

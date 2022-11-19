@@ -9,11 +9,11 @@
     mbpfan = {
       enable = true;
       settings.general = {
-        low_temp = 55;
-        high_temp = 70;
+        low_temp = 30;
+        high_temp = 40;
         max_temp = 89;
         polling_interval = 2;
-        min_fan1_speed = 2000;
+        min_fan1_speed = 2800;
       };
     };
     pipewire = {

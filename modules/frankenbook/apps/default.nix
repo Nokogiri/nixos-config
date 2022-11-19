@@ -5,6 +5,7 @@
     brightnessctl
     iwd
     ldns
+    rclone
     sshfs-fuse
     udisks
     udiskie

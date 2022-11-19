@@ -4,6 +4,7 @@
   ./environment
   ./nginx
   ./services
+  ./user-services
   ./wireguard
   ../agnostic/docker
 ]

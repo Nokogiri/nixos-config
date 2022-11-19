@@ -6,6 +6,7 @@
       exec ${pkgs.nixVersions.stable}/bin/nix --experimental-features "nix-command flakes" "$@"
     '')
     pfetch
+    rclone
     starship
   ];
 

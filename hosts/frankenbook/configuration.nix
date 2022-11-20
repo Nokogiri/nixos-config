@@ -17,16 +17,16 @@
   };
 
   boot = {
-    blacklistedKernelModules = [ "b43" ];
+    blacklistedKernelModules = [ "b43" "snd_had_intel" ];
     consoleLogLevel = 3;
-    extraModulePackages = [
-      config.boot.kernelPackages.broadcom_sta
-    ];
+    #extraModulePackages = [
+    #  config.boot.kernelPackages.broadcom_sta
+    #];
     extraModprobeConfig = ''
       options hid_apple fnmode=2 swap_fn_leftctrl=1 iso_layout=0
     '';
     initrd.availableKernelModules = [ "xhci_pci" "ehci_pci" "ahci" "firewire_ohci" "usb_storage" "usbhid" "sd_mod" "sdhci_pci" ];
-    initrd.kernelModules = [ "i915" "hid-apple" "wl" ];
+    initrd.kernelModules = [ "i915" "hid-apple" ];
     kernelModules = [ "hid-nintendo" "kvm-intel" ];
     kernelPackages =
       pkgs.linuxPackages_zen
@@ -37,6 +37,7 @@
       "i915.fastboot=1"
       "i915.enable_guc=2"
       "i915.enable_fbc=1"
+      "i915_enable_rc6=7"
       "noibrs"
       "noibpb"
       "nopti"
@@ -94,7 +95,7 @@
   hardware = {
     cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
     enableRedistributableFirmware = true;
-    bluetooth.enable = true;
+    bluetooth.enable = false;
     opengl.extraPackages = with pkgs; [
       vaapiIntel
     ];
@@ -115,7 +116,7 @@
 
   programs.fuse.userAllowOther = true;
 
-  sound.enable = true;
+  sound.enable = false;
 
   location = {
     latitude = 50.9787;

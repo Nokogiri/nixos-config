@@ -3,7 +3,18 @@
 {
   services = {
 
-    avahi.enable = true;
+    avahi = {
+      enable = true;
+      hostName = "homeassistant";
+      ipv6 = false;
+      publish = {
+        enable = true;
+        workstation = true;
+        hinfo = true;
+        domain = true;
+        userServices = true;
+      };
+    };
     dbus.enable = true;
     logind.lidSwitch = "ignore";
     mbpfan = {

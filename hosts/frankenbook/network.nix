@@ -15,13 +15,14 @@
   networking = {
     hostName = "frankenbook";
     useDHCP = false;
+    enableIPv6 = false;
     #resolvconf.enable = true;
     wireless.iwd.enable = true;
     dhcpcd.extraConfig = "noipv6rs\nnoipv6";
     firewall = {
       trustedInterfaces = [
         "wg0"
-        "wlp2s0"
+        "enp1s0f0"
       ];
       allowedTCPPorts = [
         80
@@ -62,10 +63,10 @@
       anyInterface = true;
     };
 
-    links."79-iwd" = {
-      matchConfig.Type = [ "wlan" ];
-      linkConfig.NamePolicy = "path";
-    };
+#    links."79-iwd" = {
+#      matchConfig.Type = [ "wlan" ];
+#      linkConfig.NamePolicy = "path";
+#    };
 
     networks."20-wired" = {
       matchConfig.Name = [ "en*" ];
@@ -76,31 +77,31 @@
         UseRoutes = true;
       };
     };
-    networks."25-wireless" = {
-      matchConfig.Name = [ "wlp2s0" ];
-      matchConfig.SSID = [ "!\\(\\=\\^\\-\\-\\^\\=\\)" ];
-      DHCP = "ipv4";
-      networkConfig = {
-        MulticastDNS = true;
-        IPv6AcceptRA = "no";
-      };
-      dhcpV4Config = {
-        RouteMetric = 20;
-        UseDNS = true;
-        UseRoutes = true;
-      };
-    };
-    networks."20-wireless" = {
-      matchConfig.Name = [ "wlp2s0" ];
-      networkConfig.IPv6AcceptRA = "no";
-      DHCP = "no";
-      address = [ 
-        "192.168.178.5/24"
-        "192.168.178.57/24"
-      ];
-      dns = [ "192.168.178.254" ];
-      gateway = [ "192.168.178.1" ];
-    };
+#    networks."25-wireless" = {
+#      matchConfig.Name = [ "wlp2s0" ];
+#      matchConfig.SSID = [ "!\\(\\=\\^\\-\\-\\^\\=\\)" ];
+#      DHCP = "ipv4";
+#      networkConfig = {
+#        MulticastDNS = true;
+#        IPv6AcceptRA = "no";
+#      };
+#      dhcpV4Config = {
+#        RouteMetric = 20;
+#        UseDNS = true;
+#        UseRoutes = true;
+#      };
+#    };
+#    networks."20-wireless" = {
+#      matchConfig.Name = [ "wlp2s0" ];
+#      networkConfig.IPv6AcceptRA = "no";
+#      DHCP = "no";
+#      address = [ 
+#        "192.168.178.5/24"
+#        "192.168.178.57/24"
+#      ];
+#      dns = [ "192.168.178.254" ];
+#      gateway = [ "192.168.178.1" ];
+#    };
 
     networks."90-wireguard" = {
       matchConfig.Name = "wg0";

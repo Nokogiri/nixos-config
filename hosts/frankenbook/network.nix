@@ -18,8 +18,19 @@
     #resolvconf.enable = true;
     wireless.iwd.enable = true;
     dhcpcd.extraConfig = "noipv6rs\nnoipv6";
+    firewall = {
+      trustedInterfaces = [
+        "wg0"
+        "wlp2s0"
+      ];
+      allowedTCPPorts = [
+        80
+        443
+        6052
+        8123
+      ];
+    };
   };
-
 
   systemd.network.netdevs."90-wireguard" = {
     netdevConfig = {
@@ -79,11 +90,14 @@
         UseRoutes = true;
       };
     };
-    networks."26-wireless" = {
+    networks."20-wireless" = {
       matchConfig.Name = [ "wlp2s0" ];
       networkConfig.IPv6AcceptRA = "no";
       DHCP = "no";
-      address = [ "192.168.178.21/24" ];
+      address = [ 
+        "192.168.178.5/24"
+        "192.168.178.57/24"
+      ];
       dns = [ "192.168.178.254" ];
       gateway = [ "192.168.178.1" ];
     };

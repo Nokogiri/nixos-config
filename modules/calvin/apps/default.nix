@@ -4,6 +4,7 @@
 
   environment.systemPackages = with pkgs; [
     jellyfin-ffmpeg
+    rclone
   ];
 
   programs = {

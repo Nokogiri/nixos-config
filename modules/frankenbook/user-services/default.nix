@@ -20,7 +20,7 @@
           --umask 022 \
           --allow-other \
           --allow-non-empty \
-          --dir-cache-time 48h \
+          --dir-cache-time 2h \
           --poll-interval 5m \
           nokogiri: /media/cloud/nokogiri
           '';
@@ -47,7 +47,7 @@
           --umask 022 \
           --allow-other \
           --allow-non-empty \
-          --dir-cache-time 48h \
+          --dir-cache-time 2h \
           --poll-interval 5m \
           lyria: /media/cloud/lyria
           '';
@@ -74,7 +74,7 @@
           --umask 022 \
           --allow-other \
           --allow-non-empty \
-          --dir-cache-time 48h \
+          --dir-cache-time 2h \
           --poll-interval 5m \
           guntheria: /media/cloud/guntheria
           '';
@@ -101,7 +101,7 @@
           --umask 022 \
           --allow-other \
           --allow-non-empty \
-          --dir-cache-time 48h \
+          --dir-cache-time 2h \
           --poll-interval 5m \
           markus: /media/cloud/markus
           '';
@@ -127,7 +127,7 @@
           --umask 022 \
           --allow-other \
           --allow-non-empty \
-          --dir-cache-time 48h \
+          --dir-cache-time 2h \
           --poll-interval 5m \
           kenny: /media/cloud/kenny
           '';
@@ -153,7 +153,7 @@
           --umask 022 \
           --allow-other \
           --allow-non-empty \
-          --dir-cache-time 48h \
+          --dir-cache-time 2h \
           --poll-interval 5m \
           hildi: /media/cloud/hildi
           '';

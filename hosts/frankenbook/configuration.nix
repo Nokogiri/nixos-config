@@ -115,7 +115,8 @@
   };
 
   programs.fuse.userAllowOther = true;
-
+  
+  security.sudo.wheelNeedsPassword = false;
   sound.enable = false;
 
   location = {

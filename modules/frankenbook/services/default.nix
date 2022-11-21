@@ -15,6 +15,12 @@
         userServices = true;
       };
     };
+    btrbk = {
+      extraPackages = [
+        pkgs.mbuffer
+        pkgs.xz
+      ];
+    };
     dbus.enable = true;
     logind.lidSwitch = "ignore";
     mbpfan = {

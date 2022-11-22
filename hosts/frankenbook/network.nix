@@ -16,7 +16,6 @@
     hostName = "frankenbook";
     useDHCP = false;
     enableIPv6 = false;
-    #resolvconf.enable = true;
     wireless.iwd.enable = true;
     dhcpcd.extraConfig = "noipv6rs\nnoipv6";
     firewall = {
@@ -27,6 +26,7 @@
       allowedTCPPorts = [
         80
         443
+        5353
         6052
         8123
       ];
@@ -63,11 +63,6 @@
       anyInterface = true;
     };
 
-#    links."79-iwd" = {
-#      matchConfig.Type = [ "wlan" ];
-#      linkConfig.NamePolicy = "path";
-#    };
-
     networks."20-wired" = {
       matchConfig.Name = [ "en*" ];
       DHCP = "ipv4";
@@ -76,32 +71,14 @@
         UseDNS = true;
         UseRoutes = true;
       };
+      linkConfig = {
+        Multicast = true;
+      };
+      networkConfig = {
+        MulticastDNS = true;
+        LLMNR = true;
+      };
     };
-#    networks."25-wireless" = {
-#      matchConfig.Name = [ "wlp2s0" ];
-#      matchConfig.SSID = [ "!\\(\\=\\^\\-\\-\\^\\=\\)" ];
-#      DHCP = "ipv4";
-#      networkConfig = {
-#        MulticastDNS = true;
-#        IPv6AcceptRA = "no";
-#      };
-#      dhcpV4Config = {
-#        RouteMetric = 20;
-#        UseDNS = true;
-#        UseRoutes = true;
-#      };
-#    };
-#    networks."20-wireless" = {
-#      matchConfig.Name = [ "wlp2s0" ];
-#      networkConfig.IPv6AcceptRA = "no";
-#      DHCP = "no";
-#      address = [ 
-#        "192.168.178.5/24"
-#        "192.168.178.57/24"
-#      ];
-#      dns = [ "192.168.178.254" ];
-#      gateway = [ "192.168.178.1" ];
-#    };
 
     networks."90-wireguard" = {
       matchConfig.Name = "wg0";

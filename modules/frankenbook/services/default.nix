@@ -4,9 +4,11 @@
   services = {
 
     avahi = {
-      enable = true;
+      enable = false;
       hostName = "homeassistant";
+      interfaces = [ "enp1s0f0" ];
       ipv6 = false;
+      nssmdns = true;
       publish = {
         enable = true;
         workstation = true;
@@ -40,7 +42,14 @@
       wireplumber.enable = true;
     };
 
-    resolved.enable = true;
+    resolved = {
+      enable = true;
+      extraConfig = ''
+        Domains=home.arpa
+        MulticastDNS=true
+        LLMNR=true
+        '';
+    };
     tlp.enable = false;
     udisks2.enable = true;
 

@@ -36,10 +36,10 @@
       };
     };
     pipewire = {
-      enable = true;
-      alsa.enable = true;
-      pulse.enable = true;
-      wireplumber.enable = true;
+      enable = false;
+      alsa.enable = false;
+      pulse.enable = false;
+      wireplumber.enable = false;
     };
 
     resolved = {

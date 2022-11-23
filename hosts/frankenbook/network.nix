@@ -13,9 +13,9 @@
   };
 
   networking = {
-    hostName = "frankenbook";
+    hostName = "homeassistant";
     useDHCP = false;
-    enableIPv6 = false;
+    enableIPv6 = true;
     wireless.iwd.enable = false;
     dhcpcd.extraConfig = "noipv6rs\nnoipv6";
     firewall = {
@@ -65,7 +65,10 @@
 
     networks."20-wired" = {
       matchConfig.Name = [ "en*" ];
-      DHCP = "ipv4";
+      DHCP = "ipv6";
+      address = [ "192.168.178.57/24" ];
+      gateway = [ "192.168.178.1" ];
+      dns = [ "192.168.178.254" ];
       dhcpV4Config = {
         RouteMetric = 10;
         UseDNS = true;

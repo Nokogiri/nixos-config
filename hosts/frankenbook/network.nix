@@ -16,7 +16,7 @@
     hostName = "frankenbook";
     useDHCP = false;
     enableIPv6 = false;
-    wireless.iwd.enable = true;
+    wireless.iwd.enable = false;
     dhcpcd.extraConfig = "noipv6rs\nnoipv6";
     firewall = {
       trustedInterfaces = [

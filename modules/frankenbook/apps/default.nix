@@ -8,7 +8,6 @@
     rclone
     sshfs-fuse
     udisks
-    udiskie
     yt-dlp
   ];
 

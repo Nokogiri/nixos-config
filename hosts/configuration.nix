@@ -59,7 +59,7 @@
     };
   };
 
-  console.font = "Lat2-14";
+  console.font = "lat2-14";
 
   time.timeZone = "Europe/Berlin";
 

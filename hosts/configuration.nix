@@ -9,6 +9,7 @@
       experimental-features = nix-command flakes
       keep-outputs = true
       keep-derivations = true
+      extra-sandbox-paths = /nix/var/cache/ccache
     '';
     gc = {
       automatic = true;
@@ -20,11 +21,13 @@
       #extra-sandbox-paths = [ (toString config.programs.ccache.cacheDir) ];
       substituters = [
         #"https://cache.fishoeder.net"
+        "https://nookogiri.cachix.org"
         "https://nix-community.cachix.org"
         "https://cache.nixos.org"
       ];
       trusted-public-keys = [
         "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+        "nookogiri.cachix.org-1:tKY3HBn6Xhuqys5EcQRl1u+sKualOXFzCs9Q6qEXR+o="
         #"cache.fishoeder.net:0wqH5JXoJJVWitNUfD9PCCVO+A8DOEOyXZSrkCi5lb8="
       ];
     };
@@ -86,64 +89,7 @@
 
   sops.age.sshKeyPaths = [ "/etc/ssh/ssh_host_ed25519_key" ];
 
-  environment.systemPackages = with pkgs; [
-    (pkgs.writeShellScriptBin "nixVersions.stable" ''
-      exec ${pkgs.nixVersions.stable}/bin/nix --experimental-features "nix-command flakes" "$@"
-    '')
-    age
-    atool
-    bat
-    btop
-    cachix
-    chezmoi
-    compsize
-    direnv
-    dfc
-    fd
-    file
-    fzf
-    git
-    gitAndTools.diff-so-fancy
-    jq
-    killall
-    lesspipe
-    linuxKernel.packages.linux_zen.cpupower
-    lsd
-    ncdu
-    neovim
-    nix-diff
-    nix-direnv
-    nix-index
-    nix-tree
-    nix-top
-    nix-pin
-    nix-zsh-completions
-    pfetch
-    python
-    ranger
-    ripgrep
-    rsync
-    ssh-to-age
-    starship
-    tmux
-    unrar
-    unzip
-    zip
-    vivid
-    wireguard-tools
-  ];
-
-  programs = {
-    git.enable = true;
-    gnupg.agent.enable = true;
-    tmux.enable = true;
-    zsh.enable = true;
-  };
   services = {
     openssh.enable = true;
   };
-  programs.command-not-found.enable = false;
-  programs.zsh.interactiveShellInit = ''
-    source ${pkgs.nix-index}/etc/profile.d/command-not-found.sh
-  '';
 }

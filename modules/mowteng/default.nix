@@ -1,0 +1,6 @@
+[
+  ./sway
+  ./fonts
+  ./apps
+  ./services
+]

@@ -1,7 +1,8 @@
 keys:
   - &host_calvin age1cf896thek5up8ghqqgxw9twz4ssrf8z200a350uhjafmp7s4kdjsrncxk6
   - &host_homeassistant age1xp5hezyj8l8heum9gzmdve9hnuv2l7vxy3xa6gnze28zqk2pwpkswn5l9u
-  - &host_mowteng age1m2g0h0m5ctv0pvcrlv9rz3jdhhsqg97q3krxjfp29rc7x4sv95pscn84qt
+  - &host_mowteng age1d7u73tcpugy3293l38a5ucpdw6whd30ewdtcl8g96lau06kgsa4qvvqlq4
+
 creation_rules:
   - path_regex: secrets/[^/]+\.yaml$
     key_groups:

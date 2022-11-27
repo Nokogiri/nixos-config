@@ -58,27 +58,23 @@
 
     networks."25-wireless" = {
       matchConfig.Name = [ "wl*" ];
-      #matchConfig.SSID = [ "!\\(\\=\\^\\-\\-\\^\\=\\)" ];
-      DHCP = "ipv4";
-      networkConfig = {
-        MulticastDNS = true;
-        IPv6AcceptRA = "no";
-      };
+      DHCP = "ipv6";
+      address = [ "192.168.178.3/24" ];
+      gateway = [ "192.168.178.1" ];
+      dns = [ "192.168.178.254" ];
       dhcpV4Config = {
         RouteMetric = 20;
         UseDNS = true;
         UseRoutes = true;
       };
+      linkConfig = {
+        Multicast = true;
+      };
+      networkConfig = {
+        MulticastDNS = true;
+        LLMNR = true;
+      };
     };
-    networks."26-wireless" = {
-      matchConfig.Name = [ "wl*" ];
-      networkConfig.IPv6AcceptRA = "no";
-      DHCP = "no";
-      address = [ "192.168.178.61/24" ];
-      dns = [ "192.168.178.254" ];
-      gateway = [ "192.168.178.1" ];
-    };
-
     networks."90-wireguard" = {
       matchConfig.Name = "wg0";
       address = [ "10.200.200.3/24" ];

@@ -35,8 +35,16 @@
       pulse.enable = true;
       wireplumber.enable = true;
     };
-
-    resolved.enable = true;
+    resolved = {
+      enable = true;
+      extraConfig = ''
+        Domains=home.arpa
+        MulticastDNS=true
+        LLMNR=true
+        ReadEtcHosts=true
+        Cache=true
+        '';
+    };
     tlp.enable = true;
     udisks2.enable = true;
 
@@ -53,7 +61,7 @@
     };
 
     libvirtd = {
-      enable = true;
+      enable = false;
       onBoot = "ignore";
       onShutdown = "shutdown";
     };

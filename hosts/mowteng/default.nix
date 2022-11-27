@@ -1,8 +1,6 @@
 { pkgs, lib, user, ... }:
 
 {
-  imports =
-    [ (import ./configuration.nix) ] ++
-    [ (import ./network.nix) ] ++
-    (import ../../modules/mowteng);
+  imports = [ (import ./configuration.nix) ] ++ [ (import ./network.nix) ]
+    ++ (import ../../modules/mowteng);
 }

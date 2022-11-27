@@ -2,10 +2,7 @@
 
 {
 
-  environment.systemPackages = with pkgs; [
-    jellyfin-ffmpeg
-    rclone
-  ];
+  environment.systemPackages = with pkgs; [ jellyfin-ffmpeg rclone ];
 
   programs = {
     git.enable = true;

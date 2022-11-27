@@ -3,11 +3,7 @@
 {
   nixpkgs.overlays = [
     (self: super: {
-      mpv = super.mpv.override {
-        scripts = [
-          self.mpvScripts.mpris
-        ];
-      };
+      mpv = super.mpv.override { scripts = [ self.mpvScripts.mpris ]; };
     })
   ];
 
@@ -37,9 +33,9 @@
     pinentry-gnome
     pkg-config
     polkit_gnome
-    (
-      let
-        python-packages-plus = python-packages: with python-packages; [
+    (let
+      python-packages-plus = python-packages:
+        with python-packages; [
           isort
           evdev
           jinja2
@@ -49,10 +45,8 @@
           unidecode
           setuptools
         ];
-        python-with-packages-plus = python3.withPackages python-packages-plus;
-      in
-      python-with-packages-plus
-    )
+      python-with-packages-plus = python3.withPackages python-packages-plus;
+    in python-with-packages-plus)
     sshfs-fuse
     texlive.combined.scheme-small
     udisks
@@ -60,7 +54,6 @@
     yt-dlp
     xdg_utils
   ];
-
 
   programs = {
     gnupg.agent.enable = true;

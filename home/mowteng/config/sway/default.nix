@@ -1,34 +1,20 @@
 { config, lib, pkgs, home-manager, ... }:
 
-let
-  cfg = config.wayland.windowManager.sway.config;
-in
-{
+let cfg = config.wayland.windowManager.sway.config;
+in {
   wayland.windowManager.sway = {
     enable = true;
     config = {
       assigns = {
-        "1" = [
-          { app_id = "kitty"; }
-        ];
-        "2" = [
-          { app_id = "firefox"; }
-          { app_id = "chromium-browser"; }
-        ];
-        "3" = [
-          { app_id = "mpv"; }
-        ];
-        "4" = [
-          { class = "Emacs"; }
-          { app_id = "emacs"; }
-        ];
+        "1" = [{ app_id = "kitty"; }];
+        "2" = [ { app_id = "firefox"; } { app_id = "chromium-browser"; } ];
+        "3" = [{ app_id = "mpv"; }];
+        "4" = [ { class = "Emacs"; } { app_id = "emacs"; } ];
         "5" = [
           { app_id = "org.pwmt.zathura"; }
           { app_id = "com.github.maoschanz.drawing"; }
         ];
-        "6" = [
-          { class = "Steam"; }
-        ];
+        "6" = [{ class = "Steam"; }];
         "7" = [
           { class = "Spotify"; }
           { app_id = "spotify-qt"; }
@@ -37,9 +23,7 @@ in
         "8" = [
 
         ];
-        "9" = [
-          { class = "Com.github.johnfactotum.Foliate"; }
-        ];
+        "9" = [{ class = "Com.github.johnfactotum.Foliate"; }];
       };
       bars = [ ];
       colors = {
@@ -90,9 +74,7 @@ in
         ];
         modifier = "Mod4";
       };
-      focus = {
-        followMouse = true;
-      };
+      focus = { followMouse = true; };
       fonts = {
         names = [ "mononoki Nerd Font" ];
         style = "Regular";
@@ -115,12 +97,8 @@ in
           events = "enabled";
           tap = "enabled";
         };
-        "1386:18888:Wacom_HID_49C8_Finger" = {
-          map_to_output = "eDP-1";
-        };
-        "1386:18888:Wacom_HID_49C8_Pen" = {
-          map_to_output = "eDP-1";
-        };
+        "1386:18888:Wacom_HID_49C8_Finger" = { map_to_output = "eDP-1"; };
+        "1386:18888:Wacom_HID_49C8_Pen" = { map_to_output = "eDP-1"; };
       };
       keybindings = {
         # Basics apps
@@ -210,17 +188,19 @@ in
         "${cfg.modifier}+Ctrl+m" = "exec grimshot save window";
 
         # mylock
-        "${cfg.modifier}+l" = "exec ${config.home.homeDirectory}/.local/bin/mylock";
-        "${cfg.modifier}+Shift+l" = "exec ${config.home.homeDirectory}/.local/bin/mylock at-home-mode";
-        "${cfg.modifier}+Ctrl+l" = "exec ${config.home.homeDirectory}/.local/bin/mylock safe-mode";
-        "${cfg.modifier}+Shift+Ctrl+l" = "exec ${config.home.homeDirectory}/.local/bin/mylock lock-now";
+        "${cfg.modifier}+l" =
+          "exec ${config.home.homeDirectory}/.local/bin/mylock";
+        "${cfg.modifier}+Shift+l" =
+          "exec ${config.home.homeDirectory}/.local/bin/mylock at-home-mode";
+        "${cfg.modifier}+Ctrl+l" =
+          "exec ${config.home.homeDirectory}/.local/bin/mylock safe-mode";
+        "${cfg.modifier}+Shift+Ctrl+l" =
+          "exec ${config.home.homeDirectory}/.local/bin/mylock lock-now";
       };
       menu = "\${pkgs.wofi}/bin/wofi --show drun";
       modifier = "Mod4";
       output = {
-        "*" = {
-          bg = "${config.xdg.configHome}/wallpaper/wall-01.png fill";
-        };
+        "*" = { bg = "${config.xdg.configHome}/wallpaper/wall-01.png fill"; };
       };
       seat = {
         "*" = {
@@ -229,14 +209,15 @@ in
         };
       };
       startup = [
-        { command = "configure-gtk"; always = true; }
+        {
+          command = "configure-gtk";
+          always = true;
+        }
         { command = "wl-paste --watch cliphist store"; }
         { command = "avizo-service"; }
       ];
       terminal = "kitty";
-      window = {
-        border = 1;
-      };
+      window = { border = 1; };
       workspaceAutoBackAndForth = true;
 
     };

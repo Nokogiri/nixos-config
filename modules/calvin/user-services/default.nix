@@ -1,6 +1,5 @@
 { pkgs, config, libs, ... }:
 
 {
-  imports = 
-  [(./rclone.nix)];
+  imports = [ (./rclone.nix) ];
 }

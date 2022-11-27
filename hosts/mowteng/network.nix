@@ -17,9 +17,10 @@
     useDHCP = false;
     #resolvconf.enable = true;
     wireless.iwd.enable = true;
-    dhcpcd.extraConfig = "noipv6rs\nnoipv6";
+    dhcpcd.extraConfig = ''
+      noipv6rs
+      noipv6'';
   };
-
 
   systemd.network.netdevs."90-wireguard" = {
     netdevConfig = {
@@ -32,10 +33,7 @@
     };
     wireguardPeers = [{
       wireguardPeerConfig = {
-        AllowedIPs = [
-          "10.200.200.0/24"
-          "::/1"
-        ];
+        AllowedIPs = [ "10.200.200.0/24" "::/1" ];
         Endpoint = "46.38.240.252:51871";
         PersistentKeepalive = 25;
         PresharedKeyFile = config.sops.secrets."wg/psk".path;
@@ -67,9 +65,7 @@
         UseDNS = true;
         UseRoutes = true;
       };
-      linkConfig = {
-        Multicast = true;
-      };
+      linkConfig = { Multicast = true; };
       networkConfig = {
         MulticastDNS = true;
         LLMNR = true;

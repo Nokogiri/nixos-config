@@ -1,5 +1,1 @@
-[
-  ./apps
-  ./sops
-  ./users
-]
+[ ./apps ./sops ./users ]

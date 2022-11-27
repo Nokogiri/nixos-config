@@ -24,34 +24,30 @@
       root = "/srv/www/apps/foodwiki";
 
       locations = {
-        "~ /(conf/|bin/|inc/)" = {
-          extraConfig = "deny all;";
-        };
+        "~ /(conf/|bin/|inc/)" = { extraConfig = "deny all;"; };
 
-        "~ ^/data/" = {
-          extraConfig = "internal;";
-        };
+        "~ ^/data/" = { extraConfig = "internal;"; };
 
-        "~ ^/lib.*\.(js|css|gif|png|ico|jpg|jpeg)$" = {
+        "~ ^/lib.*.(js|css|gif|png|ico|jpg|jpeg)$" = {
           extraConfig = "expires 365d;";
         };
 
         "/" = {
           priority = 1;
           index = "doku.php";
-          extraConfig = ''try_files $uri $uri/ @dokuwiki;'';
+          extraConfig = "try_files $uri $uri/ @dokuwiki;";
         };
 
         "@dokuwiki" = {
           extraConfig = ''
-          # rewrites "doku.php/" out of the URLs if you set the userwrite setting to .htaccess in dokuwiki config page
-            rewrite ^/_media/(.*) /lib/exe/fetch.php?media=$1 last;
-            rewrite ^/_detail/(.*) /lib/exe/detail.php?media=$1 last;
-            rewrite ^/_export/([^/]+)/(.*) /doku.php?do=export_$1&id=$2 last;
-            rewrite ^/(.*) /doku.php?id=$1&$args last;
-            '';
-          };
-          
+            # rewrites "doku.php/" out of the URLs if you set the userwrite setting to .htaccess in dokuwiki config page
+              rewrite ^/_media/(.*) /lib/exe/fetch.php?media=$1 last;
+              rewrite ^/_detail/(.*) /lib/exe/detail.php?media=$1 last;
+              rewrite ^/_export/([^/]+)/(.*) /doku.php?do=export_$1&id=$2 last;
+              rewrite ^/(.*) /doku.php?id=$1&$args last;
+          '';
+        };
+
         "~ \\.php$" = {
           extraConfig = ''
             try_files $uri $uri/ /doku.php;
@@ -59,9 +55,9 @@
             fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
             fastcgi_param REDIRECT_STATUS 200;
             fastcgi_pass unix:${config.services.phpfpm.pools."foodwiki".socket};
-              '';
-            };
-          };
+          '';
         };
       };
+    };
+  };
 }

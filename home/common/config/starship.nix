@@ -3,12 +3,11 @@
 {
   programs = {
     starship = {
-      enable = false;
+      enable = true;
       enableZshIntegration = false;
       settings = {
-        battery = {
-          disabled = true;
-        };
+        add_newline = false;
+        battery = { disabled = true; };
       };
     };
   };

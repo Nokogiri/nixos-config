@@ -17,19 +17,12 @@
     useDHCP = false;
     enableIPv6 = true;
     wireless.iwd.enable = false;
-    dhcpcd.extraConfig = "noipv6rs\nnoipv6";
+    dhcpcd.extraConfig = ''
+      noipv6rs
+      noipv6'';
     firewall = {
-      trustedInterfaces = [
-        "wg0"
-        "enp1s0f0"
-      ];
-      allowedTCPPorts = [
-        80
-        443
-        5353
-        6052
-        8123
-      ];
+      trustedInterfaces = [ "wg0" "enp1s0f0" ];
+      allowedTCPPorts = [ 80 443 5353 6052 8123 ];
     };
   };
 
@@ -44,10 +37,7 @@
     };
     wireguardPeers = [{
       wireguardPeerConfig = {
-        AllowedIPs = [
-          "10.200.200.0/24"
-          "::/1"
-        ];
+        AllowedIPs = [ "10.200.200.0/24" "::/1" ];
         Endpoint = "46.38.240.252:51871";
         PersistentKeepalive = 25;
         PresharedKeyFile = config.sops.secrets."wg/psk".path;
@@ -74,9 +64,7 @@
         UseDNS = true;
         UseRoutes = true;
       };
-      linkConfig = {
-        Multicast = true;
-      };
+      linkConfig = { Multicast = true; };
       networkConfig = {
         MulticastDNS = true;
         LLMNR = true;

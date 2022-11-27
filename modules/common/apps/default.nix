@@ -4,7 +4,7 @@
   environment.systemPackages = with pkgs; [
     (pkgs.writeShellScriptBin "nixVersions.stable" ''
       exec ${pkgs.nixVersions.stable}/bin/nix --experimental-features "nix-command flakes" "$@"
-    '')    
+    '')
     age
     atool
     bat

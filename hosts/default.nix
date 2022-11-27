@@ -1,4 +1,5 @@
-{ lib, inputs, nixpkgs, user, sops-nix, nix-minecraft, home-manager, emacs-overlay, addins, ... }:
+{ lib, inputs, nixpkgs, user, sops-nix, nix-minecraft, home-manager
+, emacs-overlay, addins, ... }:
 
 let
   system = "x86_64-linux"; # System architecture
@@ -9,8 +10,7 @@ let
   };
 
   lib = nixpkgs.lib;
-in
-{
+in {
   frankenbook = lib.nixosSystem {
     # Desktop profile
     inherit system;
@@ -22,7 +22,9 @@ in
       ./configuration.nix
       {
         nixpkgs.overlays = [
-          (self: super: { nix-direnv = super.nix-direnv.override { enableFlakes = true; }; })
+          (self: super: {
+            nix-direnv = super.nix-direnv.override { enableFlakes = true; };
+          })
         ];
       }
     ];
@@ -40,7 +42,9 @@ in
         nixpkgs.overlays = [
           emacs-overlay.overlay
           addins.overlay
-          (self: super: { nix-direnv = super.nix-direnv.override { enableFlakes = true; }; })
+          (self: super: {
+            nix-direnv = super.nix-direnv.override { enableFlakes = true; };
+          })
         ];
       }
       home-manager.nixosModules.home-manager
@@ -66,7 +70,9 @@ in
       {
         nixpkgs.overlays = [
           nix-minecraft.overlay
-          (self: super: { nix-direnv = super.nix-direnv.override { enableFlakes = true; }; })
+          (self: super: {
+            nix-direnv = super.nix-direnv.override { enableFlakes = true; };
+          })
         ];
       }
     ];

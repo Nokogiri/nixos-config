@@ -17,12 +17,7 @@
         userServices = true;
       };
     };
-    btrbk = {
-      extraPackages = [
-        pkgs.mbuffer
-        pkgs.xz
-      ];
-    };
+    btrbk = { extraPackages = [ pkgs.mbuffer pkgs.xz ]; };
     dbus.enable = true;
     logind.lidSwitch = "ignore";
     mbpfan = {
@@ -48,7 +43,7 @@
         Domains=home.arpa
         MulticastDNS=true
         LLMNR=true
-        '';
+      '';
     };
     tlp.enable = false;
     udisks2.enable = true;

@@ -1,8 +1,7 @@
 { config, lib, pkgs, inputs, user, ... }:
 
 {
-  imports =
-    (import ../modules/common);
+  imports = (import ../modules/common);
   nix = {
     package = pkgs.nixVersions.stable;
     extraOptions = ''
@@ -18,9 +17,8 @@
     };
     settings = {
       auto-optimise-store = true;
-      #extra-sandbox-paths = [ (toString config.programs.ccache.cacheDir) ];
+      extra-sandbox-paths = [ (toString config.programs.ccache.cacheDir) ];
       substituters = [
-        #"https://cache.fishoeder.net"
         "https://nookogiri.cachix.org"
         "https://nix-community.cachix.org"
         "https://cache.nixos.org"
@@ -28,24 +26,17 @@
       trusted-public-keys = [
         "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
         "nookogiri.cachix.org-1:tKY3HBn6Xhuqys5EcQRl1u+sKualOXFzCs9Q6qEXR+o="
-        #"cache.fishoeder.net:0wqH5JXoJJVWitNUfD9PCCVO+A8DOEOyXZSrkCi5lb8="
       ];
     };
   };
 
-  environment.pathsToLink = [
-    "/share/nix-direnv"
-    "/share/zsh"
-  ];
+  environment.pathsToLink = [ "/share/nix-direnv" "/share/zsh" ];
 
   nixpkgs.config.allowUnfree = true;
 
   i18n = {
     defaultLocale = "en_US.UTF-8";
-    supportedLocales = [
-      "en_US.UTF-8/UTF-8"
-      "de_DE.UTF-8/UTF-8"
-    ];
+    supportedLocales = [ "en_US.UTF-8/UTF-8" "de_DE.UTF-8/UTF-8" ];
     extraLocaleSettings = {
       LC_CTYPE = "en_US.UTF-8";
       LC_NUMERIC = "de_DE.UTF-8";
@@ -70,18 +61,20 @@
     doas = {
       enable = true;
       wheelNeedsPassword = true;
-      extraRules = [{
-        groups = [ "wheel" ];
-        noPass = false;
-        keepEnv = true;
-        persist = true;
-      }
+      extraRules = [
+        {
+          groups = [ "wheel" ];
+          noPass = false;
+          keepEnv = true;
+          persist = true;
+        }
         {
           users = [ "nokogiri" ];
           noPass = true;
           keepEnv = true;
           persist = false;
-        }];
+        }
+      ];
     };
   };
 
@@ -89,7 +82,5 @@
 
   sops.age.sshKeyPaths = [ "/etc/ssh/ssh_host_ed25519_key" ];
 
-  services = {
-    openssh.enable = true;
-  };
+  services = { openssh.enable = true; };
 }

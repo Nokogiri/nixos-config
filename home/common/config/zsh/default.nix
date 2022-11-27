@@ -1,5 +1,4 @@
-{ config, pkgs, user, ... }:
-{
+{ config, pkgs, user, ... }: {
   xdg.configFile."zsh/p10k.zsh".source = ./p10k.zsh;
   xdg.configFile."zsh/p10k-linux.zsh".source = ./p10k-linux.zsh;
   programs = {
@@ -23,7 +22,7 @@
         bindkey "$terminfo[kcud1]" history-substring-search-down
 
         export COMPLETION_WAITING_DOTS="true"
-        
+
         setopt correct
         unsetopt correctall
         if [[ ! $TERM =~ "linux" ]]; then
@@ -33,9 +32,9 @@
         fi
         # Miscellaneous settings
         #setopt INTERACTIVE_COMMENTS  # Enable comments in interactive shell.
-        
+
         setopt extended_glob # Enable more powerful glob features
-        
+
         # Long running processes should return time after they complete. Specified
         # in seconds.
         REPORTTIME=2
@@ -44,7 +43,7 @@
         autoload -U zmv
 
         ZSH_AUTOSUGGEST_CLEAR_WIDGETS+=(bracketed-paste)
-        
+
         setopt hist_verify
         setopt INC_APPEND_HISTORY
         unsetopt BEEP
@@ -78,12 +77,8 @@
         share = true;
         size = 100000;
       };
-      localVariables = {
-        POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD = true;
-      };
-      oh-my-zsh = {
-        enable = true;
-      };
+      localVariables = { POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD = true; };
+      oh-my-zsh = { enable = true; };
       plugins = [
         {
           name = "fzf-tab";

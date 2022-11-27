@@ -11,7 +11,6 @@
     #yt-dlp
   ];
 
-
   programs = {
     gnupg.agent.enable = true;
     mtr.enable = true;

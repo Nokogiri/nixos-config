@@ -43,16 +43,14 @@
         LLMNR=true
         ReadEtcHosts=true
         Cache=true
-        '';
+      '';
     };
     tlp.enable = true;
     udisks2.enable = true;
 
   };
 
-  security = {
-    polkit.enable = true;
-  };
+  security = { polkit.enable = true; };
 
   virtualisation = {
     docker = {

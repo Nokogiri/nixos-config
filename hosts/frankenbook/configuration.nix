@@ -4,11 +4,7 @@
 { config, lib, pkgs, modulesPath, ... }:
 
 {
-  imports =
-    [
-      (modulesPath + "/installer/scan/not-detected.nix")
-    ];
-
+  imports = [ (modulesPath + "/installer/scan/not-detected.nix") ];
 
   boot.loader = {
     systemd-boot.enable = true;
@@ -25,12 +21,19 @@
     extraModprobeConfig = ''
       options hid_apple fnmode=2 swap_fn_leftctrl=1 iso_layout=0
     '';
-    initrd.availableKernelModules = [ "xhci_pci" "ehci_pci" "ahci" "firewire_ohci" "usb_storage" "usbhid" "sd_mod" "sdhci_pci" ];
+    initrd.availableKernelModules = [
+      "xhci_pci"
+      "ehci_pci"
+      "ahci"
+      "firewire_ohci"
+      "usb_storage"
+      "usbhid"
+      "sd_mod"
+      "sdhci_pci"
+    ];
     initrd.kernelModules = [ "i915" "hid-apple" ];
     kernelModules = [ "hid-nintendo" "kvm-intel" ];
-    kernelPackages =
-      pkgs.linuxPackages_zen
-    ;
+    kernelPackages = pkgs.linuxPackages_zen;
     kernelParams = [
       "acpi_backlight=vendor"
       "intremap=off"
@@ -54,24 +57,16 @@
     ];
   };
 
-
-
   fileSystems."/" = {
     device = "/dev/disk/by-uuid/1f200403-52ed-4fe6-8e44-edfa6aed6cf9";
     fsType = "btrfs";
-    options = [
-      "subvol=@nixos"
-      "compress=zstd:9"
-    ];
+    options = [ "subvol=@nixos" "compress=zstd:9" ];
   };
 
   fileSystems."/home" = {
     device = "/dev/disk/by-uuid/1f200403-52ed-4fe6-8e44-edfa6aed6cf9";
     fsType = "btrfs";
-    options = [
-      "subvol=@home"
-      "compress=zstd:9"
-    ];
+    options = [ "subvol=@home" "compress=zstd:9" ];
   };
 
   fileSystems."/efi" = {
@@ -87,27 +82,22 @@
     ];
   };
 
-  swapDevices = [
-    { device = "/dev/disk/by-uuid/649f67bb-4f10-493f-b4e6-0c0aa625552d"; }
-  ];
-
+  swapDevices =
+    [{ device = "/dev/disk/by-uuid/649f67bb-4f10-493f-b4e6-0c0aa625552d"; }];
 
   hardware = {
-    cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+    cpu.intel.updateMicrocode =
+      lib.mkDefault config.hardware.enableRedistributableFirmware;
     enableRedistributableFirmware = true;
     bluetooth.enable = false;
-    opengl.extraPackages = with pkgs; [
-      vaapiIntel
-    ];
+    opengl.extraPackages = with pkgs; [ vaapiIntel ];
   };
 
   systemd.sleep.extraConfig = ''
     HibernateMode=shutdown
   '';
 
-  environment.systemPackages = with pkgs; [
-    lm_sensors
-  ];
+  environment.systemPackages = with pkgs; [ lm_sensors ];
 
   powerManagement = {
     cpuFreqGovernor = "ondemand";
@@ -115,7 +105,7 @@
   };
 
   programs.fuse.userAllowOther = true;
-  
+
   security.sudo.wheelNeedsPassword = false;
   sound.enable = false;
 

@@ -19,7 +19,8 @@
         wayland_titlebar_color = "system";
         hide_window_decorations = true;
         scrollback_lines = 9000;
-        scrollback_pager = "less --chop-long-lines --RAW-CONTROL-CHARS +INPUT_LINE_NUMBER";
+        scrollback_pager =
+          "less --chop-long-lines --RAW-CONTROL-CHARS +INPUT_LINE_NUMBER";
         scrollback_pager_history_size = 0;
         wheel_scroll_multiplier = 5;
         mouse_hide_wait = 3;
@@ -77,9 +78,9 @@
         listen_on = "unix:/tmp/kitty";
         update_check_interval = 0;
         startup_session = true;
-        clipboard_control = "write-clipboard write-primary read-clipboard read-primary";
+        clipboard_control =
+          "write-clipboard write-primary read-clipboard read-primary";
         term = "xterm-kitty";
-
 
         # Window settings
         remember_window_size = true;

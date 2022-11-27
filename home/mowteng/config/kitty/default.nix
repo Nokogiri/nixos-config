@@ -1,5 +1,6 @@
 {
   xdg.configFile."kitty/theme.conf".source = ./frappe.conf;
+  xdg.configFile."kitty/tab_bar.py".source = ./tab_bar.py;
   programs = {
     kitty = {
       enable = true;
@@ -19,7 +20,8 @@
         wayland_titlebar_color = "system";
         hide_window_decorations = true;
         scrollback_lines = 9000;
-        scrollback_pager = "less --chop-long-lines --RAW-CONTROL-CHARS +INPUT_LINE_NUMBER";
+        scrollback_pager =
+          "less --chop-long-lines --RAW-CONTROL-CHARS +INPUT_LINE_NUMBER";
         scrollback_pager_history_size = 0;
         wheel_scroll_multiplier = 5;
         mouse_hide_wait = 3;
@@ -46,22 +48,25 @@
         enable_audio_bell = false;
         visual_bell_duration = 0;
         window_alert_on_bell = true;
-        bell_on_tab = true;
+        bell_on_tab = false;
         command_on_bell = "none";
 
         # Tab settings
         tab_bar_edge = "bottom";
         tab_bar_margin_height = "0.0 0.0";
         tab_bar_margin_width = "0.0";
-        tab_bar_style = "powerline";
+        tab_bar_align = "left";
+        tab_bar_style = "custom";
         tab_bar_min_tabs = 1;
         tab_switch_strategy = "previous";
-        tab_fade = "0 0 0 0";
+        tab_fade = "0.25 0.5 0.75 1";
         tab_separator = "";
         tab_activity_symbol = "none";
         tab_powerline_style = "angled";
         active_tab_font_style = "bold";
         inactive_tab_font_style = "normal";
+        tab_title_template = ''
+          "{f'{title[:30]}…' if title.rindex(title[-1]) + 1 > 30 else (title.center(6) if (title.rindex(title[-1]) + 1) % 2 == 0 else title.center(5))}"'';
 
         # Misc settings
         disable_ligatures = "cursor";
@@ -77,9 +82,9 @@
         listen_on = "unix:/tmp/kitty";
         update_check_interval = 0;
         startup_session = true;
-        clipboard_control = "write-clipboard write-primary read-clipboard read-primary";
+        clipboard_control =
+          "write-clipboard write-primary read-clipboard read-primary";
         term = "xterm-kitty";
-
 
         # Window settings
         remember_window_size = true;

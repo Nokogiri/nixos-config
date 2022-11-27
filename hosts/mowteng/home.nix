@@ -46,7 +46,7 @@ with lib;
 
         #Emulation
         cemu 
-        ppsspp-sdl
+        ppsspp-sdl-wayland
         retroarch
         libretro.mgba
         libretro.bsnes

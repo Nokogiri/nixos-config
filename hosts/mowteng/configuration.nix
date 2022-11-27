@@ -20,6 +20,7 @@
     initrd.availableKernelModules = [ "nvme" "xhci_pci" "ahci" "sd_mod" ];
     initrd.kernelModules = [ "amd_pstate" "amdgpu" ];
     kernelModules = [ "kvm-amd" "zenpower" ];
+    extraModulePackages = [ pkgs.linuxPackages_lqx.zenpower ];
     kernelPackages = pkgs.linuxPackages_lqx;
     kernelPatches = [
       {
@@ -107,15 +108,6 @@
     enableRedistributableFirmware = true;
     bluetooth.enable = true;
 
-    #opengl.extraPackages = with pkgs; [
-    #  rocm-opencl-icd
-    #  rocm-opencl-runtime
-      #amdvlk
-    #];
-    #opengl.extraPackages32 = with pkgs; [
-    #  driversi686Linux.amdvlk
-    #];
-
     opengl = {
       driSupport = lib.mkDefault true;
       driSupport32Bit = lib.mkDefault true;
@@ -137,7 +129,6 @@
   environment.systemPackages = with pkgs; [
     lm_sensors
     linuxKernel.packages.linux_lqx.cpupower
-    linuxKernel.packages.linux_lqx.zenpower
   ];
 
   powerManagement = {

@@ -219,13 +219,12 @@ in
       modifier = "Mod4";
       output = {
         "*" = {
-          bg = "${config.home.homeDirectory}/tmp/dotfiles/config/bspwm/rices/cynthia/wall-01.png fill";
+          bg = "${config.xdg.configHome}/wallpaper/wall-01.png fill";
         };
       };
       seat = {
         "*" = {
           xcursor_theme = "${config.gtk.cursorTheme.name}";
-          #xcursor_theme = "Vimix-White-dark";
           hide_cursor = "when-typing 10";
         };
       };

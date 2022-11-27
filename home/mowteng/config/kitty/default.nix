@@ -1,10 +1,10 @@
 {
-  xdg.configFile."kitty/theme.conf".source = ./OneDark.conf;
+  xdg.configFile."kitty/theme.conf".source = ./frappe.conf;
   programs = {
     kitty = {
       enable = true;
       font = {
-        name = "mononoki Nerd Font Mono";
+        name = "CaskaydiaCove Nerd Font Mono";
         size = 13;
       };
       extraConfig = ''

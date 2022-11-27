@@ -65,10 +65,6 @@
       "utf8"
     ];
   };
-  fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/5381-ECEE";
-      fsType = "vfat";
-    };
 
   fileSystems."/home" =
     { device = "/dev/disk/by-uuid/d1f0114c-069e-46c1-bf58-f2d024ca46f7";

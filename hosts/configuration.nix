@@ -4,20 +4,17 @@
   imports = (import ../modules/common);
   nix = {
     package = pkgs.nixVersions.stable;
-    extraOptions = ''
-      experimental-features = nix-command flakes
-      keep-outputs = true
-      keep-derivations = true
-      extra-sandbox-paths = /nix/var/cache/ccache
-    '';
     gc = {
       automatic = true;
       dates = "weekly";
       options = "--delete-older-than 20d";
     };
     settings = {
+      experimental-features = [ "nix-command flakes" ];
       auto-optimise-store = true;
-      extra-sandbox-paths = [ (toString config.programs.ccache.cacheDir) ];
+      extra-sandbox-paths = [ "/nix/var/cache/ccache" ];
+      keep-outputs = true;
+      keep-derivations = true;
       substituters = [
         "https://nookogiri.cachix.org"
         "https://nix-community.cachix.org"

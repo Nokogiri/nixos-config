@@ -106,7 +106,7 @@
   ];
 
   powerManagement = {
-    cpuFreqGovernor = "schedutil";
+    cpuFreqGovernor = "ondemand";
     powertop.enable = false;
   };
 

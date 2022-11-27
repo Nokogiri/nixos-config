@@ -1,4 +1,4 @@
-#  Home-manager configuration for desktop
+# Home-manager configuration for desktop
 #
 #  flake.nix
 #   ├─ ./hosts

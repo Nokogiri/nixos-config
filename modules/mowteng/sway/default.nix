@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, lib, home-manager, ... }:
 
 {
   environment = {
@@ -63,9 +63,9 @@
         in ''
           export XDG_DATA_DIRS=${datadir}:$XDG_DATA_DIRS
           gnome_schema=org.gnome.desktop.interface
-          gsettings set $gnome_schema gtk-theme 'vimix-dark'
-          gsettings set $gnome_schema icon-theme 'Vimix-Black-dark'
-          gsettings set $gnome_schema cursor-theme 'Vimix-White-dark'
+          gsettings set $gnome_schema gtk-theme 'Catppuccin-Frappe-Green'
+          gsettings set $gnome_schema icon-theme 'Colloid-green-dark'
+          gsettings set $gnome_schema cursor-theme 'Colloid-dark'
         '';
       })
     ];

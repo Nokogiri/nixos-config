@@ -8,8 +8,6 @@
         "FiraMono"
         "FiraCode"
         "Meslo"
-        "Mononoki"
-        "SourceCodePro"
       ];
     })
     #corefonts
@@ -20,6 +18,8 @@
     noto-fonts
     noto-fonts-emoji
     noto-fonts-cjk-sans
+    powerline-symbols
+    weather-icons
   ];
 
   fonts = {
@@ -32,7 +32,7 @@
       defaultFonts = {
         serif = [ "Fira Code" ];
         sansSerif = [ "Fira Code" ];
-        monospace = [ "Fira Code Mono" ];
+        monospace = [ "Fira Mono" ];
       };
     };
   };

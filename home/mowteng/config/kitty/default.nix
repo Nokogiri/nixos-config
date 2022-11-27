@@ -70,6 +70,7 @@
 
         # Misc settings
         disable_ligatures = "cursor";
+        #symbol_map = "U+F000-U+F0FF Weather Icons";
         adjust_line_height = 0;
         adjust_column_width = 0;
         repaint_delay = 8;
@@ -84,7 +85,7 @@
         startup_session = true;
         clipboard_control =
           "write-clipboard write-primary read-clipboard read-primary";
-        term = "xterm-kitty";
+        #term = "xterm-kitty";
 
         # Window settings
         remember_window_size = true;

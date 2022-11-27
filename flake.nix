@@ -21,7 +21,7 @@
     , emacs-overlay, addins, ... }:
     let user = "nokogiri";
     in {
-      nixosConfigurations = (import ./hosts {
+      nixosConfigurations = (import ./system {
         inherit (nixpkgs) lib;
         inherit inputs nixpkgs user nix-minecraft sops-nix home-manager
           emacs-overlay addins;

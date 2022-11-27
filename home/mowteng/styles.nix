@@ -2,11 +2,11 @@
   gtk = {
     enable = true;
     cursorTheme = {
-      package = pkgs.catppuccin-cursors.frappeGreen;
-      name = "Catppuccin-Frappe-Green-Cursors";
+      package = pkgs.colloid-cursors;
+      name = "Colloid-dark";
     };
     font = {
-      name = "Fira Code";
+      name = "FiraCode Nerd Font";
       size = 13;
     };
     iconTheme = {
@@ -14,7 +14,7 @@
       name = "Colloid-green-dark";
     };
     theme = {
-      package = pkgs.catppuccin-gtk;
+      package = pkgs.catppuccin-gtk-frappe-green;
       name = "Catppuccin-Frappe-Green";
     };
     gtk3 = {

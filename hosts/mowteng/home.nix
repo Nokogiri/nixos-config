@@ -26,6 +26,7 @@ with lib;
       tridactyl-native
       chromium
       gimp
+      gopass
       gtk-pipe-viewer
       imv
       inkscape
@@ -37,6 +38,7 @@ with lib;
       mpv
       pamixer
       playerctl
+      spotify
       yt-dlp
 
       #Emulation

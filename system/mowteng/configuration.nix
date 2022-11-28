@@ -20,7 +20,7 @@
       options hid_xpadneo ff_connect_notify=0
       blacklist pcspkr
       options usb_storage quirks=090c:1000:,152d:0578:u,0bc2:2322:u
-      '';
+    '';
     extraModulePackages = [ pkgs.linuxPackages_lqx.zenpower ];
     kernelPackages = pkgs.linuxPackages_lqx;
     kernelPatches = [{

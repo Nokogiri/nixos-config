@@ -31,6 +31,7 @@ with lib;
       imv
       inkscape
       ncspot
+      transmission-remote-gtk
       zathura
 
       gparted
@@ -43,7 +44,7 @@ with lib;
 
       #Emulation
       cemu
-      ppsspp-sdl-wayland
+      ppsspp
       rpcs3
       retroarch
       libretro.mgba

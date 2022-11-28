@@ -1,1 +1,1 @@
-[ ./sway ./fonts ./apps ./services ]
+[ ./apps ./fonts ./network ./services ./sway ]

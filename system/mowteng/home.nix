@@ -44,6 +44,7 @@ with lib;
       #Emulation
       cemu
       ppsspp-sdl-wayland
+      rpcs3
       retroarch
       libretro.mgba
       libretro.bsnes
@@ -64,6 +65,7 @@ with lib;
       #Games
       gamemode
       gamescope
+      heroic-beta
       mangohud
       prismlauncher
 

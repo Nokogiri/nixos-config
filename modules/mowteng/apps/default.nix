@@ -6,7 +6,26 @@
       mpv = super.mpv.override { scripts = [ self.mpvScripts.mpris ]; };
     })
   ];
-
+  nixpkgs.config.packageOverrides = pkgs: {
+    steam = pkgs.steam.override {
+      extraPkgs = pkgs:
+        with pkgs; [
+          libgdiplus
+          gamescope
+          mangohud
+          xorg.libXcursor
+          xorg.libXi
+          xorg.libXinerama
+          xorg.libXScrnSaver
+          libpng
+          libpulseaudio
+          libvorbis
+          stdenv.cc.cc.lib
+          libkrb5
+          keyutils
+        ];
+    };
+  };
   environment.systemPackages = with pkgs; [
     amdvlk
     brightnessctl

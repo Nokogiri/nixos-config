@@ -16,13 +16,19 @@
     initrd.availableKernelModules = [ "nvme" "xhci_pci" "ahci" "sd_mod" ];
     initrd.kernelModules = [ "amd_pstate" "amdgpu" ];
     kernelModules = [ "kvm-amd" "zenpower" "msr" ];
+    extraModprobeConfig = ''
+      options hid_xpadneo ff_connect_notify=0
+      blacklist pcspkr
+      options usb_storage quirks=090c:1000:,152d:0578:u,0bc2:2322:u
+      '';
     extraModulePackages = [ pkgs.linuxPackages_lqx.zenpower ];
     kernelPackages = pkgs.linuxPackages_lqx;
     kernelPatches = [{
       name = "d3cold-fix";
       patch = ./patches/d3cold.patch;
     }];
-    kernelParams = [ "amd_pstate.shared_mem=1" ];
+    tmpOnTmpfs = true;
+    tmpOnTmpfsSize = "60%";
   };
 
   fileSystems."/" = {

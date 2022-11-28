@@ -65,7 +65,7 @@
           gnome_schema=org.gnome.desktop.interface
           gsettings set $gnome_schema gtk-theme 'Catppuccin-Frappe-Green'
           gsettings set $gnome_schema icon-theme 'Colloid-green-dark'
-          gsettings set $gnome_schema cursor-theme 'Colloid-dark'
+          gsettings set $gnome_schema cursor-theme 'Colloid-dark-Cursors'
         '';
       })
     ];

@@ -3,7 +3,7 @@
     enable = true;
     cursorTheme = {
       package = pkgs.colloid-cursors;
-      name = "Colloid-dark";
+      name = "Colloid-dark-Cursors";
     };
     font = {
       name = "FiraCode Nerd Font";

@@ -1,7 +1,7 @@
 { config, lib, pkgs, inputs, user, ... }:
 
 {
-  imports = (import ../modules/common);
+  imports = (import ./common);
   nix = {
     package = pkgs.nixVersions.stable;
     gc = {

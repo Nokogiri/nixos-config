@@ -1,0 +1,1 @@
+[ ./apps ./sops ./users ]

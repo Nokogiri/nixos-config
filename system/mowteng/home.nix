@@ -23,7 +23,6 @@ with lib;
         (epkgs: [ epkgs.vterm ]))
       (aspellWithDicts (ds: with ds; [ de en en-computers en-science ]))
       firefox-wayland
-      tridactyl-native
       chromium
       gimp
       gopass

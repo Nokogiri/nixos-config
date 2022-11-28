@@ -1,1 +1,1 @@
-[ ./apps ./fonts ./network ./services ./sway ]
+[ ./apps ./fonts ./network ./overrides ./services ./sway ]

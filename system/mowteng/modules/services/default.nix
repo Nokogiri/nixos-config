@@ -4,13 +4,6 @@
   services = {
 
     avahi.enable = true;
-    clight = {
-      enable = false;
-      temperature = {
-        day = 6500;
-        night = 4200;
-      };
-    };
     dbus.enable = true;
     fwupd = {
       enable = true;
@@ -29,7 +22,7 @@
       extraConfig = ''
         Domains=home.arpa
         MulticastDNS=true
-        LLMNR=true
+        LLMNR=false
         ReadEtcHosts=true
         Cache=true
       '';

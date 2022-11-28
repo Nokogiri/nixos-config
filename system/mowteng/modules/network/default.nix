@@ -64,11 +64,12 @@
         RouteMetric = 20;
         UseDNS = true;
         UseRoutes = true;
+        UseDomains = true;
       };
       linkConfig = { Multicast = true; };
       networkConfig = {
         MulticastDNS = true;
-        LLMNR = true;
+        LLMNR = false;
       };
     };
     networks."90-wireguard" = {

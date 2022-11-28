@@ -2,10 +2,7 @@
 
 {
   fonts.fonts = with pkgs; [
-    (nerdfonts.override {
-      fonts = [ "CascadiaCode" "FiraMono" "FiraCode" "Meslo" ];
-    })
-    #corefonts
+    nerdfonts
     dejavu_fonts
     fira-code
     fira-mono

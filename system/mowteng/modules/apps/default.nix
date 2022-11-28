@@ -1,55 +1,46 @@
 { config, pkgs, lib, ... }:
 
 {
-  nixpkgs.overlays = [
-    (self: super: {
-      mpv = super.mpv.override { scripts = [ self.mpvScripts.mpris ]; };
-    })
-  ];
-  nixpkgs.config.packageOverrides = pkgs: {
-    steam = pkgs.steam.override {
-      extraPkgs = pkgs:
-        with pkgs; [
-          libgdiplus
-          gamescope
-          mangohud
-          xorg.libXcursor
-          xorg.libXi
-          xorg.libXinerama
-          xorg.libXScrnSaver
-          libpng
-          libpulseaudio
-          libvorbis
-          stdenv.cc.cc.lib
-          libkrb5
-          keyutils
-        ];
-    };
-  };
+  #nixpkgs.overlays = [
+  #  (self: super: {
+  #    mpv = super.mpv.override { scripts = [ self.mpvScripts.mpris ]; };
+  #  })
+  #];
+  #nixpkgs.config.packageOverrides = pkgs: {
+  #  steam = pkgs.steam.override {
+  #    extraPkgs = pkgs:
+  #      with pkgs; [
+  #        libgdiplus
+  #        gamescope
+  #        mangohud
+  #        xorg.libXcursor
+  #        xorg.libXi
+  #       xorg.libXinerama
+  #       xorg.libXScrnSaver
+  ##       libpng
+  #       libpulseaudio
+  #       libvorbis
+  #       stdenv.cc.cc.lib
+  #       libkrb5
+  #       keyutils
+  #     ];
+  # };
+  #};
   environment.systemPackages = with pkgs; [
     brightnessctl
-    blueman
-    cmake
-    clang
     firefox
     fprintd
     fwupd
-    gcc
-    gnumake
     ffmpeg
-    glib.bin
-    glfw-wayland
     hunspell
     iio-sensor-proxy
     iwd
     iwgtk
     ldns
     libinput
-    libva-utils
     mpv
     pandoc
     pinentry-gnome
-    pkg-config
     polkit_gnome
     (let
       python-packages-plus = python-packages:

@@ -1,0 +1,1 @@
+[ ./sway ./fonts ./apps ./services ]

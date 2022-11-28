@@ -2,5 +2,5 @@
 
 {
   imports = [ (import ./configuration.nix) ] ++ [ (import ./network.nix) ]
-    ++ (import ../../modules/mowteng);
+    ++ (import ./modules);
 }

@@ -22,24 +22,15 @@ with lib;
       ((emacsPackagesFor emacsPgtkNativeComp).emacsWithPackages
         (epkgs: [ epkgs.vterm ]))
       (aspellWithDicts (ds: with ds; [ de en en-computers en-science ]))
-      firefox-wayland
-      chromium
-      gimp
       gopass
       gtk-pipe-viewer
-      imv
-      inkscape
       ncspot
-      transmission-remote-gtk
       zathura
 
       gparted
       # media
-      mpv
       pamixer
       playerctl
-      spotify
-      yt-dlp
 
       #Emulation
       cemu
@@ -65,7 +56,6 @@ with lib;
       #Games
       gamemode
       gamescope
-      heroic-beta
       mangohud
       prismlauncher
 

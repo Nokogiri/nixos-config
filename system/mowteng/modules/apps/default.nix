@@ -1,45 +1,35 @@
 { config, pkgs, lib, ... }:
 
 {
-  #nixpkgs.overlays = [
-  #  (self: super: {
-  #    mpv = super.mpv.override { scripts = [ self.mpvScripts.mpris ]; };
-  #  })
-  #];
-  #nixpkgs.config.packageOverrides = pkgs: {
-  #  steam = pkgs.steam.override {
-  #    extraPkgs = pkgs:
-  #      with pkgs; [
-  #        libgdiplus
-  #        gamescope
-  #        mangohud
-  #        xorg.libXcursor
-  #        xorg.libXi
-  #       xorg.libXinerama
-  #       xorg.libXScrnSaver
-  ##       libpng
-  #       libpulseaudio
-  #       libvorbis
-  #       stdenv.cc.cc.lib
-  #       libkrb5
-  #       keyutils
-  #     ];
-  # };
-  #};
   environment.systemPackages = with pkgs; [
-    brightnessctl
-    firefox
-    fprintd
-    fwupd
+
+    # web
+    chromium
+    firefox-wayland
+    transmission-remote-gtk
+    widevine-cdm
+
+    # documents, graphics etc
+    gimp
+    imv
+    inkscape
+    pandoc
+    xournalpp
+
+    # video & audio
     ffmpeg
-    hunspell
+    gtk-pipe-viewer
+    mpv
+    spotify
+    yt-dlp
+
+    # system
+    brightnessctl
+    fwupd
     iio-sensor-proxy
-    iwd
     iwgtk
     ldns
     libinput
-    mpv
-    pandoc
     pinentry-gnome
     polkit_gnome
     (let
@@ -59,9 +49,7 @@
     ryzen-ppd
     sshfs-fuse
     texlive.combined.scheme-small
-    udisks
     udiskie
-    yt-dlp
     xdg_utils
   ];
 

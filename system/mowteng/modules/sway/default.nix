@@ -32,6 +32,7 @@
       cliphist
       eww-wayland
       fuzzel
+      glib.bin
       gsettings-desktop-schemas
       grim
       kitty
@@ -40,7 +41,6 @@
       pulseaudio
       rofi-wayland
       slurp
-      sov
       swayidle
       swaylock-effects
       swaynotificationcenter

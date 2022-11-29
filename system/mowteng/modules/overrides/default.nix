@@ -23,11 +23,7 @@
           ];
       };
       nerdfonts = nerdfonts.override {
-        fonts = [
-          "CascadiaCode"
-          "FiraMono"
-          "FiraCode"
-        ];
+        fonts = [ "CascadiaCode" "FiraMono" "FiraCode" ];
       };
     };
 }

@@ -22,48 +22,11 @@ with lib;
       ((emacsPackagesFor emacsPgtkNativeComp).emacsWithPackages
         (epkgs: [ epkgs.vterm ]))
       (aspellWithDicts (ds: with ds; [ de en en-computers en-science ]))
-      gopass
-      gtk-pipe-viewer
-      ncspot
-      zathura
 
       gparted
-      # media
-      pamixer
-      playerctl
 
-      #Emulation
-      cemu
-      ppsspp
-      rpcs3
-      retroarch
-      libretro.mgba
-      libretro.bsnes
-      libretro.bsnes-hd
-      libretro.dolphin
-      libretro.snes9x
-      libretro.flycast
-      libretro.melonds
-      libretro.gambatte
-      libretro.genesis-plus-gx
-      libretro.beetle-psx
-      libretro.beetle-psx-hw
-      libretro.beetle-pce-fast
-      libretro.beetle-supergrafx
-      libretro.mupen64plus
-      libretro.parallel-n64
-
-      #Games
-      gamemode
-      gamescope
-      mangohud
-      prismlauncher
-
-      # misc
-      cmake
       gtk_engines
       nixfmt
-      pavucontrol
     ];
   };
 }

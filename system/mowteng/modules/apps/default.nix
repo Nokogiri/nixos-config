@@ -15,6 +15,7 @@
     inkscape
     pandoc
     xournalpp
+    zathura
 
     # video & audio
     ffmpeg
@@ -23,11 +24,61 @@
     spotify
     yt-dlp
 
+    # emultation
+    cemu
+    libretro.beetle-pce-fast
+    libretro.beetle-psx
+    libretro.beetle-psx-hw
+    libretro.beetle-supergrafx
+    libretro.dolphin
+    libretro.mgba
+    libretro.mupen64plus
+    libretro.parallel-n64
+    libretro.snes9x
+    ppsspp
+    rpcs3
+    ryujinx
+    yuzu-mainline
+
+    # game-utils
+    gamemode
+    gamescope
+    mangohud
+    prismlauncher
+
+    # general utils
+    iwgtk
+    pavucontrol
+    udiskie
+
+    # cli utils
+    gopass
+    neofetch
+    pamixer
+    playerctl
+    ponymix
+    xdg_utils
+
+    # sway utils
+    avizo
+    cliphist
+    eww-wayland
+    fuzzel
+    glib.bin
+    grim
+    kitty
+    mako
+    slurp
+    swayidle
+    swaylock-effects
+    swaynotificationcenter
+    wl-clipboard
+    wlr-randr
+    wofi
+
     # system
-    brightnessctl
     fwupd
     iio-sensor-proxy
-    iwgtk
     ldns
     libinput
     pinentry-gnome
@@ -49,8 +100,6 @@
     ryzen-ppd
     sshfs-fuse
     texlive.combined.scheme-small
-    udiskie
-    xdg_utils
   ];
 
   programs = {
@@ -62,6 +111,24 @@
       enable = true;
       remotePlay.openFirewall = true;
       dedicatedServer.openFirewall = true;
+    };
+    sway = {
+      enable = true;
+      wrapperFeatures.gtk = true;
+      extraSessionCommands = ''
+        export TDESKTOP_DISABLE_GTK_INTEGRATION=1
+        export CLUTTER_BACKEND=wayland
+        export BEMENU_BACKEND=wayland
+        export MOZ_ENABLE_WAYLAND=1
+        export QT_QPA_PLATFORM=wayland-egl
+        export QT_WAYLAND_FORCE_DPI=physical
+        export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
+        export QT_STYLE_OVERRIDE=kvantum
+        export SDL_VIDEODRIVER=wayland
+        export _JAVA_AWT_WM_NONREPARENTING=1
+        export NO_AT_BRIDGE=1
+        export WINIT_UNIX_BACKEND=wayland
+      '';
     };
     waybar.enable = true;
     xwayland.enable = true;

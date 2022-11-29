@@ -30,7 +30,7 @@
     nix-top
     nix-pin
     nix-zsh-completions
-    python3
+    #python3
     ranger
     rclone
     ripgrep

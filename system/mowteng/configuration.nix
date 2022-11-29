@@ -34,13 +34,13 @@
   fileSystems."/" = {
     device = "/dev/disk/by-uuid/d1f0114c-069e-46c1-bf58-f2d024ca46f7";
     fsType = "btrfs";
-    options = [ "subvol=@nixroot" "compress=zstd:9" ];
+    options = [ "subvol=@nixroot" "compress=zstd:9" "relatime" ];
   };
 
   fileSystems."/nix" = {
     device = "/dev/disk/by-uuid/d1f0114c-069e-46c1-bf58-f2d024ca46f7";
     fsType = "btrfs";
-    options = [ "subvol=@nix" "compress=zstd:9" ];
+    options = [ "subvol=@nix" "compress=zstd:9" "relatime" ];
   };
 
   fileSystems."/efi" = {
@@ -59,13 +59,13 @@
   fileSystems."/home" = {
     device = "/dev/disk/by-uuid/d1f0114c-069e-46c1-bf58-f2d024ca46f7";
     fsType = "btrfs";
-    options = [ "subvol=@home" "compress=zstd:9" ];
+    options = [ "subvol=@home" "compress=zstd:9" "relatime" ];
   };
 
   fileSystems."/data/Games" = {
     device = "/dev/disk/by-uuid/d1f0114c-069e-46c1-bf58-f2d024ca46f7";
     fsType = "btrfs";
-    options = [ "subvol=@GameData" "compress=zstd:9" ];
+    options = [ "subvol=@GameData" "compress=zstd:9" "relatime" ];
   };
 
   fileSystems."/data/butter" = {

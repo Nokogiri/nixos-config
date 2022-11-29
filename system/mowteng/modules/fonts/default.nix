@@ -7,10 +7,10 @@
     fira-code
     fira-mono
     unifont
-    noto-fonts
+    #noto-fonts
     noto-fonts-emoji
     noto-fonts-cjk-sans
-    powerline-symbols
+    #powerline-symbols
     weather-icons
   ];
 

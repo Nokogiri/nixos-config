@@ -67,6 +67,7 @@
     glib.bin
     grim
     kitty
+    kitty-themes
     mako
     slurp
     swayidle
@@ -76,7 +77,10 @@
     wlr-randr
     wofi
 
+    # misc
+    hyprland
     # system
+    nvtop-amd
     fwupd
     iio-sensor-proxy
     ldns

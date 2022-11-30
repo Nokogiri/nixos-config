@@ -4,7 +4,7 @@
   programs = {
     starship = {
       enable = true;
-      enableZshIntegration = false;
+      enableZshIntegration = true;
       settings = {
         add_newline = false;
         battery = { disabled = true; };

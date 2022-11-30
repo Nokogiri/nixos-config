@@ -11,11 +11,11 @@
     };
     iconTheme = {
       package = pkgs.colloid-icon-theme;
-      name = "Colloid-green-dark";
+      name = "Colloid-teal-dark";
     };
     theme = {
-      package = pkgs.catppuccin-gtk-frappe-green;
-      name = "Catppuccin-Frappe-Green";
+      package = pkgs.catppuccin-gtk-frappe-teal;
+      name = "Catppuccin-Frappe-Teal";
     };
     gtk3 = {
       extraConfig = {

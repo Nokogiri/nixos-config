@@ -1,4 +1,4 @@
-{ lib, inputs, nixpkgs, user, sops-nix, nix-minecraft, home-manager
+{ lib, inputs, nixpkgs, user, sops-nix, nix-minecraft, home-manager, hyprland
 , emacs-overlay, addins, ... }:
 
 let
@@ -36,6 +36,7 @@ in {
     modules = [
       # Modules that are used.
       sops-nix.nixosModules.sops
+      hyprland.nixosModules.default
       ./mowteng
       ./configuration.nix
       {

@@ -7,9 +7,10 @@
 
     home-manager = { url = "github:nix-community/home-manager/master"; };
 
-    emacs-overlay = {
-      #url = "github:nix-community/emacs-overlay/962851d3e66ce26c65693ab9e2eadd87c24b5c7c";
-      url = "github:nix-community/emacs-overlay";
+    emacs-overlay = { url = "github:nix-community/emacs-overlay"; };
+    hyprland = {
+      url = "github:hyprwm/Hyprland";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     addins = { url = "git+https://codeberg.org/Nokogiri/nix-pkgs.git"; };
@@ -18,12 +19,12 @@
   };
 
   outputs = inputs@{ self, nixpkgs, sops-nix, nix-minecraft, home-manager
-    , emacs-overlay, addins, ... }:
+    , hyprland, emacs-overlay, addins, ... }:
     let user = "nokogiri";
     in {
       nixosConfigurations = (import ./system {
         inherit (nixpkgs) lib;
-        inherit inputs nixpkgs user nix-minecraft sops-nix home-manager
+        inherit inputs nixpkgs user nix-minecraft sops-nix home-manager hyprland
           emacs-overlay addins;
       });
       nixosConfiguration = (import ./arm { inherit (nixpkgs) lib; });

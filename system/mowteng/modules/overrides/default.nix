@@ -25,6 +25,8 @@
       nerdfonts = nerdfonts.override {
         fonts = [ "CascadiaCode" "FiraMono" "FiraCode" ];
       };
+      colloid-icon-theme =
+        colloid-icon-theme.override { colorVariants = [ "teal" ]; };
     };
 }
 

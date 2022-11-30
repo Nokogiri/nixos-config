@@ -1,6 +1,5 @@
 { config, pkgs, user, ... }: {
-  xdg.configFile."zsh/p10k.zsh".source = ./p10k.zsh;
-  xdg.configFile."zsh/p10k-linux.zsh".source = ./p10k-linux.zsh;
+  xdg.configFile."zsh/zgenom-setup".source = ./zgenom-setup;
   programs = {
     zsh = {
       dotDir = ".config/zsh";
@@ -10,13 +9,14 @@
       enableSyntaxHighlighting = true;
       autocd = true;
       initExtraFirst = ''
-        if [[ -r "/home/${user}/.cache/p10k-instant-prompt-${user}.zsh" ]]; then
-          source "/home/${user}/.cache/p10k-instant-prompt-${user}.zsh"
-        fi
+        #if [[ -r "/home/${user}/.cache/p10k-instant-prompt-${user}.zsh" ]]; then
+        #  source "/home/${user}/.cache/p10k-instant-prompt-${user}.zsh"
+        #fi
 
         WORDCHARS=""
       '';
       initExtra = ''
+        source $ZDOTDIR/zgenom-setup
         zmodload zsh/terminfo
         bindkey "$terminfo[kcuu1]" history-substring-search-up
         bindkey "$terminfo[kcud1]" history-substring-search-down
@@ -25,11 +25,6 @@
 
         setopt correct
         unsetopt correctall
-        if [[ ! $TERM =~ "linux" ]]; then
-          source ~/.config/zsh/p10k.zsh
-        else
-          source ~/.config/zsh/p10k-linux.zsh
-        fi
         # Miscellaneous settings
         #setopt INTERACTIVE_COMMENTS  # Enable comments in interactive shell.
 
@@ -77,59 +72,8 @@
         share = true;
         size = 100000;
       };
-      localVariables = { POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD = true; };
-      oh-my-zsh = { enable = true; };
-      plugins = [
-        {
-          name = "fzf-tab";
-          src = pkgs.fetchFromGitHub {
-            owner = "Aloxaf";
-            repo = "fzf-tab";
-            rev = "7e0eee64df6c7c81a57792674646b5feaf89f263";
-            sha256 = "ixUnuNtxxmiigeVjzuV5uG6rIBPY/1vdBZF2/Qv0Trs=";
-          };
-        }
-        {
-          name = "fzf-zsh";
-          file = "plugins/fzf/fzf.plugin.zsh";
-          src = pkgs.fetchFromGitHub {
-            owner = "ohmyzsh";
-            repo = "ohmyzsh";
-            rev = "8362ae285a5c227cb20387543483a3597fa31931";
-            sha256 = "4jQEGC3EXLC5dnDa+717/sf29vyS4zdDY/mrQ5gfepY=";
-          };
-        }
-        {
-          name = "powerlevel10k";
-          file = "powerlevel10k.zsh-theme";
-          src = pkgs.fetchFromGitHub {
-            owner = "romkatv";
-            repo = "powerlevel10k";
-            rev = "e72264e01cb24431455ed6e398a769bca0da7ffe";
-            sha256 = "FbjjOLod4l+FGvOhSAmTuAdsoBrxdfEY/MYP163N1xY=";
-          };
-        }
-
-        {
-          name = "zsh-history-substring-search";
-          src = pkgs.fetchFromGitHub {
-            owner = "zsh-users";
-            repo = "zsh-history-substring-search";
-            rev = "4abed97b6e67eb5590b39bcd59080aa23192f25d";
-            sha256 = "8kiPBtgsjRDqLWt0xGJ6vBBLqCWEIyFpYfd+s1prHWk=";
-          };
-        }
-        {
-          name = "zsh-nix-shell";
-          file = "nix-shell.plugin.zsh";
-          src = pkgs.fetchFromGitHub {
-            owner = "chisui";
-            repo = "zsh-nix-shell";
-            rev = "v0.5.0";
-            sha256 = "0za4aiwwrlawnia4f29msk822rj9bgcygw6a8a6iikiwzjjz0g91";
-          };
-        }
-      ];
+      #localVariables = { POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD = true; };
+      #oh-my-zsh = { enable = true; };
       shellAliases = {
         sys = "doas systemctl";
         sysu = "systemctl --user";

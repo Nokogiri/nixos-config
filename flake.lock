@@ -6,11 +6,11 @@
         "nvfetcher": "nvfetcher"
       },
       "locked": {
-        "lastModified": 1669797323,
-        "narHash": "sha256-gunWEup8DZZE/RN+Wf2iKvotoQ4nIP+YoIV7Ivd1uHo=",
+        "lastModified": 1669846573,
+        "narHash": "sha256-P3bqHYN2DuNC0hH8SfQDkROPSHq5VKpM4tmtRe8Qymo=",
         "ref": "refs/heads/main",
-        "rev": "3291bf8752ada1b51d8e61b54672d7acb5e9980d",
-        "revCount": 129,
+        "rev": "2cd58b8c444fe5e533ec008c35ad4ab09ba07c50",
+        "revCount": 131,
         "type": "git",
         "url": "https://codeberg.org/Nokogiri/nix-pkgs.git"
       },
@@ -25,11 +25,11 @@
         "nixpkgs": "nixpkgs_2"
       },
       "locked": {
-        "lastModified": 1669801362,
-        "narHash": "sha256-kwrejUngReIv3M926D/SRQkJVCiaBuBcj7t3RmIXc4U=",
+        "lastModified": 1669837677,
+        "narHash": "sha256-N90RpOEt79SAb199foN0SxjZhwKzD6Nrdrk6pD4+GbA=",
         "owner": "nix-community",
         "repo": "emacs-overlay",
-        "rev": "a686fa48a89b0cba053143ba155506c93718037f",
+        "rev": "b8ed2226758cbd6c2d19b28f1fa9f26b9f78073c",
         "type": "github"
       },
       "original": {
@@ -116,6 +116,27 @@
         "owner": "nix-community",
         "ref": "master",
         "repo": "home-manager",
+        "type": "github"
+      }
+    },
+    "hyprland": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "wlroots": "wlroots"
+      },
+      "locked": {
+        "lastModified": 1669815201,
+        "narHash": "sha256-7T5/OyMSbABvkQmkMOxdVGE5EEcfGFk6wIL6tCf7Oeg=",
+        "owner": "hyprwm",
+        "repo": "Hyprland",
+        "rev": "869f0a023888b6c9a214814c56192e922542c970",
+        "type": "github"
+      },
+      "original": {
+        "owner": "hyprwm",
+        "repo": "Hyprland",
         "type": "github"
       }
     },
@@ -276,6 +297,7 @@
         "addins": "addins",
         "emacs-overlay": "emacs-overlay",
         "home-manager": "home-manager",
+        "hyprland": "hyprland",
         "nix-minecraft": "nix-minecraft",
         "nixpkgs": "nixpkgs_5",
         "sops-nix": "sops-nix"
@@ -313,6 +335,24 @@
         "owner": "numtide",
         "repo": "flake-utils",
         "type": "github"
+      }
+    },
+    "wlroots": {
+      "flake": false,
+      "locked": {
+        "host": "gitlab.freedesktop.org",
+        "lastModified": 1668785720,
+        "narHash": "sha256-CX+PYJP2PxZWL380WzyMNsrfRgIb/78brdwvDg/zj28=",
+        "owner": "wlroots",
+        "repo": "wlroots",
+        "rev": "4ff46e6cf9463e594605928feeb7c55cf323b5e7",
+        "type": "gitlab"
+      },
+      "original": {
+        "host": "gitlab.freedesktop.org",
+        "owner": "wlroots",
+        "repo": "wlroots",
+        "type": "gitlab"
       }
     }
   },

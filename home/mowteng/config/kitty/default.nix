@@ -1,5 +1,4 @@
 {
-  xdg.configFile."kitty/theme.conf".source = ./frappe.conf;
   xdg.configFile."kitty/tab_bar.py".source = ./tab_bar.py;
   programs = {
     kitty = {
@@ -8,10 +7,10 @@
         name = "CaskaydiaCove Nerd Font Mono";
         size = 13;
       };
-      extraConfig = ''
-        include ./theme.conf
-
-      '';
+      #extraConfig = ''
+      #  include ./theme.conf
+      #'';
+      theme = "Catppuccin-Frappe";
       settings = {
         # General settings
         kitty_mod = "ctrl+shift";

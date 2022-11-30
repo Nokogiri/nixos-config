@@ -3,13 +3,13 @@
 # vim: ft=zsh sw=2 ts=2 et foldmethod=marker
 # -------------------------------------------------------------------------------------------------
 
-ZGEN_DIR=${ZGEN_DIR:-$HOME/.cache/zsh/plugs}
+ZGEN_DIR=$HOME/.cache/zsh/plugs
 
-#ZGEN_SRC=~/.cache/zsh/zgenom
+ZGEN_SRC=~/.cache/zsh/zgenom
 
-#if [[ ! -f "$ZGEN_SRC"/zgenom.zsh ]]; then
-#  git clone https://github.com/jandamm/zgenom.git "$ZGEN_SRC"
-#fi
+if [[ ! -f "$ZGEN_SRC"/zgenom.zsh ]]; then
+  git clone https://github.com/jandamm/zgenom.git "$ZGEN_SRC"
+fi
 
 source "$ZGEN_SRC"/zgenom.zsh
 
@@ -26,12 +26,12 @@ load-up-plugin-list() {
   zmodload zsh/terminfo
   bindkey "$terminfo[kcuu1]" history-substring-search-up
   bindkey "$terminfo[kcud1]" history-substring-search-down
-  
-  zgenom load RobSis/zsh-completion-generator
 
-  zgenom load zsh-users/zsh-autosuggestions
+  zgenom load chisui/zsh-nix-shell
   
   zgenom save
+
+  zgenom compile $ZGEN_DIR
 }
 
 get_file_modification_time() {

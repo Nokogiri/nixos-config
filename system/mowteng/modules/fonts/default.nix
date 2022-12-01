@@ -7,15 +7,13 @@
     fira-code
     fira-mono
     unifont
-    #noto-fonts
-    noto-fonts-emoji
+    twemoji-color-font
     noto-fonts-cjk-sans
-    #powerline-symbols
     weather-icons
   ];
 
   fonts = {
-    enableDefaultFonts = true;
+    enableDefaultFonts = false;
     fontDir.enable = true;
     enableGhostscriptFonts = true;
     fontconfig = {
@@ -24,7 +22,8 @@
       defaultFonts = {
         serif = [ "Fira Code" ];
         sansSerif = [ "Fira Code" ];
-        monospace = [ "Fira Mono" ];
+        monospace = [ "Fira Mono" ]; 
+        emoji = [ "Twitter Color Emoji" ];
       };
     };
   };

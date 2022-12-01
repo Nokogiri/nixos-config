@@ -116,6 +116,7 @@
   programs = {
     gnupg.agent.enable = true;
     mtr.enable = true;
+    kdeconnect.enable = true;
     light.enable = true;
     ssh.startAgent = true;
     steam = {

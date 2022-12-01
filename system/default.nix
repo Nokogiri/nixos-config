@@ -11,14 +11,14 @@ let
 
   lib = nixpkgs.lib;
 in {
-  frankenbook = lib.nixosSystem {
+  homeassistant = lib.nixosSystem {
     # Desktop profile
     inherit system;
     specialArgs = { inherit inputs user; }; # Pass flake variable
     modules = [
       # Modules that are used.
       sops-nix.nixosModules.sops
-      ./frankenbook
+      ./homeassistant
       ./configuration.nix
       {
         nixpkgs.overlays = [

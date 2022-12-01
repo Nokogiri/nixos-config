@@ -59,7 +59,7 @@
     ponymix
     xdg_utils
 
-    # sway utils
+    # wm utils
     avizo
     cliphist
     eww-wayland
@@ -68,6 +68,7 @@
     grim
     kitty
     kitty-themes
+    libsForQt5.qtstyleplugin-kvantum
     mako
     slurp
     swayidle
@@ -79,6 +80,11 @@
 
     # misc
     hyprland
+
+    # edit ++ devel
+    tree-sitter
+    gcc
+    gnumake
     # system
     nvtop-amd
     fwupd
@@ -94,6 +100,7 @@
           evdev
           jinja2
           nose
+          pynvim
           pytest
           requests
           unidecode

@@ -27,9 +27,10 @@
       };
     };
   };
-  qt = {
-    enable = true;
-    platformTheme = "gtk";
-    style = { name = "gtk2"; };
-  };
+  #qt = {
+  #  enable = true;
+  #  platformTheme = "qt5ct";
+  #style = { name = "gtk2"; };
+  #};
+  home.sessionVariables = { QT_QPA_PLATFORMTHEME = "qt5ct"; };
 }

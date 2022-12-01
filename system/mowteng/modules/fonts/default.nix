@@ -3,9 +3,8 @@
 {
   fonts.fonts = with pkgs; [
     nerdfonts
+    cascadia-code
     dejavu_fonts
-    fira-code
-    fira-mono
     unifont
     twemoji-color-font
     noto-fonts-cjk-sans
@@ -20,9 +19,9 @@
       enable = true;
       antialias = true;
       defaultFonts = {
-        serif = [ "Fira Code" ];
-        sansSerif = [ "Fira Code" ];
-        monospace = [ "Fira Mono" ]; 
+        serif = [ "Cascadia Code" ];
+        sansSerif = [ "Cascadia Code" ];
+        monospace = [ "Cascadia Mono" ];
         emoji = [ "Twitter Color Emoji" ];
       };
     };

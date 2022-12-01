@@ -53,8 +53,10 @@
 
     # cli utils
     gopass
+    libnotify
     neofetch
     pamixer
+    pass
     playerctl
     ponymix
     xdg_utils
@@ -69,7 +71,6 @@
     kitty
     kitty-themes
     libsForQt5.qtstyleplugin-kvantum
-    mako
     slurp
     swayidle
     swaylock-effects
@@ -79,7 +80,6 @@
     wofi
 
     # misc
-    hyprland
 
     # edit ++ devel
     tree-sitter

@@ -12,7 +12,7 @@
   ];
 
   fonts = {
-    enableDefaultFonts = false;
+    enableDefaultFonts = true;
     fontDir.enable = true;
     enableGhostscriptFonts = true;
     fontconfig = {

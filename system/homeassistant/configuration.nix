@@ -82,13 +82,12 @@
     device = "/dev/disk/by-uuid/1f200403-52ed-4fe6-8e44-edfa6aed6cf9";
     fsType = "btrfs";
     options = [ "subvolid=5" ];
-    };
-    fileSystems."/data/snapshots" = {
-      device = "/dev/disk/by-uuid/1f200403-52ed-4fe6-8e44-edfa6aed6cf9";
-      fsType = "btrfs";
-      options = [ "subvol=@snapshots" ];
-    };
-
+  };
+  fileSystems."/data/snapshots" = {
+    device = "/dev/disk/by-uuid/1f200403-52ed-4fe6-8e44-edfa6aed6cf9";
+    fsType = "btrfs";
+    options = [ "subvol=@snapshots" ];
+  };
 
   swapDevices =
     [{ device = "/dev/disk/by-uuid/649f67bb-4f10-493f-b4e6-0c0aa625552d"; }];

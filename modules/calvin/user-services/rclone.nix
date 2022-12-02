@@ -19,11 +19,12 @@
                     --vfs-cache-max-size 256M \
                     --log-level INFO \
                     --log-file /tmp/rclone-%i.log \
-                    --umask 022 \
+                    --umask 002 \
                     --allow-other \
                     --allow-non-empty \
                     --dir-cache-time 48h \
                     --poll-interval 5m \
+                    --gid 994 \
                     nokogiri: /media/cloud/nokogiri
         '';
         ExecStop = "/run/wrappers/bin/fusermount -u /media/cloud/nokogiri";
@@ -48,14 +49,15 @@
                     --vfs-cache-max-size 256M \
                     --log-level INFO \
                     --log-file /tmp/rclone-%i.log \
-                    --umask 022 \
+                    --umask 002 \
                     --allow-other \
                     --allow-non-empty \
                     --dir-cache-time 48h \
                     --poll-interval 5m \
-                    lyria: /media/cloud/lyria
+                    --gid 994 \
+                    lyria:Media /media/cloud/Media/lyria
         '';
-        ExecStop = "/run/wrappers/bin/fusermount -u /media/cloud/lyria";
+        ExecStop = "/run/wrappers/bin/fusermount -u /media/cloud/Media/lyria";
         Environment = [ "PATH=/run/wrappers/bin/:$PATH" ];
       };
     };
@@ -77,14 +79,15 @@
                     --vfs-cache-max-size 256M \
                     --log-level INFO \
                     --log-file /tmp/rclone-%i.log \
-                    --umask 022 \
+                    --umask 002 \
                     --allow-other \
                     --allow-non-empty \
                     --dir-cache-time 48h \
                     --poll-interval 5m \
-                    guntheria: /media/cloud/guntheria
+                    --gid 994 \
+                    guntheria:Media /media/cloud/Media/guntheria
         '';
-        ExecStop = "/run/wrappers/bin/fusermount -u /media/cloud/guntheria";
+        ExecStop = "/run/wrappers/bin/fusermount -u /media/cloud/Media/guntheria";
         Environment = [ "PATH=/run/wrappers/bin/:$PATH" ];
       };
     };
@@ -106,14 +109,15 @@
                     --vfs-cache-max-size 256M \
                     --log-level INFO \
                     --log-file /tmp/rclone-%i.log \
-                    --umask 022 \
+                    --umask 002 \
                     --allow-other \
                     --allow-non-empty \
                     --dir-cache-time 48h \
                     --poll-interval 5m \
-                    markus: /media/cloud/markus
+                    --gid 994 \
+                    markus:Media /media/cloud/Media/markus
         '';
-        ExecStop = "/run/wrappers/bin/fusermount -u /media/cloud/markus";
+        ExecStop = "/run/wrappers/bin/fusermount -u /media/cloud/Media/markus";
         Environment = [ "PATH=/run/wrappers/bin/:$PATH" ];
       };
     };
@@ -134,14 +138,15 @@
                     --vfs-cache-max-size 256M \
                     --log-level INFO \
                     --log-file /tmp/rclone-%i.log \
-                    --umask 022 \
+                    --umask 002 \
                     --allow-other \
                     --allow-non-empty \
                     --dir-cache-time 48h \
                     --poll-interval 5m \
-                    kenny: /media/cloud/kenny
+                    --gid 994 \
+                    kenny:Media /media/cloud/Media/kenny
         '';
-        ExecStop = "/run/wrappers/bin/fusermount -u /media/cloud/kenny";
+        ExecStop = "/run/wrappers/bin/fusermount -u /media/cloud/Media/kenny";
         Environment = [ "PATH=/run/wrappers/bin/:$PATH" ];
       };
     };
@@ -162,14 +167,15 @@
                     --vfs-cache-max-size 256M \
                     --log-level INFO \
                     --log-file /tmp/rclone-%i.log \
-                    --umask 022 \
+                    --umask 002 \
                     --allow-other \
                     --allow-non-empty \
                     --dir-cache-time 48h \
                     --poll-interval 5m \
-                    hildi: /media/cloud/hildi
+                    --gid 994 \
+                    hildi:Media /media/cloud/Media/hildi
         '';
-        ExecStop = "/run/wrappers/bin/fusermount -u /media/cloud/hildi";
+        ExecStop = "/run/wrappers/bin/fusermount -u /media/cloud/Media/hildi";
         Environment = [ "PATH=/run/wrappers/bin/:$PATH" ];
       };
     };

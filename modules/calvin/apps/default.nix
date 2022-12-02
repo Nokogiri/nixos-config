@@ -2,7 +2,7 @@
 
 {
 
-  environment.systemPackages = with pkgs; [ jellyfin-ffmpeg rclone ];
+  environment.systemPackages = with pkgs; [ jellyfin-ffmpeg rclone mergerfs mergerfs-tools ];
 
   programs = {
     git.enable = true;

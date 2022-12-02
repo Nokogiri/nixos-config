@@ -33,6 +33,7 @@
       "disk"
       "docker"
       "input"
+      "jellyfin"
       "uinput"
       "users"
       "video"

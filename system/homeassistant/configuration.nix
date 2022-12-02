@@ -15,9 +15,6 @@
   boot = {
     blacklistedKernelModules = [ "b43" "snd_had_intel" ];
     consoleLogLevel = 3;
-    #extraModulePackages = [
-    #  config.boot.kernelPackages.broadcom_sta
-    #];
     extraModprobeConfig = ''
       options hid_apple fnmode=2 swap_fn_leftctrl=1 iso_layout=0
     '';
@@ -31,9 +28,9 @@
       "sd_mod"
       "sdhci_pci"
     ];
-    initrd.kernelModules = [ "i915" "hid-apple" ];
-    kernelModules = [ "hid-nintendo" "kvm-intel" ];
-    kernelPackages = pkgs.linuxPackages_zen;
+    initrd.kernelModules = [ "hid-apple" ];
+    kernelModules = [ "kvm-intel" ];
+    kernelPackages = pkgs.linuxPackages_lqx;
     kernelParams = [
       "acpi_backlight=vendor"
       "intremap=off"
@@ -81,6 +78,17 @@
       "utf8"
     ];
   };
+  fileSystems."/data/butter" = {
+    device = "/dev/disk/by-uuid/1f200403-52ed-4fe6-8e44-edfa6aed6cf9";
+    fsType = "btrfs";
+    options = [ "subvolid=5" ];
+    };
+    fileSystems."/data/snapshots" = {
+      device = "/dev/disk/by-uuid/1f200403-52ed-4fe6-8e44-edfa6aed6cf9";
+      fsType = "btrfs";
+      options = [ "subvol=@snapshots" ];
+    };
+
 
   swapDevices =
     [{ device = "/dev/disk/by-uuid/649f67bb-4f10-493f-b4e6-0c0aa625552d"; }];

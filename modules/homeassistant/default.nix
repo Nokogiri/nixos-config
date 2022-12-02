@@ -1,1 +1,1 @@
-[ ../agnostic/docker ./apps ./nginx ./services ./user-services ]
+[ ../agnostic/docker ./apps ./nginx ./services ]

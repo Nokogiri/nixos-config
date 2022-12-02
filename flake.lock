@@ -119,27 +119,6 @@
         "type": "github"
       }
     },
-    "hyprland": {
-      "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ],
-        "wlroots": "wlroots"
-      },
-      "locked": {
-        "lastModified": 1670006877,
-        "narHash": "sha256-tadd5GosX0q1l6SYvt5GzSa/MABriXVkf4nU74VTn9M=",
-        "owner": "hyprwm",
-        "repo": "Hyprland",
-        "rev": "70d4fadc39954ce9712cf1504a32a990b87ff131",
-        "type": "github"
-      },
-      "original": {
-        "owner": "hyprwm",
-        "repo": "Hyprland",
-        "type": "github"
-      }
-    },
     "nix-minecraft": {
       "inputs": {
         "flake-utils": "flake-utils_3",
@@ -269,6 +248,21 @@
         "type": "github"
       }
     },
+    "nixpkgs_7": {
+      "locked": {
+        "lastModified": 1655043425,
+        "narHash": "sha256-A+oT+aQGhW5lXy8H0cqBLsYtgcnT5glmGOXWQDcGw6I=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "914ef51ffa88d9b386c71bdc88bffc5273c08ada",
+        "type": "github"
+      },
+      "original": {
+        "id": "nixpkgs",
+        "ref": "nixos-unstable",
+        "type": "indirect"
+      }
+    },
     "nvfetcher": {
       "inputs": {
         "flake-compat": "flake-compat",
@@ -297,10 +291,10 @@
         "addins": "addins",
         "emacs-overlay": "emacs-overlay",
         "home-manager": "home-manager",
-        "hyprland": "hyprland",
         "nix-minecraft": "nix-minecraft",
         "nixpkgs": "nixpkgs_5",
-        "sops-nix": "sops-nix"
+        "sops-nix": "sops-nix",
+        "spicetify-nix": "spicetify-nix"
       }
     },
     "sops-nix": {
@@ -322,6 +316,24 @@
         "type": "github"
       }
     },
+    "spicetify-nix": {
+      "inputs": {
+        "nixpkgs": "nixpkgs_7"
+      },
+      "locked": {
+        "lastModified": 1666059600,
+        "narHash": "sha256-ceVk8Yeg1jwrToeGReF3aphq0JPHykla6FjgVP0+d3s=",
+        "owner": "the-argus",
+        "repo": "spicetify-nix",
+        "rev": "56f9397313b1f97ba94b1b2f947133fff4a12cee",
+        "type": "github"
+      },
+      "original": {
+        "owner": "the-argus",
+        "repo": "spicetify-nix",
+        "type": "github"
+      }
+    },
     "utils": {
       "locked": {
         "lastModified": 1667395993,
@@ -335,24 +347,6 @@
         "owner": "numtide",
         "repo": "flake-utils",
         "type": "github"
-      }
-    },
-    "wlroots": {
-      "flake": false,
-      "locked": {
-        "host": "gitlab.freedesktop.org",
-        "lastModified": 1669925104,
-        "narHash": "sha256-xMHfW+/G9MieN/5tXHUA5/ztE8dkE093cNFTEUgcwxI=",
-        "owner": "wlroots",
-        "repo": "wlroots",
-        "rev": "c8eb24d30e18c165728b8788a10716611c3b633d",
-        "type": "gitlab"
-      },
-      "original": {
-        "host": "gitlab.freedesktop.org",
-        "owner": "wlroots",
-        "repo": "wlroots",
-        "type": "gitlab"
       }
     }
   },

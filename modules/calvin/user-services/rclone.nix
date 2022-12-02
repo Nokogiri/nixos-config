@@ -87,7 +87,8 @@
                     --gid 994 \
                     guntheria:Media /media/cloud/Media/guntheria
         '';
-        ExecStop = "/run/wrappers/bin/fusermount -u /media/cloud/Media/guntheria";
+        ExecStop =
+          "/run/wrappers/bin/fusermount -u /media/cloud/Media/guntheria";
         Environment = [ "PATH=/run/wrappers/bin/:$PATH" ];
       };
     };

@@ -1,5 +1,5 @@
-{ lib, inputs, nixpkgs, user, sops-nix, nix-minecraft, home-manager, hyprland
-, emacs-overlay, addins, ... }:
+{ lib, inputs, nixpkgs, user, sops-nix, nix-minecraft, home-manager
+, emacs-overlay, addins, spicetify-nix, ... }:
 
 let
   system = "x86_64-linux"; # System architecture
@@ -36,7 +36,7 @@ in {
     modules = [
       # Modules that are used.
       sops-nix.nixosModules.sops
-      hyprland.nixosModules.default
+      #spicetify-nix.homeManagerModule
       ./mowteng
       ./configuration.nix
       {
@@ -55,7 +55,8 @@ in {
         home-manager.useUserPackages = true;
         home-manager.extraSpecialArgs = { inherit user; }; # Pass flake variable
         home-manager.users.${user} = {
-          imports = [ (import ./home.nix) ] ++ [ (import ./mowteng/home.nix) ];
+          imports = [ (import ./home.nix) ] ++ [ (import ./mowteng/home.nix) ]
+            ++ [ spicetify-nix.homeManagerModule ];
         };
       }
     ];

@@ -2,6 +2,7 @@
   ./config/kitty
   ./vscode.nix
   ./config/wofi
+  ./spotify.nix
   ./styles.nix
   ./config/sway
   ./config/wallpaper

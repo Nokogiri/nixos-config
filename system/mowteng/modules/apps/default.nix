@@ -71,6 +71,7 @@
     kitty
     kitty-themes
     libsForQt5.qtstyleplugin-kvantum
+    libsForQt5.qt5ct
     slurp
     swayidle
     swaylock-effects
@@ -80,6 +81,7 @@
     wofi
 
     # misc
+    kdiskmark
 
     # edit ++ devel
     tree-sitter

@@ -3,6 +3,7 @@
     extraPackages = with pkgs; [ mbuffer zstd ];
     instances = {
       "btrbk" = {
+        onCalendar = null;
         settings = {
           stream_buffer = "512m";
           snapshot_create = "ondemand";

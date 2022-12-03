@@ -19,7 +19,7 @@ with lib;
   home = {
     sessionVariables = { BROWSER = "friefox"; };
     packages = with pkgs; [
-      ((emacsPackagesFor emacsPgtkNativeComp).emacsWithPackages
+      ((emacsPackagesFor emacsPgtk).emacsWithPackages
         (epkgs: [ epkgs.vterm ]))
       (aspellWithDicts (ds: with ds; [ de en en-computers en-science ]))
 

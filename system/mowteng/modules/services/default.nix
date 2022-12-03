@@ -34,7 +34,12 @@
   };
 
   security = {
-    polkit.enable = true;
+    polkit = {
+      enable = true;
+      adminIdentities = [
+        "unix-user:nokogiri"
+      ];
+    };
     rtkit.enable = true;
   };
 

@@ -36,9 +36,7 @@
   security = {
     polkit = {
       enable = true;
-      adminIdentities = [
-        "unix-user:nokogiri"
-      ];
+      adminIdentities = [ "unix-user:nokogiri" ];
     };
     rtkit.enable = true;
   };

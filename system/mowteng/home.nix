@@ -19,8 +19,7 @@ with lib;
   home = {
     sessionVariables = { BROWSER = "friefox"; };
     packages = with pkgs; [
-      ((emacsPackagesFor emacsPgtk).emacsWithPackages
-        (epkgs: [ epkgs.vterm ]))
+      ((emacsPackagesFor emacsPgtk).emacsWithPackages (epkgs: [ epkgs.vterm ]))
       (aspellWithDicts (ds: with ds; [ de en en-computers en-science ]))
 
       gparted

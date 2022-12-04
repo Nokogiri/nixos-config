@@ -1,0 +1,11 @@
+[
+  ./apps
+  #./docker
+  ./environment
+  ./network
+  ./nginx
+  ./services
+  ./user-services
+  ./wireguard
+  ../agnostic/docker
+]

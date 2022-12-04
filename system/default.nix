@@ -87,6 +87,18 @@ in {
           })
         ];
       }
+      home-manager.nixosModules.home-manager
+      {
+        # Home-Manager module that is used.
+        home-manager.useGlobalPkgs = true;
+        home-manager.useUserPackages = true;
+        home-manager.extraSpecialArgs = { inherit user; }; # Pass flake variable
+        home-manager.users.${user} = {
+          imports = [ (import ../home) ] #++ (import ../home/calvin) # Maybe in the future.
+            ++ [ spicetify-nix.homeManagerModule ];
+        };
+      }
+ 
     ];
   };
 }

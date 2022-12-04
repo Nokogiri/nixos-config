@@ -28,7 +28,7 @@
       patch = ./patches/d3cold.patch;
     }];
     tmpOnTmpfs = true;
-    tmpOnTmpfsSize = "60%";
+    tmpOnTmpfsSize = "90%";
   };
 
   fileSystems."/" = {

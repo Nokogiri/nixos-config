@@ -1,1 +1,1 @@
-[ ./apps ./docker ./sops ./users ]
+[ ./apps ./sops ./users ]

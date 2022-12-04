@@ -27,8 +27,9 @@
       name = "d3cold-fix";
       patch = ./patches/d3cold.patch;
     }];
-    tmpOnTmpfs = true;
-    tmpOnTmpfsSize = "90%";
+    cleanTmpDir = true;
+    #tmpOnTmpfs = false;
+    #mpOnTmpfsSize = "90%";
   };
 
   fileSystems."/" = {

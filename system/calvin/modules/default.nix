@@ -7,5 +7,5 @@
   ./services
   ./user-services
   ./wireguard
-  ../agnostic/docker
+  ../../optional/docker
 ]

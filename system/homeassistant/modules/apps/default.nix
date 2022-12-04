@@ -5,7 +5,7 @@
     brightnessctl
     btrbk
     ldns
-    python
+    #python
     rclone
     sshfs-fuse
     udisks

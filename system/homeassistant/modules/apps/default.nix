@@ -5,10 +5,10 @@
     brightnessctl
     btrbk
     ldns
+    python
     rclone
     sshfs-fuse
     udisks
-    #yt-dlp
   ];
 
   programs = {

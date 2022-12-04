@@ -1,1 +1,1 @@
-[ ../../optional/docker ./apps ./nginx ./services ]
+[ ../../optional/docker ./apps ./network ./nginx ./services ]

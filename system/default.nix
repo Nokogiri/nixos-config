@@ -36,7 +36,6 @@ in {
     modules = [
       # Modules that are used.
       sops-nix.nixosModules.sops
-      #spicetify-nix.homeManagerModule
       ./mowteng
       ./configuration.nix
       {
@@ -55,7 +54,7 @@ in {
         home-manager.useUserPackages = true;
         home-manager.extraSpecialArgs = { inherit user; }; # Pass flake variable
         home-manager.users.${user} = {
-          imports = [ (import ./home.nix) ] ++ [ (import ./mowteng/home.nix) ]
+          imports = [ (import ../home) ] ++ (import ../home/mowteng)
             ++ [ spicetify-nix.homeManagerModule ];
         };
       }

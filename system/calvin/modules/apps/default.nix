@@ -7,7 +7,6 @@
     rclone
     mergerfs
     mergerfs-tools
-    python
   ];
 
   programs = {

@@ -1,11 +1,12 @@
 [
   ./home.nix
-  ./config/kitty
   ./vscode.nix
-  ./config/wofi
   ./spotify.nix
   ./styles.nix
+  ./config/gammastep
+  ./config/kitty
   ./config/sway
   ./config/wallpaper
   ./config/waybar
+  ./config/wofi
 ]

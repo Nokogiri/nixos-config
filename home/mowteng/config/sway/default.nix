@@ -89,7 +89,6 @@ in {
       input = {
         "1:1:AT_Translated_Set_2_keyboard" = {
           xkb_layout = "us,de";
-          #xkb_model = "apple_laptop";
           xkb_options = "grp:alt_space_toggle";
           xkb_variant = "altgr-intl,";
         };

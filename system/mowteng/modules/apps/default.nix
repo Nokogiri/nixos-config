@@ -13,6 +13,7 @@
     gimp
     imv
     inkscape
+    obsidian
     pandoc
     xournalpp
     zathura
@@ -41,6 +42,7 @@
     yuzu-mainline
 
     # game-utils
+    heroic
     gamemode
     gamescope
     mangohud

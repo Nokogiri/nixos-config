@@ -21,6 +21,7 @@
     # video & audio
     ffmpeg
     gtk-pipe-viewer
+    jellyfin-media-player
     mpv
     spotify
     yt-dlp

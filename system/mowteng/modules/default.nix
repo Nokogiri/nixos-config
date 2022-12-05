@@ -1,1 +1,11 @@
-[ ./apps ./btrbk ./fonts ./network ./overrides ./services ./sway ./tlp ]
+[
+  ./apps
+  ./btrbk
+  ./fonts
+  ./network
+  ./overrides
+  ./pipewire
+  ./services
+  ./sway
+  ./tlp
+]

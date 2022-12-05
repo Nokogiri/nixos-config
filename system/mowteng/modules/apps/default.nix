@@ -84,6 +84,7 @@
 
     # misc
     kdiskmark
+    mailctl
 
     # edit ++ devel
     tree-sitter

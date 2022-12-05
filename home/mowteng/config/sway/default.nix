@@ -1,4 +1,4 @@
-{ config, lib, pkgs, home-manager, ... }:
+{ config, lib, pkgs, ... }:
 
 let cfg = config.wayland.windowManager.sway.config;
 in {

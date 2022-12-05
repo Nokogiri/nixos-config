@@ -1,5 +1,3 @@
-{ config, pkgs, ... }:
-
 {
   xdg.configFile."wofi/style.css".source = ./style.css;
   xdg.configFile."wofi/config".text = ''

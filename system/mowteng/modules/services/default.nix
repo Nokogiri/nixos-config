@@ -17,6 +17,7 @@
       pulse.enable = true;
       wireplumber.enable = true;
     };
+    printing.enable = true;
     resolved = {
       enable = true;
       extraConfig = ''

@@ -5,6 +5,7 @@
   ./network
   ./overrides
   ./pipewire
+  ./sane
   ./services
   ./sway
   ./tlp

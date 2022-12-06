@@ -11,6 +11,7 @@
 
     # documents, graphics etc
     gimp
+    gnome.simple-scan
     imv
     inkscape
     obsidian

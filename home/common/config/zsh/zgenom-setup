@@ -14,9 +14,8 @@ fi
 source "$ZGEN_SRC"/zgenom.zsh
 
 load-up-plugin-list() {
-  zgenom oh-my-zsh
-  zgenom ohmyzsh plugins/fzf
-
+  zgenom load ohmyzsh/ohmyzsh plugins/fzf
+  zgenom load ohmyzsh/ohmyzsh lib/key-bindings.zsh
   zgenom load Aloxaf/fzf-tab
 
   zgenom load zdharma-continuum/fast-syntax-highlighting

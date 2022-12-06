@@ -321,11 +321,11 @@
         "nixpkgs": "nixpkgs_7"
       },
       "locked": {
-        "lastModified": 1670022043,
-        "narHash": "sha256-Z7TfjM6VYWwIfQ8xO3VSydn/r9HrrC5cnlRh1KfIL3g=",
+        "lastModified": 1670362381,
+        "narHash": "sha256-UJd7cibL43oCOb+0DRgbPh5DHUILwWD396gslJvaSvs=",
         "owner": "the-argus",
         "repo": "spicetify-nix",
-        "rev": "b19aa37870d6d2f1a521566ce37079a01e8a440f",
+        "rev": "3ebab057f9a6daf455258ee6a0a60d67667639ed",
         "type": "github"
       },
       "original": {

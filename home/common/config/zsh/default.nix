@@ -9,17 +9,10 @@
       enableSyntaxHighlighting = true;
       autocd = true;
       initExtraFirst = ''
-        #if [[ -r "/home/${user}/.cache/p10k-instant-prompt-${user}.zsh" ]]; then
-        #  source "/home/${user}/.cache/p10k-instant-prompt-${user}.zsh"
-        #fi
-
         WORDCHARS=""
       '';
       initExtra = ''
         source $ZDOTDIR/zgenom-setup
-        zmodload zsh/terminfo
-        bindkey "$terminfo[kcuu1]" history-substring-search-up
-        bindkey "$terminfo[kcud1]" history-substring-search-down
 
         export COMPLETION_WAITING_DOTS="true"
 

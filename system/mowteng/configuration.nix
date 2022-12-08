@@ -9,9 +9,11 @@
   boot.loader = {
     systemd-boot.enable = true;
     efi.canTouchEfiVariables = true;
-    efi.efiSysMountPoint = "/efi";
+    efi.efiSysMountPoint = "/boot";
   };
 
+  boot.supportedFilesystems = [ "zfs" ];
+  networking.hostId = "05fc191c";
   boot = {
     initrd.availableKernelModules = [ "nvme" "xhci_pci" "ahci" "sd_mod" ];
     initrd.kernelModules = [ "amd_pstate" "amdgpu" ];
@@ -28,24 +30,46 @@
       patch = ./patches/d3cold.patch;
     }];
     cleanTmpDir = true;
-    #tmpOnTmpfs = false;
-    #mpOnTmpfsSize = "90%";
   };
 
   fileSystems."/" = {
-    device = "/dev/disk/by-uuid/d1f0114c-069e-46c1-bf58-f2d024ca46f7";
-    fsType = "btrfs";
-    options = [ "subvol=@nixroot" "compress=zstd:9" "relatime" ];
+    device = "mowteng/system/root";
+    fsType = "zfs";
+    options = [ "zfsutil" "X-mount.mkdir" ];
+  };
+
+  fileSystems."/tmp" = {
+    device = "mowteng/system/tmp";
+    fsType = "zfs";
+    options = [ "zfsutil" "X-mount.mkdir" ];
+  };
+
+  fileSystems."/home" = {
+    device = "mowteng/data/home";
+    fsType = "zfs";
+    options = [ "zfsutil" "X-mount.mkdir" ];
   };
 
   fileSystems."/nix" = {
-    device = "/dev/disk/by-uuid/d1f0114c-069e-46c1-bf58-f2d024ca46f7";
-    fsType = "btrfs";
-    options = [ "subvol=@nix" "compress=zstd:9" "relatime" ];
+    device = "mowteng/local/nix";
+    fsType = "zfs";
+    options = [ "zfsutil" "X-mount.mkdir" ];
   };
 
-  fileSystems."/efi" = {
-    device = "/dev/disk/by-uuid/7141-64D6";
+  fileSystems."/var/lib" = {
+    device = "mowteng/system/var/lib";
+    fsType = "zfs";
+    options = [ "zfsutil" "X-mount.mkdir" ];
+  };
+
+  fileSystems."/var/log" = {
+    device = "mowteng/system/var/log";
+    fsType = "zfs";
+    options = [ "zfsutil" "X-mount.mkdir" ];
+  };
+
+  fileSystems."/boot" = {
+    device = "/dev/disk/by-uuid/67B9-6ED6";
     fsType = "vfat";
     options = [
       "fmask=0022"
@@ -57,31 +81,8 @@
     ];
   };
 
-  fileSystems."/home" = {
-    device = "/dev/disk/by-uuid/d1f0114c-069e-46c1-bf58-f2d024ca46f7";
-    fsType = "btrfs";
-    options = [ "subvol=@home" "compress=zstd:9" "relatime" ];
-  };
-
-  fileSystems."/data/Games" = {
-    device = "/dev/disk/by-uuid/d1f0114c-069e-46c1-bf58-f2d024ca46f7";
-    fsType = "btrfs";
-    options = [ "subvol=@GameData" "compress=zstd:9" "relatime" ];
-  };
-
-  fileSystems."/data/butter" = {
-    device = "/dev/disk/by-uuid/d1f0114c-069e-46c1-bf58-f2d024ca46f7";
-    fsType = "btrfs";
-  };
-
-  fileSystems."/data/snapshots" = {
-    device = "/dev/disk/by-uuid/d1f0114c-069e-46c1-bf58-f2d024ca46f7";
-    fsType = "btrfs";
-    options = [ "subvol=@snapshots" ];
-  };
-
   swapDevices =
-    [{ device = "/dev/disk/by-uuid/cbd786fb-2d29-4652-9749-ab5e2b4fbee9"; }];
+    [{ device = "/dev/disk/by-uuid/b6b88dbb-ad22-4746-ba8a-a1c32b3a184f"; }];
 
   hardware = {
     cpu.amd.updateMicrocode =

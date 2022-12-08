@@ -87,7 +87,7 @@
     # misc
     kdiskmark
     mailctl
-
+    xorg.xhost
     # edit ++ devel
     tree-sitter
     gcc

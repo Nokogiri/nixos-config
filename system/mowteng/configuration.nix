@@ -19,7 +19,7 @@
     initrd.kernelModules = [ "amd_pstate" "amdgpu" ];
     kernelModules = [ "kvm-amd" "zenpower" "msr" ];
     extraModprobeConfig = ''
-      options hid_xpadneo ff_connect_notify=0
+      options hid_xpadneo ff_connect_notify=0 quirks=30:03:c8:25:e8:80+32
       blacklist pcspkr
       options usb-storage quirks=090c:1000:,152d:0578:u,0bc2:2322:u
     '';

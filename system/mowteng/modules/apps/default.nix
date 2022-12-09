@@ -14,7 +14,6 @@
     gnome.simple-scan
     imv
     inkscape
-    obsidian
     pandoc
     xournalpp
     zathura
@@ -85,7 +84,6 @@
     wofi
 
     # misc
-    kdiskmark
     mailctl
     xorg.xhost
     # edit ++ devel

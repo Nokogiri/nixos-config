@@ -10,6 +10,10 @@
       mode = "0640";
       owner = config.users.users.systemd-network.name;
     };
+    "wifi/pass" = {
+      mode = "0640";
+      owner = config.users.users.systemd-network.name;
+    };
   };
 
   networking = {

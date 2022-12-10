@@ -5,11 +5,14 @@
 
 {
   imports = [ (modulesPath + "/installer/scan/not-detected.nix") ];
-
+  
+  networking.hostId = "2d3a30d6";
   boot.loader = {
-    systemd-boot.enable = true;
+    #systemd-boot.enable = true;
     efi.canTouchEfiVariables = true;
-    efi.efiSysMountPoint = "/efi";
+    efi.efiSysMountPoint = "/boot";
+    grub.efiSupport = true;
+    grub.device = "nodev";
   };
 
   boot = {
@@ -30,7 +33,6 @@
     ];
     initrd.kernelModules = [ "hid-apple" ];
     kernelModules = [ "kvm-intel" ];
-    kernelPackages = pkgs.linuxPackages_lqx;
     kernelParams = [
       "acpi_backlight=vendor"
       "intremap=off"
@@ -52,21 +54,43 @@
       "mitigations=off"
       "sdhci.debug_quirks2=4"
     ];
+  supportedFilesystems = [ "zfs" ];
   };
+  fileSystems."/" =
+    { device = "homeassistant/system/root";
+      fsType = "zfs"; options = [ "zfsutil" "X-mount.mkdir" ];
+    };
 
-  fileSystems."/" = {
-    device = "/dev/disk/by-uuid/1f200403-52ed-4fe6-8e44-edfa6aed6cf9";
-    fsType = "btrfs";
-    options = [ "subvol=@nixos" "compress=zstd:9" ];
-  };
+  fileSystems."/var/lib" =
+    { device = "homeassistant/system/var/lib";
+      fsType = "zfs"; options = [ "zfsutil" "X-mount.mkdir" ];
+    };
 
-  fileSystems."/home" = {
-    device = "/dev/disk/by-uuid/1f200403-52ed-4fe6-8e44-edfa6aed6cf9";
-    fsType = "btrfs";
-    options = [ "subvol=@home" "compress=zstd:9" ];
-  };
+  fileSystems."/var/log" =
+    { device = "homeassistant/system/var/log";
+      fsType = "zfs"; options = [ "zfsutil" "X-mount.mkdir" ];
+    };
 
-  fileSystems."/efi" = {
+  fileSystems."/tmp" =
+    { device = "homeassistant/system/tmp";
+      fsType = "zfs"; options = [ "zfsutil" "X-mount.mkdir" ];
+    };
+
+  fileSystems."/home" =
+    { device = "homeassistant/data/home";
+      fsType = "zfs"; options = [ "zfsutil" "X-mount.mkdir" ];
+    };
+
+  fileSystems."/nix" =
+    { device = "homeassistant/local/nix";
+      fsType = "zfs"; options = [ "zfsutil" "X-mount.mkdir" ];
+    };
+
+  swapDevices =
+    [ { device = "/dev/disk/by-uuid/8638fc3c-846e-49ea-9307-5194a729e74c"; }
+    ];
+
+  fileSystems."/boot" = {
     device = "/dev/disk/by-uuid/67E3-17ED";
     fsType = "vfat";
     options = [
@@ -78,19 +102,6 @@
       "utf8"
     ];
   };
-  fileSystems."/data/butter" = {
-    device = "/dev/disk/by-uuid/1f200403-52ed-4fe6-8e44-edfa6aed6cf9";
-    fsType = "btrfs";
-    options = [ "subvolid=5" ];
-  };
-  fileSystems."/data/snapshots" = {
-    device = "/dev/disk/by-uuid/1f200403-52ed-4fe6-8e44-edfa6aed6cf9";
-    fsType = "btrfs";
-    options = [ "subvol=@snapshots" ];
-  };
-
-  swapDevices =
-    [{ device = "/dev/disk/by-uuid/649f67bb-4f10-493f-b4e6-0c0aa625552d"; }];
 
   hardware = {
     cpu.intel.updateMicrocode =

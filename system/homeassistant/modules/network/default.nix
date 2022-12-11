@@ -54,7 +54,7 @@
 
     networks."20-wired" = {
       matchConfig.Name = [ "en*" ];
-      DHCP = "ipv4";
+      DHCP = "yes";
       #address = [ "192.168.178.57/24" ];
       #gateway = [ "192.168.178.1" ];
       #dns = [ "192.168.178.254" ];

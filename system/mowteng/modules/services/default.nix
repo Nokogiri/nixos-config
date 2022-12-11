@@ -3,7 +3,6 @@
 {
   services = {
 
-    avahi.enable = true;
     dbus.enable = true;
     fwupd = {
       enable = true;
@@ -22,7 +21,7 @@
       enable = true;
       extraConfig = ''
         Domains=home.arpa
-        MulticastDNS=true
+        MulticastDNS=resolve
         LLMNR=false
         ReadEtcHosts=true
         Cache=true

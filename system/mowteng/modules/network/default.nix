@@ -15,15 +15,20 @@
       owner = config.users.users.systemd-network.name;
     };
   };
-
+  
+  networking.firewall = { allowedUDPPorts = [ 5353 ]; };
   networking = {
     hostName = "mowteng";
     useDHCP = false;
-    #resolvconf.enable = true;
-    wireless.iwd.enable = true;
-    dhcpcd.extraConfig = ''
-      noipv6rs
-      noipv6'';
+    wireless = { 
+      enable = true;
+      environmentFile = config.sops.secrets."wifi/pass".path;
+      networks = {
+        "(=^--^=)" = {
+          psk = "@PSK_HOME@";
+        };
+      };
+    };
   };
 
   systemd.network.netdevs."90-wireguard" = {
@@ -46,6 +51,13 @@
     }];
   };
 
+  networking.networkmanager = { 
+    enable = false;
+    extraConfig = ''
+      [connection]
+      connection.mdns=2
+      '';
+    };
   systemd.network = {
     enable = true;
     wait-online = {
@@ -53,17 +65,9 @@
       anyInterface = true;
     };
 
-    links."00-iwd" = {
-      matchConfig.Type = [ "wlan" ];
-      linkConfig.NamePolicy = "path";
-    };
-
     networks."25-wireless" = {
       matchConfig.Name = [ "wl*" ];
-      DHCP = "ipv6";
-      address = [ "192.168.178.3/24" ];
-      gateway = [ "192.168.178.1" ];
-      dns = [ "192.168.178.254" ];
+      DHCP = "yes";
       dhcpV4Config = {
         RouteMetric = 20;
         UseDNS = true;
@@ -73,7 +77,7 @@
       linkConfig = { Multicast = true; };
       networkConfig = {
         MulticastDNS = true;
-        LLMNR = false;
+        LLMNR = true;
       };
     };
     networks."90-wireguard" = {

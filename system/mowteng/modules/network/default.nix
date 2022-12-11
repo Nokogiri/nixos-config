@@ -14,6 +14,10 @@
       mode = "0640";
       owner = config.users.users.systemd-network.name;
     };
+    wireless = {
+      mode = "0640";
+      owner = config.users.users.systemd-network.name;
+    };
   };
 
   networking = {
@@ -25,7 +29,7 @@
     useDHCP = false;
     wireless = {
       enable = true;
-      environmentFile = config.sops.secrets."wifi/pass".path;
+      environmentFile = config.sops.secrets.wireless.path;
       networks = { "(=^--^=)" = { psk = "@PSK_HOME@"; }; };
       # Imperative
       allowAuxiliaryImperativeNetworks = true;

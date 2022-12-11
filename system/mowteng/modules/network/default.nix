@@ -17,6 +17,10 @@
   };
 
   networking = {
+    firewall = {
+      trustedInterfaces = [ "wg0" ];
+      allowedUDPPorts = [ 5353 ];
+    };
     hostName = "mowteng";
     useDHCP = false;
     wireless = {
@@ -65,7 +69,7 @@
 
     networks."25-wireless" = {
       matchConfig.Name = [ "wl*" ];
-      DHCP = "yes";
+      DHCP = "ipv4";
       dhcpV4Config = {
         RouteMetric = 20;
         UseDNS = true;

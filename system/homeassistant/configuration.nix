@@ -53,6 +53,7 @@
       "tsx_async_abort=off"
       "mitigations=off"
       "sdhci.debug_quirks2=4"
+      "ipv6.disable=1"
     ];
     supportedFilesystems = [ "zfs" ];
   };

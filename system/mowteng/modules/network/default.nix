@@ -22,7 +22,7 @@
 
   networking = {
     firewall = {
-      trustedInterfaces = [ "wg0" ];
+      trustedInterfaces = [ "wg0" "wlp3s0" ];
       allowedUDPPorts = [ 5353 ];
     };
     hostName = "mowteng";

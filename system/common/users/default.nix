@@ -38,7 +38,7 @@
       "users"
       "video"
       "wheel"
-      "networkmanager"
+      "network"
       config.users.groups.keys.name
     ];
     shell = pkgs.zsh;

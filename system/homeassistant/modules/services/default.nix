@@ -3,21 +3,6 @@
 {
   services = {
 
-    avahi = {
-      enable = false;
-      hostName = "homeassistant";
-      interfaces = [ "enp1s0f0" ];
-      ipv6 = false;
-      nssmdns = true;
-      publish = {
-        enable = true;
-        workstation = true;
-        hinfo = true;
-        domain = true;
-        userServices = true;
-      };
-    };
-    btrbk = { extraPackages = [ pkgs.mbuffer pkgs.xz ]; };
     dbus.enable = true;
     logind.lidSwitch = "ignore";
     mbpfan = {
@@ -30,12 +15,6 @@
         min_fan1_speed = 2000;
       };
     };
-    pipewire = {
-      enable = false;
-      alsa.enable = false;
-      pulse.enable = false;
-      wireplumber.enable = false;
-    };
 
     resolved = {
       enable = true;
@@ -45,7 +24,6 @@
         LLMNR=true
       '';
     };
-    tlp.enable = false;
     udisks2.enable = true;
 
   };

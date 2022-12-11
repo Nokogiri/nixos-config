@@ -3,9 +3,7 @@
 {
   environment.systemPackages = with pkgs; [
     brightnessctl
-    btrbk
     ldns
-    #python
     rclone
     sshfs-fuse
     udisks

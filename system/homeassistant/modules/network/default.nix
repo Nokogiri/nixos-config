@@ -16,7 +16,6 @@
     hostName = "homeassistant";
     useDHCP = false;
     enableIPv6 = true;
-    wireless.iwd.enable = false;
     dhcpcd.extraConfig = ''
       noipv6rs
       noipv6'';

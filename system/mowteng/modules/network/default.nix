@@ -15,22 +15,27 @@
       owner = config.users.users.systemd-network.name;
     };
   };
-  
-  networking.firewall = { allowedUDPPorts = [ 5353 ]; };
+
   networking = {
     hostName = "mowteng";
     useDHCP = false;
-    wireless = { 
+    wireless = {
       enable = true;
       environmentFile = config.sops.secrets."wifi/pass".path;
-      networks = {
-        "(=^--^=)" = {
-          psk = "@PSK_HOME@";
-        };
+      networks = { "(=^--^=)" = { psk = "@PSK_HOME@"; }; };
+      # Imperative
+      allowAuxiliaryImperativeNetworks = true;
+      userControlled = {
+        enable = true;
+        group = "network";
       };
+      extraConfig = ''
+        update_config=1
+      '';
     };
   };
 
+  users.groups.network = { };
   systemd.network.netdevs."90-wireguard" = {
     netdevConfig = {
       Kind = "wireguard";
@@ -51,13 +56,6 @@
     }];
   };
 
-  networking.networkmanager = { 
-    enable = false;
-    extraConfig = ''
-      [connection]
-      connection.mdns=2
-      '';
-    };
   systemd.network = {
     enable = true;
     wait-online = {

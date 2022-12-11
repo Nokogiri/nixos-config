@@ -5,7 +5,7 @@
 
 {
   imports = [ (modulesPath + "/installer/scan/not-detected.nix") ];
-  
+
   networking.hostId = "2d3a30d6";
   boot.loader = {
     #systemd-boot.enable = true;
@@ -54,41 +54,46 @@
       "mitigations=off"
       "sdhci.debug_quirks2=4"
     ];
-  supportedFilesystems = [ "zfs" ];
+    supportedFilesystems = [ "zfs" ];
   };
-  fileSystems."/" =
-    { device = "homeassistant/system/root";
-      fsType = "zfs"; options = [ "zfsutil" "X-mount.mkdir" ];
-    };
+  fileSystems."/" = {
+    device = "homeassistant/system/root";
+    fsType = "zfs";
+    options = [ "zfsutil" "X-mount.mkdir" ];
+  };
 
-  fileSystems."/var/lib" =
-    { device = "homeassistant/system/var/lib";
-      fsType = "zfs"; options = [ "zfsutil" "X-mount.mkdir" ];
-    };
+  fileSystems."/var/lib" = {
+    device = "homeassistant/system/var/lib";
+    fsType = "zfs";
+    options = [ "zfsutil" "X-mount.mkdir" ];
+  };
 
-  fileSystems."/var/log" =
-    { device = "homeassistant/system/var/log";
-      fsType = "zfs"; options = [ "zfsutil" "X-mount.mkdir" ];
-    };
+  fileSystems."/var/log" = {
+    device = "homeassistant/system/var/log";
+    fsType = "zfs";
+    options = [ "zfsutil" "X-mount.mkdir" ];
+  };
 
-  fileSystems."/tmp" =
-    { device = "homeassistant/system/tmp";
-      fsType = "zfs"; options = [ "zfsutil" "X-mount.mkdir" ];
-    };
+  fileSystems."/tmp" = {
+    device = "homeassistant/system/tmp";
+    fsType = "zfs";
+    options = [ "zfsutil" "X-mount.mkdir" ];
+  };
 
-  fileSystems."/home" =
-    { device = "homeassistant/data/home";
-      fsType = "zfs"; options = [ "zfsutil" "X-mount.mkdir" ];
-    };
+  fileSystems."/home" = {
+    device = "homeassistant/data/home";
+    fsType = "zfs";
+    options = [ "zfsutil" "X-mount.mkdir" ];
+  };
 
-  fileSystems."/nix" =
-    { device = "homeassistant/local/nix";
-      fsType = "zfs"; options = [ "zfsutil" "X-mount.mkdir" ];
-    };
+  fileSystems."/nix" = {
+    device = "homeassistant/local/nix";
+    fsType = "zfs";
+    options = [ "zfsutil" "X-mount.mkdir" ];
+  };
 
   swapDevices =
-    [ { device = "/dev/disk/by-uuid/8638fc3c-846e-49ea-9307-5194a729e74c"; }
-    ];
+    [{ device = "/dev/disk/by-uuid/8638fc3c-846e-49ea-9307-5194a729e74c"; }];
 
   fileSystems."/boot" = {
     device = "/dev/disk/by-uuid/67E3-17ED";

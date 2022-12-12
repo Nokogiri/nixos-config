@@ -1,5 +1,6 @@
 { pkgs, lib, spicetify-nix, ... }:
-let spicePkgs = spicetify-nix.pkgSets.${pkgs.system};
+#let spicePkgs = spicetify-nix.pkgSets.${pkgs.system};
+let spicePkgs = spicetify-nix.packages.${pkgs.system}.default;
 in {
 
   programs.spicetify = {

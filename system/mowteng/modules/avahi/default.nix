@@ -2,7 +2,7 @@
   services.avahi = {
     enable = true;
     hostName = config.networking.hostName;
-    nssmdns = true;
+    nssmdns = false;
     openFirewall = true;
     publish = {
       enable = true;

@@ -73,18 +73,18 @@
 
     networks."25-wireless" = {
       matchConfig.Name = [ "wl*" ];
-      DHCP = "ipv4";
+      DHCP = "yes";
       dhcpV4Config = {
         RouteMetric = 20;
         UseDNS = true;
         UseRoutes = true;
         UseDomains = true;
       };
-      linkConfig = { Multicast = true; };
-      networkConfig = {
-        MulticastDNS = true;
-        LLMNR = true;
-      };
+      #linkConfig = { Multicast = true; };
+      #networkConfig = {
+      #  MulticastDNS = false;
+      #  LLMNR = false;
+      #};
     };
     networks."90-wireguard" = {
       matchConfig.Name = "wg0";

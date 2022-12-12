@@ -1,5 +1,6 @@
 [
   ./apps
+  ./avahi
   ./btrbk
   ./fonts
   ./network

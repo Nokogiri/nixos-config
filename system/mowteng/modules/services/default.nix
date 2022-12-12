@@ -21,8 +21,8 @@
       enable = true;
       extraConfig = ''
         Domains=home.arpa
-        MulticastDNS=resolve
-        LLMNR=false
+        #MulticastDNS=resolve
+        #LLMNR=false
         ReadEtcHosts=true
         Cache=true
       '';

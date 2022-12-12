@@ -1,5 +1,4 @@
-{pkgs, lib, config, ...}:
-{
+{ pkgs, lib, config, ... }: {
   services.avahi = {
     enable = true;
     hostName = config.networking.hostName;

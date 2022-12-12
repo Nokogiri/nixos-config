@@ -1,1 +1,1 @@
-[ ../../optional/docker ./apps ./network ./nginx ./services ]
+[ ../../optional/docker ./apps ./avahi ./network ./nginx ./services ]

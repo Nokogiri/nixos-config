@@ -6,30 +6,43 @@
 {
   imports = [ (modulesPath + "/installer/scan/not-detected.nix") ];
 
-  boot.loader = {
-    systemd-boot.enable = true;
-    efi.canTouchEfiVariables = true;
-    efi.efiSysMountPoint = "/boot";
-  };
+  #  boot.loader = {
+  #    systemd-boot.enable = true;
+  #    efi.canTouchEfiVariables = true;
+  #    efi.efiSysMountPoint = "/boot";
+  #  };
 
-  boot.supportedFilesystems = [ "zfs" ];
   networking.hostId = "05fc191c";
   boot = {
-    initrd.availableKernelModules = [ "nvme" "xhci_pci" "ahci" "sd_mod" ];
-    initrd.kernelModules = [ "amd_pstate" "amdgpu" ];
-    kernelModules = [ "kvm-amd" "zenpower" "msr" ];
+    cleanTmpDir = true;
     extraModprobeConfig = ''
       options hid_xpadneo ff_connect_notify=0 quirks=30:03:c8:25:e8:80+32
       blacklist pcspkr
       options usb-storage quirks=090c:1000:,152d:0578:u,0bc2:2322:u
     '';
     extraModulePackages = [ pkgs.linuxPackages_lqx.zenpower ];
+    initrd = {
+      availableKernelModules = [ "nvme" "xhci_pci" "ahci" "sd_mod" ];
+      kernelModules = [ "amd_pstate" "amdgpu" ];
+    };
+    kernelModules = [ "kvm-amd" "zenpower" "msr" ];
     kernelPackages = pkgs.linuxPackages_lqx;
     kernelPatches = [{
       name = "d3cold-fix";
       patch = ./patches/d3cold.patch;
     }];
-    cleanTmpDir = true;
+    loader = {
+      efi = {
+        efiSysMountPoint = "/boot";
+        canTouchEfiVariables = true;
+      };
+      grub = {
+        enable = true;
+        efiSupport = true;
+        device = "nodev";
+      };
+    };
+    supportedFilesystems = [ "zfs" ];
   };
 
   fileSystems."/" = {

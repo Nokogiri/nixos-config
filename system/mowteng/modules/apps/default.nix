@@ -19,6 +19,7 @@
     zathura
 
     # video & audio
+    easyeffects
     ffmpeg
     gtk-pipe-viewer
     jellyfin-media-player

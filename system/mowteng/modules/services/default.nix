@@ -40,10 +40,14 @@
     rtkit.enable = true;
   };
 
+  systemd.tmpfiles.rules = [
+    "D /tmp/.X11-unix 1777 nokogiri root"
+  ];
+
   virtualisation = {
     docker = {
-      enable = false;
-      storageDriver = "btrfs";
+      enable = true;
+      storageDriver = "zfs";
     };
 
     libvirtd = {

@@ -6,15 +6,11 @@
 {
   imports = [ (modulesPath + "/installer/scan/not-detected.nix") ];
 
-  #  boot.loader = {
-  #    systemd-boot.enable = true;
-  #    efi.canTouchEfiVariables = true;
-  #    efi.efiSysMountPoint = "/boot";
-  #  };
-
   networking.hostId = "05fc191c";
+  
   boot = {
     cleanTmpDir = true;
+    consoleLogLevel = 3;
     extraModprobeConfig = ''
       options hid_xpadneo ff_connect_notify=0 quirks=30:03:c8:25:e8:80+32
       blacklist pcspkr
@@ -42,56 +38,55 @@
         device = "nodev";
       };
     };
+    plymouth = {
+      enable = true;
+    };
     supportedFilesystems = [ "zfs" ];
   };
 
-  fileSystems."/" = {
-    device = "mowteng/system/root";
-    fsType = "zfs";
-    options = [ "zfsutil" "X-mount.mkdir" ];
-  };
-
-  fileSystems."/tmp" = {
-    device = "mowteng/system/tmp";
-    fsType = "zfs";
-    options = [ "zfsutil" "X-mount.mkdir" ];
-  };
-
-  fileSystems."/home" = {
-    device = "mowteng/data/home";
-    fsType = "zfs";
-    options = [ "zfsutil" "X-mount.mkdir" ];
-  };
-
-  fileSystems."/nix" = {
-    device = "mowteng/local/nix";
-    fsType = "zfs";
-    options = [ "zfsutil" "X-mount.mkdir" ];
-  };
-
-  fileSystems."/var/lib" = {
-    device = "mowteng/system/var/lib";
-    fsType = "zfs";
-    options = [ "zfsutil" "X-mount.mkdir" ];
-  };
-
-  fileSystems."/var/log" = {
-    device = "mowteng/system/var/log";
-    fsType = "zfs";
-    options = [ "zfsutil" "X-mount.mkdir" ];
-  };
-
-  fileSystems."/boot" = {
-    device = "/dev/disk/by-uuid/67B9-6ED6";
-    fsType = "vfat";
-    options = [
-      "fmask=0022"
-      "dmask=0022"
-      "codepage=437"
-      "iocharset=ascii"
-      "shortname=mixed"
-      "utf8"
-    ];
+  fileSystems = {
+    "/" = {
+      device = "mowteng/system/root";
+      fsType = "zfs";
+      options = [ "zfsutil" "X-mount.mkdir" ];
+    };
+    "/tmp" = {
+      device = "mowteng/system/tmp";
+      fsType = "zfs";
+      options = [ "zfsutil" "X-mount.mkdir" ];
+    };
+    "/home" = {
+      device = "mowteng/data/home";
+      fsType = "zfs";
+      options = [ "zfsutil" "X-mount.mkdir" ];
+    };
+    "/nix" = {
+      device = "mowteng/local/nix";
+      fsType = "zfs";
+      options = [ "zfsutil" "X-mount.mkdir" ];
+    };
+    "/var/lib" = {
+      device = "mowteng/system/var/lib";
+      fsType = "zfs";
+      options = [ "zfsutil" "X-mount.mkdir" ];
+    };
+    "/var/log" = {
+      device = "mowteng/system/var/log";
+      fsType = "zfs";
+      options = [ "zfsutil" "X-mount.mkdir" ];
+    };
+    "/boot" = {
+      device = "/dev/disk/by-uuid/67B9-6ED6";
+      fsType = "vfat";
+      options = [
+        "fmask=0022"
+        "dmask=0022"
+        "codepage=437"
+        "iocharset=ascii"
+        "shortname=mixed"
+        "utf8"
+      ];
+    };
   };
 
   swapDevices =
@@ -144,6 +139,10 @@
           defaults = "compress-force=zstd:6";
         };
       };
+    };
+    zfs = {
+      autoScrub.enable = true;
+      trim.enable = true;
     };
   };
 
